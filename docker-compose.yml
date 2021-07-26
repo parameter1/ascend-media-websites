@@ -259,3 +259,19 @@ services:
     ports:
       - "9921:80"
       - "19921:19921"
+
+  template:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/examplesite.org
+    environment:
+      <<: *env
+      <<: *env-tauron
+      PORT: 80
+      EXPOSED_PORT: 9999
+      LIVERELOAD_PORT: 19999
+      TENANT_KEY: ascend_hh
+      SITE_ID: 60c7666d46f24a64538b458d
+    ports:
+      - "9999:80"
+      - "19999:19999"
