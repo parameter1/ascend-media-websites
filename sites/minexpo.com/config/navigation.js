@@ -2,16 +2,12 @@ const primary = [
   { href: '/directory', label: 'Exhibitor Directory' },
   { href: '/exhibitor-news', label: 'Exhibitor News' },
   { href: '/leaders', label: 'Featured Exhibitors' },
-  // eslint-disable-next-line no-script-url
-  { href: 'javascript:void(0)', label: 'Exhibit Hall Map' },
-  // eslint-disable-next-line no-script-url
-  { href: '/export-directory', label: 'Export Directory' },
+  { href: 'https://www.allintheloop.net/App/me/meMINExpo', label: 'Exhibit Hall Floor Plans' },
 ];
 
 const secondary = [
   { href: 'https://www.MINExpo.com', label: 'MINExpo.com' },
-  { href: '/directory/other-related-equipment-products-and-services/publishers?type=Company', label: 'MINExpo MEDIA PARTNERS' },
-  { href: 'https://www.allintheloop.net/App/me/meMINExpo', label: 'Exhibit Hall Maps' },
+  { href: '/directory/other-related-equipment-products-services/publishers?type=Company', label: 'MINExpo MEDIA PARTNERS' },
 ];
 
 const resources = [];
