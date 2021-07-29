@@ -2,7 +2,7 @@ const primary = [
   { href: '/directory', label: 'Exhibitor Directory' },
   { href: '/exhibitor-news', label: 'Exhibitor News' },
   { href: '/leaders', label: 'Featured Exhibitors' },
-  { href: 'https://www.allintheloop.net/App/me/meMINExpo', label: 'Exhibit Hall Floor Plans' },
+  { href: 'https://www.allintheloop.net/App/me/meMINExpo', label: 'Exhibit Hall Floor Plans', target: '_blank' },
 ];
 
 const secondary = [
