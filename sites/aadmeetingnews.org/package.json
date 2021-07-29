@@ -17,7 +17,7 @@
   "dependencies": {
     "@ascend-media/package-global": "^0.5.0",
     "@parameter1/base-cms-marko-core": "^2.32.0",
-    "@parameter1/base-cms-marko-web": "^2.32.0",
+    "@parameter1/base-cms-marko-web": "^2.34.0",
     "@parameter1/base-cms-marko-web-gam": "^2.22.2",
     "@parameter1/base-cms-marko-web-gcse": "^2.22.2",
     "@parameter1/base-cms-marko-web-gtm": "^2.22.2",
@@ -29,7 +29,7 @@
     "@parameter1/base-cms-marko-web-theme-default": "^2.30.0",
     "@parameter1/base-cms-object-path": "^2.22.2",
     "@parameter1/base-cms-utils": "^2.22.2",
-    "@parameter1/base-cms-web-cli": "^2.32.0",
+    "@parameter1/base-cms-web-cli": "^2.34.0",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1",
     "newrelic": "^6.4.1"

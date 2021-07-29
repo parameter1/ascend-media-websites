@@ -14,7 +14,7 @@
     "@parameter1/base-cms-env": "^2.0.0",
     "@parameter1/base-cms-image": "^2.8.1",
     "@parameter1/base-cms-marko-core": "^2.32.0",
-    "@parameter1/base-cms-marko-web": "^2.32.0",
+    "@parameter1/base-cms-marko-web": "^2.34.0",
     "@parameter1/base-cms-marko-web-gam": "^2.22.2",
     "@parameter1/base-cms-marko-web-gtm": "^2.22.2",
     "@parameter1/base-cms-marko-web-theme-default": "^2.30.0",
