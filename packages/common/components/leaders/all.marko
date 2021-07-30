@@ -11,11 +11,10 @@ $ const displayViewAll = defaultValue(input.displayViewAll, true);
   contextual,
   displayHeader: false,
   displayViewAll,
-  columns: 2,
+  columns: 3,
   offsetTop: 50,
   viewAllHref: '/leaders',
   mediaQueries: [
-    { prop: "open", value: "right", query: "(min-width: 1490px)" },
     { prop: "columns", value: 2, query: "(max-width: 991px)" },
     { prop: "columns", value: 1, query: "(max-width: 700px)" },
   ],
