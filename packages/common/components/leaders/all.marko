@@ -11,7 +11,7 @@ $ const displayViewAll = defaultValue(input.displayViewAll, true);
   contextual,
   displayHeader: false,
   displayViewAll,
-  columns: 2,
+  columns: 3,
   offsetTop: 50,
   viewAllHref: '/leaders',
   mediaQueries: [
@@ -19,4 +19,5 @@ $ const displayViewAll = defaultValue(input.displayViewAll, true);
     { prop: "columns", value: 2, query: "(max-width: 991px)" },
     { prop: "columns", value: 1, query: "(max-width: 700px)" },
   ],
+  allowFlyOut: false
 }/>
