@@ -61,6 +61,17 @@ $ const { id, alias, name, pageNode } = data;
       <div class="col-lg-8 mb-block">
         <common-leaders-home-page />
       </div>
+      <div class="col-lg-4 mb-block">
+        <marko-web-query|{ nodes }|
+          name="website-scheduled-content"
+          params={ limit: 1, skip: 7, requiresImage: true, queryFragment }
+        >
+          <website-content-card-node
+            image-width=340
+            node=nodes[0]
+          />
+        </marko-web-query>
+      </div>
     </div>
 
     <div class="row">
@@ -70,7 +81,7 @@ $ const { id, alias, name, pageNode } = data;
       <div class="col-lg-8 col-md-6 mb-block">
         <marko-web-query|{ nodes }|
           name="website-scheduled-content"
-          params={ limit: 4, skip: 10, requiresImage: true, queryFragment }
+          params={ limit: 4, skip: 8, requiresImage: true, queryFragment }
         >
         <default-theme-card-deck-flow cols=2 nodes=nodes>
           <@slot|{ node, index }|>
@@ -86,7 +97,7 @@ $ const { id, alias, name, pageNode } = data;
 
     <marko-web-query|{ nodes }|
       name="website-scheduled-content"
-      params={ sectionId: id, limit: 16, skip: 14, requiresImage: true, queryFragment }
+      params={ sectionId: id, limit: 16, skip: 12, requiresImage: true, queryFragment }
     >
       <default-theme-card-deck-flow cols=3 nodes=nodes>
         <@slot|{ node, index }|>
@@ -112,7 +123,7 @@ $ const { id, alias, name, pageNode } = data;
         component-name="content-load-more-flow"
         fragment-name="content-list"
         query-name="website-scheduled-content"
-        query-params={ sectionId: id, limit: 12, skip: 30, requiresImage: true }
+        query-params={ sectionId: id, limit: 12, skip: 28, requiresImage: true }
         max-pages=3
         page-input={ for: "website-section", id }
       />
