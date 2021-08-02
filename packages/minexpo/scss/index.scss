@@ -128,9 +128,10 @@
   margin-right: map-get($spacers, block);
   margin-left: map-get($spacers, block);
   &__list {
-    padding:0;
+    padding: 0;
   }
   &__title {
+    display: flex;
     color: $primary;
     background-color: $white;
     #{ $self } {
