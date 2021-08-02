@@ -137,7 +137,7 @@ $ const displayExportDetails = (
         </@header>
         <@body>
           <if(businessContacts.length)>
-            <label class="content-section-header content-section-header--border">Public Contact(s)</label>
+            <label class="content-section-header content-section-header--border">Representative on Site</label>
             <for|contact| of=businessContacts>
               <marko-web-block>
                 ${contact.name}
@@ -154,7 +154,7 @@ $ const displayExportDetails = (
             </for>
           </if>
           <if(marketingContacts.length)>
-            <label class="content-section-header content-section-header--border">Marketing Contact(s)</label>
+            <label class="content-section-header content-section-header--border">Post Show Contact</label>
             <for|contact| of=marketingContacts>
               <marko-web-block>
                 ${contact.name}
