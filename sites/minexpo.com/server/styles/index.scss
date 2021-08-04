@@ -146,13 +146,3 @@ $theme-site-header-breakpoints: (
     }
   }
 }
-
-.leaders-section{
-  &--with-parent{
-    .leaders-section{
-      &__title {
-        display: none;
-      }
-    }
-  }
-}
