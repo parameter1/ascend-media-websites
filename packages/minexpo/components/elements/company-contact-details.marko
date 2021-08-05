@@ -42,9 +42,6 @@ $ const socialLinkAttrs = getAsObject(input, "socialLinkAttrs");
       <if(showEmail)>
         <marko-web-content-public-email block-name=blockName obj=content link=true/>
       </if>
-      <div class="col-sm-4 px-0">
-        <common-leaders-company-website-link company=content />
-      </div>
     </default-theme-content-contact-details-section>
   </if>
 
@@ -90,4 +87,10 @@ $ const socialLinkAttrs = getAsObject(input, "socialLinkAttrs");
       </if>
     </default-theme-content-contact-details-section>
   </if>
+  <if(content.nmaOrder)>
+    NMA Member
+  </if>
+  <div class="col-sm-4 px-0">
+    <common-leaders-company-website-link company=content />
+  </div>
 </default-theme-page-contact-details>
