@@ -194,6 +194,12 @@ $ const displayExportDetails = (
               ${content.marketingInterest}
             </marko-web-block>
           </if>
+          <if(content.numberOfEmployees)>
+            <label class="content-section-header content-section-header--border">Number of Employees</label>
+            <marko-web-block>
+              ${content.numberOfEmployees}
+            </marko-web-block>
+          </if>
 
         </@body>
       </marko-web-node-list>

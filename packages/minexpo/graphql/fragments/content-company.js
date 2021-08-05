@@ -70,6 +70,7 @@ fragment WebsiteContentCompanyFragment on Content {
     internationalBusinessInterest: customAttribute(input: { path: "internationalBusinessInterest" })
     alphaGroup: customAttribute(input: { path: "alphaGroup" })
     boothLocation: customAttribute(input: { path: "boothLocation" })
+    nmaOrder: customAttribute(input: { path: "nmaOrder" })
 
     businessContacts: publicContacts {
       edges {
