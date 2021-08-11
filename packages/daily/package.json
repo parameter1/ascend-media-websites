@@ -1,6 +1,6 @@
 {
   "name": "@ascend-media/package-daily",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "author": "Brandon Krigbaum <brandon@parameter1.com>",
   "repository": "https://github.com/parameter1/ascend-media-websites/tree/master/packages/daily",
   "license": "MIT",
@@ -10,7 +10,7 @@
     "test": "yarn lint"
   },
   "dependencies": {
-    "@ascend-media/package-contact-us": "^1.0.0",
+    "@ascend-media/package-contact-us": "^1.0.2",
     "@parameter1/base-cms-env": "^2.0.0",
     "@parameter1/base-cms-image": "^2.8.1",
     "@parameter1/base-cms-marko-core": "^2.32.0",
