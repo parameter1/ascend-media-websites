@@ -87,7 +87,8 @@ $ const socialLinkAttrs = getAsObject(input, "socialLinkAttrs");
       </if>
     </default-theme-content-contact-details-section>
   </if>
-  <if(content.nmaOrder)>
+  $ console.log(content)
+  <if(content.nmaMember === "Yes")>
     NMA Member
   </if>
   <div class="col-sm-4 px-0">
