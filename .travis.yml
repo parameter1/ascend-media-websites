@@ -185,14 +185,14 @@ jobs:
     #   env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-rc5kp]
 
     - stage: production
-      name: asa.ascendmedia.com
-      script: npx @parameter1/base-cms-website-deployment-tool deploy asa.ascendmedia.com websites
+      name: asa.org
+      script: npx @parameter1/base-cms-website-deployment-tool deploy asa.org websites
       install: skip
       env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-njflm]
 
     # - stage: staging
-    #   name: asa.ascendmedia.com
-    #   script: npx @parameter1/base-cms-website-deployment-tool deploy asa.ascendmedia.com websites
+    #   name: asa.org
+    #   script: npx @parameter1/base-cms-website-deployment-tool deploy asa.org websites
     #   install: skip
     #   env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-rc5kp]
 

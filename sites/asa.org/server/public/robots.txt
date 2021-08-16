@@ -5,5 +5,5 @@ User-agent: *
 # Disallow: /__
 Disallow: /
 
-Sitemap: https://www.asa.ascendmedia.com/sitemap.xml
-Sitemap: https://www.asa.ascendmedia.com/sitemap-google-news.xml
+Sitemap: https://www.asa.org/sitemap.xml
+Sitemap: https://www.asa.org/sitemap-google-news.xml

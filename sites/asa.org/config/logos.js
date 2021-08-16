@@ -1,6 +1,6 @@
 module.exports = {
   navbar: {
-    src: '',
+    src: 'http://placehold.jp/600x200.png',
     srcset: [
       '',
     ],
@@ -8,7 +8,7 @@ module.exports = {
     title: 'Example Site',
   },
   footer: {
-    src: '',
+    src: 'http://placehold.jp/400x200.png',
     srcset: [
       '',
     ],

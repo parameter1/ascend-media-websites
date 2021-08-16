@@ -263,7 +263,7 @@ services:
   asa:
     <<: *node
     <<: *site-cmd
-    working_dir: /root/sites/asa.ascendmedia.com
+    working_dir: /root/sites/asa.org
     environment:
       <<: *env
       <<: *env-tauron
@@ -271,7 +271,7 @@ services:
       EXPOSED_PORT: 9922
       LIVERELOAD_PORT: 19921
       TENANT_KEY: ascend_hh
-      SITE_ID: 60c7666d46f24a64538b458d
+      SITE_ID: 611a7eaf3fdb1225198b45a3
     ports:
       - "9922:80"
       - "19922:19922"
