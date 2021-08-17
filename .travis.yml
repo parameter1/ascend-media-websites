@@ -184,6 +184,55 @@ jobs:
     #   install: skip
     #   env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-rc5kp]
 
+    - stage: production
+      name: asa.org
+      script: npx @parameter1/base-cms-website-deployment-tool deploy asa.org websites
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-njflm]
+
+    # - stage: staging
+    #   name: asa.org
+    #   script: npx @parameter1/base-cms-website-deployment-tool deploy asa.org websites
+    #   install: skip
+    #   env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-rc5kp]
+
+    - stage: production
+      name: acep.org
+      script: npx @parameter1/base-cms-website-deployment-tool deploy acep.org websites
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-njflm]
+
+    # - stage: staging
+    #   name: acep.org
+    #   script: npx @parameter1/base-cms-website-deployment-tool deploy acep.org websites
+    #   install: skip
+    #   env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-rc5kp]
+
+
+    - stage: production
+      name: aao.hns.org
+      script: npx @parameter1/base-cms-website-deployment-tool deploy aao.hns.org websites
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-njflm]
+
+    # - stage: staging
+    #   name: aao.hns.org
+    #   script: npx @parameter1/base-cms-website-deployment-tool deploy aao.hns.org websites
+    #   install: skip
+    #   env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-rc5kp]
+
+    - stage: production
+      name: ashp.org
+      script: npx @parameter1/base-cms-website-deployment-tool deploy ashp.org websites
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-njflm]
+
+    # - stage: staging
+    #   name: ashp.org
+    #   script: npx @parameter1/base-cms-website-deployment-tool deploy ashp.org websites
+    #   install: skip
+    #   env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-rc5kp]
+
     #############################
     ### ^^^ ADD SITES HERE ^^^ ##
     #############################
