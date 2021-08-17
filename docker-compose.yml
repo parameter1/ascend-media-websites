@@ -308,6 +308,22 @@ services:
       - "9924:80"
       - "19924:19924"
 
+  ashp:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/ashp.org
+    environment:
+      <<: *env
+      <<: *env-tauron
+      PORT: 80
+      EXPOSED_PORT: 9925
+      LIVERELOAD_PORT: 19925
+      TENANT_KEY: ascend_hh
+      SITE_ID: 611bbf5d4c3ae90e268b4592
+    ports:
+      - "9925:80"
+      - "19925:19925"
+
   template:
     <<: *node
     <<: *site-cmd
