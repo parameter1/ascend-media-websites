@@ -309,10 +309,10 @@ services:
       - "9924:80"
       - "19924:19924"
 
-    ashp:
+  ashp:
     <<: *node
     <<: *site-cmd
-    working_dir: /root/sites/aao.hns.org
+    working_dir: /root/sites/ashp.org
     environment:
       <<: *env
       <<: *env-tauron
