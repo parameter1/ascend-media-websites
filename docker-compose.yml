@@ -260,6 +260,55 @@ services:
       - "9921:80"
       - "19921:19921"
 
+  asa:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/asa.org
+    environment:
+      <<: *env
+      <<: *env-tauron
+      PORT: 80
+      EXPOSED_PORT: 9922
+      LIVERELOAD_PORT: 19922
+      TENANT_KEY: ascend_hh
+      SITE_ID: 611a7eaf3fdb1225198b45a3
+    ports:
+      - "9922:80"
+      - "19922:19922"
+
+
+  acep:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/acep.org
+    environment:
+      <<: *env
+      <<: *env-tauron
+      PORT: 80
+      EXPOSED_PORT: 9923
+      LIVERELOAD_PORT: 19923
+      TENANT_KEY: ascend_hh
+      SITE_ID: 611a92384931c530198b45bf
+    ports:
+      - "9923:80"
+      - "19923:19923"
+
+  aao:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/aao.hns.org
+    environment:
+      <<: *env
+      <<: *env-tauron
+      PORT: 80
+      EXPOSED_PORT: 9924
+      LIVERELOAD_PORT: 19924
+      TENANT_KEY: ascend_hh
+      SITE_ID: 611a92384931c530198b45bf
+    ports:
+      - "9924:80"
+      - "19924:19923"
+
   template:
     <<: *node
     <<: *site-cmd
