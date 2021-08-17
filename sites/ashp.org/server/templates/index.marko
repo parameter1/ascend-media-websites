@@ -1,0 +1,128 @@
+import { getAsObject, getAsArray } from "@parameter1/base-cms-object-path";
+import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
+import { isFunction } from "@parameter1/base-cms-utils";
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import websiteSectionContentLoader from "@ascend-media/package-global/loaders/website-section-content";
+import queryFragment from "@ascend-media/package-global/graphql/fragments/content-list";
+
+$ const { GAM, apollo } = out.global;
+
+$ const {
+  id,
+  alias,
+  name,
+  pageNode,
+} = input;
+
+$ const adSlots = ({ aliases }) => ({
+  "gpt-ad-lb1": GAM.getAdUnit({ name: "lb1", aliases }),
+  "gpt-ad-lb2": GAM.getAdUnit({ name: "lb2", aliases }),
+  "gpt-ad-rail3": GAM.getAdUnit({ name: "rail3", size:[300, 600],  aliases }),
+});
+
+$ const promise = websiteSectionContentLoader(apollo, {
+  sectionId: id,
+  featuredParams: {
+    optionName: ["Pinned"],
+    limit: 5,
+    requiresImage: true,
+    queryFragment
+  },
+  standardParams: {
+    optionName: ["Standard"],
+    limit: 8,
+    requiresImage: true,
+    queryFragment
+  },
+  withStandardQuery: true,
+});
+
+<marko-web-resolve|{ resolved: sectionContent }| promise=promise>
+  $ const { featured, standard } = sectionContent;
+  <marko-web-resolve|{ resolved: { data: section } }| promise=pageNode.load()>
+    $ const aliases = hierarchyAliases(section);
+    $ const slots = adSlots({ aliases });
+    <marko-web-website-section-page-layout id=id alias=alias name=name>
+      <@head>
+        <marko-web-gtm-website-section-context|{ context }| alias=alias>
+          <marko-web-gtm-push data=context />
+        </marko-web-gtm-website-section-context>
+        <marko-web-gam-slots slots=slots />
+      </@head>
+
+      <@above-container>
+        <@section
+          id=section.id
+          name=section.name
+          alias=section.alias
+          logo=section.logo
+          hierarchy=section.hierarchy
+        />
+      </@above-container>
+      <@above-page>
+        <marko-web-gam-display-ad
+          id="gpt-ad-lb1"
+          slots=slots
+          class="mt-block"
+          modifiers=["max-width-970", "margin-auto-x", "center", "paid"]
+        />
+      </@above-page>
+      <@page>
+        <global-standard-hero-block nodes=getAsArray(featured, "nodes") />
+        <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(0, 2) cols=3 ad-index=1 ad-name="rail1" />
+        <div class="row">
+          <div class="col-lg-8">
+            <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(2, 4) />
+          </div>
+          <div class="col-lg-4">
+            <global-standard-section-list-block
+              section-alias="industry-resources"
+              inner-justified=false
+              query-params={ limit: 2, requiresImage: false }
+              display-image=false
+              modifiers=["sponsored"]
+            />
+          </div>
+        </div>
+        <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(4, 6) cols=3 ad-index=0 ad-name="rail2" />
+
+        <div class="row">
+          <div class="col-lg-4 mb-block">
+            <marko-web-gam-display-ad id="gpt-ad-rail3" />
+          </div>
+          <div class="col-lg-4 mb-block">
+            <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(6, 8) cols=1 />
+          </div>
+          <div class="col-lg-4 mb-block">
+            <global-twitter-widget-block />
+          </div>
+        </div>
+
+        <marko-web-gam-display-ad id="gpt-ad-lb2" modifiers=["max-width-790", "center", "paid"] />
+
+      </@page>
+
+      <@below-page>
+        <marko-web-resolve-page|{ data: section }| node=pageNode>
+          $ const aliases = hierarchyAliases(section);
+          $ const loadMoreParams = {
+            sectionId: id,
+            optionName: ["Standard"],
+            excludeContentIds: sectionContent.ids,
+            limit: 12,
+          };
+          <marko-web-load-more
+            component-name="global-content-card-deck-flow"
+            component-input={ aliases, cols: 3, withTeaser: false }
+            fragment-name="global-content-list"
+            query-name="website-scheduled-content"
+            query-params=loadMoreParams
+            max-pages=3
+            page-input={ for: "website-section", id }
+          />
+        </marko-web-resolve-page>
+      </@below-page>
+
+    </marko-web-website-section-page-layout>
+  </marko-web-resolve>
+</marko-web-resolve>
