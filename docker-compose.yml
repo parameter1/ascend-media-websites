@@ -276,7 +276,6 @@ services:
       - "9922:80"
       - "19922:19922"
 
-
   acep:
     <<: *node
     <<: *site-cmd
