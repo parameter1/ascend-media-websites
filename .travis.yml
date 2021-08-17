@@ -196,6 +196,18 @@ jobs:
     #   install: skip
     #   env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-rc5kp]
 
+    - stage: production
+      name: acep.org
+      script: npx @parameter1/base-cms-website-deployment-tool deploy acep.org websites
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-njflm]
+
+    # - stage: staging
+    #   name: acep.org
+    #   script: npx @parameter1/base-cms-website-deployment-tool deploy acep.org websites
+    #   install: skip
+    #   env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-rc5kp]
+
 
     #############################
     ### ^^^ ADD SITES HERE ^^^ ##

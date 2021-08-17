@@ -276,6 +276,21 @@ services:
       - "9922:80"
       - "19922:19922"
 
+  acep:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/acep.org
+    environment:
+      <<: *env
+      <<: *env-tauron
+      PORT: 80
+      EXPOSED_PORT: 9923
+      LIVERELOAD_PORT: 19923
+      TENANT_KEY: ascend_hh
+      SITE_ID: 611a92384931c530198b45bf
+    ports:
+      - "9923:80"
+      - "19923:19923"
 
   template:
     <<: *node
