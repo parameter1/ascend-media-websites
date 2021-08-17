@@ -260,6 +260,23 @@ services:
       - "9921:80"
       - "19921:19921"
 
+  asa:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/asa.org
+    environment:
+      <<: *env
+      <<: *env-tauron
+      PORT: 80
+      EXPOSED_PORT: 9922
+      LIVERELOAD_PORT: 19922
+      TENANT_KEY: ascend_hh
+      SITE_ID: 611a7eaf3fdb1225198b45a3
+    ports:
+      - "9922:80"
+      - "19922:19922"
+
+
   template:
     <<: *node
     <<: *site-cmd
