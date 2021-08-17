@@ -1,0 +1,32 @@
+@import "../../node_modules/@ascend-media/package-global/scss/variables";
+
+$primary: #1c7cd5;
+$secondary: #76bc43;
+
+$theme-site-navbar-logo-height: 100px;
+$theme-site-navbar-logo-height-sm: 100px;
+$theme-site-footer-logo-height: 100px;
+$theme-site-footer-primary-bg-color: $primary;
+$theme-site-footer-secondary-bg-color: $primary;
+$theme-site-footer-copyright-color: #fff;
+$theme-site-navbar-primary-bg-color: $primary;
+$theme-site-navbar-secondary-bg-color: #fff;
+$theme-site-navbar-secondary-type: light;
+
+
+@import "../../node_modules/@ascend-media/package-global/scss/theme";
+
+.node {
+  &__footer-left a {
+    color: $secondary;
+  }
+  &__footer-right {
+    white-space: nowrap;
+  }
+}
+
+.site-footer {
+  &__container--secondary {
+    background-color: $primary;
+  }
+}
