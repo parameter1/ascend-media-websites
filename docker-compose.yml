@@ -307,7 +307,7 @@ services:
       SITE_ID: 611bb90b0fa7e3b2258b458c
     ports:
       - "9924:80"
-      - "19924:19923"
+      - "19924:19924"
 
   template:
     <<: *node
