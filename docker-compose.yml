@@ -304,7 +304,7 @@ services:
       EXPOSED_PORT: 9924
       LIVERELOAD_PORT: 19924
       TENANT_KEY: ascend_hh
-      SITE_ID: 611a92384931c530198b45bf
+      SITE_ID: 611bb90b0fa7e3b2258b458c
     ports:
       - "9924:80"
       - "19924:19923"
