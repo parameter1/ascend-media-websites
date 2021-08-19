@@ -10,16 +10,17 @@ module.exports = {
   copyrightNotice: '',
   sponsoredText: 'Paid Advertising Content',
   socialMediaLinks: [
-    { provider: 'facebook', href: '#', target: '_blank' },
-    { provider: 'instagram', href: '#', target: '_blank' },
-    { provider: 'twitter', href: '#', target: '_blank' },
+    { provider: 'facebook', href: 'https://www.facebook.com/AmericanSocietyofAnesthesiologists/', target: '_blank' },
+    { provider: 'twitter', href: 'https://twitter.com/ASALifeline?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor', target: '_blank' },
+    { provider: 'linkedin', href: 'https://www.linkedin.com/company/american-society-of-anesthesiologists/', target: '_blank' },
+    { provider: 'instagram', href: 'https://www.instagram.com/asa_hq/?hl=en', target: '_blank' },
   ],
   gtm: {
     containerId: 'GTM-NGJTG3G',
   },
   twitterFeed: {
-    href: '',
-    tagline: '',
+    href: 'https://twitter.com/ASALifeline?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor',
+    tagline: 'Tweets from ASA LifeLine',
   },
   gcse: {
     id: '',
