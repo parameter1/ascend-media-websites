@@ -11,12 +11,12 @@ const userTools = [
 ];
 
 const topics = [
-  { href: '/section-1', label: 'Section 1' },
-  { href: '/section-2', label: 'Section 2' },
-  { href: '/section-3', label: 'Section 3' },
-  { href: '/section-4', label: 'Section 4' },
-  { href: '/section-5', label: 'Section 5' },
-  { href: '/section-6', label: 'Section 6' },
+  { href: '/ashp-news', label: 'ASHP News' },
+  { href: '/meeting-coverage', label: 'Meeting Coverage' },
+  { href: '/', label: 'Program' },
+  { href: '/awards-events', label: 'Awards and Events' },
+  { href: '/ashp-marketplace', label: 'ASHP Marketplace' },
+  { href: '/previews', label: 'Previews' },
 ];
 
 const secondary = [
