@@ -20,9 +20,7 @@ const topics = [
 ];
 
 const secondary = [
-  { href: '/secondary-1', label: 'Secondary 1' },
-  // { href: '#', label: 'Abstracts', target: '_blank' },
-  // { href: '#', label: 'Claim CME', target: '_blank' },
+  { href: 'https://midyear.ashp.org/register', label: 'Registration', target: '_blank' },
 ];
 
 module.exports = {
