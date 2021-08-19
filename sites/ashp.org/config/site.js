@@ -10,16 +10,17 @@ module.exports = {
   copyrightNotice: '',
   sponsoredText: 'Paid Advertising Content',
   socialMediaLinks: [
-    { provider: 'facebook', href: '#', target: '_blank' },
-    { provider: 'instagram', href: '#', target: '_blank' },
-    { provider: 'twitter', href: '#', target: '_blank' },
+    { provider: 'facebook', href: 'https://www.facebook.com/ASHPofficial/', target: '_blank' },
+    { provider: 'twitter', href: 'https://twitter.com/ashpofficial', target: '_blank' },
+    { provider: 'linkedin', href: 'https://www.linkedin.com/company/ashp/', target: '_blank' },
+    { provider: 'instagram', href: 'https://www.instagram.com/ashpofficial/', target: '_blank' },
   ],
   gtm: {
     containerId: 'GTM-5R53C42',
   },
   twitterFeed: {
-    href: '',
-    tagline: '',
+    href: 'https://twitter.com/ashpofficial',
+    tagline: 'Tweets from ASHP Official',
   },
   gcse: {
     id: '',
