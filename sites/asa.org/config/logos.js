@@ -8,9 +8,9 @@ module.exports = {
     title: 'Example Site',
   },
   footer: {
-    src: 'https://img.ascendmedia.com/files/base/ascend/hh/image/static/asa/asa-footer.png?h=200',
+    src: 'https://img.ascendmedia.com/files/base/ascend/hh/image/static/asa/asa-footer-white.png?h=200',
     srcset: [
-      'https://img.ascendmedia.com/files/base/ascend/hh/image/static/asa/asa-footer.png?h=200 2x',
+      'https://img.ascendmedia.com/files/base/ascend/hh/image/static/asa/asa-footer-white.png?h=200 2x',
     ],
   },
 };
