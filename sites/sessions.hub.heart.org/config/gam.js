@@ -1,4 +1,4 @@
-const configureGAM = require('@ascend-media/package-shared/config/gam');
+const configureGAM = require('@ascend-media/package-global/config/gam');
 
 const config = configureGAM({ basePath: 'sessions' });
 
