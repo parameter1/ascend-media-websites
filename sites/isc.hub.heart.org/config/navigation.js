@@ -8,6 +8,7 @@ const searchItem = {
 const userTools = [
   { href: '/page/privacy-policy', label: 'Privacy Policy' },
   { href: '/page/terms-conditions', label: 'Terms & Conditions' },
+  { href: 'https://isc.hub.heart.org/21627364', label: 'Accessibility Statement', target: '_blank' },
 ];
 
 const topics = [
