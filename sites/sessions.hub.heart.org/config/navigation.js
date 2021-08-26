@@ -16,7 +16,7 @@ const topics = [
   { href: '/science-technology-hall', label: 'Science & Technology Hall' },
   { href: 'https://eventpilotadmin.com/web/planner.php?id=AHA20', label: 'Program' },
   { href: '/previews', label: 'Previews' },
-  { href: '/archives', label: 'Archives'}
+  { href: '/archives', label: 'Archives'},
 ];
 
 const secondary = [
