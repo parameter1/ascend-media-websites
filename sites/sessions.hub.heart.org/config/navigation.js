@@ -20,6 +20,9 @@ const topics = [
 ];
 
 const secondary = [
+  { href: '/', label: '#AHA21' },
+  { href: '/', label: '#ReSS21' },
+  { href: '/', label: '#QCOR21' },
   { href: 'https://AHAsessions.heart.org', label: 'Virtual Experience Access', target: '_blank' },
   { href: 'https://aha.apprisor.org/epsWelcome.cfm?CFID=7614838&CFTOKEN=f427dce13daa111b-374EED08-CF40-A033-D6066C65AA7B755D', label: 'Posters Access', target: '_blank' },
 ];
