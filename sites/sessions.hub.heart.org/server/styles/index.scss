@@ -7,7 +7,7 @@ $theme-site-footer-primary-bg-color: $primary;
 $theme-site-footer-secondary-bg-color: $primary;
 $theme-site-footer-copyright-color: #fff;
 $theme-site-navbar-primary-bg-color: $black;
-$theme-site-navbar-secondary-bg-color: #fff;
+$theme-site-navbar-secondary-bg-color: $primary;
 $theme-site-navbar-secondary-type: dark;
 
 @import "../../node_modules/@ascend-media/package-global/scss/theme";
@@ -24,17 +24,11 @@ $theme-site-navbar-secondary-type: dark;
       background-color: transparent;
     }
   }
-
-  .site-navbar {
-    &--secondary {
-      background: linear-gradient(90deg, $black 0%, $primary 100%);
-    }
-  }
 }
 
 .node {
   &__footer-left a {
-    color: $secondary;
+    color: $black;
   }
   &__footer-right {
     white-space: nowrap;
