@@ -30,3 +30,19 @@ $theme-site-navbar-secondary-type: dark;
   text-align: center;
   text-transform: uppercase;
 }
+
+a:focus,
+area:focus,
+input:not([disabled]):focus,
+select:not([disabled]):focus,
+textarea:not([disabled]):focus,
+button:not([disabled]):focus,
+iframe:focus,
+[tabindex],
+[contentEditable="true"]
+{
+  &:not([tabindex="-1"])
+  {
+    border: medium solid #000;
+  }
+}
