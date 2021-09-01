@@ -16,6 +16,9 @@ const topics = [
   { href: '/day-3', label: 'Day 3' },
   { href: '/day-4', label: 'Day 4' },
   { href: '/day-5', label: 'Day 5' },
+];
+
+const resources = [
   { href: 'https://www.abstractsonline.com/pp8/#!/9323', label: 'Program', target: '_blank' },
   { href: 'https://www.asahq.org/', label: 'On-Demand', target: '_blank' }, // Will be different offsite link when given
 ];
@@ -40,11 +43,11 @@ module.exports = {
   menu: [
     {
       label: 'Topics',
-      items: [...topics.slice(0, 5)],
+      items: [...topics],
     },
     {
       label: 'Resources',
-      items: [...topics.slice(5)],
+      items: [...resources],
     },
     {
       label: 'User Tools',
