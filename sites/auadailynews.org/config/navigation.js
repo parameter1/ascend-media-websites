@@ -13,7 +13,7 @@ const userTools = [
 const topics = [
   { href: '/late-breaking-science', label: 'Late-Breaking Science' },
   { href: '/meeting-coverage', label: 'Meeting Coverage' },
-  { href: 'https://www.eventscribe.net//2021/AUA2021/', label: 'Program', target: '_blank' },
+  { href: 'https://aua2021.app.swapcard.com/event/aua-2021-annual-meeting-1', label: 'Program', target: '_blank' },
   { href: '/industry-events', label: 'Industry Events' },
   { href: '/science-technology-hall', label: 'Science & Technology Hall' },
   { href: '/previews', label: 'Previews' },
