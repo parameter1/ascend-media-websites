@@ -32,7 +32,7 @@ const secondary = [
 module.exports = {
 
   primary: {
-    items: [...topics],
+    items: [...topics, ...resources],
   },
   secondary: {
     items: [...secondary],
