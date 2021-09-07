@@ -26,6 +26,21 @@ $theme-site-navbar-secondary-type: dark;
   }
 }
 
+.site-navbar {
+  $self: &;
+  &__items {
+    &--secondary {
+      #{ $self } {
+        &__item {
+          &:first-child {
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+}
+
 .node {
   &__footer-left a {
     color: $black;
