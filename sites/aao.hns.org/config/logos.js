@@ -1,16 +1,16 @@
 module.exports = {
   navbar: {
-    src: 'https://placehold.jp/600x200.png',
+    src: 'https://img.ascendmedia.com/files/base/ascend/hh/image/static/aao-hns/aao-hns-header.png?h=200',
     srcset: [
-      '',
+      'https://img.ascendmedia.com/files/base/ascend/hh/image/static/aao-hns/aao-hns-header.png?h=400 2x',
     ],
     href: '/',
-    title: 'Example Site',
+    title: 'AAO-HNS',
   },
   footer: {
-    src: 'https://placehold.jp/400x200.png',
+    src: 'https://img.ascendmedia.com/files/base/ascend/hh/image/static/aao-hns/aao-hns-footer.png?h=200',
     srcset: [
-      '',
+      'https://img.ascendmedia.com/files/base/ascend/hh/image/static/aao-hns/aao-hns-footer.png?h=400 2x',
     ],
   },
 };
