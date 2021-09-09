@@ -2,13 +2,23 @@ $ const { GAM } = out.global;
 
 $ const { aliases } = input;
 
-<shared-eposters-mr-block />
+<!--<shared-eposters-mr-block />-->
+<marko-web-gam-define-display-ad
+  ...GAM.getAdUnit({ name: "rail1" })
+  class="mt-block"
+  modifiers=["center"]
+/>
 
 <shared-watch-listen-block />
 
 <shared-early-career-block />
 
-<shared-exhibits-mr-block />
+<!--<shared-exhibits-mr-block />-->
+<marko-web-gam-define-display-ad
+  ...GAM.getAdUnit({ name: "rail2" })
+  class="mt-block"
+  modifiers=["center"]
+/>
 
 <a
   class="twitter-timeline btn btn-primary btn-block"

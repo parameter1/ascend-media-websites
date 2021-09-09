@@ -20,12 +20,13 @@ $ const {
     <a class="anchor" name="top" />
     <marko-web-resolve-page|{ data: section }| node=pageNode>
       $ const aliases = hierarchyAliases(section);
-      <shared-leaderboard-block />
-      <!-- <marko-web-gam-define-display-ad
+      <!-- <shared-leaderboard-block />-->
+      <marko-web-gam-define-display-ad
         ...GAM.getAdUnit({ name: "lb1", aliases })
+        modifiers=["top-of-page", "max-width-970", "center", "paid"]
         collapse-before-ad-fetch=true
-        modifiers=["top-of-page", "center", "max-width-970"]
-      /> -->
+        with-wrapper=true
+      />
 
       <div class="row">
         <div class="col-lg-8 mb-block-lg">
