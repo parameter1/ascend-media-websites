@@ -11,16 +11,20 @@ const userTools = [
 ];
 
 const topics = [
-  { href: '/section-1', label: 'Section 1' },
-  { href: '/section-2', label: 'Section 2' },
-  { href: '/section-3', label: 'Section 3' },
-  { href: '/section-4', label: 'Section 4' },
-  { href: '/section-5', label: 'Section 5' },
-  { href: '/section-6', label: 'Section 6' },
+  { href: '/day-1', label: 'Day 1' },
+  { href: '/day-2', label: 'Day 2' },
+  { href: '/day-3', label: 'Day 3' },
+  { href: '/day-4', label: 'Day 4' },
+  { href: '/day-5', label: 'Day 5' },
+];
+
+const resources = [
+  { href: 'https://www.abstractsonline.com/pp8/#!/9323', label: 'Program', target: '_blank' },
+  { href: 'https://www.asahq.org/', label: 'On-Demand', target: '_blank' }, // Will be different offsite link when given
 ];
 
 const secondary = [
-  { href: '/secondary-1', label: 'Secondary 1' },
+  { href: 'https://www.asahq.org/', label: 'asahq.org', target: '_blank' },
   // { href: '#', label: 'Abstracts', target: '_blank' },
   // { href: '#', label: 'Claim CME', target: '_blank' },
 ];
@@ -28,7 +32,7 @@ const secondary = [
 module.exports = {
 
   primary: {
-    items: [...topics],
+    items: [...topics, ...resources],
   },
   secondary: {
     items: [...secondary],
@@ -43,7 +47,7 @@ module.exports = {
     },
     {
       label: 'Resources',
-      items: [...secondary],
+      items: [...resources],
     },
     {
       label: 'User Tools',
