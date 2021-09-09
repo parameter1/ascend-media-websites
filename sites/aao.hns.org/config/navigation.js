@@ -11,16 +11,16 @@ const userTools = [
 ];
 
 const topics = [
-  { href: '/section-1', label: 'Section 1' },
-  { href: '/section-2', label: 'Section 2' },
-  { href: '/section-3', label: 'Section 3' },
-  { href: '/section-4', label: 'Section 4' },
-  { href: '/section-5', label: 'Section 5' },
-  { href: '/section-6', label: 'Section 6' },
+  { href: '/meeting-coverage', label: 'Meeting Coverage' },
+  { href: '/', label: 'Conference Agenda', target: '_blank' }, // Need URL
+  { href: '/', label: 'OTO Experience', target: '_blank' }, // Need URL
+  { href: '/125th-anniversary', label: '125th Anniversary' },
+  { href: '/', label: 'Claim CMR', target: '_blank' }, // Need URL
 ];
 
 const secondary = [
-  { href: '/secondary-1', label: 'Secondary 1' },
+  { href: '/', label: 'Virtual Platform', target: '_blank' }, // Need URL
+  { href: '/', label: 'Posters', target: '_blank' }, // Need URL
   // { href: '#', label: 'Abstracts', target: '_blank' },
   // { href: '#', label: 'Claim CME', target: '_blank' },
 ];

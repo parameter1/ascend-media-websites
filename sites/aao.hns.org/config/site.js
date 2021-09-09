@@ -10,9 +10,10 @@ module.exports = {
   copyrightNotice: '',
   sponsoredText: 'Paid Advertising Content',
   socialMediaLinks: [
-    { provider: 'facebook', href: '#', target: '_blank' },
-    { provider: 'instagram', href: '#', target: '_blank' },
-    { provider: 'twitter', href: '#', target: '_blank' },
+    { provider: 'facebook', href: 'https://www.facebook.com/AAOHNS', target: '_blank' },
+    { provider: 'instagram', href: 'https://www.instagram.com/aaohns/', target: '_blank' },
+    { provider: 'twitter', href: 'https://twitter.com/AAOHNS', target: '_blank' },
+    { provider: 'youtube', href: 'https://www.youtube.com/user/aaohns', target: '_blank' },
   ],
   gtm: {
     containerId: 'GTM-PWX9TTJ',
