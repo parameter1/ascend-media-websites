@@ -4,6 +4,9 @@
 
   &__logo {
     filter: none;
+    @include media-breakpoint-down(sm) {
+      height: $theme-site-navbar-logo-height-sm;
+    }
   }
 
   &__items {
