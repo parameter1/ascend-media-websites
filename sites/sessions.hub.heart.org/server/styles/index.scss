@@ -1,9 +1,16 @@
-@import "../../node_modules/@ascend-media/package-shared/scss/variables";
+@import "../../node_modules/@ascend-media/package-global/scss/variables";
 
+$theme-site-navbar-logo-height: 100px;
+$theme-site-navbar-logo-height-sm: 100px;
+$theme-site-footer-logo-height: 100px;
+$theme-site-footer-primary-bg-color: $primary;
+$theme-site-footer-secondary-bg-color: $primary;
+$theme-site-footer-copyright-color: #fff;
 $theme-site-navbar-primary-bg-color: $black;
+$theme-site-navbar-secondary-bg-color: $primary;
 $theme-site-navbar-secondary-type: dark;
 
-@import "../../node_modules/@ascend-media/package-shared/scss/theme";
+@import "../../node_modules/@ascend-media/package-global/scss/theme";
 
 .body-wrapper {
   display: block;
@@ -17,10 +24,34 @@ $theme-site-navbar-secondary-type: dark;
       background-color: transparent;
     }
   }
+}
 
-  .site-navbar {
+.site-navbar {
+  $self: &;
+  &__items {
     &--secondary {
-      background: linear-gradient(90deg, $black 0%, $primary 100%);
+      #{ $self } {
+        &__item {
+          &:first-child {
+            font-weight: 700;
+          }
+        }
+      }
     }
+  }
+}
+
+.node {
+  &__footer-left a {
+    color: $black;
+  }
+  &__footer-right {
+    white-space: nowrap;
+  }
+}
+
+.site-footer {
+  &__container--secondary {
+    background-color: $primary;
   }
 }

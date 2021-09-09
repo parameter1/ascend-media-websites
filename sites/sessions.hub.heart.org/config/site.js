@@ -20,6 +20,10 @@ module.exports = {
   gtm: {
     containerId: 'GTM-TXG3S5L',
   },
+  twitterFeed: {
+    href: ' https://twitter.com/AHAMeetings',
+    tagline: 'Tweets by AHAMeetings',
+  },
   gcse: {
     id: '3b6a89459a586ff54',
   },
