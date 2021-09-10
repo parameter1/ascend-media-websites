@@ -3,6 +3,9 @@
   &__logo {
     margin-bottom: map-get($spacers, block);
     filter: none;
+    @include media-breakpoint-down(sm) {
+      height: $theme-site-footer-logo-height-sm;
+    }
   }
   &__wrapper {
     @media (min-width: $marko-web-document-container-max-width) {
@@ -23,8 +26,8 @@
     }
   }
   &__social-icons {
-    margin: auto 0;
     padding-bottom: map-get($spacers, block);
+    margin: auto 0;
   }
 
   @include media-breakpoint-down(sm) {
