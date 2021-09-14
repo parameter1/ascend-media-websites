@@ -15,7 +15,6 @@ const topics = [
   { href: '/career', label: 'Career' },
   { href: '/exhibit-hall', label: 'Exhibit Hall' },
   { href: '/', label: 'Program', target: '_blank' }, // NEED URL
-  { href: '/industry-events', label: 'Industry Events' },
   { href: '/', label: 'Claim CME', target: '_blank' }, // NEED URL
   { href: '/previews', label: 'Previews' },
 ];
