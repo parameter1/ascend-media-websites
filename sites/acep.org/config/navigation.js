@@ -11,16 +11,18 @@ const userTools = [
 ];
 
 const topics = [
-  { href: '/section-1', label: 'Section 1' },
-  { href: '/section-2', label: 'Section 2' },
-  { href: '/section-3', label: 'Section 3' },
-  { href: '/section-4', label: 'Section 4' },
-  { href: '/section-5', label: 'Section 5' },
-  { href: '/section-6', label: 'Section 6' },
+  { href: '/meeting-coverage', label: 'Meeting Coverage' },
+  { href: '/career', label: 'Career' },
+  { href: '/exhibit-hall', label: 'Exhibit Hall' },
+  { href: '/', label: 'Program', target: '_blank' }, // NEED URL
+  { href: '/industry-events', label: 'Industry Events' },
+  { href: '/', label: 'Claim CME', target: '_blank' }, // NEED URL
+  { href: '/previews', label: 'Previews' },
 ];
 
 const secondary = [
-  { href: '/secondary-1', label: 'Secondary 1' },
+  { href: '/', label: 'Virtual', target: '_blank' }, // NEED URL
+  { href: '/', label: 'Posters', target: '_blank' }, // NEED URL
   // { href: '#', label: 'Abstracts', target: '_blank' },
   // { href: '#', label: 'Claim CME', target: '_blank' },
 ];
