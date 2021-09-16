@@ -1,6 +1,6 @@
 import { getAsObject, get } from "@parameter1/base-cms-object-path";
 
-$ const { site, req, GAM } = out.global;
+$ const { site, req, GAM, nativeX } = out.global;
 $ const { NODE_ENV } = process.env;
 $ const aboveContainer = get(input, "aboveContainer.renderBody");
 
@@ -12,6 +12,7 @@ $ const aboveContainer = get(input, "aboveContainer.renderBody");
     <link rel="manifest" href="/site.webmanifest">
     <marko-web-gam-init />
     <marko-web-gtm-init container-id=site.get("gtm.containerId") />
+    <marko-web-native-x-init uri=nativeX.getUri() enabled=nativeX.isEnabled() />
     <marko-web-gtm-push data={ env: NODE_ENV } />
     <${input.head} />
     <marko-web-gtm-start />
