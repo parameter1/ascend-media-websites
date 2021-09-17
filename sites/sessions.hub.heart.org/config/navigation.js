@@ -8,6 +8,7 @@ const searchItem = {
 const userTools = [
   { href: 'https://www.heart.org/en/about-us/statements-and-policies/privacy-statement', label: 'Privacy Policy', target: '_blank' },
   { href: '/page/terms-conditions', label: 'Terms & Conditions' },
+  { href: '/21723089', label: 'Accessibility Statement', target: '_blank' },
 ];
 
 const topics = [
