@@ -2,7 +2,7 @@ import GAM from "../../../config/gam";
 
 $ const { id, pageNode } = data;
 
-<marko-web-magazine-publication-page-layout id=id>
+<marko-web-magazine-publication-page-layout id=id attrs={"aria-label": `website-section-${id}`}>
   <@head>
     <marko-web-gtm-magazine-publication-context|{ context }| id=id>
       <marko-web-gtm-push data=context />

@@ -9,7 +9,7 @@ $ const title = "Supplier Events";
 $ const description = "The latest supplier events for packaging professionals";
 $ const now = (new Date()).valueOf();
 
-<marko-web-default-page-layout type=type title=title description=description>
+<marko-web-default-page-layout type=type title=title description=description attrs={"aria-label": `website-section-${id}`}>
   <@head>
     <marko-web-gtm-default-context|{ context }| type=type>
       <marko-web-gtm-push data=context />

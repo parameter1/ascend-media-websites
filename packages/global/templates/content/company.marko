@@ -8,7 +8,7 @@ $ const adSlots = ({ aliases }) => ({
   "gpt-ad-lb1": GAM.getAdUnit({ name: "lb1", aliases }),
 });
 
-<marko-web-content-page-layout id=id type=type>
+<marko-web-content-page-layout id=id type=type attrs={"aria-label": `website-section-${id}`}>
   <@head>
     <marko-web-gtm-content-context|{ context }| id=id>
       <marko-web-gtm-push data=context />
