@@ -83,6 +83,7 @@ $ const adSlots = ({ aliases }) => ({
         query-name="all-company-content"
         query-params={ companyId: id, limit: 24, includeContentTypes, withSite: false }
         page-input={ for: "content", id, type }
+        attrs={ "aria-label": "load-more", "role": "main" }
       />
   </marko-web-resolve-page>
 </@below-page>

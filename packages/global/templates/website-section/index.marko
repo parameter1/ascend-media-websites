@@ -104,6 +104,7 @@ $ const promise = websiteSectionContentLoader(apollo, {
             query-params=loadMoreParams
             max-pages=3
             page-input={ for: "website-section", id }
+            attrs={ "aria-label": "load-more", "role": "main" }
           />
         </marko-web-resolve-page>
       </@below-page>

@@ -48,6 +48,7 @@ $ const adSlots = ({ aliases }) => ({
         query-params={ sectionId: id, limit: 12, skip: 20, requiresImage: true }
         max-pages=3
         page-input={ for: "website-section", id }
+        attrs={ "aria-label": "load-more", "role": "main" }
       />
     </marko-web-resolve-page>
   </@below-page>

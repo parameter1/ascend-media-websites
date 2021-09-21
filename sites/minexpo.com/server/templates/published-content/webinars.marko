@@ -44,6 +44,7 @@ $ const description = defaultDescription(title, config);
       query-name="all-published-content"
       query-params={ contentTypes: ["Webinar"], limit: 18, sortField: "startDate", sortOrder: "desc", skip: 18 }
       page-input={ for: "published-content" }
+      attrs={ "aria-label": "load-more", "role": "main" }
     />
   </@below-page>
 </marko-web-default-page-layout>
