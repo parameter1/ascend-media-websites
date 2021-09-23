@@ -72,7 +72,9 @@ $ const promise = websiteSectionContentLoader(apollo, {
         <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(0, 2) cols=3 ad-index=1 ad-name="rail1" />
         <div class="row">
           <div class="col-lg-8">
-            <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(2, 4) />
+            <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(2, 4)>
+              <@native-x index=0 name="default" />
+            </global-content-card-deck-flow>
           </div>
           <div class="col-lg-4">
             <global-standard-section-list-block
@@ -113,7 +115,7 @@ $ const promise = websiteSectionContentLoader(apollo, {
           };
           <marko-web-load-more
             component-name="global-content-card-deck-flow"
-            component-input={ aliases, cols: 3, withTeaser: false }
+            component-input={ aliases, cols: 3, withTeaser: false, nativeX: { index: 1, secondIndex: 8, name: "default" } }
             fragment-name="global-content-list"
             query-name="website-scheduled-content"
             query-params=loadMoreParams
