@@ -17,9 +17,12 @@ $ const nativeX = getAsObject(input, "nativeX");
   nodes=input.nodes
 >
   <@slot|{ node, index }|>
+  $ const { secondIndex } = nativeX;
+  $ const loadMulti = (index === nativeX.index || index === secondIndex) && input.pageNumber === 1;
+  $ const loadNativeX = secondIndex ? (loadMulti) : (index === nativeX.index);
     <marko-web-native-x-render|{ node: nxNode, linkAttrs, containerAttrs }|
       ...nativeX
-      when=(index === nativeX.index)
+      when=(loadNativeX)
       node=node
       config=nxConfig
     >
