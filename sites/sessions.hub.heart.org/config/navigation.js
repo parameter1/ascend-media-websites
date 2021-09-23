@@ -11,13 +11,13 @@ const userTools = [
 ];
 
 const topics = [
-  { href: '/late-breaking-science', label: 'Late-Breaking Science' },
-  { href: '/daily-coverage', label: 'Daily Coverage' },
-  { href: '/exhibit-hall', label: 'Exhibit Hall' },
-  { href: 'https://eventpilotadmin.com/web/planner.php?id=AHA20', label: 'Program' },
+  { href: '/late-breaking-science', label: 'Late-Breaking Science', target: '_blank' },
+  { href: '/daily-coverage', label: 'Daily Coverage', target: '_blank' },
+  { href: '/exhibit-hall', label: 'Exhibit Hall', target: '_blank' },
+  { href: 'https://eventpilotadmin.com/web/planner.php?id=AHA20', label: 'Program', target: '_blank' },
   { href: 'https://professional.heart.org/en/meetings/scientific-sessions/programming/cme-ce-credit', label: 'Claim CME', target: '_blank' },
   { href: 'https://AHASessions.heart.org/sessions/on-demand', label: 'OnDemand', target: '_blank' },
-  { href: '/previews', label: 'Previews' },
+  { href: '/previews', label: 'Previews', target: '_blank' },
 ];
 
 const secondary = [
