@@ -15,12 +15,12 @@ const topics = [
   { href: '/', label: 'Conference Agenda', target: '_blank' }, // Need URL
   { href: '/', label: 'OTO Experience', target: '_blank' }, // Need URL
   { href: '/125th-anniversary', label: '125th Anniversary' },
-  { href: '/', label: 'Claim CMR', target: '_blank' }, // Need URL
+  { href: 'https://otomtg21.junolive.co/Welcome', label: 'Claim CME', target: '_blank' },
 ];
 
 const secondary = [
-  { href: '/', label: 'Virtual Platform', target: '_blank' }, // Need URL
-  { href: '/', label: 'Posters', target: '_blank' }, // Need URL
+  { href: 'https://otomtg21.junolive.co/Welcome', label: 'Virtual Platform', target: '_blank' },
+  { href: 'https://www.researchposters.com/display_posters.aspx?code=AAO2021', label: 'Posters', target: '_blank' },
   // { href: '#', label: 'Abstracts', target: '_blank' },
   // { href: '#', label: 'Claim CME', target: '_blank' },
 ];
