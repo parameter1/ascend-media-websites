@@ -1,6 +1,6 @@
 {
   "name": "@ascend-media/acep.org",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "author": "Jake Collins <jake.collins@parameter1.com>",
   "repository": "https://github.com/parameter1/ascend-media-websites/tree/master/sites/acep.org",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "test": "yarn lint && yarn compile && yarn build"
   },
   "dependencies": {
-    "@ascend-media/package-global": "^1.2.1",
+    "@ascend-media/package-global": "^1.2.4",
     "@parameter1/base-cms-marko-core": "^2.32.0",
     "@parameter1/base-cms-marko-web": "^2.34.0",
     "@parameter1/base-cms-marko-web-gam": "^2.22.2",
