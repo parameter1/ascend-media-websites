@@ -12,7 +12,7 @@ const userTools = [
 
 const topics = [
   { href: '/meeting-coverage', label: 'Meeting Coverage' },
-  { href: '/', label: 'Conference Agenda', target: '_blank' }, // Need URL
+  { href: 'https://www.entnet.org/events/annual-meeting/otomtg21-conference-agenda/', label: 'Conference Agenda', target: '_blank' },
   { href: '/', label: 'OTO Experience', target: '_blank' }, // Need URL
   { href: '/125th-anniversary', label: '125th Anniversary' },
   { href: 'https://otomtg21.junolive.co/Welcome', label: 'Claim CME', target: '_blank' },
