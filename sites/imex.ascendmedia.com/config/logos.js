@@ -1,16 +1,16 @@
 module.exports = {
   navbar: {
-    src: 'https://img.ascendmedia.com/files/base/ascend/hearthub/image/static/planet-imex-logo.png?h=16',
+    src: 'https://img.ascendmedia.com/files/base/ascend/hearthub/image/static/2021-imex-header.png?h=200',
     srcset: [
-      'https://img.ascendmedia.com/files/base/ascend/hearthub/image/static/planet-imex-logo.png?h=32 2x',
+      'https://img.ascendmedia.com/files/base/ascend/hearthub/image/static/2021-imex-header.png?h=400 2x',
     ],
     href: '/',
-    title: 'PlanetIMEX',
+    title: 'IMEX America',
   },
   footer: {
-    src: 'https://img.ascendmedia.com/files/base/ascend/hearthub/image/static/planet-imex-logo.png?h=16',
+    src: 'https://img.ascendmedia.com/files/base/ascend/hearthub/image/static/2021-imex-header.png?h=200',
     srcset: [
-      'https://img.ascendmedia.com/files/base/ascend/hearthub/image/static/planet-imex-logo.png?h=32 2x',
+      'https://img.ascendmedia.com/files/base/ascend/hearthub/image/static/2021-imex-header.png?h=400 2x',
     ],
   },
 };
