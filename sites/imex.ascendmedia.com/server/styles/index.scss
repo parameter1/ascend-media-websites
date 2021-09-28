@@ -1,18 +1,23 @@
 @import "../../node_modules/@ascend-media/package-daily/scss/variables";
 
-$primary: #1616ac;
-$secondary: #0c0c5f;
+$primary: #097dc1;
+$secondary: #da291c;
+$tertiary: #3a3839;
 
-$theme-site-navbar-logo-height: 16px;
-$theme-site-navbar-logo-height-sm: 16px;
-$theme-site-footer-logo-height: 16px;
-$theme-site-footer-primary-bg-color: $secondary;
-$theme-site-footer-secondary-bg-color: $secondary;
+$theme-site-navbar-logo-height: 100px;
+$theme-site-navbar-logo-height-sm: 50px;
+$theme-site-footer-logo-height: 100px;
+$theme-site-footer-logo-height-sm: 50px;
+$theme-site-footer-primary-bg-color: $primary;
+$theme-site-footer-secondary-bg-color: $primary;
 $theme-site-footer-copyright-color: $light;
-$theme-site-navbar-primary-bg-color: $secondary;
-$theme-site-navbar-secondary-bg-color: $primary;
+$theme-site-navbar-primary-bg-color: $primary;
+$theme-site-navbar-secondary-bg-color: #f2f2f2;
 $theme-site-navbar-secondary-type: dark;
-$theme-hero-teaser-bg-color: #0c0c5f;
+$theme-hero-teaser-bg-color: $secondary;
+$theme-site-navbar-secondary-link-color: $tertiary;
+$theme-site-navbar-tertiary-link-color: $tertiary;
+$theme-hero-teaser-bg-color: $tertiary;
 
 
 @import "../../node_modules/@ascend-media/package-daily/scss/theme";
@@ -31,8 +36,8 @@ $theme-hero-teaser-bg-color: #0c0c5f;
   }
 }
 
-.site-navbar {
-  &--secondary {
-    background: linear-gradient(0deg, #082138 0%, $primary 100%);
+.page-contents {
+  &__content-body{
+    color: #3a3839;
   }
 }
