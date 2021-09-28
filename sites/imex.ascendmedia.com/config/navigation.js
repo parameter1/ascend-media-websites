@@ -1,8 +1,8 @@
 const searchItem = {
-  // href: '/search',
-  // label: 'Search',
-  // icon: 'search',
-  // modifiers: ['search-icon'],
+  href: '/search',
+  label: 'Search',
+  icon: 'search',
+  modifiers: ['search-icon'],
 };
 
 const userTools = [
@@ -11,18 +11,17 @@ const userTools = [
 ];
 
 const topics = [
-  { href: '/cvb-cities', label: 'CVB/Cities' },
-  { href: '/hotels', label: 'Hotels' },
-  // { href: '/venues', label: 'Venues' },
-  { href: '/travel', label: 'Travel' },
-  { href: '/safety-standards', label: 'Safety Standards' },
-  { href: 'https://planetimex.com', label: 'Program', target: '_blank' },
-  { href: 'https://planetimex.com', label: 'PlanetIMEX', target: '_blank' },
+  { href: '/destinations', label: 'Destinations' },
+  { href: '/accommodations-venues', label: 'Accommodations & Venues' },
+  { href: '/associations', label: 'Associations' },
+  { href: '/More', label: 'More' },
+  { href: 'https://www.imexamerica.com/whats-on/schedule-at-a-glance', label: 'Program', target: '_blank' },
+  { href: 'https://https://www.imexamerica.com/.com', label: 'IMEX America', target: '_blank' },
 ];
 
 const secondary = [
-  { href: 'https://www.imexexhibitions.com', label: 'IMEX Group', target: '_blank' },
-  { href: 'https://planetimex.com', label: 'PlanetIMEX', target: '_blank' },
+  // { href: 'https://www.imexexhibitions.com', label: 'IMEX Group', target: '_blank' },
+  // { href: 'https://planetimex.com', label: 'PlanetIMEX', target: '_blank' },
 ];
 
 module.exports = {
