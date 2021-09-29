@@ -13,7 +13,7 @@ const userTools = [
 const topics = [
   { href: '/meeting-coverage', label: 'Meeting Coverage' },
   { href: 'https://otomtg21.junolive.co/live', label: 'Conference Agenda', target: '_blank' },
-  { href: '/', label: 'OTO Experience', target: '_blank' }, // Need URL
+  { href: '/oto-experience', label: 'OTO Experience' },
   { href: '/125th-anniversary', label: '125th Anniversary' },
   { href: 'https://otomtg21.junolive.co/Welcome', label: 'Claim CME', target: '_blank' },
 ];
