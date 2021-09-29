@@ -42,7 +42,7 @@ $ const promise = websiteSectionContentLoader(apollo, {
   <marko-web-resolve|{ resolved: { data: section } }| promise=pageNode.load()>
     $ const aliases = hierarchyAliases(section);
     $ const slots = adSlots({ aliases });
-    <marko-web-website-section-page-layout id=id alias=alias name=name>
+    <marko-web-website-section-page-layout id=id alias=alias name=name attrs={"aria-label": `website-section-${id}`}>
       <@head>
         <marko-web-gtm-website-section-context|{ context }| alias=alias>
           <marko-web-gtm-push data=context />
@@ -119,6 +119,7 @@ $ const promise = websiteSectionContentLoader(apollo, {
             query-params=loadMoreParams
             max-pages=3
             page-input={ for: "website-section", id }
+            attrs={ "aria-label": "load-more", "role": "main" }
           />
         </marko-web-resolve-page>
       </@below-page>

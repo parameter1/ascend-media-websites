@@ -8,7 +8,7 @@ $ const type = "published-content";
 $ const title = "Videos";
 $ const description = defaultDescription(title, config);
 
-<marko-web-default-page-layout type=type title=title description=description>
+<marko-web-default-page-layout type=type title=title description=description attrs={"aria-label": `website-section-${id}`}>
   <@head>
     <marko-web-gtm-default-context|{ context }| type=type>
       <marko-web-gtm-push data=context />
@@ -44,6 +44,7 @@ $ const description = defaultDescription(title, config);
       query-name="all-published-content"
       query-params={ contentTypes: ["Video"], limit: 10, skip: 10 }
       page-input={ for: "published-content" }
+      attrs={ "aria-label": "load-more", "role": "main" }
     />
   </@below-page>
 </marko-web-default-page-layout>

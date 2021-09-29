@@ -22,6 +22,7 @@ $ const {
       withSite: false,
     }
     page-input={ for: "content", id, type }
+    attrs={ "aria-label": "load-more", "role": "main" }
   />
 </if>
 <else-if(type === "company")>
@@ -33,6 +34,7 @@ $ const {
     query-name="all-company-content"
     query-params={ companyId: id }
     page-input={ for: "content", id, type }
+    attrs={ "aria-label": "load-more", "role": "main" }
   />
 </else-if>
 <else-if(sectionId)>
@@ -44,5 +46,6 @@ $ const {
     query-name="website-scheduled-content"
     query-params={ sectionId, excludeContentIds: [id], limit: 12, skip: sectionSkip }
     page-input={ for: "content", id, type }
+    attrs={ "aria-label": "load-more", "role": "main" }
   />
 </else-if>

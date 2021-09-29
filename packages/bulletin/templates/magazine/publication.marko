@@ -6,7 +6,7 @@ $ const adSlots = ({ aliases }) => ({
   "gpt-ad-lb1": GAM.getAdUnit({ name: "lb1", aliases }),
 });
 
-<marko-web-magazine-publication-page-layout id=id>
+<marko-web-magazine-publication-page-layout id=id attrs={"aria-label": `website-section-${id}`}>
   <@head>
     <marko-web-gtm-magazine-publication-context|{ context }| id=id>
       <marko-web-gtm-push data=context />
@@ -43,6 +43,7 @@ $ const adSlots = ({ aliases }) => ({
         query-name="magazine-active-issues"
         query-params={ publicationId: id, mailing: { after: 1451625839000 }, limit: 12 }
         page-input={ for: "magazine-publication", id }
+        attrs={ "aria-label": "load-more", "role": "main" }
       />
     </marko-web-resolve-page>
   </@below-page>
