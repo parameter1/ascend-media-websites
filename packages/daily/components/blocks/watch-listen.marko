@@ -19,7 +19,7 @@ $ const rootImageSrc = 'https://img.hub.heart.org/files/base/ascend/hearthub/ima
 $ const watchSrc = defaultValue(site.get("blocks.watch.src"), `${rootImageSrc}/watch-icon.png`);
 $ const listenSrc = defaultValue(site.get("blocks.listen.src"), `${rootImageSrc}/listen-icon.png`);
 $ const navigationSrc = defaultValue(site.get("blocks.navigation.src"), `${rootImageSrc}/navigation-icon.png`);
-$ const readSrc = defaultValue(site.get("blocks.read.src", `${rootImageSrc}/read-icon.png`));
+$ const readSrc = defaultValue(site.get("blocks.read.src"), `${rootImageSrc}/read-icon.png`);
 
 
 <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
