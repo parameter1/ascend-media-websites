@@ -1,6 +1,6 @@
 {
   "name": "@ascend-media/hypertension.hub.heart.org",
-  "version": "1.2.3",
+  "version": "1.2.6",
   "author": "Brandon Krigbaum <brandonbk@gmail.com>",
   "repository": "https://github.com/parameter1/ascend-media-websites/tree/master/sites/hypertension.hub.heart.org",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "test": "yarn lint && yarn compile && yarn build"
   },
   "dependencies": {
-    "@ascend-media/package-shared": "^1.2.3",
+    "@ascend-media/package-shared": "^1.2.6",
     "@parameter1/base-cms-marko-core": "^2.37.2",
     "@parameter1/base-cms-marko-web": "^2.43.0",
     "@parameter1/base-cms-marko-web-gam": "^2.22.2",
