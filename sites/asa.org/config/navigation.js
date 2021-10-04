@@ -17,7 +17,7 @@ const topics = [
   { href: '/monday', label: 'Monday' },
   { href: '/tuesday', label: 'Tuesday' },
   { href: 'https://www.asahq.org/annualmeeting', label: 'Meeting Info', target: '_blank' },
-  { href: '#', label: 'Claim CME', target: '_blank' }, // NEED URL
+
 ];
 
 const resources = [
@@ -28,6 +28,7 @@ const resources = [
 const secondary = [
   { href: 'https://www.asahq.org/annualmeeting/attend/health', label: 'Health & Safety', target: '_blank' },
   { href: 'https://reliancegraphics.tuosystems.com/shopping/1399737?store_catalog_id=90680', label: 'Swag Store', target: '_blank' },
+  { href: '#', label: 'Claim CME', target: '_blank' }, // NEED URL
 ];
 
 module.exports = {
