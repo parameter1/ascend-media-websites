@@ -8,6 +8,7 @@ module.exports = {
   gam,
   company: 'Ascend Media',
   copyrightNotice: '',
+  showCopyright: false,
   sponsoredText: 'Paid Advertising Content',
   socialMediaLinks: [
     { provider: 'facebook', href: 'https://www.facebook.com/AmericanSocietyofAnesthesiologists/', target: '_blank' },
