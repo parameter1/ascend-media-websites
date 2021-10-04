@@ -16,7 +16,7 @@ const topics = [
   { href: '/day-3', label: 'Day 3' },
   { href: '/day-4', label: 'Day 4' },
   { href: '/day-5', label: 'Day 5' },
-  { href: '/', label: 'Meeting Info' },
+  { href: 'https://www.asahq.org/annualmeeting', label: 'Meeting Info', target: '_blank' },
   { href: '#', label: 'Claim CME', target: '_blank' }, // NEED URL
 ];
 
@@ -26,8 +26,8 @@ const resources = [
 ];
 
 const secondary = [
-  { href: '#', label: 'Health & Safety', target: '_blank' }, // NEED URL
-  { href: '#', label: 'Swag Store', target: '_blank' }, // NEED URL
+  { href: 'https://www.asahq.org/annualmeeting/attend/health', label: 'Health & Safety', target: '_blank' },
+  { href: 'https://reliancegraphics.tuosystems.com/shopping/1399737?store_catalog_id=90680', label: 'Swag Store', target: '_blank' },
 ];
 
 module.exports = {
