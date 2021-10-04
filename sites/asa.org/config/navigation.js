@@ -16,6 +16,8 @@ const topics = [
   { href: '/day-3', label: 'Day 3' },
   { href: '/day-4', label: 'Day 4' },
   { href: '/day-5', label: 'Day 5' },
+  { href: '/', label: 'Meeting Info' },
+  { href: '#', label: 'Claim CME', target: '_blank' }, // NEED URL
 ];
 
 const resources = [
@@ -24,9 +26,8 @@ const resources = [
 ];
 
 const secondary = [
-  { href: 'https://www.asahq.org/', label: 'asahq.org', target: '_blank' },
-  // { href: '#', label: 'Abstracts', target: '_blank' },
-  // { href: '#', label: 'Claim CME', target: '_blank' },
+  { href: '#', label: 'Health & Safety', target: '_blank' }, // NEED URL
+  { href: '#', label: 'Swag Store', target: '_blank' }, // NEED URL
 ];
 
 module.exports = {
