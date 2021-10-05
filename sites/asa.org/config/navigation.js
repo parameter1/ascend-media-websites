@@ -11,22 +11,24 @@ const userTools = [
 ];
 
 const topics = [
-  { href: '/day-1', label: 'Day 1' },
-  { href: '/day-2', label: 'Day 2' },
-  { href: '/day-3', label: 'Day 3' },
-  { href: '/day-4', label: 'Day 4' },
-  { href: '/day-5', label: 'Day 5' },
+  { href: '/friday', label: 'Friday' },
+  { href: '/saturday', label: 'Saturday' },
+  { href: '/sunday', label: 'Sunday' },
+  { href: '/monday', label: 'Monday' },
+  { href: '/tuesday', label: 'Tuesday' },
+  { href: 'https://www.asahq.org/annualmeeting', label: 'Meeting Info', target: '_blank' },
+
 ];
 
 const resources = [
-  { href: 'https://www.abstractsonline.com/pp8/#!/9323', label: 'Program', target: '_blank' },
+  { href: 'https://www.abstractsonline.com/pp8/#!/9323', label: 'Sessions', target: '_blank' },
   { href: 'https://www.asahq.org/', label: 'On-Demand', target: '_blank' }, // Will be different offsite link when given
 ];
 
 const secondary = [
-  { href: 'https://www.asahq.org/', label: 'asahq.org', target: '_blank' },
-  // { href: '#', label: 'Abstracts', target: '_blank' },
-  // { href: '#', label: 'Claim CME', target: '_blank' },
+  { href: 'https://www.asahq.org/annualmeeting/attend/health', label: 'Health & Safety', target: '_blank' },
+  { href: 'https://reliancegraphics.tuosystems.com/shopping/1399737?store_catalog_id=90680', label: 'Swag Store', target: '_blank' },
+  { href: 'https://www.abstractsonline.com/pp8/#!/9323/credits', label: 'Claim CME', target: '_blank' },
 ];
 
 module.exports = {

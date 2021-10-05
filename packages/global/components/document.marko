@@ -29,6 +29,6 @@ $ const aboveContainer = get(input, "aboveContainer.renderBody");
   </@above-container>
   <@below-container>
     <${input.belowContainer} />
-    <default-theme-site-footer />
+    <default-theme-site-footer show-copyright=site.get("showCopyright") />
   </@below-container>
 </marko-web-document>
