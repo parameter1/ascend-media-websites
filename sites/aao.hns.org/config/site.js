@@ -19,8 +19,8 @@ module.exports = {
     containerId: 'GTM-PWX9TTJ',
   },
   twitterFeed: {
-    href: '',
-    tagline: '',
+    href: 'https://twitter.com/AAOHNS',
+    tagline: 'Tweets from AAOHNS',
   },
   gcse: {
     id: '',
