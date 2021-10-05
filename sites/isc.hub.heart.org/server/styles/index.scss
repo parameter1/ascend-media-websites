@@ -18,7 +18,7 @@ $theme-site-navbar-secondary-type: dark;
   height: auto;
 
   @media (min-width: map-get($theme-site-header-breakpoints, small-text-primary)) {
-    background: url("https://img.hub.heart.org/files/base/ascend/hearthub/image/static/sessions-background.png?w=1850&auto=format,compress&q=70") no-repeat 50% 150px;
+    background: url("https://img.hub.heart.org/files/base/ascend/hearthub/image/static/isc_background.png?w=1850&auto=format,compress&q=70") no-repeat 50% 150px;
 
     .page {
       background-color: transparent;
