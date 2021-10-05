@@ -19,8 +19,8 @@ module.exports = {
     containerId: 'GTM-WLZHFLX',
   },
   twitterFeed: {
-    href: '',
-    tagline: '',
+    href: 'https://twitter.com/acepnow',
+    tagline: 'Tweets from ACEP Now',
   },
   gcse: {
     id: '',
