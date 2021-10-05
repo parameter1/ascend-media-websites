@@ -5,6 +5,7 @@ const config = configureGAM({ basePath: 'isc' });
 config
   .setAliasAdUnits('default', [
     { name: 'lb1', templateName: 'leaderboard', path: 'lb1' },
+    { name: 'lb2', templateName: 'leaderboard', path: 'lb2' },
     { name: 'rail1', templateName: 'rail', path: 'rail1' },
     { name: 'rail2', templateName: 'rail', path: 'rail2' },
     { name: 'rail3', templateName: 'rail', path: 'rail3' },
