@@ -1,11 +1,9 @@
 const navigation = require('./navigation');
 const gam = require('./gam');
 const logos = require('./logos');
-const blocks = require('./blocks');
 const nativeX = require('./native-x');
 
 module.exports = {
-  blocks,
   logos,
   navigation,
   nativeX,
@@ -21,6 +19,10 @@ module.exports = {
   ],
   gtm: {
     containerId: 'GTM-TV97VDV',
+  },
+  twitterFeed: {
+    href: 'http://www.twitter.com/American_Heart',
+    tagline: 'Tweets from American Heart',
   },
   gcse: {
     id: '8fda9b5d0e7f9c0d5',
