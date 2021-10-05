@@ -1,4 +1,4 @@
-const startServer = require('@ascend-media/package-shared/start-server');
+const startServer = require('@ascend-media/package-global/start-server');
 
 const routes = require('./server/routes');
 const siteConfig = require('./config/site');
