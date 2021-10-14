@@ -15,7 +15,7 @@ const topics = [
   { href: '/late-breaking-science', label: 'Late-Breaking Science' },
   { href: '/daily-coverage', label: 'Daily Coverage' },
   { href: '/industry-highlights', label: 'Industry Highlights' },
-  { href: 'https://eventpilotadmin.com/web/planner.php?id=AHA20', label: 'Program', target: '_blank' },
+  { href: 'https://eventpilotadmin.com/web/planner.php?id=AHA21', label: 'Program', target: '_blank' },
   { href: '/previews', label: 'Previews' },
   { href: '/archives', label: 'Archives' },
 ];
