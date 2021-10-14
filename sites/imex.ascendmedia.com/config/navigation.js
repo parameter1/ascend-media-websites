@@ -16,7 +16,7 @@ const topics = [
   { href: '/associations', label: 'Associations' },
   { href: '/More', label: 'More' },
   { href: 'https://www.imexamerica.com/whats-on/schedule-at-a-glance', label: 'Program', target: '_blank' },
-  { href: 'https://www.imexamerica.com/.com', label: 'IMEX America', target: '_blank' },
+  { href: 'https://www.imexamerica.com/', label: 'IMEX America', target: '_blank' },
 ];
 
 const secondary = [
