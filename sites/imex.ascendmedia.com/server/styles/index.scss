@@ -26,14 +26,6 @@ $theme-hero-teaser-bg-color: $tertiary;
   display: block;
   flex-direction: column;
   height: auto;
-
-  @media (min-width: map-get($theme-site-header-breakpoints, small-text-primary)) {
-    background: url("https://img.ascendmedia.com/files/base/ascend/hearthub/image/static/imex-background.jpg?w=1850") no-repeat 50% 85px;
-
-    .page {
-      background-color: transparent;
-    }
-  }
 }
 
 .page-contents {
