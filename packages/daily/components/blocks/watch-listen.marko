@@ -10,7 +10,7 @@ $ const queryParams = {
   limit: 3,
   queryFragment,
   sectionBubbling: false,
-  includeContentTypes: ["Video", "Podcast", "Promotion"],
+  includeContentTypes: ["Article", "News", "Document", "Video", "Podcast", "Promotion"],
   sectionAlias: 'watch-listen',
   ...getAsObject(input, "queryParams"),
 };
@@ -37,7 +37,15 @@ $ const readSrc = defaultValue(site.get("blocks.read.src"), `${rootImageSrc}/rea
     }
     $ if (content.type === "promotion") {
       action = get(content, "linkText") || "Navigation Tips";
-      src = (action === 'Listen') ? listenSrc : (action === 'Watch') ? watchSrc : navigationSrc;
+      if (action === 'Listen') {
+        src = listenSrc;
+      } else if (action === 'Watch') {
+        src = watchSrc
+      } else if (action === 'Read') {
+        src = readSrc
+      } else {
+        src = navigationSrc
+      }
       link = { target: '_blank' };
     }
     <marko-web-node
