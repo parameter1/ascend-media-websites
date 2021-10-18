@@ -16,7 +16,7 @@ module.exports = {
     { provider: 'linkedin', href: '', target: '_blank' },
   ],
   gtm: {
-    containerId: 'GTM-5LK3FQ6',
+    containerId: 'GTM-TBD',
   },
   twitterFeed: {
     href: '',
