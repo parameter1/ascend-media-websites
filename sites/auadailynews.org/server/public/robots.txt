@@ -5,5 +5,5 @@ User-agent: *
 Disallow: /__
 Disallow: /print/content
 
-Sitemap: https://www.hearthubs.org/sitemap.xml
-Sitemap: https://www.hearthubs.org/sitemap-google-news.xml
+Sitemap: https://www.auadailynews.org/sitemap.xml
+Sitemap: https://www.auadailynews.org/sitemap-google-news.xml

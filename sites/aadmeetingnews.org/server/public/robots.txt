@@ -2,8 +2,7 @@
 # www.google.com/support/webmasters/bin/answer.py?hl=en&answer=156449
 
 User-agent: *
-# Disallow: /__
-Disallow: /
+Disallow: /__
 
-Sitemap: https://www.hearthubs.org/sitemap.xml
-Sitemap: https://www.hearthubs.org/sitemap-google-news.xml
+Sitemap: https://www.aadmeetingnews.org/sitemap.xml
+Sitemap: https://www.aadmeetingnews.org/sitemap-google-news.xml
