@@ -20,7 +20,8 @@ $ const watchSrc = defaultValue(site.get("blocks.watch.src"), `${rootImageSrc}/w
 $ const listenSrc = defaultValue(site.get("blocks.listen.src"), `${rootImageSrc}/listen-icon.png`);
 $ const navigationSrc = defaultValue(site.get("blocks.navigation.src"), `${rootImageSrc}/navigation-icon.png`);
 $ const readSrc = defaultValue(site.get("blocks.read.src"), `${rootImageSrc}/read-icon.png`);
-
+$ const searchSrc = defaultValue(site.get("blocks.search.src"), `${rootImageSrc}/search-icon.png`);
+$ const connectSrc = defaultValue(site.get("blocks.connect.src"), `${rootImageSrc}/connect-icon.png`);
 
 <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
   <for|content, index| of=nodes>
@@ -40,11 +41,15 @@ $ const readSrc = defaultValue(site.get("blocks.read.src"), `${rootImageSrc}/rea
       if (action === 'Listen') {
         src = listenSrc;
       } else if (action === 'Watch') {
-        src = watchSrc
+        src = watchSrc;
       } else if (action === 'Read') {
-        src = readSrc
+        src = readSrc;
+      } else if (action === 'Search') {
+        src = searchSrc;
+      } else if (action === 'Connect'){
+        src = connectSrc;
       } else {
-        src = navigationSrc
+        src = navigationSrc;
       }
       link = { target: '_blank' };
     }

@@ -40,4 +40,10 @@ module.exports = {
   read: {
     src: 'https://img.ascendmedia.com/files/base/ascend/hearthub/image/static/imex-read-icon-green.png',
   },
+  search: {
+    src: 'https://img.ascendmedia.com/files/base/ascend/hearthub/image/static/imex-search-icon-green.png',
+  },
+  connect: {
+    src: 'https://img.ascendmedia.com/files/base/ascend/hearthub/image/static/imex-connect-icon-green.png',
+  },
 };
