@@ -83,7 +83,7 @@ $theme-site-header-breakpoints: (
   border-color: $light-bg-color;
 }
 
-.pagination-controls {
+.marko-web-search-pagination-controls {
   display: flex;
   align-items: center;
   padding-top: map-get($spacers, block);

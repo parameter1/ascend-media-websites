@@ -6,6 +6,13 @@
     "./nodes/marko.json",
     "./page-wrappers/marko.json"
   ],
+  "<minexpo-web-search-pagination-controls>": {
+    "template": "./pagination-controls.marko",
+    "<block>": {},
+    "<link>": {},
+    "@total-count": "number",
+    "@path": "string"
+  },
   "<minexpo-site-footer>": {
     "template": "./site-footer.marko"
   }
