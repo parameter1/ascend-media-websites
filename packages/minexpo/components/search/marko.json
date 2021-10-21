@@ -1,7 +1,0 @@
-{
-  "<minexpo-country-facets>": {
-    "template": "./country-facets.marko",
-    "@phrase": "string",
-    "@section-ids": "array"
-  }
-}
