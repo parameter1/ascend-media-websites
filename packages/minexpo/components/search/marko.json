@@ -1,17 +1,4 @@
 {
-  "<minexpo-content-search-query>": {
-    "template": "./query.marko",
-    "@phrase": "string",
-    "@limit": "number",
-    "@skip": "number",
-    "@section-ids": "array",
-    "@content-type": "string",
-    "@country": "string",
-    "@query-fragment": {
-      "type": "string",
-      "required": true
-    }
-  },
   "<minexpo-country-facets>": {
     "template": "./country-facets.marko",
     "@phrase": "string",

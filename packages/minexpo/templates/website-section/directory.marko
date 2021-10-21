@@ -5,31 +5,19 @@ import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import queryFragment from "../../graphql/fragments/content-list";
 import { retrieveSections } from "../../utils/retrieve-sections";
 import categorySectionsFragment from "../../graphql/fragments/category-sections"
-import { buildContentQuery } from "../../components/search/queries";
 import { getChildSectionIds } from "../../utils/get-child-section-ids";
 
 
 $ const {
   $markoWebSearch: search,
-  $algolia,
-  apollo,
   GAM,
-  pagination:
-  p,
   req,
 } = out.global;
 $ const sortField = (search.input.searchQuery) ? undefined : "NAME";
 $ const sortOrder = (search.input.searchQuery) ? undefined : "ASC";
 $ const currentPage = search.getCurrentPage();
-$ const contentType = defaultValue(req.query.type, 'Company');
 $ const primaryAlias = req.path.replace(/^\/+/, '').split('/')[0];
 $ const selectedCountry = defaultValue(req.query.country, '');
-$ const phrase = defaultValue(req.query.phrase, '');
-$ const supportedContendTypes = {
-  Company: 'Exhibitor',
-  Product: 'Product',
-  News: 'News'
-};
 
 $ const {
   id,
@@ -37,7 +25,6 @@ $ const {
   name,
   pageNode,
 } = input;
-$ const perPage = 20;
 
 <marko-web-resolve-page|{ data: section }| node=pageNode>
   <marko-web-website-section-page-layout id=id alias=alias name=name attrs={"aria-label": `website-section-${id}`}>
@@ -236,7 +223,7 @@ $ const perPage = 20;
                           modifiers=['content-list']
                         >
                         <@header>
-                          <if(p.page > 1)>${supportedContendTypes[contentType]} in ${section.name}: Page ${p.page}</if>
+                          <if(currentPage > 1)>Companies in ${section.name}: Page ${currentPage}</if>
                           <else>Companies Alphabetically</else>
                         </@header>
                         <@nodes nodes=nodes>

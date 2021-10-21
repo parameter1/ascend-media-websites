@@ -23,7 +23,6 @@
     "@parameter1/base-cms-object-path": "^2.22.2",
     "@parameter1/base-cms-utils": "^2.22.2",
     "@parameter1/base-cms-web-common": "^2.44.0",
-    "algoliasearch": "^4.8.3",
     "graphql-tag": "^2.10.1"
   },
   "devDependencies": {

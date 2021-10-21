@@ -2,7 +2,6 @@ const newrelic = require('newrelic');
 const { startServer } = require('@parameter1/base-cms-marko-web');
 const { set, getAsObject } = require('@parameter1/base-cms-object-path');
 const paginated = require('@ascend-media/package-minexpo/middleware/paginated');
-const algolia = require('@ascend-media/package-minexpo/middleware/algolia');
 const { version } = require('./package.json');
 const routes = require('./server/routes');
 const siteConfig = require('./config/site');
@@ -30,14 +29,6 @@ module.exports = startServer({
     // Setup GAM.
     const gamConfig = getAsObject(siteConfig, 'gam');
     if (gamConfig) set(app.locals, 'GAM', gamConfig);
-
-    // Use Algolia client/index middleware
-    // Will be available on `req.$algolia` and `res.locals.$algolia`
-    app.use(algolia({
-      appId: env.ALGOLIA_APP_ID,
-      apiKey: env.ALGOLIA_API_KEY,
-      defaultIndex: env.ALGOLIA_DEFAULT_INDEX,
-    }));
 
     app.use(paginated());
   },
