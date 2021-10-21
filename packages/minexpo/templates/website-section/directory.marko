@@ -10,6 +10,7 @@ import { getChildSectionIds } from "../../utils/get-child-section-ids";
 
 
 $ const {
+  $markoWebSearch: search,
   $algolia,
   apollo,
   GAM,
@@ -17,6 +18,9 @@ $ const {
   p,
   req,
 } = out.global;
+$ const sortField = (search.input.searchQuery) ? undefined : "NAME";
+$ const sortOrder = (search.input.searchQuery) ? undefined : "ASC";
+$ const currentPage = search.getCurrentPage();
 $ const contentType = defaultValue(req.query.type, 'Company');
 $ const primaryAlias = req.path.replace(/^\/+/, '').split('/')[0];
 $ const selectedCountry = defaultValue(req.query.country, '');
@@ -36,13 +40,6 @@ $ const {
 $ const perPage = 20;
 
 <marko-web-resolve-page|{ data: section }| node=pageNode>
-  $ let queryParams = {
-    sectionId: section.id,
-    optionName: ["Standard"],
-    queryFragment,
-    includeContentTypes: [contentType]
-  };
-  $ if ('Company' === contentType) queryParams.sort = { field: 'name', order: 'asc' };
   <marko-web-website-section-page-layout id=id alias=alias name=name attrs={"aria-label": `website-section-${id}`}>
     <@head>
       <marko-web-gtm-website-section-context|{ context }| alias=alias>
@@ -76,17 +73,20 @@ $ const perPage = 20;
           </div>
         </@section>
         <@section>
-          <form method="GET" action=req.path class="search-form row">
+          <marko-web-search-form>
+            <@block class="search-form row" />
             <div class="col form-group search-form__group search-form__group--phrase">
               <label for="search-phrase" class="sr-only">Enter search phrase</label>
-              <input id="search-phrase" name="phrase" type="search" class="form-control" value=phrase placeholder="Enter search phrase...">
-              <if(contentType !== 'Company')>
-                <label for="content-type" class="sr-only">Content Type</label>
-                <input id="content-type" name="type" type="hidden" class="form-control" value=contentType placeholder="">
-              </if>
+              <marko-web-search-input
+                id="search-phrase"
+                class="form-control"
+                placeholder="Enter search phrase..."
+              />
             </div>
-            <button type="submit" class="col btn btn-primary search-form__btn search-form__btn--search">Search</button>
-          </form>
+            <button type="submit" class="col btn btn-primary search-form__btn search-form__btn--search">
+              Search
+            </button>
+          </marko-web-search-form>
         </@section>
 
         <@section>
@@ -109,59 +109,13 @@ $ const perPage = 20;
                           title="Product Categories"
                           aliases=aliases
                           active-id=id
-                          content-type=contentType
-                          phrase=phrase
+                          search-query=search.input.searchQuery
                           with-toggle=true
                           primary-alias=primaryAlias
                           initially-expanded=(alias !== primaryAlias)
                         />
                       </div>
-                      <!-- <div class="mb-block">
-                        <div class="content-type-facets">
-                          <h3 class="content-type-facets__title">
-                            Type
-                            <default-theme-menu-toggle-button
-                              class-name='content-type-facets__toggle'
-                              targets=['.content-type-facets__list']
-                              toggle-class='content-type-facets__list--open'
-                              initially-expanded=(contentType !== 'Company')
-                              icon-modifiers=["sm"]
-                              icon-name="plus"
-                              expanded-icon-name="dash"
-                            />
-                          </h3>
-                          $ let contentFilterAlias = (phrase) ? `/${section.alias}?phrase=${phrase}` : `/${section.alias}`;
-                          $ const contentTypeFilterClass = (contentType !== 'Company') ? 'content-type-facets__list content-type-facets__list--open' : 'content-type-facets__list';
-                          <div class=contentTypeFilterClass>
-                            <for|key,value| in=supportedContendTypes>
-                              <if(key === 'Company')>
-                              $ const activeModifier = ('Company' === contentType) ? '--active' : '';
-                              <div class=`content-type-facets__item content-type-facets__item--${key}`>
-                                <a class=`content-type-facets__link content-type-facets__link${activeModifier}` href=contentFilterAlias>
-                                  ${value}
-                                </a>
-                              </div>
-                              </if>
-                              <else-if(key === contentType)>
-                                <div class=`content-type-facets__item content-type-facets__item--${key}`>
-                                  <a class=`content-type-facets__link content-type-facets__link--active` href=contentFilterAlias>
-                                    ${value}
-                                  </a>
-                                </div>
-                              </else-if>
-                              <else>
-                                $ contentFilterAlias = (phrase) ? `/${section.alias}?phrase=${phrase}&type=${key}` : `/${section.alias}?type=${key}`;
-                                <div class=`content-type-facets__item content-type-facets__item--${key}`>
-                                  <a class=`content-type-facets__link content-type-facets__link` href=contentFilterAlias>
-                                    ${value}
-                                  </a>
-                                </div>
-                              </else>
-                            </for>
-                          </div>
-                        </div>
-                      </div> -->
-                      <if('Company' === contentType)>
+                      <!-- <if('Company' === contentType)>
                         <div class="mb-block">
                           <minexpo-country-facets|{ countries }|
                             phrase=phrase
@@ -218,7 +172,7 @@ $ const perPage = 20;
                             </div>
                           </minexpo-country-facets>
                         </div>
-                      </if>
+                      </if> -->
                     </div>
                   </div>
 
@@ -263,13 +217,13 @@ $ const perPage = 20;
                 </div>
               </div>
               <div class="col-lg-8 mb-block">
-                <minexpo-content-search-query|{ nodes, totalCount, facets }|
-                  phrase=phrase
-                  limit=perPage
-                  skip=p.skip({ perPage })
-                  content-type=contentType
-                  country=selectedCountry
-                  section-ids=sectionIds
+                <marko-web-search-query|{ nodes, totalCount }|
+                  limit=search.getLimit()
+                  skip=search.getSkip()
+                  sortField=sortField
+                  sortOrder=sortOrder
+                  search-query=search.input.searchQuery
+                  assigned-to-website-section-ids=[section.id]
                   query-fragment=queryFragment
                 >
                   <div class="row">
@@ -282,14 +236,8 @@ $ const perPage = 20;
                           modifiers=['content-list']
                         >
                         <@header>
-                          <if('Company' === contentType)>
-                            <if(p.page > 1)>${supportedContendTypes[contentType]} in ${section.name}: Page ${p.page}</if>
-                            <else>${supportedContendTypes[contentType]}s Alphabetically</else>
-                          </if>
-                          <else>
-                            <if(p.page > 1)>${section.name}: Page ${p.page}</if>
-                            <else>Latest ${supportedContendTypes[contentType]} in ${section.name}</else>
-                          </else>
+                          <if(p.page > 1)>${supportedContendTypes[contentType]} in ${section.name}: Page ${p.page}</if>
+                          <else>Companies Alphabetically</else>
                         </@header>
                         <@nodes nodes=nodes>
                           <@slot|{ node }|>
@@ -308,14 +256,12 @@ $ const perPage = 20;
                   </div>
                   <div class="row">
                     <div class="col">
-                      <pagination-controls
-                        per-page=perPage
-                        total-count=totalCount
-                        path=section.alias
-                      />
+                      <marko-web-search-pagination-controls total-count=totalCount>
+                        <@link class="btn btn-primary" />
+                      </marko-web-search-pagination-controls>
                     </div>
                   </div>
-                </minexpo-content-search-query>
+                </marko-web-search-query>
               </div>
             </div>
           </marko-web-query>
