@@ -6,7 +6,7 @@
   "@content-type": {
     "type": "string"
   },
-  "@phrase": {
+  "@search-query": {
     "type": "string"
   },
   "@active-id": {

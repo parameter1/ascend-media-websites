@@ -1,4 +1,11 @@
-$ const { facets, title, description, aliases, withToggle, initiallyExpanded } = input;
+$ const {
+  facets,
+  title,
+  description,
+  aliases,
+  withToggle,
+  initiallyExpanded,
+} = input;
 
 $ const className = (withToggle) ? "directory-facets directory-facets--with-toggle" : 'directory-facets';
 
@@ -29,7 +36,7 @@ $ const className = (withToggle) ? "directory-facets directory-facets--with-togg
       facets=facets
       aliases=aliases
       content-type=input.contentType
-      phrase=input.phrase
+      search-query=input.searchQuery
       active-id=input.activeId
       initially-expanded=initiallyExpanded
     />
