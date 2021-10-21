@@ -22,7 +22,7 @@ const topics = [
 
 const resources = [
   { href: 'https://www.abstractsonline.com/pp8/#!/9323', label: 'Sessions', target: '_blank' },
-  { href: 'https://www.asahq.org/', label: 'On-Demand', target: '_blank' }, // Will be different offsite link when given
+  { href: 'https://asa.ondemand.org/', label: 'On-Demand', target: '_blank' },
 ];
 
 const secondary = [
