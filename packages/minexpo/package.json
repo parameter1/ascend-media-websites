@@ -18,6 +18,7 @@
     "@parameter1/base-cms-marko-web-gtm": "^2.22.2",
     "@parameter1/base-cms-marko-web-inquiry": "^2.27.1",
     "@parameter1/base-cms-marko-web-native-x": "^2.44.0",
+    "@parameter1/base-cms-marko-web-search": "^2.46.3",
     "@parameter1/base-cms-marko-web-theme-default": "^2.44.1",
     "@parameter1/base-cms-object-path": "^2.22.2",
     "@parameter1/base-cms-utils": "^2.22.2",
