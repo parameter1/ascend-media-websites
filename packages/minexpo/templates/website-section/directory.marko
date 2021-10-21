@@ -1,4 +1,5 @@
 import { getAsArray, getAsObject } from "@parameter1/base-cms-object-path";
+import { cleanPath } from "@parameter1/base-cms-utils";
 import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
 import hierarchyIds from "@parameter1/base-cms-marko-web/utils/hierarchy-ids";
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
@@ -243,12 +244,17 @@ $ const {
                   </div>
                   <div class="row">
                     <div class="col">
-                      <minexpo-web-search-pagination-controls
+                      <marko-web-search-pagination-controls
                         total-count=totalCount
-                        path=section.alias
                       >
                         <@link class="btn btn-primary" />
-                      </minexpo-web-search-pagination-controls>
+                        $ const reqQueryParams = defaultValue(req.query, {});
+                        $ delete reqQueryParams.page;
+                        $ const reqQueryParamsStr = Object.keys(reqQueryParams).map((key) => `${key}=${reqQueryParams[key]}`).join('&');
+                        <marko-web-element|{ currentPage, totalPages }| block-name="marko-web-search-pagination-controls" name="pages">
+                          <marko-web-browser-component name="PaginationPageNumberInput" props={ page: currentPage, totalPages, path: cleanPath(section.alias), queryStr: reqQueryParamsStr } />
+                        </marko-web-element>
+                      </marko-web-search-pagination-controls>
                     </div>
                   </div>
                 </marko-web-search-query>
