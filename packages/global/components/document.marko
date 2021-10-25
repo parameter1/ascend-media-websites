@@ -1,6 +1,6 @@
 import { getAsObject, get } from "@parameter1/base-cms-object-path";
 
-$ const { site, req, GAM } = out.global;
+$ const { site, req, GAM, config } = out.global;
 $ const { NODE_ENV } = process.env;
 $ const aboveContainer = get(input, "aboveContainer.renderBody");
 
@@ -11,6 +11,9 @@ $ const aboveContainer = get(input, "aboveContainer.renderBody");
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <marko-web-gam-init />
+    <if(["sessions.hub.heart.org", "isc.hub.heart.org"].includes(config.websiteContext.host))>
+      <link href="https://static.heart.org/ahaanywhere/sitecore/dist/css/aha-header-footer.css" rel="stylesheet">
+    </if>
     <marko-web-gtm-init container-id=site.get("gtm.containerId") />
     <marko-web-gtm-push data={ env: NODE_ENV } />
     <${input.head} />
@@ -29,6 +32,11 @@ $ const aboveContainer = get(input, "aboveContainer.renderBody");
   </@above-container>
   <@below-container>
     <${input.belowContainer} />
-    <default-theme-site-footer show-copyright=site.get("showCopyright") />
+    <if(["sessions.hub.heart.org", "isc.hub.heart.org"].includes(config.websiteContext.host))>
+      <global-aha-footer />
+    </if>
+    <else>
+      <default-theme-site-footer show-copyright=site.get("showCopyright") />
+    </else>
   </@below-container>
 </marko-web-document>
