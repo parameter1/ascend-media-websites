@@ -1,4 +1,4 @@
-import { getAsArray, getAsObject } from "@parameter1/base-cms-object-path";
+import { get, getAsArray, getAsObject } from "@parameter1/base-cms-object-path";
 import { cleanPath } from "@parameter1/base-cms-utils";
 import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
 import hierarchyIds from "@parameter1/base-cms-marko-web/utils/hierarchy-ids";
@@ -6,10 +6,12 @@ import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import queryFragment from "../../graphql/fragments/content-list";
 import { retrieveSections } from "../../utils/retrieve-sections";
 import categorySectionsFragment from "../../graphql/fragments/category-sections"
+import countryFacetsLoader from "../../loaders/country-facets";
 import { getChildSectionIds } from "../../utils/get-child-section-ids";
 
 
 $ const {
+  $baseBrowse,
   $markoWebSearch: search,
   GAM,
   req,
@@ -18,7 +20,8 @@ $ const sortField = (search.input.searchQuery) ? undefined : "NAME";
 $ const sortOrder = (search.input.searchQuery) ? undefined : "ASC";
 $ const currentPage = search.getCurrentPage();
 $ const primaryAlias = req.path.replace(/^\/+/, '').split('/')[0];
-$ const selectedCountry = defaultValue(req.query.country, '');
+$ const selectedCountry = get(req, 'query.countryCode');
+$ const countryCodes = selectedCountry? [selectedCountry] : [];
 
 $ const {
   id,
@@ -28,6 +31,7 @@ $ const {
 } = input;
 
 <marko-web-resolve-page|{ data: section }| node=pageNode>
+  $ const countryFacetsPromise = countryFacetsLoader($baseBrowse, { searchQuery: search.input.searchQuery, assignedToWebsiteSectionIds: [section.id] });
   <marko-web-website-section-page-layout id=id alias=alias name=name attrs={"aria-label": `website-section-${id}`}>
     <@head>
       <marko-web-gtm-website-section-context|{ context }| alias=alias>
@@ -103,6 +107,60 @@ $ const {
                           initially-expanded=(alias !== primaryAlias)
                         />
                       </div>
+                      <marko-web-resolve|{ resolved }| promise=countryFacetsPromise>
+                        $ const { countryFacets } = resolved;
+                        <div class="mb-block">
+                          <div class="directory-country-facets">
+                            <h3 class="directory-country-facets__title">
+                              Country
+                              <default-theme-menu-toggle-button
+                                class-name=`directory-country-facets__toggle`
+                                targets=[`.directory-country-facets__list`]
+                                toggle-class=`directory-country-facets__list--open`
+                                initially-expanded=(selectedCountry !== '')
+                                icon-modifiers=["sm"]
+                                icon-name="plus"
+                                expanded-icon-name="dash"
+                              />
+                            </h3>
+                            $ const countryFilterFacetClass = (selectedCountry !== '') ? "directory-country-facets__list directory-country-facets__list--open" : "directory-country-facets__list";
+                            <div class=countryFilterFacetClass>
+                              <for|country| of=countryFacets>
+                                <if(selectedCountry === country.id)>
+                                <marko-web-browser-component
+                                    name="DirectoryAutoScroll"
+                                    props={
+                                      containerTarget: '.directory-country-facets > .directory-country-facets__list',
+                                      elementTarget: `.directory-country-facets__link--active`,
+                                      offset: -12,
+                                    }
+                                  />
+                                  $ const countryFilterLink = (search.input.searchQuery) ? `/${section.alias}?searchQuery=${search.input.searchQuery}` : `/${section.alias}`;
+                                  <div class="directory-country-facets__item directory-country-facets__item--51709">
+                                    <a
+                                      class="directory-country-facets__link directory-country-facets__link--active"
+                                      href=countryFilterLink
+                                    >
+                                      ${country.name}
+                                    </a>
+                                  </div>
+                                </if>
+                                <else>
+                                  $ const countryFilterLink = (search.input.searchQuery) ? `/${section.alias}?searchQuery=${search.input.searchQuery}&countryCode=${country.id}` : `/${section.alias}?countryCode=${country.id}`;
+                                  <div class="directory-country-facets__item directory-country-facets__item--51709">
+                                    <a
+                                      class="directory-country-facets__link"
+                                      href=countryFilterLink
+                                    >
+                                      ${country.name}
+                                    </a>
+                                  </div>
+                                </else>
+                              </for>
+                            </div>
+                          </div>
+                        </div>
+                      </marko-web-resolve>
                       <!-- <if('Company' === contentType)>
                         <div class="mb-block">
                           <minexpo-country-facets|{ countries }|
@@ -210,13 +268,13 @@ $ const {
                   skip=search.getSkip()
                   sortField=sortField
                   sortOrder=sortOrder
+                  countryCodes=countryCodes
                   search-query=search.input.searchQuery
                   assigned-to-website-section-ids=[section.id]
                   query-fragment=queryFragment
                 >
                   <div class="row">
                     <div class="col">
-                      <!-- $ console.log(facets.country); -->
                       <marko-web-node-list
                           inner-justified=true
                           flush-x=false
