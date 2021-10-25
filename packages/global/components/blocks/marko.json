@@ -2,9 +2,6 @@
   "taglib-imports": [
     "./load-more/marko.json"
   ],
-  "<global-aha-footer>": {
-    "template": "./aha-site-footer.marko"
-  },
   "<global-twitter-widget-block>": {
     "template": "./twitter-widget.marko"
   },
