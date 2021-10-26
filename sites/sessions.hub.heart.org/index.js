@@ -1,5 +1,6 @@
 const startServer = require('@ascend-media/package-global/start-server');
 
+const errorTemplate = require('@ascend-media/package-global/templates/error');
 const routes = require('./server/routes');
 const siteConfig = require('./config/site');
 const coreConfig = require('./config/core');
@@ -11,4 +12,5 @@ module.exports = startServer({
   coreConfig,
   siteConfig,
   routes,
+  errorTemplate,
 }).then(() => log('Website started!')).catch(e => setImmediate(() => { throw e; }));
