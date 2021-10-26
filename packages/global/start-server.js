@@ -22,7 +22,7 @@ module.exports = (options = {}) => {
     document: options.document || document,
     components: options.components || components,
     fragments: options.fragments || fragments,
-    errorTemplate: options.errorTemplate,
+    ...(options.errorTemplate && { errorTemplate: options.errorTemplate }),
     onStart: async (app) => {
       if (typeof onStart === 'function') await onStart(app);
       app.set('trust proxy', 'loopback, linklocal, uniquelocal');
