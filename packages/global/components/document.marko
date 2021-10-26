@@ -30,7 +30,7 @@ $ const aboveContainer = get(input, "aboveContainer.renderBody");
   </@above-container>
   <@below-container>
     <${input.belowContainer} />
-    <if(["sessions.hub.heart.org", "isc.hub.heart.org"].includes(config.websiteContext.host))>
+    <if(site.config.ahaFooter)>
       <footer id="aha-footer" class="l-footer" />
       <marko-web-deferred-script-loader-register
         name="aha-footer"
