@@ -1,6 +1,6 @@
 {
   "name": "@ascend-media/aadmeetingnews.org",
-  "version": "1.3.0",
+  "version": "1.3.2",
   "author": "Brian Miller <brian@parameter1.com>",
   "repository": "https://github.com/parameter1/ascend-media-websites/tree/master/sites/aadmeetingnews.org",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "test": "yarn lint && yarn compile && yarn build"
   },
   "dependencies": {
-    "@ascend-media/package-global": "^1.3.0",
+    "@ascend-media/package-global": "^1.3.2",
     "@parameter1/base-cms-marko-core": "^2.46.0",
     "@parameter1/base-cms-marko-web": "^2.46.1",
     "@parameter1/base-cms-marko-web-gam": "^2.48.1",
