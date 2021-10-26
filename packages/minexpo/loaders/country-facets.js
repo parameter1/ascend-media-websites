@@ -8,9 +8,7 @@ const getCountryFacets = async (apolloClient, {
   const input = {
     ...(searchQuery && { search: { query: searchQuery } }),
     ...((assignedToWebsiteSectionIds.length) && {
-      assignedToWebsites: {
-        ...(assignedToWebsiteSectionIds.length && { sectionIds: assignedToWebsiteSectionIds }),
-      },
+      assignedToWebsites: { sectionIds: assignedToWebsiteSectionIds },
     }),
   };
   const query = gql`
