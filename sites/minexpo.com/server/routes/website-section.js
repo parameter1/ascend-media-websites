@@ -9,14 +9,12 @@ const leaders = require('../templates/website-section/leaders');
 const queryFragment = require('../graphql/fragments/website-section-page');
 
 module.exports = (app) => {
-  const config = new MarkoWebSearchConfig({
-    resultsPerPage: { default: 18 },
-    contentTypes: ['Company'],
-  });
-
-  const searchMiddleware = (req, res, next) => {
+  const searchMiddleware = config => (req, res, next) => {
     res.locals.$markoWebSearch = new MarkoWebSearch({
-      config,
+      config: new MarkoWebSearchConfig(config || {
+        resultsPerPage: { default: 18 },
+        contentTypes: ['Company'],
+      }),
       query: {
         ...req.query,
       },
@@ -31,19 +29,19 @@ module.exports = (app) => {
     template: contactUs,
     queryFragment,
   }));
-  app.get('/:alias(directory)', searchMiddleware, withWebsiteSection({
+  app.get('/:alias(directory)', searchMiddleware(), withWebsiteSection({
     template: directory,
     queryFragment,
   }));
-  app.get('/:alias(directory/[a-z0-9-/]+)', searchMiddleware, withWebsiteSection({
+  app.get('/:alias(directory/[a-z0-9-/]+)', searchMiddleware(), withWebsiteSection({
     template: directory,
     queryFragment,
   }));
-  app.get('/:alias(export-directory)', searchMiddleware, withWebsiteSection({
+  app.get('/:alias(export-directory)', searchMiddleware(), withWebsiteSection({
     template: directory,
     queryFragment,
   }));
-  app.get('/:alias(export-directory/[a-z0-9-/]+)', searchMiddleware, withWebsiteSection({
+  app.get('/:alias(export-directory/[a-z0-9-/]+)', searchMiddleware(), withWebsiteSection({
     template: directory,
     queryFragment,
   }));
