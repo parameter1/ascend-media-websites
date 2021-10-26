@@ -10,10 +10,8 @@ $ const aboveContainer = get(input, "aboveContainer.renderBody");
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <marko-web-deferred-script-loader-init />
     <marko-web-gam-init />
-    <if(["sessions.hub.heart.org", "isc.hub.heart.org"].includes(config.websiteContext.host))>
-      <link href="https://static.heart.org/ahaanywhere/sitecore/dist/css/aha-header-footer.css" rel="stylesheet">
-    </if>
     <marko-web-gtm-init container-id=site.get("gtm.containerId") />
     <marko-web-gtm-push data={ env: NODE_ENV } />
     <${input.head} />
@@ -33,10 +31,19 @@ $ const aboveContainer = get(input, "aboveContainer.renderBody");
   <@below-container>
     <${input.belowContainer} />
     <if(["sessions.hub.heart.org", "isc.hub.heart.org"].includes(config.websiteContext.host))>
-      <global-aha-footer />
+      <footer id="aha-footer" class="l-footer" />
+      <marko-web-deferred-script-loader-register
+        name="aha-footer"
+        on="ready"
+        src="https://static.heart.org/ahaanywhere/sitecore/dist/ahaHeaderFooterSitecore.js"
+        on-script-load="if ($.prototype.ahaHeaderFooterSitecore) $('.body-wrapper').ahaHeaderFooterSitecore()"
+      />
     </if>
     <else>
       <default-theme-site-footer show-copyright=site.get("showCopyright") />
     </else>
   </@below-container>
+  <@below-wrapper>
+    <marko-web-deferred-script-loader-load />
+  </@below-wrapper>
 </marko-web-document>
