@@ -50,4 +50,5 @@ module.exports = {
     logo: 'https://img.hub.heart.org/files/base/ascend/hearthub/image/static/footer.svg?h=90',
     bgColor: '#ffffff',
   },
+  ahaFooter: true,
 };
