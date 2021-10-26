@@ -2583,10 +2583,10 @@
     "@parameter1/base-cms-object-path" "^2.45.0"
     "@parameter1/base-cms-utils" "^2.22.2"
 
-"@parameter1/base-cms-marko-web-search@^2.46.3":
-  version "2.46.3"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-search/-/base-cms-marko-web-search-2.46.3.tgz#89915c3defbf2653869aa489f916dee3ebf2b81f"
-  integrity sha512-W0cFOO+oIzFzzBQWAMP76vfUDyIuGt98eOX4nmYhkdXmtQZEJQpkZ0jxEDVqKaPTfRpg/pisIVv/ZSNcLhuS9g==
+"@parameter1/base-cms-marko-web-search@^2.48.1":
+  version "2.48.1"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-search/-/base-cms-marko-web-search-2.48.1.tgz#d8f53077912d93732d913cd4296497f7726e45be"
+  integrity sha512-exHyH+IysgnRup+nB9l56TrO0v4S7toTZwthhQN+ncoFXOMscQV3SBZDmlhLOsB3eGcbDn5MlkX2T11IlcauVw==
   dependencies:
     "@parameter1/base-cms-inflector" "^2.0.0"
     "@parameter1/base-cms-marko-web-icons" "^2.46.3"
