@@ -3,7 +3,7 @@
     "template": "./facets.marko",
     "@facets": "array",
     "@content-type": "string",
-    "@phrase": "string",
+    "@search-query": "string",
     "@aliases": "array",
     "@active-id": "expression",
     "@title": "string",

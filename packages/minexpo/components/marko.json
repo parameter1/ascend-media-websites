@@ -4,8 +4,7 @@
     "./elements/marko.json",
     "./flows/marko.json",
     "./nodes/marko.json",
-    "./page-wrappers/marko.json",
-    "./search/marko.json"
+    "./page-wrappers/marko.json"
   ],
   "<minexpo-site-footer>": {
     "template": "./site-footer.marko"

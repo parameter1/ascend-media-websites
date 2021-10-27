@@ -1,31 +1,27 @@
-import { getAsArray, getAsObject } from "@parameter1/base-cms-object-path";
+import { get, getAsArray, getAsObject } from "@parameter1/base-cms-object-path";
+import { cleanPath } from "@parameter1/base-cms-utils";
 import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
 import hierarchyIds from "@parameter1/base-cms-marko-web/utils/hierarchy-ids";
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import queryFragment from "../../graphql/fragments/content-list";
 import { retrieveSections } from "../../utils/retrieve-sections";
 import categorySectionsFragment from "../../graphql/fragments/category-sections"
-import { buildContentQuery } from "../../components/search/queries";
+import countryFacetsLoader from "../../loaders/country-facets";
 import { getChildSectionIds } from "../../utils/get-child-section-ids";
 
 
 $ const {
-  $algolia,
-  apollo,
+  $baseBrowse,
+  $markoWebSearch: search,
   GAM,
-  pagination:
-  p,
   req,
 } = out.global;
-$ const contentType = defaultValue(req.query.type, 'Company');
+$ const sortField = (search.input.searchQuery) ? undefined : "NAME";
+$ const sortOrder = (search.input.searchQuery) ? undefined : "ASC";
+$ const currentPage = search.getCurrentPage();
 $ const primaryAlias = req.path.replace(/^\/+/, '').split('/')[0];
-$ const selectedCountry = defaultValue(req.query.country, '');
-$ const phrase = defaultValue(req.query.phrase, '');
-$ const supportedContendTypes = {
-  Company: 'Exhibitor',
-  Product: 'Product',
-  News: 'News'
-};
+$ const selectedCountry = get(req, 'query.countryCode');
+$ const countryCodes = selectedCountry ? [selectedCountry] : [];
 
 $ const {
   id,
@@ -33,16 +29,9 @@ $ const {
   name,
   pageNode,
 } = input;
-$ const perPage = 20;
 
 <marko-web-resolve-page|{ data: section }| node=pageNode>
-  $ let queryParams = {
-    sectionId: section.id,
-    optionName: ["Standard"],
-    queryFragment,
-    includeContentTypes: [contentType]
-  };
-  $ if ('Company' === contentType) queryParams.sort = { field: 'name', order: 'asc' };
+  $ const countryFacetsPromise = countryFacetsLoader($baseBrowse, { searchQuery: search.input.searchQuery, assignedToWebsiteSectionIds: [section.id] });
   <marko-web-website-section-page-layout id=id alias=alias name=name attrs={"aria-label": `website-section-${id}`}>
     <@head>
       <marko-web-gtm-website-section-context|{ context }| alias=alias>
@@ -76,17 +65,20 @@ $ const perPage = 20;
           </div>
         </@section>
         <@section>
-          <form method="GET" action=req.path class="search-form row">
+          <marko-web-search-form>
+            <@block class="search-form row" />
             <div class="col form-group search-form__group search-form__group--phrase">
               <label for="search-phrase" class="sr-only">Enter search phrase</label>
-              <input id="search-phrase" name="phrase" type="search" class="form-control" value=phrase placeholder="Enter search phrase...">
-              <if(contentType !== 'Company')>
-                <label for="content-type" class="sr-only">Content Type</label>
-                <input id="content-type" name="type" type="hidden" class="form-control" value=contentType placeholder="">
-              </if>
+              <marko-web-search-input
+                id="search-phrase"
+                class="form-control"
+                placeholder="Enter search phrase..."
+              />
             </div>
-            <button type="submit" class="col btn btn-primary search-form__btn search-form__btn--search">Search</button>
-          </form>
+            <button type="submit" class="col btn btn-primary search-form__btn search-form__btn--search">
+              Search
+            </button>
+          </marko-web-search-form>
         </@section>
 
         <@section>
@@ -109,59 +101,69 @@ $ const perPage = 20;
                           title="Product Categories"
                           aliases=aliases
                           active-id=id
-                          content-type=contentType
-                          phrase=phrase
+                          search-query=search.input.searchQuery
                           with-toggle=true
                           primary-alias=primaryAlias
                           initially-expanded=(alias !== primaryAlias)
                         />
                       </div>
-                      <!-- <div class="mb-block">
-                        <div class="content-type-facets">
-                          <h3 class="content-type-facets__title">
-                            Type
-                            <default-theme-menu-toggle-button
-                              class-name='content-type-facets__toggle'
-                              targets=['.content-type-facets__list']
-                              toggle-class='content-type-facets__list--open'
-                              initially-expanded=(contentType !== 'Company')
-                              icon-modifiers=["sm"]
-                              icon-name="plus"
-                              expanded-icon-name="dash"
-                            />
-                          </h3>
-                          $ let contentFilterAlias = (phrase) ? `/${section.alias}?phrase=${phrase}` : `/${section.alias}`;
-                          $ const contentTypeFilterClass = (contentType !== 'Company') ? 'content-type-facets__list content-type-facets__list--open' : 'content-type-facets__list';
-                          <div class=contentTypeFilterClass>
-                            <for|key,value| in=supportedContendTypes>
-                              <if(key === 'Company')>
-                              $ const activeModifier = ('Company' === contentType) ? '--active' : '';
-                              <div class=`content-type-facets__item content-type-facets__item--${key}`>
-                                <a class=`content-type-facets__link content-type-facets__link${activeModifier}` href=contentFilterAlias>
-                                  ${value}
-                                </a>
+                      <marko-web-resolve|{ resolved }| promise=countryFacetsPromise>
+                        $ const { countryFacets } = resolved;
+                        <if(countryFacets.length)>
+                          <div class="mb-block">
+                            <div class="directory-country-facets">
+                              <h3 class="directory-country-facets__title">
+                                Country
+                                <default-theme-menu-toggle-button
+                                  class-name=`directory-country-facets__toggle`
+                                  targets=[`.directory-country-facets__list`]
+                                  toggle-class=`directory-country-facets__list--open`
+                                  initially-expanded=(selectedCountry !== '')
+                                  icon-modifiers=["sm"]
+                                  icon-name="plus"
+                                  expanded-icon-name="dash"
+                                />
+                              </h3>
+                              $ const countryFilterFacetClass = (selectedCountry !== '') ? "directory-country-facets__list directory-country-facets__list--open" : "directory-country-facets__list";
+                              <div class=countryFilterFacetClass>
+                                <for|country| of=countryFacets>
+                                  <if(selectedCountry === country.id)>
+                                  <marko-web-browser-component
+                                      name="DirectoryAutoScroll"
+                                      props={
+                                        containerTarget: '.directory-country-facets > .directory-country-facets__list',
+                                        elementTarget: `.directory-country-facets__link--active`,
+                                        offset: -12,
+                                      }
+                                    />
+                                    $ const countryFilterLink = (search.input.searchQuery) ? `/${section.alias}?searchQuery=${search.input.searchQuery}` : `/${section.alias}`;
+                                    <div class="directory-country-facets__item directory-country-facets__item--51709">
+                                      <a
+                                        class="directory-country-facets__link directory-country-facets__link--active"
+                                        href=countryFilterLink
+                                      >
+                                        ${country.name}
+                                      </a>
+                                    </div>
+                                  </if>
+                                  <else>
+                                    $ const countryFilterLink = (search.input.searchQuery) ? `/${section.alias}?searchQuery=${search.input.searchQuery}&countryCode=${country.id}` : `/${section.alias}?countryCode=${country.id}`;
+                                    <div class="directory-country-facets__item directory-country-facets__item--51709">
+                                      <a
+                                        class="directory-country-facets__link"
+                                        href=countryFilterLink
+                                      >
+                                        ${country.name}
+                                      </a>
+                                    </div>
+                                  </else>
+                                </for>
                               </div>
-                              </if>
-                              <else-if(key === contentType)>
-                                <div class=`content-type-facets__item content-type-facets__item--${key}`>
-                                  <a class=`content-type-facets__link content-type-facets__link--active` href=contentFilterAlias>
-                                    ${value}
-                                  </a>
-                                </div>
-                              </else-if>
-                              <else>
-                                $ contentFilterAlias = (phrase) ? `/${section.alias}?phrase=${phrase}&type=${key}` : `/${section.alias}?type=${key}`;
-                                <div class=`content-type-facets__item content-type-facets__item--${key}`>
-                                  <a class=`content-type-facets__link content-type-facets__link` href=contentFilterAlias>
-                                    ${value}
-                                  </a>
-                                </div>
-                              </else>
-                            </for>
+                            </div>
                           </div>
-                        </div>
-                      </div> -->
-                      <if('Company' === contentType)>
+                        </if>
+                      </marko-web-resolve>
+                      <!-- <if('Company' === contentType)>
                         <div class="mb-block">
                           <minexpo-country-facets|{ countries }|
                             phrase=phrase
@@ -218,7 +220,7 @@ $ const perPage = 20;
                             </div>
                           </minexpo-country-facets>
                         </div>
-                      </if>
+                      </if> -->
                     </div>
                   </div>
 
@@ -263,18 +265,18 @@ $ const perPage = 20;
                 </div>
               </div>
               <div class="col-lg-8 mb-block">
-                <minexpo-content-search-query|{ nodes, totalCount, facets }|
-                  phrase=phrase
-                  limit=perPage
-                  skip=p.skip({ perPage })
-                  content-type=contentType
-                  country=selectedCountry
-                  section-ids=sectionIds
+                <marko-web-search-query|{ nodes, totalCount }|
+                  limit=search.getLimit()
+                  skip=search.getSkip()
+                  sortField=sortField
+                  sortOrder=sortOrder
+                  countryCodes=countryCodes
+                  search-query=search.input.searchQuery
+                  assigned-to-website-section-ids=[section.id]
                   query-fragment=queryFragment
                 >
                   <div class="row">
                     <div class="col">
-                      <!-- $ console.log(facets.country); -->
                       <marko-web-node-list
                           inner-justified=true
                           flush-x=false
@@ -282,14 +284,8 @@ $ const perPage = 20;
                           modifiers=['content-list']
                         >
                         <@header>
-                          <if('Company' === contentType)>
-                            <if(p.page > 1)>${supportedContendTypes[contentType]} in ${section.name}: Page ${p.page}</if>
-                            <else>${supportedContendTypes[contentType]}s Alphabetically</else>
-                          </if>
-                          <else>
-                            <if(p.page > 1)>${section.name}: Page ${p.page}</if>
-                            <else>Latest ${supportedContendTypes[contentType]} in ${section.name}</else>
-                          </else>
+                          <if(currentPage > 1)>Companies in ${section.name}: Page ${currentPage}</if>
+                          <else>Companies Alphabetically</else>
                         </@header>
                         <@nodes nodes=nodes>
                           <@slot|{ node }|>
@@ -308,14 +304,20 @@ $ const perPage = 20;
                   </div>
                   <div class="row">
                     <div class="col">
-                      <pagination-controls
-                        per-page=perPage
+                      <marko-web-search-pagination-controls|{ currentPage, totalPages }|
                         total-count=totalCount
-                        path=section.alias
-                      />
+                      >
+                        <@link class="btn btn-primary" />
+                        $ const reqQueryParams = defaultValue(req.query, {});
+                        $ delete reqQueryParams.page;
+                        $ const reqQueryParamsStr = (new URLSearchParams(reqQueryParams)).toString();
+                        <marko-web-element block-name="marko-web-search-pagination-controls" name="pages">
+                          <marko-web-browser-component name="PaginationPageNumberInput" props={ page: currentPage, totalPages, path: cleanPath(section.alias), queryStr: reqQueryParamsStr } />
+                        </marko-web-element>
+                      </marko-web-search-pagination-controls>
                     </div>
                   </div>
-                </minexpo-content-search-query>
+                </marko-web-search-query>
               </div>
             </div>
           </marko-web-query>

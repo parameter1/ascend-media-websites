@@ -5,14 +5,14 @@ $ const block = "directory-facets";
 $ const {
   facets,
   contentType,
-  phrase,
+  searchQuery,
   activeId,
   aliases,
   initiallyExpanded
 } = input;
 
 $ const reqParamsObj = {};
-$ if (phrase) reqParamsObj.phrase = phrase;
+$ if (searchQuery) reqParamsObj.searchQuery = searchQuery;
 $ if (contentType) reqParamsObj.type = contentType;
 $ const reqParamsStr = Object.keys(reqParamsObj || {}).map((key) => [
     encodeURIComponent(key),
@@ -63,7 +63,7 @@ $ facets.sort((a, b) => a.name.localeCompare(b.name));
           active-id=activeId
           aliases=aliases
           content-type=contentType
-          phrase=phrase
+          search-query=searchQuery
         />
       </div>
     </for>

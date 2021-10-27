@@ -3,9 +3,6 @@
   "taglib-imports": [
     "./components/marko.json"
   ],
-  "<pagination-controls>": {
-    "template": "./components/pagination-controls.marko"
-  },
   "<minexpo-site-header>": {
     "template": "./components/site-header.marko",
     "<above-nav>": {},

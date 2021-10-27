@@ -5,7 +5,7 @@ import categorySectionsFragment from "../../graphql/fragments/category-sections"
 $ const activeId = defaultValue(input.activeId, null);
 $ const aliases = defaultValue(input.aliases, []);
 $ const contentType = defaultValue(input.contentType, "");
-$ const phrase = defaultValue(input.phrase, null);
+$ const searchQuery = defaultValue(input.searchQuery, null);
 $ const primaryAlias = defaultValue(input.primaryAlias, "directory");
 $ const title = defaultValue(input.title, "Categories");
 $ const description = defaultValue(input.description, "");
@@ -23,7 +23,7 @@ $ const withToggle = defaultValue(input.withToggle, false);
     active-id=activeId
     aliases=aliases
     content-type=contentType
-    phrase=phrase
+    search-query=searchQuery
     with-toggle=withToggle
     initially-expanded=input.initiallyExpanded
   />
