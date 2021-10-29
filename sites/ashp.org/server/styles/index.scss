@@ -1,16 +1,16 @@
 @import "../../node_modules/@ascend-media/package-global/scss/variables";
 
-$primary: #1c7cd5;
-$secondary: #76bc43;
+$primary: #006eb7;
+$secondary: #f47932;
 
 $theme-site-navbar-logo-height: 100px;
 $theme-site-navbar-logo-height-sm: 45px;
 $theme-site-footer-logo-height: 100px;
 $theme-site-footer-primary-bg-color: $primary;
 $theme-site-footer-secondary-bg-color: $primary;
-$theme-site-footer-copyright-color: #fff;
-$theme-site-navbar-primary-bg-color: $primary;
-$theme-site-navbar-secondary-bg-color: #fff;
+$theme-site-footer-copyright-color: $white;
+$theme-site-navbar-primary-bg-color: #efefef;
+$theme-site-navbar-secondary-bg-color: $white;
 $theme-site-navbar-secondary-type: light;
 
 
@@ -28,5 +28,41 @@ $theme-site-navbar-secondary-type: light;
 .site-footer {
   &__container--secondary {
     background-color: $primary;
+  }
+}
+
+.site-navbar {
+  &--primary {
+    .site-navbar {
+      &__link {
+        color: $primary;
+      }
+    }
+  }
+  &--secondary {
+    background: linear-gradient(180deg, $black 0%, $primary 60%);
+    .site-navbar {
+      &__link {
+        color: $white;
+      }
+    }
+  }
+  &__items {
+    &--tertiary {
+      .site-navbar {
+        &__link {
+          svg {
+            fill: $white;
+          }
+        }
+      }
+    }
+  }
+  &__toggler {
+    .marko-web-icon {
+      svg {
+        fill: $white;
+      }
+    }
   }
 }

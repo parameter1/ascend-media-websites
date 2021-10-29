@@ -11,7 +11,7 @@ const userTools = [
 ];
 
 const topics = [
-  { href: '/ashp-news', label: 'ASHP News' },
+  { href: '/ashp-spotlight', label: 'ASHP Spotlight' },
   { href: '/meeting-coverage', label: 'Meeting Coverage' },
   { href: 'https://midyear.ashp.org/session-schedule-and-itinerary-planner?loginreturnUrl=SSOCheckOnly', label: 'Program', target: '_blank' },
   { href: '/awards-events', label: 'Awards and Events' },
