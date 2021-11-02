@@ -41,8 +41,12 @@
     }
   }
 
+  &__header a {
+    color: $gray-700;
+  }
+
   &__footer {
-    color: $gray-600;
+    color: $gray-700;
   }
 
   &__footer-left {
