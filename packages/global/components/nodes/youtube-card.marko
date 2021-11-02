@@ -19,7 +19,7 @@ $ const { linkAttrs } = input;
     link={ href: video.url, target: "_blank", attrs: linkAttrs }
   />
   <@body>
-    <@title tag="h5">
+    <@title tag="h3">
       <marko-web-obj-text type="content" obj=video field="title" tag=null link={ href: video.url, target: "_blank", attrs: linkAttrs } />
     </@title>
     <@text modifiers=["teaser"] show=(video.description)>

@@ -32,7 +32,7 @@ $ const { linkAttrs } = input;
         <marko-web-website-section-name obj=primarySection link=true />
       </@left>
     </@header>
-    <@title tag="h5" modifiers=input.titleModifiers>
+    <@title tag="h2" modifiers=input.titleModifiers>
       <marko-web-content-short-name tag=null obj=content link={ attrs: linkAttrs } />
     </@title>
     <@text modifiers=["teaser"] show=(withTeaser && content.teaser)>
