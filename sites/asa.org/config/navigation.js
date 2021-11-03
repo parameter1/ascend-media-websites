@@ -27,7 +27,7 @@ const resources = [
 
 const secondary = [
   { href: 'https://www.asahq.org/annualmeeting/attend/health', label: 'Health & Safety', target: '_blank' },
-  { href: 'https://reliancegraphics.tuosystems.com/shopping/1399737?store_catalog_id=90680', label: 'Swag Store', target: '_blank' },
+  { href: 'https://asa-365.ascendeventmedia.com/', label: 'Archives', target: '_blank' },
   { href: 'https://www.abstractsonline.com/pp8/#!/9323/credits', label: 'Claim CME', target: '_blank' },
 ];
 
