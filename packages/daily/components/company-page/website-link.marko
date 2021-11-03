@@ -1,11 +1,10 @@
 import { get, getAsObject } from "@parameter1/base-cms-object-path";
 
-$ const { id, name } = getAsObject(input, "company");
-$ const href = get(input, "company.website");
+$ const { website: href, id: companyId, name: companyName } = getAsObject(input, "company");
 $ const props = {
   href,
-  label: "Visit Site",
-  classNames: "btn btn-sm btn-primary btn-block",
+  companyId,
+  companyName
 };
 
 <if(href)>
