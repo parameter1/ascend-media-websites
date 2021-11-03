@@ -30,13 +30,13 @@
         line-height: 1.4;
 
         // stylelint-disable-next-line
-        h3 {
+        h2 {
           margin-bottom: .25rem;
           font-size: 18px;
         }
 
         // stylelint-disable-next-line
-        h4 {
+        h3 {
           font-size: 16px;
           color: $primary;
         }
@@ -47,6 +47,7 @@
         }
 
         // stylelint-disable-next-line
+        p.footnote,
         h6 b {
           color: $dark;
         }
