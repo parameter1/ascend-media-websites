@@ -61,5 +61,8 @@
   },
   "<global-global-right-rail-block>": {
     "template": "./right-rail.marko"
+  },
+  "<global-notice-pushdown-block>": {
+    "template": "./notice-pushdown.marko"
   }
 }
