@@ -61,3 +61,13 @@ $pswp__root-z-index: $theme-site-header-z-index + 1 !default;
     }
   }
 }
+
+.pushdown-wrapper {
+  padding-top: calculate-navbar-height-for(default);
+
+  @each $breakpoint, $width in sort-map-by-values($theme-site-header-breakpoints, desc) {
+    @media (max-width: $width) {
+      padding-top: calculate-navbar-height-for($breakpoint);
+    }
+  }
+}
