@@ -39,7 +39,7 @@ module.exports = {
     },
   },
   inquiry: {
-    enabled: false,
+    enabled: true,
     directSend: true,
     sendTo: 'DSanford@ascendintegratedmedia.com',
     sendFrom: 'IMEX <noreply@ascendintegratedmedia.com>',
