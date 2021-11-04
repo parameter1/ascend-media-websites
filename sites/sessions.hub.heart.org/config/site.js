@@ -51,4 +51,5 @@ module.exports = {
     bgColor: '#ffffff',
   },
   ahaFooter: true,
+  noticePushdown: true,
 };
