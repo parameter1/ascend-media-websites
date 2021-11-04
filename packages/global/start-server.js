@@ -9,6 +9,8 @@ const fragments = require('./fragments');
 
 const buildNativeXConfig = require('./native-x/build-config');
 
+const pushdownCookieFinder = require('./middleware/pushdown-cookie-finder');
+
 const routes = siteRoutes => (app) => {
   // Load site routes.
   siteRoutes(app);
@@ -37,6 +39,9 @@ module.exports = (options = {}) => {
 
       // Clean all response bodies.
       app.use(cleanResponse());
+
+      // Use cookieFinder middleware
+      app.use(pushdownCookieFinder());
     },
     onAsyncBlockError: e => newrelic.noticeError(e),
   });
