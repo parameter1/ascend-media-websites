@@ -13,13 +13,10 @@ const userTools = [
 
 const topics = [
   { href: '/late-breaking-science', label: 'Late-Breaking Science' },
-  { href: '/isc-news', label: 'ISC News' },
-  { href: '/exhibit-hall', label: 'Exhibit Hall' },
+  { href: '/daily-coverage', label: 'Daily Coverage' },
+  { href: '/industry-highlights', label: 'Industry Highlights' },
   { href: 'https://eventpilotadmin.com/web/planner.php?id=ISC21', label: 'Program' },
-  // { href: '#', label: 'Claim CME', target: '_blank' },
-  // { href: '#', label: 'OnDemand' },
   { href: '/previews', label: 'Previews' },
-  // { href: '/archives', label: 'Archives' },
 ];
 
 const secondary = [

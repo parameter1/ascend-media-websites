@@ -17,7 +17,6 @@ const topics = [
   { href: '/industry-highlights', label: 'Industry Highlights' },
   { href: 'https://eventpilotadmin.com/web/planner.php?id=AHA21', label: 'Program', target: '_blank' },
   { href: '/previews', label: 'Previews' },
-  { href: '/archives', label: 'Archives' },
 ];
 
 const secondary = [
