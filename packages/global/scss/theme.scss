@@ -71,7 +71,7 @@ $pswp__root-z-index: $theme-site-header-z-index + 1 !default;
     }
   }
   .pushdown-inner-container {
-    max-width: 1150px;
+    max-width: $marko-web-document-container-max-width;
     margin: auto;
   }
 }
