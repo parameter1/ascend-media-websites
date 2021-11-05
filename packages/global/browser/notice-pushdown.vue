@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!closed" class="pushdown-wrapper" style="background-color:white">
+  <div v-if="!isClosed" class="pushdown-wrapper" style="background-color:white">
     <div class="text-center p-4 font-size-sm pushdown-inner-container">
       <div class="d-flex justify-content-end">
         <button
@@ -35,17 +35,22 @@ export default {
     },
   },
 
+  data: () => ({
+    isClosed: null,
+  }),
+
   mounted() {
+    this.isClosed = this.closed;
     this.$nextTick(() => {
-      if (!this.closed) {
+      if (!this.isClosed) {
         document.getElementsByClassName('document-container')[0].style.paddingTop = '0px';
       }
     });
   },
   methods: {
     close() {
-      if (!this.closed) {
-        this.closed = true;
+      if (!this.isClosed) {
+        this.isClosed = true;
         document.getElementsByClassName('document-container')[0].removeAttribute('style');
       }
     },
