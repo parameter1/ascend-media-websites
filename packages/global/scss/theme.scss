@@ -70,4 +70,8 @@ $pswp__root-z-index: $theme-site-header-z-index + 1 !default;
       padding-top: calculate-navbar-height-for($breakpoint);
     }
   }
+  .pushdown-inner-container {
+    max-width: 1150px;
+    margin: auto;
+  }
 }
