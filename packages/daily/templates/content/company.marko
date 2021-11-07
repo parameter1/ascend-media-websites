@@ -54,12 +54,10 @@ $ const adSlots = ({ aliases }) => ({
         </div>
 
         <div class="col-lg-4 mb-block page-rail">
-          <marko-web-gam-display-ad id="gpt-ad-rail1" />
           <daily-company-page-key-contacts
             contacts=resolved.getEdgeNodesFor("publicContacts")
             class="mb-block"
           />
-
           <if(resolved.get("enableRmi"))>
             <marko-web-node-list collapsible=false modifiers=["sticky-top"]>
               <@header>Request More Information</@header>
@@ -68,6 +66,7 @@ $ const adSlots = ({ aliases }) => ({
               </@body>
             </marko-web-node-list>
           </if>
+          <marko-web-gam-display-ad id="gpt-ad-rail1" />
         </div>
       </div>
       <marko-web-gam-display-ad id="gpt-ad-lb1" modifiers=["max-width-790", "center"] />
