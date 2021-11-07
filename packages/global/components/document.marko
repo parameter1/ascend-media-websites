@@ -27,6 +27,9 @@ $ const aboveContainer = get(input, "aboveContainer.renderBody");
 
     <global-site-header />
     <default-theme-site-menu modifiers=["right"] />
+    <if(site.config.noticePushdown)>
+      <global-notice-pushdown-block />
+    </if>
   </@above-container>
   <@below-container>
     <${input.belowContainer} />

@@ -1,0 +1,12 @@
+import { getAsObject } from "@parameter1/base-cms-object-path";
+
+$ const { site } = out.global;
+$ const { hasCookie } = getAsObject(out.global, "pushdownState");
+
+$ const props = {
+  closed: hasCookie,
+  message: site.config.pushdownMessage,
+  imgSrc: site.config.pushdownImgSrc,
+}
+
+<marko-web-browser-component name="NoticePushdown" props=props />

@@ -19,6 +19,7 @@ $pswp__root-z-index: $theme-site-header-z-index + 1 !default;
 @import "./components/marko-web-icon";
 @import "./components/node-list";
 @import "./components/node";
+@import "./components/notice-pushdown";
 @import "./components/page-attribution";
 @import "./components/page-contents";
 @import "./components/page-dates";

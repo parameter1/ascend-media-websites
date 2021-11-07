@@ -14,6 +14,7 @@ Vue.use(VModal);
 
 const CompanyProfileWebsiteLink = () => import(/* webpackChunkName: "company-profile-website-link" */ './website-link.vue');
 const CompanyProfileSocialLink = () => import(/* webpackChunkName: "company-profile-social-link" */ './social-link.vue');
+const NoticePushdown = () => import(/* webPackChunkName: "jump-modal" */ './notice-pushdown.vue');
 
 window.jQuery = jQuery;
 window.$ = jQuery;
@@ -29,4 +30,5 @@ export default (Browser) => {
 
   Browser.register('CompanyProfileWebsiteLink', CompanyProfileWebsiteLink);
   Browser.register('CompanyProfileSocialLink', CompanyProfileSocialLink);
+  Browser.register('NoticePushdown', NoticePushdown);
 };

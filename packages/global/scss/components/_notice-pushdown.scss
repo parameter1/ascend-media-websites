@@ -1,0 +1,19 @@
+.notice-pushdown {
+  padding-top: calculate-navbar-height-for(default);
+  background-color: #fff;
+
+  @each $breakpoint, $width in sort-map-by-values($theme-site-header-breakpoints, desc) {
+    @media (max-width: $width) {
+      padding-top: calculate-navbar-height-for($breakpoint);
+    }
+  }
+  &--inner-container {
+    max-width: $marko-web-document-container-max-width;
+    margin: auto;
+  }
+  .btn {
+    color: #000;
+    font-size: 2rem;
+    padding: 0;
+  }
+}
