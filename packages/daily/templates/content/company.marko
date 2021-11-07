@@ -6,6 +6,7 @@ $ const { id, type, pageNode } = data;
 
 $ const adSlots = ({ aliases }) => ({
   "gpt-ad-lb1": GAM.getAdUnit({ name: "lb1", aliases }),
+  "gpt-ad-rail1": GAM.getAdUnit({ name: "rail1", aliases }),
 });
 
 <marko-web-content-page-layout id=id type=type>
@@ -21,9 +22,6 @@ $ const adSlots = ({ aliases }) => ({
   </@head>
 
   <@page>
-    <!-- <daily-leaderboard-block /> -->
-    <!-- <marko-web-gam-display-ad id="gpt-ad-lb1" modifiers=["top-of-page", "max-width-790", "center"] /> -->
-
     <marko-web-resolve-page|{ data: content, resolved }| node=pageNode>
       <marko-web-page-wrapper modifiers=["shadow"] class="mb-block">
         <@section>
@@ -60,17 +58,18 @@ $ const adSlots = ({ aliases }) => ({
             contacts=resolved.getEdgeNodesFor("publicContacts")
             class="mb-block"
           />
-
           <if(resolved.get("enableRmi"))>
-            <marko-web-node-list collapsible=false modifiers=["sticky-top"]>
+            <marko-web-node-list collapsible=false>
               <@header>Request More Information</@header>
               <@body>
                 <marko-web-inquiry-form content=content with-header=false modifiers=["right-rail"] />
               </@body>
             </marko-web-node-list>
           </if>
+          <marko-web-gam-display-ad id="gpt-ad-rail1" />
         </div>
       </div>
+      <marko-web-gam-display-ad id="gpt-ad-lb1" modifiers=["max-width-790", "center"] />
     </marko-web-resolve-page>
   </@page>
 </marko-web-content-page-layout>
