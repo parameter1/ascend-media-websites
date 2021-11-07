@@ -19,6 +19,7 @@ $pswp__root-z-index: $theme-site-header-z-index + 1 !default;
 @import "./components/marko-web-icon";
 @import "./components/node-list";
 @import "./components/node";
+@import "./components/notice-pushdown";
 @import "./components/page-attribution";
 @import "./components/page-contents";
 @import "./components/page-dates";
@@ -59,19 +60,5 @@ $pswp__root-z-index: $theme-site-header-z-index + 1 !default;
       padding-bottom: 0;
       border-bottom: none;
     }
-  }
-}
-
-.pushdown-wrapper {
-  padding-top: calculate-navbar-height-for(default);
-
-  @each $breakpoint, $width in sort-map-by-values($theme-site-header-breakpoints, desc) {
-    @media (max-width: $width) {
-      padding-top: calculate-navbar-height-for($breakpoint);
-    }
-  }
-  .pushdown-inner-container {
-    max-width: $marko-web-document-container-max-width;
-    margin: auto;
   }
 }

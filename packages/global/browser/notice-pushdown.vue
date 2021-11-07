@@ -1,11 +1,10 @@
 <template>
-  <div v-if="!isClosed" class="pushdown-wrapper" style="background-color:white">
-    <div class="text-center p-4 font-size-sm pushdown-inner-container">
+  <div v-if="!isClosed" class="notice-pushdown">
+    <div class="text-center p-4 font-size-sm notice-pushdown--inner-container">
       <div class="d-flex justify-content-end">
         <button
           type="button"
           class="btn btn-link font-weight-bold"
-          :style="{ color: '#000', fontSize: '24px', padding: 0 }"
           @click="close"
         >
           &times;
