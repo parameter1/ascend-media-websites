@@ -6,8 +6,8 @@ module.exports = () => (req, res, next) => {
   const hasCookie = Boolean(get(req, `cookies.${cookieName}`));
 
   if (!hasCookie) {
-    // Expire in 2yr if not already present
-    const days = 730;
+    // Expire in 1 year if not already present
+    const days = 365;
     const maxAge = days * 24 * 60 * 60 * 1000;
     res.cookie(cookieName, true, { maxAge });
   }
