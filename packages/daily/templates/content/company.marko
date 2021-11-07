@@ -59,7 +59,7 @@ $ const adSlots = ({ aliases }) => ({
             class="mb-block"
           />
           <if(resolved.get("enableRmi"))>
-            <marko-web-node-list collapsible=false modifiers=["sticky-top"]>
+            <marko-web-node-list collapsible=false>
               <@header>Request More Information</@header>
               <@body>
                 <marko-web-inquiry-form content=content with-header=false modifiers=["right-rail"] />
