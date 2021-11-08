@@ -13,7 +13,7 @@ const userTools = [
 const topics = [
   { href: '/destinations', label: 'Destinations' },
   { href: '/accommodations-venues', label: 'Accommodations & Venues' },
-  // { href: '/associations', label: 'Associations' },
+  { href: '/associations', label: 'Associations' },
   { href: '/More', label: 'More' },
   { href: 'https://www.imexamerica.com/whats-on/schedule-at-a-glance', label: 'Program', target: '_blank' },
   { href: 'https://www.imexamerica.com/', label: 'IMEX America', target: '_blank' },
