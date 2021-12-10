@@ -20,8 +20,8 @@ const topics = [
 ];
 
 const secondary = [
-  { href: 'https://isc.heart.org', label: 'Virtual Experience Access', target: '_blank' },
-  { href: ' https://asa.apprisor.org', label: 'Posters Access', target: '_blank' },
+  // { href: 'https://isc.heart.org', label: 'Virtual Experience Access', target: '_blank' },
+  // { href: ' https://asa.apprisor.org', label: 'Posters Access', target: '_blank' },
 ];
 
 module.exports = {
