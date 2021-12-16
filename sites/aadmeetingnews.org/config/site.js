@@ -10,6 +10,7 @@ module.exports = {
   nativeX,
   company: 'Ascend Media',
   copyrightNotice: 'All rights reserved. DermWorld Meeting News Central is a publication of the American Academy of Dermatology.',
+  customCopyright: '© Ascend Media All rights reserved. DermWorld Meeting News Central is a publication of the American Academy of Dermatology.',
   sponsoredText: 'Paid Advertising Content',
   socialMediaLinks: [
     { provider: 'facebook', href: 'https://www.facebook.com/AADmember', target: '_blank' },
