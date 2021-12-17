@@ -12,7 +12,7 @@ const userTools = [
 
 const topics = [
   { href: '/daily-coverage', label: 'Daily Coverage' },
-  { href: '/industry-programs', label: 'Industry Programs' },
+  { href: '/industry-highlights', label: 'Industry Highlights' },
   { href: 'https://lms.aad.org/MeetingWebApp/Sessions/index/SM2021', label: 'Meeting Program', target: '_blank' },
 ];
 
