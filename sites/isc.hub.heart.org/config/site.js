@@ -21,8 +21,8 @@ module.exports = {
     containerId: 'GTM-TV97VDV',
   },
   twitterFeed: {
-    href: 'http://www.twitter.com/American_Heart',
-    tagline: 'Tweets from American Heart',
+    href: 'https://twitter.com/AHAScience',
+    tagline: 'Tweets from AHA Science',
   },
   gcse: {
     id: '8fda9b5d0e7f9c0d5',
