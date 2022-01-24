@@ -1,7 +1,7 @@
 @import "../../node_modules/@ascend-media/package-global/scss/variables";
 
-$primary: #2a3a8d;
-$secondary: #ee5f42;
+$primary: #5d4777;
+$secondary: #e87722;
 
 $theme-site-navbar-logo-height: 100px;
 $theme-site-navbar-logo-height-sm: 30px;
@@ -10,8 +10,8 @@ $theme-site-footer-logo-height-sm: 50px;
 $theme-site-footer-primary-bg-color: $primary;
 $theme-site-footer-secondary-bg-color: $primary;
 $theme-site-footer-copyright-color: #fff;
-$theme-site-navbar-primary-bg-color: $primary;
-$theme-site-navbar-secondary-bg-color: #fff;
+$theme-site-navbar-primary-bg-color: $secondary;
+$theme-site-navbar-secondary-bg-color: $primary;
 $theme-site-navbar-secondary-type: light;
 
 
@@ -29,5 +29,40 @@ $theme-site-navbar-secondary-type: light;
 .site-footer {
   &__container--secondary {
     background-color: #fff;
+  }
+}
+
+.site-navbar {
+  &--primary {
+    .site-navbar {
+      &__link {
+        color: #000;
+      }
+    }
+  }
+  &--secondary {
+    .site-navbar {
+      &__link {
+        color: $white;
+      }
+    }
+  }
+  &__items {
+    &--tertiary {
+      .site-navbar {
+        &__link {
+          svg {
+            fill: $white;
+          }
+        }
+      }
+    }
+  }
+  &__toggler {
+    .marko-web-icon {
+      svg {
+        fill: $white;
+      }
+    }
   }
 }
