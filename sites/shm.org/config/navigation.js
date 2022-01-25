@@ -5,24 +5,15 @@ const searchItem = {
   modifiers: ['search-icon'],
 };
 
-const userTools = [
-  // { href: '/page/privacy-policy', label: 'Privacy Policy', target: '_blank' },
-  // { href: '/page/terms-conditions', label: 'Terms & Conditions' },
-];
+const userTools = [];
 
 const topics = [
-  { href: '/section-1', label: 'Section 1' },
-  { href: '/section-2', label: 'Section 2' },
-  { href: '/section-3', label: 'Section 3' },
-  { href: '/section-4', label: 'Section 4' },
-  { href: '/section-5', label: 'Section 5' },
-  { href: '/section-6', label: 'Section 6' },
-];
-
-const secondary = [
-  // { href: 'https://aua2021.app.swapcard.com/event/aua-2021-annual-meeting-1', label: 'Virtual AUA2021', target: '_blank' },
-  // { href: '#', label: 'Abstracts', target: '_blank' },
-  // { href: '#', label: 'Claim CME', target: '_blank' },
+  { href: '/daily-coverage', label: 'Daily Coverage' },
+  { href: '#', label: 'Program' }, // NEED LINK
+  { href: '/partners-sponsors', label: 'Partners and Sponsors' },
+  { href: '/awards-events', label: 'Awards and Events' },
+  { href: '/scientific-abstracts', label: 'Scientific Abstracts' },
+  { href: '/previews', label: 'Previews' },
 ];
 
 module.exports = {
@@ -31,7 +22,7 @@ module.exports = {
     items: [...topics],
   },
   secondary: {
-    items: [...secondary],
+    items: [{ href: 'https://twitter.com/societyhospmed', label: '#SHMConverge', target: '_blank' }],
   },
   tertiary: {
     items: [searchItem],
@@ -43,7 +34,13 @@ module.exports = {
     },
     {
       label: 'Resources',
-      items: [...secondary],
+      items: [ // NEEDS LINKS
+        { href: '#', label: 'Conference FAQs' },
+        { href: '#', label: 'COVID and Safety Protocols' },
+        { href: '#', label: 'How to claim CME and other educational credits' },
+        { href: '#', label: 'SHM Converge 2023' },
+        { href: '#', label: 'Other SHM Events' },
+      ],
     },
     {
       label: 'User Tools',
