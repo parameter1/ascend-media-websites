@@ -9,11 +9,10 @@ module.exports = {
   company: 'Ascend Media',
   sponsoredText: 'Paid Advertising Content',
   socialMediaLinks: [
-    { provider: 'twitter', href: '', target: '_blank' },
-    { provider: 'facebook', href: '', target: '_blank' },
-    { provider: 'instagram', href: '', target: '_blank' },
-    { provider: 'youtube', href: '', target: '_blank' },
-    { provider: 'linkedin', href: '', target: '_blank' },
+    { provider: 'twitter', href: 'https://twitter.com/SocietyHospMed', target: '_blank' },
+    { provider: 'facebook', href: 'https://www.facebook.com/SocietyHospMed/', target: '_blank' },
+    { provider: 'instagram', href: 'https://www.instagram.com/societyhospmed/', target: '_blank' },
+    { provider: 'linkedin', href: 'https://www.linkedin.com/company/societyhospmed/', target: '_blank' },
   ],
   gtm: {
     containerId: 'GTM-TBD',
