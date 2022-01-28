@@ -15,7 +15,7 @@ const topics = [
   { href: '/late-breaking-science', label: 'Late-Breaking Science' },
   { href: '/daily-coverage', label: 'Daily Coverage' },
   { href: '/industry-highlights', label: 'Industry Highlights' },
-  { href: 'https://eventpilotadmin.com/web/planner.php?id=ISC21', label: 'Program' },
+  { href: 'https://eventpilotadmin.com/web/planner.php?id=ISC22', label: 'Program' },
 ];
 
 const secondary = [
