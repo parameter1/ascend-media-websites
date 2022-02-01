@@ -15,7 +15,7 @@ module.exports = {
     { provider: 'linkedin', href: 'https://www.linkedin.com/company/societyhospmed/', target: '_blank' },
   ],
   gtm: {
-    containerId: 'GTM-TBD',
+    containerId: 'GTM-K7Q5JTS',
   },
   twitterFeed: {
     href: '',
