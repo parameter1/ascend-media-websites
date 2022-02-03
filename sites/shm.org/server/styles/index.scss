@@ -1,0 +1,81 @@
+@import "../../node_modules/@ascend-media/package-global/scss/variables";
+
+$primary: #ffa400;
+$secondary: #57262f;
+
+$theme-site-navbar-logo-height: 100px;
+$theme-site-navbar-logo-height-sm: 30px;
+$theme-site-footer-logo-height: 100px;
+$theme-site-footer-logo-height-sm: 50px;
+$theme-site-footer-primary-bg-color: $primary;
+$theme-site-footer-secondary-bg-color: $primary;
+$theme-site-footer-copyright-color: #fff;
+$theme-site-navbar-primary-bg-color: $primary;
+$theme-site-navbar-secondary-bg-color: #202945;
+$theme-site-navbar-secondary-type: light;
+
+
+@import "../../node_modules/@ascend-media/package-global/scss/theme";
+
+.node {
+  &__footer-left a {
+    color: #795259;
+  }
+  &__footer-right {
+    white-space: nowrap;
+  }
+  &__header a {
+    color: $secondary;
+  }
+}
+
+.site-navbar {
+  $self: &;
+  &--primary {
+    .site-navbar {
+      &__link {
+        color: $secondary;
+      }
+    }
+  }
+  &--secondary {
+    .site-navbar {
+      &__link {
+        color: $white;
+      }
+    }
+  }
+  &__items {
+    &--secondary {
+      #{ $self } {
+        &__item {
+          &:first-child {
+            font-weight: 700;
+          }
+        }
+      }
+    }
+    &--tertiary {
+      .site-navbar {
+        &__link {
+          svg {
+            fill: $white;
+          }
+        }
+      }
+    }
+  }
+  &__toggler {
+    .marko-web-icon {
+      svg {
+        fill: $white;
+      }
+    }
+  }
+}
+
+.site-footer {
+  &__container--secondary {
+    background-color: $primary;
+  }
+}

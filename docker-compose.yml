@@ -324,6 +324,22 @@ services:
       - "9925:80"
       - "19925:19925"
 
+  shm:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/shm.org
+    environment:
+      <<: *env
+      <<: *env-tauron
+      PORT: 80
+      EXPOSED_PORT: 9926
+      LIVERELOAD_PORT: 19926
+      TENANT_KEY: ascend_hh
+      SITE_ID: 616db80fb973b9f0308b45aa
+    ports:
+      - "9926:80"
+      - "19926:19926"
+
   template:
     <<: *node
     <<: *site-cmd
