@@ -19,7 +19,7 @@ module.exports = {
   },
   twitterFeed: {
     href: '',
-    tagline: 'Tweets by ',
+    tagline: 'Tweets by SHM',
   },
   gcse: {
     id: '2d2e730087c2bd49e',
