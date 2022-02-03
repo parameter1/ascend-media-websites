@@ -20,6 +20,7 @@ const topics = [
 
 const secondary = [
   { href: 'https://twitter.com/search?q=%23ISC22&src=typed_query', label: '#ISC22', target: '_blank' },
+  { href: 'https://isc22.heart.org/login?redirect_uri=/', label: 'Access Virtual Experience', target: '_blank' },
   { href: ' https://asa.apprisor.org', label: 'Access ePosters', target: '_blank' },
 ];
 
