@@ -1,6 +1,6 @@
 import { getAsObject, get } from "@parameter1/base-cms-object-path";
 
-$ const { site, req, GAM, config } = out.global;
+$ const { site, req, GAM, nativeX, config } = out.global;
 $ const { NODE_ENV } = process.env;
 $ const aboveContainer = get(input, "aboveContainer.renderBody");
 
@@ -11,8 +11,24 @@ $ const aboveContainer = get(input, "aboveContainer.renderBody");
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <marko-web-deferred-script-loader-init />
-    <marko-web-gam-init />
-    <marko-web-gtm-init container-id=site.get("gtm.containerId") />
+    <marko-web-gam-init
+      on="ready"
+      request-frame=true
+      target-tag="body"
+    />
+    <marko-web-gtm-init
+      container-id=site.get("gtm.containerId")
+      on="load"
+      request-frame=true
+      target-tag="body"
+    />
+    <marko-web-native-x-init
+      uri=nativeX.getUri()
+      enabled=nativeX.isEnabled()
+      on="load"
+      request-frame=true
+      target-tag="body"
+    />
     <marko-web-gtm-push data={ env: NODE_ENV } />
     <${input.head} />
     <marko-web-gtm-start />
