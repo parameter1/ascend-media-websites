@@ -11,9 +11,24 @@ $ const aboveContainer = get(input, "aboveContainer.renderBody");
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <marko-web-deferred-script-loader-init />
-    <marko-web-gam-init />
-    <marko-web-gtm-init container-id=site.get("gtm.containerId") />
-    <marko-web-native-x-init uri=nativeX.getUri() enabled=nativeX.isEnabled() />
+    <marko-web-gam-init
+      on="ready"
+      request-frame=true
+      target-tag="body"
+    />
+    <marko-web-gtm-init
+      container-id=site.get("gtm.containerId")
+      on="load"
+      request-frame=true
+      target-tag="body"
+    />
+    <marko-web-native-x-init
+      uri=nativeX.getUri()
+      enabled=nativeX.isEnabled()
+      on="load"
+      request-frame=true
+      target-tag="body"
+    />
     <marko-web-gtm-push data={ env: NODE_ENV } />
     <${input.head} />
     <marko-web-gtm-start />
