@@ -1,7 +1,7 @@
 import Vue from '@parameter1/base-cms-marko-web/browser/vue';
 import VModal from 'vue-js-modal/dist/index.nocss';
 import jQuery from '@parameter1/base-cms-marko-web/browser/jquery-full';
-
+import RevealAd from '@parameter1/base-cms-marko-web-reveal-ad/browser';
 import Inquiry from '@parameter1/base-cms-marko-web-inquiry/browser';
 import DefaultTheme from '@parameter1/base-cms-marko-web-theme-default/browser';
 import GTM from '@parameter1/base-cms-marko-web-gtm/browser';
@@ -24,6 +24,7 @@ export default (Browser) => {
   GTM(Browser);
   GAM(Browser);
   GCSE(Browser);
+  RevealAd(Browser);
   SocialSharing(Browser);
   PhotoSwipe(Browser);
   Inquiry(Browser);
