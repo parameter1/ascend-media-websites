@@ -37,7 +37,9 @@ $ const adSlots = ({ aliases }) => ({
       name="website-optioned-content"
       params={ sectionId: id, optionName: "Pinned", limit: 17, skip: 4, requiresImage: true, queryFragment }
     >
-      <daily-content-card-deck-flow nodes=nodes cols=3 ad-index=4 ad-name="rail2" />
+      <daily-content-card-deck-flow nodes=nodes cols=3 ad-index=4 ad-name="rail2">
+        <@native-x index=3 name="default" aliases=[alias] />
+      </daily-content-card-deck-flow>
     </marko-web-query>
   </@page>
   <@below-page>

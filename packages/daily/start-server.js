@@ -1,9 +1,10 @@
 const newrelic = require('newrelic');
 const { startServer } = require('@parameter1/base-cms-marko-web');
-const { set, get } = require('@parameter1/base-cms-object-path');
+const { set, get, getAsObject } = require('@parameter1/base-cms-object-path');
 const cleanResponse = require('@parameter1/base-cms-marko-core/middleware/clean-marko-response');
 const contactUsHandler = require('@ascend-media/package-contact-us');
 
+const buildNativeXConfig = require('./native-x/build-config');
 const document = require('./components/document');
 const components = require('./components');
 const fragments = require('./fragments');
@@ -30,6 +31,10 @@ module.exports = (options = {}) => {
       // Setup GAM.
       const gamConfig = get(options, 'siteConfig.gam');
       if (gamConfig) set(app.locals, 'GAM', gamConfig);
+
+      // Setup NativeX.
+      const nativeXConfig = getAsObject(options, 'siteConfig.nativeX');
+      set(app.locals, 'nativeX', buildNativeXConfig(nativeXConfig));
 
       // Clean all response bodies.
       app.use(cleanResponse());

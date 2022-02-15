@@ -1,4 +1,5 @@
 const navigation = require('./navigation');
+const nativeX = require('./native-x');
 const gam = require('./gam');
 const logos = require('./logos');
 const blocks = require('./blocks');
@@ -8,13 +9,13 @@ module.exports = {
   logos,
   navigation,
   gam,
+  nativeX,
   company: 'Ascend Media',
   socialMediaLinks: [
     { provider: 'twitter', href: 'https://twitter.com/imex_group', target: '_blank' },
     { provider: 'facebook', href: 'https://www.facebook.com/IMEXGroup/', target: '_blank' },
     { provider: 'instagram', href: 'https://www.instagram.com/imex_group', target: '_blank' },
     { provider: 'youtube', href: 'https://www.youtube.com/channel/UCfis5mhkdeEh4IQS_-AKusw', target: '_blank' },
-    // { provider: 'pinterest', href: 'https://www.pinterest.com/americanheart/', target: '_blank' },
     { provider: 'linkedin', href: 'https://www.linkedin.com/company/imex/', target: '_blank' },
   ],
   gtm: {
