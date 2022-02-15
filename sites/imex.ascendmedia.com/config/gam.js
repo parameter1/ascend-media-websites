@@ -8,6 +8,7 @@ config
     { name: 'rail1', templateName: 'RAIL1', path: 'rail1' },
     { name: 'rail2', templateName: 'RAIL1', path: 'rail2' },
     { name: 'column1', templateName: 'COLUMN1', path: 'column1' },
+    { name: 'reskin', path: 'reskin' },
   ]);
 
 module.exports = config;
