@@ -5,24 +5,19 @@ const searchItem = {
   modifiers: ['search-icon'],
 };
 
-const userTools = [
-  // { href: '/page/privacy-policy', label: 'Privacy Policy', target: '_blank' },
-  // { href: '/page/terms-conditions', label: 'Terms & Conditions' },
-];
+const userTools = [];
 
 const topics = [
   { href: '/destinations', label: 'Destinations' },
   { href: '/accommodations-venues', label: 'Accommodations & Venues' },
   { href: '/associations', label: 'Associations' },
-  { href: '/More', label: 'More' },
+  { href: '/featured-exhibitors', label: 'Featured Exhibitors' },
+  { href: '/more', label: 'More' },
   { href: 'https://www.imexamerica.com/whats-on/schedule-at-a-glance', label: 'Program', target: '_blank' },
   { href: 'https://www.imexamerica.com/', label: 'IMEX America', target: '_blank' },
 ];
 
-const secondary = [
-  // { href: 'https://www.imexexhibitions.com', label: 'IMEX Group', target: '_blank' },
-  // { href: 'https://planetimex.com', label: 'PlanetIMEX', target: '_blank' },
-];
+const secondary = [];
 
 module.exports = {
 
