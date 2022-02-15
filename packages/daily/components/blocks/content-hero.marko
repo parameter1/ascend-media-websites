@@ -48,8 +48,10 @@ $ const queryParams = {
           </@body>
         </@image>
       </marko-web-node>
+      <marko-web-gam-display-ad id="gpt-ad-column1" modifiers=["top-of-page", "max-width-728", "center"] />
     </@hero>
     <@list|{ nodes }|>
+      <marko-web-gam-display-ad id="gpt-ad-rail1" />
       <if(nodes.length)>
         <for|content, index| of=nodes>
           $ let action = "Read";
