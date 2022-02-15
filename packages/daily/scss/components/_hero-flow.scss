@@ -1,6 +1,9 @@
 .hero-flow {
   &__hero,
   &__list {
-    margin-bottom: $block-spacer-lg;
+    .ad-container {
+      margin-bottom: $block-spacer;
+    }
+    margin-bottom: $block-spacer;
   }
 }
