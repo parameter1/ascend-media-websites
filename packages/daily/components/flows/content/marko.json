@@ -38,7 +38,8 @@
     "@attrs": "object",
     "@ad-index": "number",
     "@ad-name": "string",
-    "@ad-position": "string"
+    "@ad-position": "string",
+    "@native-x": "object"
   },
   "<daily-content-list-feed-flow>": {
     "template": "./list-feed.marko",
