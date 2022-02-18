@@ -12,7 +12,7 @@ const topics = [
   { href: '/accommodations-venues', label: 'Accommodations & Venues' },
   { href: '/associations', label: 'Associations' },
   { href: '/featured-exhibitors', label: 'Featured Exhibitors' },
-  { href: '/more', label: 'More' },
+  { href: '/happenings', label: 'Happenings' },
   { href: 'https://www.imexamerica.com/whats-on/schedule-at-a-glance', label: 'Program', target: '_blank' },
   { href: 'https://www.imexamerica.com/', label: 'IMEX America', target: '_blank' },
 ];
