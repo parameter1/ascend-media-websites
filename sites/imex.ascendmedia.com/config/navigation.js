@@ -8,16 +8,18 @@ const searchItem = {
 const userTools = [];
 
 const topics = [
+  { href: '/daily-news', label: 'Daily News' },
   { href: '/destinations', label: 'Destinations' },
   { href: '/accommodations-venues', label: 'Accommodations & Venues' },
-  { href: '/associations', label: 'Associations' },
-  { href: '/featured-exhibitors', label: 'Featured Exhibitors' },
   { href: '/happenings', label: 'Happenings' },
-  { href: 'https://www.imexamerica.com/whats-on/schedule-at-a-glance', label: 'Program', target: '_blank' },
+  { href: '/featured-exhibitors', label: 'Featured Exhibitors' },
   { href: 'https://www.imexamerica.com/', label: 'IMEX America', target: '_blank' },
 ];
 
-const secondary = [];
+const secondary = [
+  { href: 'https://www.imexamerica.com/whats-on/schedule-at-a-glance', label: 'Program', target: '_blank' },
+  { href: 'https://www.imex-frankfurt.com', label: 'IMEX Frankfurt', target: '_blank' },
+];
 
 module.exports = {
 
