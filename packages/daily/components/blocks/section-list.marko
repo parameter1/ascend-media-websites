@@ -52,6 +52,7 @@ $ const queryParams = {
             image-position=imagePosition
             flush=true
             full-height=false
+            attrs=containerAttrs
           >
             <@image
               ar="1:1"
@@ -60,7 +61,7 @@ $ const queryParams = {
               src=primaryImage.src
               alt=primaryImage.alt
               is-logo=primaryImage.isLogo
-              link={ href: get(nxNode, "siteContext.path") }
+              link={ href: get(nxNode, "siteContext.path"), attrs: linkAttrs }
               ...input.image
             />
             <@body>
@@ -70,10 +71,10 @@ $ const queryParams = {
                 </@left>
               </@header>
               <@title tag="h5">
-                <marko-web-content-short-name tag=null obj=nxNode link=true />
+                <marko-web-content-short-name tag=null obj=nxNode link={ attrs: linkAttrs } />
               </@title>
               <@text modifiers=["teaser"] show=withTeaser>
-                <marko-web-content-teaser tag=null obj=nxNode link=true />
+                <marko-web-content-teaser tag=null obj=nxNode link={ attrs: linkAttrs } />
               </@text>
             </@body>
           </marko-web-node>
