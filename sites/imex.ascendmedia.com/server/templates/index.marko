@@ -39,7 +39,9 @@ $ const adSlots = ({ aliases }) => ({
 
           <marko-web-gam-display-ad id="gpt-ad-column1" modifiers=["top-of-page", "max-width-728", "center"] />
 
-          <daily-content-featured-block section-alias="featured" link-header=false class="mb-4" limit=6 />
+          <daily-content-featured-block section-alias="daily-news" class="mb-4" limit=6>
+            <@native-x index=2 name="default" aliases=["daily-news"] />
+          </daily-content-featured-block>
 
           <daily-section-list-block section-alias="industry-insights" inner-justified=false with-teaser=true limit=2>
             <@image width="125" />
@@ -65,8 +67,8 @@ $ const adSlots = ({ aliases }) => ({
         </div>
 
         <div class="col-lg-4 mb-block-lg">
-          <daily-section-list-block section-alias="more">
-            <@native-x index=2 name="default" aliases=["more"] />
+          <daily-section-list-block section-alias="happenings">
+            <@native-x index=2 name="default" aliases=["happenings"] />
           </daily-section-list-block>
         </div>
       </div>

@@ -7,6 +7,7 @@ fragment WebsiteContentHeroFragment on Content {
   type
   shortName
   teaser(input: { useFallback: false, maxLength: null })
+  published
   siteContext {
     path
   }
@@ -15,6 +16,13 @@ fragment WebsiteContentHeroFragment on Content {
     src
     alt
     isLogo
+  }
+  primarySection {
+    id
+    name
+    alias
+    fullName
+    canonicalPath
   }
 }
 

@@ -1,7 +1,9 @@
 import { getAsObject, get } from "@parameter1/base-cms-object-path";
 import queryFragment from "../../graphql/fragments/content-featured";
 
+$ const { nativeX: nxConfig } = out.global;
 $ const { sectionAlias } = input;
+$ const nativeX = getAsObject(input, "nativeX");
 
 $ const queryParams = {
   optionName: "Pinned",
@@ -22,39 +24,47 @@ $ const queryParams = {
     class=input.class
   >
     <@header>
-      Featured Content
+      Daily News
     </@header>
     <@nodes nodes=nodes>
-      <@slot|{ node: content }|>
-        $ const primaryImage = getAsObject(content, "primaryImage");
-        $ const primarySection = getAsObject(content, "primarySection");
-        <marko-web-node
-          type=`${content.type}-content`
-          image-position="left"
-          flush=true
-          full-height=false
-        >
-          <@image
-            ar="1:1"
-            width="125"
-            use-placeholder=false
-            src=primaryImage.src
-            link={ href: get(content, "siteContext.path") }
-          />
-          <@body>
-            <@header>
-              <@left>
-                <marko-web-website-section-name obj=primarySection link=true />
-              </@left>
-            </@header>
-            <@title tag="h5">
-              <marko-web-content-short-name tag=null obj=content link=true />
-            </@title>
-            <@text modifiers=["teaser"] show=Boolean(content.teaser)>
-              <marko-web-content-teaser tag=null obj=content link=true />
-            </@text>
-          </@body>
-        </marko-web-node>
+      <@slot|{ node, index }|>
+          <marko-web-native-x-render|{ node: nxNode, linkAttrs, containerAttrs }|
+            ...nativeX
+            when=(index === nativeX.index)
+            node=node
+            config=nxConfig
+          >
+            $ const primaryImage = getAsObject(nxNode, "primaryImage");
+            $ const primarySection = getAsObject(nxNode, "primarySection");
+            <marko-web-node
+              type=`${nxNode.type}-content`
+              image-position="left"
+              flush=true
+              full-height=false
+              attrs=containerAttrs
+            >
+              <@image
+                ar="1:1"
+                width="125"
+                use-placeholder=false
+                src=primaryImage.src
+                link={ href: get(nxNode, "siteContext.path"), attrs: linkAttrs }
+              />
+              <@body>
+                <@header>
+                  <@left>
+                    <marko-web-website-section-name obj=primarySection link=true />
+                  </@left>
+                </@header>
+                <@title tag="h5">
+                  <marko-web-content-short-name tag=null obj=nxNode link={ attrs: linkAttrs }/>
+                </@title>
+                <@text modifiers=["teaser"] show=Boolean(nxNode.teaser)>
+                  <marko-web-content-teaser tag=null obj=nxNode link={ attrs: linkAttrs } />
+                </@text>
+              </@body>
+            </marko-web-node>
+        </marko-web-native-x-render>
       </@slot>
     </@nodes>
   </marko-web-node-list>

@@ -23,7 +23,7 @@ $ const nativeX = getAsObject(input, "nativeX");
       node=node
       config=nxConfig
     >
-      <daily-content-card-node ...input.node node=nxNode />
+      <daily-content-card-node ...input.node node=nxNode attrs=containerAttrs link-attrs=linkAttrs/>
     </marko-web-native-x-render>
   </@slot>
   <if(adIndex !== null)>

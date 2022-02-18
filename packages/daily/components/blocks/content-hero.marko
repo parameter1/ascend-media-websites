@@ -5,7 +5,7 @@ $ const { sectionId } = input;
 
 $ const queryParams = {
   optionName: "Pinned",
-  limit: 4,
+  limit: 3
   requiresImage: true,
   queryFragment,
   sectionBubbling: false,
@@ -54,12 +54,10 @@ $ const queryParams = {
       <marko-web-gam-display-ad id="gpt-ad-rail1" />
       <if(nodes.length)>
         <for|content, index| of=nodes>
-          $ let action = "Read";
-          $ if (content.type === "video") action = "Watch";
-          $ if (content.type === "podcast") action = "Listen";
           $ const primaryImage = getAsObject(content, "primaryImage");
+          $ const primarySection = getAsObject(content, "primarySection");
           <marko-web-node
-            image-position="left"
+            image-position="right"
             card=true
             flush=false
             full-height=false
@@ -75,12 +73,19 @@ $ const queryParams = {
               link={ href: get(content, "siteContext.path") }
             />
             <@body>
-              <@text modifiers=["content-action"]>
-                ${action}
-              </@text>
+              <@header>
+                <@left|{ blockName }|>
+                  <marko-web-website-section-name obj=primarySection link=true />
+                </@left>
+              </@header>
               <@text modifiers=["content-title"]>
                 <marko-web-content-short-name tag=null obj=content link=true />
               </@text>
+              <@footer>
+                  <@right|{ blockName }|>
+                    <marko-web-content-published obj=content />
+                  </@right>
+              </@footer>
             </@body>
           </marko-web-node>
         </for>
