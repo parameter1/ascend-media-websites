@@ -33,13 +33,11 @@ $ const adSlots = ({ aliases }) => ({
 
       <marko-web-gam-display-ad id="gpt-ad-lb1" modifiers=["top-of-page", "max-width-970", "center"] />
 
+      <daily-content-hero-block section-id=id />
+
       <div class="row">
         <div class="col-lg-8 mb-block-lg">
-          <daily-content-hero-card-block section-id=id />
-
-          <marko-web-gam-display-ad id="gpt-ad-column1" modifiers=["top-of-page", "max-width-728", "center"] />
-
-          <daily-content-featured-block section-alias="daily-news" class="mb-4" limit=6>
+          <daily-content-featured-block section-alias="daily-news" class="mb-4" limit=4>
             <@native-x index=2 name="default" aliases=["daily-news"] />
           </daily-content-featured-block>
 
@@ -49,7 +47,18 @@ $ const adSlots = ({ aliases }) => ({
         </div>
 
         <div class="col-lg-4 mb-block-lg page-rail">
-          <website-global-right-rail-block aliases=aliases />
+          <a
+            class="twitter-timeline btn btn-primary btn-block"
+            data-height="650"
+            data-theme="light"
+            href="https://twitter.com/IMEX_Group?ref_src=twsrc%5Etfw"
+            target="_blank"
+          >
+            Tweets by IMEX Group
+          </a>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+          <marko-web-gam-display-ad id="gpt-ad-rail2" class="mt-block-lg" />
         </div>
       </div>
 
