@@ -10,9 +10,9 @@ const userTools = [];
 const topics = [
   { href: '/daily-coverage', label: 'Daily Coverage' },
   { href: '#', label: 'Program' }, // NEED LINK
-  { href: '/partners-sponsors', label: 'Partners and Sponsors' },
+  { href: '/engagement-arena', label: 'Engagement Arena' },
   { href: '/awards-events', label: 'Awards and Events' },
-  { href: '/scientific-abstracts', label: 'Scientific Abstracts' },
+  { href: '/industry-highlights', label: 'Industry Highlights' },
   { href: '/previews', label: 'Previews' },
 ];
 
