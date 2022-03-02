@@ -1,11 +1,11 @@
 import { getAsObject, get } from "@parameter1/base-cms-object-path";
 import queryFragment from "../../graphql/fragments/content-hero";
 
-$ const { sectionId } = input;
+$ const { sectionId, limit } = input;
 
 $ const queryParams = {
   optionName: "Pinned",
-  limit: 3,
+  limit: limit || 3,
   requiresImage: true,
   queryFragment,
   sectionBubbling: false,
