@@ -1,6 +1,6 @@
 const configureGAM = require('@ascend-media/package-daily/config/gam');
 
-const config = configureGAM({ basePath: 'imex' });
+const config = configureGAM({ basePath: 'imex-ff' });
 
 config
   .setAliasAdUnits('default', [
