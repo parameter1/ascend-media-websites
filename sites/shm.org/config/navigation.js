@@ -9,7 +9,7 @@ const userTools = [];
 
 const topics = [
   { href: '/daily-coverage', label: 'Daily Coverage' },
-  { href: '#', label: 'Program' }, // NEED LINK
+  { href: 'https://shmconverge.hospitalmedicine.org/interactive-schedule/', label: 'Program', target: '_blank' },
   { href: '/engagement-arena', label: 'Engagement Arena' },
   { href: '/awards-events', label: 'Awards and Events' },
   { href: '/industry-highlights', label: 'Industry Highlights' },
@@ -34,12 +34,11 @@ module.exports = {
     },
     {
       label: 'Resources',
-      items: [ // NEEDS LINKS
-        { href: '#', label: 'Conference FAQs' },
-        { href: '#', label: 'COVID and Safety Protocols' },
-        { href: '#', label: 'How to claim CME and other educational credits' },
-        { href: '#', label: 'SHM Converge 2023' },
-        { href: '#', label: 'Other SHM Events' },
+      items: [
+        { href: '/22080995', label: 'Conference FAQs' },
+        { href: '/22056481', label: 'COVID and Safety Protocols' },
+        { href: '/22056721', label: 'How to claim CME and other educational credits' },
+        { href: '/22081005', label: 'SHM Converge 2023' },
       ],
     },
     {
