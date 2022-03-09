@@ -1,0 +1,35 @@
+@import "../../node_modules/@ascend-media/package-daily/scss/variables";
+
+$primary: #097dc1;
+$secondary: #da291c;
+$tertiary: #3a3839;
+
+$theme-site-navbar-logo-height: 100px;
+$theme-site-navbar-logo-height-sm: 50px;
+$theme-site-footer-logo-height: 100px;
+$theme-site-footer-logo-height-sm: 50px;
+$theme-site-footer-primary-bg-color: $primary;
+$theme-site-footer-secondary-bg-color: $primary;
+$theme-site-footer-copyright-color: $light;
+$theme-site-navbar-primary-bg-color: $primary;
+$theme-site-navbar-secondary-bg-color: #f2f2f2;
+$theme-site-navbar-secondary-type: dark;
+$theme-hero-teaser-bg-color: $secondary;
+$theme-site-navbar-secondary-link-color: $tertiary;
+$theme-site-navbar-tertiary-link-color: $tertiary;
+$theme-hero-teaser-bg-color: $tertiary;
+
+
+@import "../../node_modules/@ascend-media/package-daily/scss/theme";
+
+.body-wrapper {
+  display: block;
+  flex-direction: column;
+  height: auto;
+}
+
+.page-contents {
+  &__content-body{
+    color: #3a3839;
+  }
+}
