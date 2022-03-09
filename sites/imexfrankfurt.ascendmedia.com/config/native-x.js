@@ -1,9 +1,9 @@
 module.exports = {
   placements: {
-    default: '620a620953b78a0001ec63fe',
-    'accommodations-venues': '620a61ed53b78a0001ec63e2',
-    'daily-news': '620fb382c0c83c0001867388',
-    destinations: '620a61d6f2b8c700013b94f8',
-    happenings: '620a5fd553b78a0001ec61d6',
+    default: '6228cbc0dc9e030001b7ab0f',
+    'accommodations-venues': '6228cbd1dc9e030001b7ab38',
+    'daily-news': '6228cb9228fb2000013ad10a',
+    destinations: '6228cbe1dc9e030001b7ab6d',
+    happenings: '6228cba9dc9e030001b7aaf3',
   },
 };
