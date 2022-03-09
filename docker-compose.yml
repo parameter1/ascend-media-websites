@@ -340,6 +340,22 @@ services:
       - "9926:80"
       - "19926:19926"
 
+  imex-ff:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/imexfrankfurt.ascendmedia.com
+    environment:
+      <<: *env
+      <<: *env-tauron
+      PORT: 80
+      EXPOSED_PORT: 9927
+      LIVERELOAD_PORT: 19927
+      TENANT_KEY: ascend_hh
+      SITE_ID: 6228b5a440412800498b456f
+    ports:
+      - "9927:80"
+      - "19927:19927"
+
   template:
     <<: *node
     <<: *site-cmd
