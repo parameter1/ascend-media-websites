@@ -15,7 +15,7 @@ const topics = [
   { href: '/', label: 'Current Issue' },
   { href: '/magazine/6001dfb8a982a33b138b4589', label: 'Archives' },
   { href: 'http://www.entnet.org/annual_meeting', label: 'Annual Meeting', target: '_blank' },
-  { href: 'https://ratecards.ascendeventmedia.com/aao-hnsbulletin2021/', label: 'Advertise with the Bulletin', target: '_blank' },
+  { href: 'https://ratecards.ascendeventmedia.com/aao-hnsbulletin2022/', label: 'Advertise with the Bulletin', target: '_blank' },
   { href: 'http://entconnect.entnet.org/home', label: 'ENTConnect' },
 ];
 
