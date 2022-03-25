@@ -30,9 +30,6 @@ $ const aboveContainer = get(input, "aboveContainer.renderBody");
       target-tag="body"
     />
     <marko-web-gtm-push data={ env: NODE_ENV } />
-    <if(site.get("facebookDomainVerification"))>
-      <meta name="facebook-domain-verification" content=site.get("facebookDomainVerification") />
-    </if>
     <${input.head} />
     <marko-web-gtm-start />
     <marko-web-gam-enable />

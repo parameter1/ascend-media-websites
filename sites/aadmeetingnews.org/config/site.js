@@ -17,7 +17,6 @@ module.exports = {
     { provider: 'instagram', href: 'https://www.instagram.com/aadmember/', target: '_blank' },
     { provider: 'twitter', href: 'https://twitter.com/AADmember', target: '_blank' },
   ],
-  facebookDomainVerification: 'mim2rgasosyt1gki1wue9ydq50ndjk',
   gtm: {
     containerId: 'GTM-5R9XFFX',
   },
