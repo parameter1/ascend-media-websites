@@ -1,0 +1,89 @@
+import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
+
+$ const { GAM, nativeX } = out.global;
+
+$ const {
+  id,
+  alias,
+  name,
+  pageNode,
+} = input;
+
+$ const adSlots = ({ aliases }) => ({
+  "gpt-ad-lb1": GAM.getAdUnit({ name: "lb1", aliases }),
+  "gpt-ad-column1": GAM.getAdUnit({ name: "column1", aliases }),
+  "gpt-ad-rail1": GAM.getAdUnit({ name: "rail1", aliases }),
+  "gpt-ad-rail2": GAM.getAdUnit({ name: "rail2", aliases }),
+});
+
+<marko-web-website-section-page-layout id=id alias=alias name=name attrs={"aria-label": `website-section-${id}`}>
+  <@head>
+    <marko-web-gtm-website-section-context|{ context }| alias=alias>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-website-section-context>
+    <marko-web-resolve-page|{ data: section }| node=pageNode>
+      $ const aliases = hierarchyAliases(section);
+      <marko-web-gam-slots slots=adSlots({ aliases }) />
+    </marko-web-resolve-page>
+  </@head>
+
+  <@page>
+    <marko-web-resolve-page|{ data: section }| node=pageNode>
+      $ const aliases = hierarchyAliases(section);
+
+      <marko-web-gam-display-ad id="gpt-ad-lb1" modifiers=["top-of-page", "max-width-970", "center"] />
+
+      <daily-content-hero-block section-id=id limit=4 />
+
+      <div class="row">
+        <div class="col-lg-8 mb-block-lg">
+          <daily-content-featured-block section-alias="daily-news" class="mb-4" limit=4>
+            <@native-x index=2 name="default" aliases=["daily-news"] />
+          </daily-content-featured-block>
+
+          <daily-section-list-block section-alias="industry-insights" inner-justified=false with-teaser=true limit=2>
+            <@image width="125" />
+          </daily-section-list-block>
+        </div>
+
+        <div class="col-lg-4 mb-block-lg page-rail">
+          <a
+            class="twitter-timeline btn btn-primary btn-block"
+            data-height="650"
+            data-theme="light"
+            href="https://twitter.com/IMEX_Group?ref_src=twsrc%5Etfw"
+            target="_blank"
+          >
+            Tweets by IMEX Group
+          </a>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+          <marko-web-gam-display-ad id="gpt-ad-rail2" class="mt-block-lg" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4 mb-block-lg">
+          <daily-section-list-block section-alias="destinations">
+            <@native-x index=2 name="default" aliases=["destinations"] />
+          </daily-section-list-block>
+        </div>
+
+        <div class="col-lg-4 mb-block-lg">
+          <daily-section-list-block section-alias="accommodations-venues" >
+            <@native-x index=3 name="default" aliases=["accommodations-venues"] />
+          </daily-section-list-block>
+        </div>
+
+        <div class="col-lg-4 mb-block-lg">
+          <daily-section-list-block section-alias="happenings">
+            <@native-x index=2 name="default" aliases=["happenings"] />
+          </daily-section-list-block>
+        </div>
+      </div>
+
+      <daily-featured-exhibitors-block section-alias="featured-exhibitors" />
+
+    </marko-web-resolve-page>
+  </@page>
+</marko-web-website-section-page-layout>
