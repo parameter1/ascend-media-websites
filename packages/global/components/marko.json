@@ -4,8 +4,7 @@
     "./company-page/marko.json",
     "./elements/marko.json",
     "./flows/marko.json",
-    "./nodes/marko.json",
-    "./layouts/marko.json"
+    "./nodes/marko.json"
   ],
   "<global-document>": {
     "template": "./document.marko",
