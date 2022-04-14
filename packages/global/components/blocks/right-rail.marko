@@ -1,26 +1,12 @@
-$ const { GAM, config } = out.global;
+$ const { GAM } = out.global;
 
-$ const siteID = config.website('id');
 $ const { aliases } = input;
 
 <marko-web-gam-define-display-ad
   ...GAM.getAdUnit({ name: 'rail1', aliases })
   class="mb-block"
 />
-// AUA, AAD Site IDs
-<if(['60747a8880a4312e028b45d6','60c7666d46f24a64538b458d'].includes(siteID))>
-  <global-twitter-widget-block />
-</if>
-
-<else>
-  <global-native-x-list-block
-    placement-name="default"
-    aliases=aliases
-    limit=6
-    collapsible=true
-  />
-</else>
-
+<global-twitter-widget-block />
 <marko-web-gam-define-display-ad
 ...GAM.getAdUnit({ name: 'rail2', aliases })
   class="mb-block"

@@ -64,8 +64,5 @@
   },
   "<global-notice-pushdown-block>": {
     "template": "./notice-pushdown.marko"
-  },
-  "<global-native-x-list-block>": {
-    "template": "./native-x-list.marko"
   }
 }

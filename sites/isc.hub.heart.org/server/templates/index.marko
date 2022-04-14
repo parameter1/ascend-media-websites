@@ -77,11 +77,12 @@ $ const promise = websiteSectionContentLoader(apollo, {
             </global-content-card-deck-flow>
           </div>
           <div class="col-lg-4">
-            <global-native-x-list-block
-              placement-name="default"
-              aliases=aliases
-              limit=6
-              collapsible=true
+            <global-standard-section-list-block
+              section-alias="industry-resources"
+              inner-justified=false
+              query-params={ limit: 2, requiresImage: false }
+              display-image=false
+              modifiers=["sponsored"]
             />
           </div>
         </div>
