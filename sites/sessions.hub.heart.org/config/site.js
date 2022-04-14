@@ -2,12 +2,14 @@ const navigation = require('./navigation');
 const gam = require('./gam');
 const logos = require('./logos');
 const blocks = require('./blocks');
+const nativeX = require('./native-x');
 
 module.exports = {
   blocks,
   logos,
   navigation,
   gam,
+  nativeX,
   company: 'Ascend Media',
   socialMediaLinks: [
     { provider: 'twitter', href: 'https://twitter.com/AHAMeetings', target: '_blank' },
