@@ -1,11 +1,12 @@
-import { getAsObject, getAsArray } from "@parameter1/base-cms-object-path";
+import { get, getAsObject, getAsArray } from "@parameter1/base-cms-object-path";
 import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
 import { isFunction } from "@parameter1/base-cms-utils";
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import websiteSectionContentLoader from "@ascend-media/package-global/loaders/website-section-content";
 import queryFragment from "@ascend-media/package-global/graphql/fragments/content-list";
 
-$ const { GAM, apollo } = out.global;
+$ const { GAM, apollo, site } = out.global;
+$ const nativeXBlock = site.get('nativeXBlock');
 
 $ const {
   id,
@@ -72,15 +73,33 @@ $ const promise = websiteSectionContentLoader(apollo, {
         <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(0, 2) cols=3 ad-index=1 ad-name="rail1" />
         <div class="row">
           <div class="col-lg-8">
-            <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(2, 4) />
+            <if(!nativeXBlock === true)>
+              <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(2, 4)>
+                <@native-x index=0 name="default" />
+              </global-content-card-deck-flow>
+            </if>
+            <else>
+              <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(2, 4) />
+            </else>
           </div>
           <div class="col-lg-4">
-            <global-native-x-list-block
-              placement-name="default"
-              aliases=aliases
-              limit=6
-              collapsible=true
-            />
+            <if(nativeXBlock === true)>
+              <global-native-x-list-block
+                placement-name="default"
+                aliases=aliases
+                limit=6
+                collapsible=true
+              />
+            </if>
+            <else>
+              <global-standard-section-list-block
+                section-alias="industry-resources"
+                inner-justified=false
+                query-params={ limit: 2, requiresImage: false }
+                display-image=false
+                modifiers=["sponsored"]
+              />
+            </else>
           </div>
         </div>
         <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(4, 6) cols=3 ad-index=0 ad-name="rail2" />
