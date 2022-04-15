@@ -4,6 +4,7 @@ const logos = require('./logos');
 const nativeX = require('./native-x');
 
 module.exports = {
+  nativeXBlock: true,
   logos,
   navigation,
   gam,
