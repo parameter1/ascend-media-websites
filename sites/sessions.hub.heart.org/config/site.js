@@ -5,6 +5,7 @@ const blocks = require('./blocks');
 const nativeX = require('./native-x');
 
 module.exports = {
+  nativeXBlock: true,
   blocks,
   logos,
   navigation,
