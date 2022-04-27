@@ -1,5 +1,5 @@
 module.exports = {
   placements: {
-    default: '60ca08de2134870001cf8d78',
+    default: '6256d2dd496d3e0001107c8f',
   },
 };

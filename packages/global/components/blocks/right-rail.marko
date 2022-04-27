@@ -1,12 +1,27 @@
-$ const { GAM } = out.global;
+$ const { GAM, site } = out.global;
 
 $ const { aliases } = input;
+
+$ const nativeXBlock = site.get('nativeXBlock');
 
 <marko-web-gam-define-display-ad
   ...GAM.getAdUnit({ name: 'rail1', aliases })
   class="mb-block"
 />
-<global-twitter-widget-block />
+
+<if(nativeXBlock === true)>
+  <global-native-x-list-block
+    placement-name="default"
+    aliases=aliases
+    limit=6
+    collapsible=true
+  />
+</if>
+
+<else>
+  <global-twitter-widget-block />
+</else>
+
 <marko-web-gam-define-display-ad
 ...GAM.getAdUnit({ name: 'rail2', aliases })
   class="mb-block"
