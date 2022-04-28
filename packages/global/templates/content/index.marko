@@ -27,6 +27,8 @@ $ const displayCompanyHeader = (content) => {
   return false;
 }
 
+$ const showRightRail = (site.get("restrictRightRailDisplay") && ["document", "press-release"].includes(type)) ? false : true;
+
 <marko-web-content-page-layout id=id type=type>
   <@head>
     <marko-web-gtm-content-context|{ context }| id=id>
@@ -209,9 +211,9 @@ $ const displayCompanyHeader = (content) => {
                   class="mb-block"
                 />
               </if>
-              <else>
+              <else-if(showRightRail)>
                 <global-global-right-rail-block aliases=aliases no-shadow=true />
-              </else>
+              </else-if>
             </aside>
 
             <if(displayPhotoswipe)>
