@@ -6,6 +6,7 @@ const nativeX = require('./native-x');
 
 module.exports = {
   nativeXBlock: true,
+  restrictRightRailDisplay: true,
   blocks,
   logos,
   navigation,
