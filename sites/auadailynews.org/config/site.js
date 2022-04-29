@@ -3,6 +3,9 @@ const gam = require('./gam');
 const logos = require('./logos');
 
 module.exports = {
+  nativeXBlock: process.env.NATIVE_X_BLOCK || false,
+  restrictRightRailDisplay: process.env.RESTRICT_RIGHT_RAIL_DISPLAY || false,
+  contentPageLoadMore: process.env.CONTENT_PAGE_LOAD_MORE || false,
   logos,
   navigation,
   gam,
