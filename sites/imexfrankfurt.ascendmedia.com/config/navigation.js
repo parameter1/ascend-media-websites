@@ -10,7 +10,7 @@ const userTools = [];
 const topics = [
   { href: '/daily-news', label: 'Daily News' },
   { href: '/destinations', label: 'Destinations' },
-  { href: '/accommodations-venues', label: 'Accommodations & Venues' },
+  { href: '/accommodations-venues', label: 'Accommodation & Venues' },
   { href: '/happenings', label: 'Happenings' },
   { href: '/featured-exhibitors', label: 'Featured Exhibitors' },
   { href: 'https://www.imex-frankfurt.com', label: 'IMEX in Frankfurt', target: '_blank' },
@@ -18,7 +18,7 @@ const topics = [
 ];
 
 const secondary = [
-  { href: 'https://www.imex-frankfurt.com/schedule-at-a-glance', label: 'Program', target: '_blank' },
+  { href: 'https://www.imex-frankfurt.com/schedule-at-a-glance', label: 'Programme', target: '_blank' },
   { href: 'https://imex.ascendmedia.com/', label: 'IMEX America', target: '_blank' },
 ];
 
