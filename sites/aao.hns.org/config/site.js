@@ -4,7 +4,9 @@ const logos = require('./logos');
 const nativeX = require('./native-x');
 
 module.exports = {
-  nativeXBlock: true,
+  nativeXBlock: process.env.NATIVE_X_BLOCK || false,
+  restrictRightRailDisplay: process.env.RESTRICT_RIGHT_RAIL_DISPLAY || false,
+  contentPageLoadMore: process.env.CONTENT_PAGE_LOAD_MORE || false,
   logos,
   navigation,
   gam,

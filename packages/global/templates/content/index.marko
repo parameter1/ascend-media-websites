@@ -227,4 +227,28 @@ $ const showRightRail = (site.get("restrictRightRailDisplay") && ["document", "p
       </marko-web-page-wrapper>
     </marko-web-resolve-page>
   </@page>
+  <if(site.get("contentPageLoadMore"))>
+    <@below-page>
+      <marko-web-resolve-page|{ resolved, data: content }| node=pageNode>
+        $ const section = resolved.getAsObject("primarySection")
+        $ const aliases = hierarchyAliases(section);
+        $ const loadMoreParams = {
+          sectionId: section.id,
+          optionName: ["Standard"],
+          excludeContentIds: [id],
+          limit: 12,
+        };
+        <marko-web-load-more
+          component-name="global-content-card-deck-flow"
+          component-input={ aliases, cols: 3, withTeaser: false }
+          fragment-name="global-content-list"
+          query-name="website-scheduled-content"
+          query-params=loadMoreParams
+          max-pages=3
+          page-input={ for: "content", id }
+          attrs={ "aria-label": "load-more", "role": "main" }
+        />
+      </marko-web-resolve-page>
+    </@below-page>
+  </if>
 </marko-web-content-page-layout>
