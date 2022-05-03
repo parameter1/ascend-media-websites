@@ -91,4 +91,9 @@
       background-color: transparent;
     }
   }
+  &__header {
+    &--content-load-more {
+      padding: .75rem;
+    }
+  }
 }

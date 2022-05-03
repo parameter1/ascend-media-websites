@@ -229,6 +229,9 @@ $ const showRightRail = (site.get("restrictRightRailDisplay") && ["document", "p
   </@page>
   <if(site.get("contentPageLoadMore"))>
     <@below-page>
+      <div class="node-list__header--content-load-more">
+        <div class="node-list__header">More Content</div>
+      </div>
       <marko-web-resolve-page|{ resolved, data: content }| node=pageNode>
         $ const section = resolved.getAsObject("primarySection")
         $ const aliases = hierarchyAliases(section);
