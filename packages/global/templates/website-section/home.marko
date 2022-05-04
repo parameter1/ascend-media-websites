@@ -73,14 +73,9 @@ $ const promise = websiteSectionContentLoader(apollo, {
         <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(0, 2) cols=3 ad-index=1 ad-name="rail1" />
         <div class="row">
           <div class="col-lg-8">
-            <if(!nativeXBlock === true)>
-              <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(2, 4)>
-                <@native-x index=0 name="default" />
-              </global-content-card-deck-flow>
-            </if>
-            <else>
-              <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(2, 4) />
-            </else>
+            <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(2, 4)>
+              <@native-x index=0 name="default" />
+            </global-content-card-deck-flow>
           </div>
           <div class="col-lg-4">
             <if(nativeXBlock === true)>
