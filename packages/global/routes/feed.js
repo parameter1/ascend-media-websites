@@ -6,7 +6,7 @@ module.exports = (app) => {
     if (limit) {
       const queryParams = {
         pagination: {
-          limit,
+          limit: limit <= 200 ? limit : 200,
         },
       };
       res.redirect(`/__rss/all-published-content.xml?input=${encodeURIComponent(JSON.stringify(queryParams))}`);
