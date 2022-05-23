@@ -1,7 +1,5 @@
 @import "../../node_modules/@ascend-media/package-global/scss/variables";
 
-@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500;600;700&display=swap");
-
 $primary: #1c7cd5;
 $secondary: #76bc43;
 
@@ -15,9 +13,6 @@ $theme-site-navbar-primary-bg-color: $primary;
 $theme-site-navbar-secondary-bg-color: #fff;
 $theme-site-navbar-secondary-type: light;
 
-// AAD requested to use font-family: "Catamaran"
-$theme-font-family-sans-serif: "Catamaran", "Helvetica Neue", "Arial", sans-serif;
-$theme-font-family-serif: "Catamaran", "Helvetica Neue", "Arial", sans-serif;
 
 @import "../../node_modules/@ascend-media/package-global/scss/theme";
 
