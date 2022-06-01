@@ -1,7 +1,7 @@
 import Vue from '@parameter1/base-cms-marko-web/browser/vue';
 import VModal from 'vue-js-modal/dist/index.nocss';
 import jQuery from '@parameter1/base-cms-marko-web/browser/jquery-full';
-
+import ContactUs from '@parameter1/base-cms-marko-web-contact-us/browser';
 import Inquiry from '@parameter1/base-cms-marko-web-inquiry/browser';
 import DefaultTheme from '@parameter1/base-cms-marko-web-theme-default/browser';
 import GTM from '@parameter1/base-cms-marko-web-gtm/browser';
@@ -20,6 +20,7 @@ window.jQuery = jQuery;
 window.$ = jQuery;
 
 export default (Browser) => {
+  ContactUs(Browser);
   DefaultTheme(Browser);
   GTM(Browser);
   GAM(Browser);
