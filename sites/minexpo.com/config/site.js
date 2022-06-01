@@ -47,4 +47,19 @@ module.exports = {
     logo: 'https://img.hub.heart.org/files/base/ascend/minexpo/image/static/minexpo-logo.png?h=45',
     bgColor: '#000',
   },
+  contactUs: {
+    notificationDefaults: {
+      branding: {
+        bgColor: '#000',
+        logo: 'https://img.hub.heart.org/files/base/ascend/minexpo/image/static/minexpo-logo.png?h=45',
+      },
+      to: 'DSanford@ascendintegratedmedia.com',
+      sendFrom: 'MINExpo Show Directory <noreply@parameter1.com>',
+    },
+    branding: {
+      bgColor: '#000',
+      logo: 'https://img.hub.heart.org/files/base/ascend/minexpo/image/static/minexpo-logo.png?h=45',
+    },
+    to: 'DSanford@ascendintegratedmedia.com',
+  },
 };
