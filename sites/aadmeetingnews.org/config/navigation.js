@@ -13,11 +13,11 @@ const userTools = [
 const topics = [
   { href: '/daily-coverage', label: 'Daily Coverage' },
   { href: '/industry-highlights', label: 'Industry Highlights' },
-  { href: 'https://am2022.aad.org/sessions', label: 'Meeting Program', target: '_blank' },
+  { href: 'https://ia2022.aad.org/sessions', label: 'Meeting Program', target: '_blank' },
 ];
 
 const secondary = [
-  { href: 'https://www.aad.org/member/meetings-education/am22/registration', label: 'Registration', target: '_blank' },
+  { href: 'https://www.aad.org/member/meetings-education/ia22/registration', label: 'Registration', target: '_blank' },
   // { href: '#', label: 'Abstracts', target: '_blank' },
   // { href: '#', label: 'Claim CME', target: '_blank' },
 ];
