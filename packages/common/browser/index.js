@@ -1,4 +1,5 @@
 import Leaders from '@parameter1/base-cms-marko-web-leaders/browser';
+
 const ImageSlider = () => import(/* webpackChunkName: "common-image-slider" */ './image-slider.vue');
 const CommonGTMTrackLeaders = () => import(/* webpackChunkName: "common-gtm-track-leaders" */ './gtm-track-leaders.vue');
 const CommonLeadersCompanyWebsiteLink = () => import(/* webpackChunkName: "common-leaders-company-website-link" */ './leaders-company-website-link.vue');
