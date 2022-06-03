@@ -38,6 +38,15 @@ module.exports = {
     support: {
       email: 'reply@hearthubs.org',
     },
+
+    notificationDefaults: {
+      branding: {
+        bgColor: '#000',
+        logo: 'https://img.ascendmedia.com/files/base/ascend/hearthub/AHA_icon.svg?h=60',
+      },
+      to: 'DSanford@ascendintegratedmedia.com',
+      sendFrom: 'Ascend Media <noreply@parameter1.com>',
+    },
   },
   inquiry: {
     enabled: true,

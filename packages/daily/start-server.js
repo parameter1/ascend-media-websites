@@ -2,7 +2,8 @@ const newrelic = require('newrelic');
 const { startServer } = require('@parameter1/base-cms-marko-web');
 const { set, get, getAsObject } = require('@parameter1/base-cms-object-path');
 const cleanResponse = require('@parameter1/base-cms-marko-core/middleware/clean-marko-response');
-const contactUsHandler = require('@ascend-media/package-contact-us');
+const contactUsHandler = require('@parameter1/base-cms-marko-web-contact-us');
+const inquiryUsHandler = require('@parameter1/base-cms-marko-web-inquiry');
 
 const buildNativeXConfig = require('./native-x/build-config');
 const document = require('./components/document');
@@ -12,6 +13,8 @@ const fragments = require('./fragments');
 const routes = siteRoutes => (app) => {
   // Handle contact submissions on /__contact-us
   contactUsHandler(app);
+  // Handle contact submissions on /__inquiry
+  inquiryUsHandler(app);
   // Load site routes.
   siteRoutes(app);
 };
