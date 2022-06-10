@@ -5,10 +5,7 @@ const searchItem = {
   modifiers: ['search-icon'],
 };
 
-const userTools = [
-  // { href: '/page/privacy-policy', label: 'Privacy Policy', target: '_blank' },
-  // { href: '/page/terms-conditions', label: 'Terms & Conditions' },
-];
+const userTools = [];
 
 const topics = [
   { href: '/friday', label: 'Friday' },
@@ -16,19 +13,19 @@ const topics = [
   { href: '/sunday', label: 'Sunday' },
   { href: '/monday', label: 'Monday' },
   { href: '/tuesday', label: 'Tuesday' },
-  { href: 'https://www.asahq.org/annualmeeting', label: 'Meeting Info', target: '_blank' },
+  { href: 'https://www.asahq.org/annualmeeting', label: 'Meeting Info' },
 
 ];
 
 const resources = [
-  { href: 'https://www.abstractsonline.com/pp8/#!/9323', label: 'Sessions', target: '_blank' },
-  { href: 'https://asa.ondemand.org/', label: 'On-Demand', target: '_blank' },
+  { href: 'https://www.abstractsonline.com/pp8/#!/9323', label: 'Sessions' },
+  { href: 'https://asa.ondemand.org/', label: 'On-Demand' },
 ];
 
 const secondary = [
-  { href: 'https://www.asahq.org/annualmeeting/attend/health', label: 'Health & Safety', target: '_blank' },
-  { href: 'https://asa-365.ascendeventmedia.com/', label: 'Archives', target: '_blank' },
-  { href: 'https://www.abstractsonline.com/pp8/#!/9323/credits', label: 'Claim CME', target: '_blank' },
+  { href: 'https://www.asahq.org/annualmeeting/attend/health', label: 'Health & Safety' },
+  { href: 'https://asa-365.ascendeventmedia.com/', label: 'Archives' },
+  { href: 'https://www.abstractsonline.com/pp8/#!/9323/credits', label: 'Claim CME' },
 ];
 
 module.exports = {
