@@ -16,10 +16,10 @@ module.exports = {
   showCopyright: false,
   sponsoredText: 'Paid Advertising Content',
   socialMediaLinks: [
-    { provider: 'facebook', href: 'https://www.facebook.com/AmericanSocietyofAnesthesiologists/', target: '_blank' },
-    { provider: 'twitter', href: 'https://twitter.com/ASALifeline', target: '_blank' },
-    { provider: 'linkedin', href: 'https://www.linkedin.com/company/american-society-of-anesthesiologists/', target: '_blank' },
-    { provider: 'instagram', href: 'https://www.instagram.com/asa_hq/?hl=en', target: '_blank' },
+    { provider: 'facebook', href: 'https://www.facebook.com/AmericanSocietyofAnesthesiologists/' },
+    { provider: 'twitter', href: 'https://twitter.com/ASALifeline' },
+    { provider: 'linkedin', href: 'https://www.linkedin.com/company/american-society-of-anesthesiologists/' },
+    { provider: 'instagram', href: 'https://www.instagram.com/asa_hq/?hl=en' },
   ],
   gtm: {
     containerId: 'GTM-NGJTG3G',
