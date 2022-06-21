@@ -28,7 +28,7 @@ module.exports = {
     tagline: 'Tweets from AAOHNS',
   },
   gcse: {
-    id: '',
+    id: 'd516a7a2f5253d1c6',
   },
   contactUs: {
     to: 'DSanford@ascendintegratedmedia.com',

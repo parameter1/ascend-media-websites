@@ -28,7 +28,7 @@ module.exports = {
     tagline: 'Tweets from ACEP Now',
   },
   gcse: {
-    id: '',
+    id: '759e2e25cf2d37d19',
   },
   contactUs: {
     to: 'DSanford@ascendintegratedmedia.com',

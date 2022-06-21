@@ -29,7 +29,7 @@ module.exports = {
     tagline: 'Tweets from ASA LifeLine',
   },
   gcse: {
-    id: '',
+    id: '1982758490b24cc96',
   },
   contactUs: {
     to: 'DSanford@ascendintegratedmedia.com',
