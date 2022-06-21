@@ -28,7 +28,7 @@ module.exports = {
     tagline: 'Tweets from ASHP Official',
   },
   gcse: {
-    id: '',
+    id: '88fa7953f74c0807d',
   },
   contactUs: {
     to: 'DSanford@ascendintegratedmedia.com',

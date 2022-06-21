@@ -27,7 +27,7 @@ module.exports = {
     tagline: 'Tweets by SHM',
   },
   gcse: {
-    id: '2d2e730087c2bd49e',
+    id: '3afae276bd265adea',
   },
   contactUs: {
     to: 'DSanford@ascendintegratedmedia.com',
