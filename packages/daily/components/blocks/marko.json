@@ -101,5 +101,8 @@
   },
   "<daily-event-schedule-block>": {
     "template": "./event-schedule.marko"
+  },
+  "<daily-exhibitors-banner-block>": {
+    "template": "./exhibitors-banner.marko"
   }
 }

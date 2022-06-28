@@ -15,7 +15,7 @@
     "test": "yarn lint && yarn compile && yarn build"
   },
   "dependencies": {
-    "@ascend-media/package-shared": "^1.5.0",
+    "@ascend-media/package-daily": "^1.5.0",
     "@parameter1/base-cms-marko-core": "^2.80.0",
     "@parameter1/base-cms-marko-web": "^2.92.0",
     "@parameter1/base-cms-marko-web-gam": "^2.90.4",
