@@ -129,7 +129,7 @@ $ const {
                                 <for|country| of=countryFacets>
                                   <if(selectedCountry === country.id)>
                                   <marko-web-browser-component
-                                      name="DirectoryAutoScroll"
+                                      name="MinexpoAutoScroll"
                                       props={
                                         containerTarget: '.directory-country-facets > .directory-country-facets__list',
                                         elementTarget: `.directory-country-facets__link--active`,
@@ -163,64 +163,6 @@ $ const {
                           </div>
                         </if>
                       </marko-web-resolve>
-                      <!-- <if('Company' === contentType)>
-                        <div class="mb-block">
-                          <shared-country-facets|{ countries }|
-                            phrase=phrase
-                            section-ids=sectionIds
-                          >
-                            <div class="directory-country-facets">
-                              <h3 class="directory-country-facets__title">
-                                Country
-                                <default-theme-menu-toggle-button
-                                  class-name=`directory-country-facets__toggle`
-                                  targets=[`.directory-country-facets__list`]
-                                  toggle-class=`directory-country-facets__list--open`
-                                  initially-expanded=(selectedCountry !== '')
-                                  icon-modifiers=["sm"]
-                                  icon-name="plus"
-                                  expanded-icon-name="dash"
-                                />
-                              </h3>
-                              $ const countryFilterFacetClass = (selectedCountry !== '') ? "directory-country-facets__list directory-country-facets__list--open" : "directory-country-facets__list";
-                              <div class=countryFilterFacetClass>
-                                <for|country| of=countries>
-                                  <if(selectedCountry === country)>
-                                  <marko-web-browser-component
-                                      name="DirectoryAutoScroll"
-                                      props={
-                                        containerTarget: '.directory-country-facets > .directory-country-facets__list',
-                                        elementTarget: `.directory-country-facets__link--active`,
-                                        offset: -12,
-                                      }
-                                    />
-                                    $ const countryFilterLink = (phrase) ? `/${section.alias}?phrase=${phrase}` : `/${section.alias}`;
-                                    <div class="directory-country-facets__item directory-country-facets__item--51709">
-                                      <a
-                                        class="directory-country-facets__link directory-country-facets__link--active"
-                                        href=countryFilterLink
-                                      >
-                                        ${country}
-                                      </a>
-                                    </div>
-                                  </if>
-                                  <else>
-                                    $ const countryFilterLink = (phrase) ? `/${section.alias}?phrase=${phrase}&country=${encodeURI(country)}` : `/${section.alias}?country=${encodeURI(country)}`;
-                                    <div class="directory-country-facets__item directory-country-facets__item--51709">
-                                      <a
-                                        class="directory-country-facets__link"
-                                        href=countryFilterLink
-                                      >
-                                        ${country}
-                                      </a>
-                                    </div>
-                                  </else>
-                                </for>
-                              </div>
-                            </div>
-                          </shared-country-facets>
-                        </div>
-                      </if> -->
                     </div>
                   </div>
 
@@ -312,7 +254,7 @@ $ const {
                         $ delete reqQueryParams.page;
                         $ const reqQueryParamsStr = (new URLSearchParams(reqQueryParams)).toString();
                         <marko-web-element block-name="marko-web-search-pagination-controls" name="pages">
-                          <marko-web-browser-component name="PaginationPageNumberInput" props={ page: currentPage, totalPages, path: cleanPath(section.alias), queryStr: reqQueryParamsStr } />
+                          <marko-web-browser-component name="MinexpoPaginationPageNumberInput" props={ page: currentPage, totalPages, path: cleanPath(section.alias), queryStr: reqQueryParamsStr } />
                         </marko-web-element>
                       </marko-web-search-pagination-controls>
                     </div>
