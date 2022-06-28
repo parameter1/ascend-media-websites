@@ -1,36 +1,36 @@
 {
   "tags": {
-    "common-leaders-dropdown-portal": {
+    "shared-leaders-dropdown-portal": {
       "template": "./dropdown-portal.marko"
     },
-    "common-leaders-all": {
+    "shared-leaders-all": {
       "template": "./all.marko",
       "@contextual": "bolean",
       "@display-view-all": "boolean"
     },
-    "common-leaders-directory-page": {
+    "shared-leaders-directory-page": {
       "template": "./directory-page.marko",
       "@expanded": "boolean",
       "@display-view-all": "boolean"
     },
-    "common-leaders-home-page": {
+    "shared-leaders-home-page": {
       "template": "./home-page.marko",
       "@expanded": "boolean",
       "@display-view-all": "boolean",
       "@media-query-columns": "number"
     },
-    "common-leaders-contextual": {
+    "shared-leaders-contextual": {
       "template": "./contextual.marko",
       "@content-id": "number"
     },
-    "common-leaders-gtm-tracker": {
+    "shared-leaders-gtm-tracker": {
       "template": "./gtm-tracker.marko"
     },
-    "common-leaders-company-website-link": {
+    "shared-leaders-company-website-link": {
       "template": "./company-website-link.marko",
       "@company": "object"
     },
-    "common-leaders-company-social-link": {
+    "shared-leaders-company-social-link": {
       "template": "./company-social-link.marko",
       "@company": "object",
       "@item": "object"

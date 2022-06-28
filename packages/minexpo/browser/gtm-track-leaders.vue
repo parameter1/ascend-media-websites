@@ -1,5 +1,5 @@
 <template>
-  <div class="common-track-leaders" />
+  <div class="shared-track-leaders" />
 </template>
 
 <script>

@@ -1,3 +1,4 @@
+// CSS previously found in the common package
 @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500,600,700|Source+Serif+Pro:400,600,700&display=swap");
 
 $theme-font-family-sans-serif: "IBM Plex Sans", sans-serif !default;
@@ -25,10 +26,10 @@ $theme-site-header-breakpoints: (
 @import "../../node_modules/@parameter1/base-cms-marko-web-theme-default/skins/orion/skin";
 @import "../../node_modules/@parameter1/base-cms-marko-web-gtm/scss/slot";
 @import "../../node_modules/@parameter1/base-cms-marko-web-leaders/scss/leaders";
-@import "./carousel";
-@import "./contact-us-form"; // @todo this should be remove once contact us is in core
-@import "./company-page";
-@import "./leaders-index-page";
+@import "./common-components//carousel.scss";
+@import "./common-components/contact-us-form"; // @todo this should be remove once contact us is in core
+@import "./common-components/company-page";
+@import "./common-components/leaders-index-page";
 
 .leaders {
   @include border-radius($theme-card-border-radius);

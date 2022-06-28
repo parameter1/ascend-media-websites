@@ -1,10 +1,5 @@
 {
-  "<minexpo-content-company-page-wrapper>": {
-    "template": "./company.marko",
-    "@id": "string",
-    "@type": "string"
-  },
-  "<minexpo-content-leader-page-wrapper>": {
+  "<shared-content-leader-page-wrapper>": {
     "template": "./leader.marko",
     "@id": "string",
     "@type": "string",
