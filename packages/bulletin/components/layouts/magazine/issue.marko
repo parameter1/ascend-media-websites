@@ -1,5 +1,5 @@
 import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
-import queryFragment from "@ascend-media/package-shared/graphql/fragments/content-list";
+import queryFragment from "@ascend-media/package-daily/graphql/fragments/content-list";
 import { get, getAsObject } from "@parameter1/base-cms-object-path";
 
 $ const { issue } = input;
@@ -25,10 +25,10 @@ $ const { issue } = input;
       </marko-web-element>
       <marko-web-element name="list" block-name="hero-flow">
         <marko-web-query|{ nodes }| name="magazine-scheduled-content" collapsible=false params={ issueId: issue.id, includeSectionNames: ["The Leading Edge"], queryFragment }>
-          <shared-content-list-flow nodes=nodes inner-justified=true flush-x=false flush-y=false>
+          <daily-content-list-flow nodes=nodes inner-justified=true flush-x=false flush-y=false>
             <@header>Leading Edge</@header>
             <@node image-position="right" with-section=false with-dates=false with-teaser=true />
-          </shared-content-list-flow>
+          </daily-content-list-flow>
         </marko-web-query>
       </marko-web-element>
     </marko-web-block>
@@ -45,7 +45,7 @@ $ const { issue } = input;
     >
       <default-theme-card-deck-flow cols=3 nodes=nodes>
         <@slot|{ node, index }|>
-          <shared-content-card-node node=node with-attribution=false with-section=false with-dates=false with-teaser=true />
+          <daily-content-card-node node=node with-attribution=false with-section=false with-dates=false with-teaser=true />
         </@slot>
         <@slot position="after" index=3>
           <marko-web-gam-display-ad id="gpt-ad-rail1" modifiers=["in-card"] />
@@ -65,7 +65,7 @@ $ const { issue } = input;
     >
       <default-theme-card-deck-flow cols=3 nodes=nodes>
         <@slot|{ node, index }|>
-          <shared-content-card-node node=node with-attribution=false with-section=false with-dates=false with-teaser=true />
+          <daily-content-card-node node=node with-attribution=false with-section=false with-dates=false with-teaser=true />
         </@slot>
         <@slot position="after" index=7>
           <marko-web-gam-display-ad id="gpt-ad-rail2" modifiers=["in-card"] />
