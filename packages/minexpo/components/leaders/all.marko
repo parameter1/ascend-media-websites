@@ -1,0 +1,21 @@
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+
+$ const { site } = out.global;
+$ const contextual = defaultValue(input.contextual, true);
+$ const displayViewAll = defaultValue(input.displayViewAll, true);
+
+<marko-web-leaders props={
+  sectionAlias: 'leaders/2021',
+  open: null,
+  expanded: true,
+  contextual,
+  displayHeader: false,
+  displayViewAll,
+  columns: 3,
+  offsetTop: 50,
+  viewAllHref: '/leaders',
+  mediaQueries: [
+    { prop: "columns", value: 2, query: "(max-width: 991px)" },
+    { prop: "columns", value: 1, query: "(max-width: 700px)" },
+  ],
+}/>

@@ -1,10 +1,10 @@
 {
   "tags": {
-    "minexpo-gam-content-targeting": {
+    "shared-gam-content-targeting": {
       "template": "./gam-content-targeting.marko",
       "@obj": "object"
     },
-    "minexpo-company-contact-details": {
+    "shared-company-contact-details": {
       "template": "./company-contact-details.marko",
       "@obj": "object",
       "@show-email": {
@@ -21,5 +21,17 @@
       "@website-link-attrs": "object",
       "@social-link-attrs": "object"
     }
+  },
+  "<common-company-logo>": {
+    "template": "./company-logo.marko",
+    "@content": "object"
+  },
+  "<common-image-slider>": {
+    "template": "./image-slider.marko",
+    "@images" : "array"
+  },
+  "<common-supplier-disclaimer>": {
+    "template": "./supplier-disclaimer.marko",
+    "@obj": "object"
   }
 }

@@ -165,7 +165,7 @@ $ const {
                       </marko-web-resolve>
                       <!-- <if('Company' === contentType)>
                         <div class="mb-block">
-                          <minexpo-country-facets|{ countries }|
+                          <shared-country-facets|{ countries }|
                             phrase=phrase
                             section-ids=sectionIds
                           >
@@ -218,7 +218,7 @@ $ const {
                                 </for>
                               </div>
                             </div>
-                          </minexpo-country-facets>
+                          </shared-country-facets>
                         </div>
                       </if> -->
                     </div>
@@ -289,14 +289,14 @@ $ const {
                         </@header>
                         <@nodes nodes=nodes>
                           <@slot|{ node }|>
-                            <minexpo-company-node
+                            <shared-company-node
                               with-section=false
                               with-teaser=false
                               node=node
                               modifiers=["content-list"]
                             >
                               <@image width=250 ar="3:2" use-placeholder=true />
-                            </minexpo-company-node>
+                            </shared-company-node>
                           </@slot>
                         </@nodes>
                       </marko-web-node-list>

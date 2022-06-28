@@ -26,17 +26,17 @@
       "default-value": false
     }
   },
-  "<minexpo-company-product-categories-block>": {
+  "<shared-company-product-categories-block>": {
     "template": "./company-product-categories.marko",
     "@alias": "array",
     "@schedules": "array"
   },
-  "<minexpo-company-export-categories-block>": {
+  "<shared-company-export-categories-block>": {
     "template": "./company-export-categories.marko",
     "@alias": "array",
     "@schedules": "array"
   },
-  "<minexpo-content-load-more-block>": {
+  "<shared-content-load-more-block>": {
     "template": "./content-load-more.marko",
     "<native-x>": {
       "@index": "number",
@@ -52,5 +52,23 @@
     "@section-id": "number",
     "@section-name": "string",
     "@section-skip": "number"
+  },
+  "<common-featured-companies>": {
+    "template": "./featured-companies.marko",
+    "@content-id": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "<common-company-details>": {
+    "template": "./company-details.marko",
+    "@company": "object"
+  },
+  "<common-leadership-company-videos>": {
+    "template": "./leadership-company-videos.marko",
+    "@content-id": {
+      "type": "number",
+      "required": true
+    }
   }
 }

@@ -23,7 +23,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
             "gpt-ad-rail1": GAM.getAdUnit({ name: "rail1", aliases }),
           };
           <marko-web-gam-slots slots=adSlots />
-          <minexpo-gam-content-targeting obj=content />
+          <shared-gam-content-targeting obj=content />
         </if>
       </marko-web-resolve-page>
   </@head>
@@ -131,7 +131,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
     <marko-web-resolve-page|{ resolved, data: content }| node=pageNode>
       $ const section = resolved.getAsObject("primarySection");
       $ const aliases = hierarchyAliases(section);
-      <minexpo-content-load-more-block
+      <shared-content-load-more-block
         id=id
         type=type
         name=content.name
@@ -139,7 +139,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
         section-id=section.id
         section-name=section.name
       >
-      </minexpo-content-load-more-block>
+      </shared-content-load-more-block>
     </marko-web-resolve-page>
   </@below-page>
   <@foot>
