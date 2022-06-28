@@ -1,0 +1,27 @@
+import { getAsArray } from "@parameter1/base-cms-object-path";
+
+$ const facets = getAsArray(input, "facets");
+$ const aliases = getAsArray(input, "aliases");
+
+<!-- <div class="directory-facets-toggle">
+  <div class="directory-facets-toggle__label">Show Filters</div>
+  <default-theme-menu-toggle-button
+    class-name="directory-facets-toggle__button"
+    targets=[".directory-facets"]
+    toggle-class="directory-facets--open"
+    icon-modifiers=["sm"]
+    icon-name="plus"
+    expanded-icon-name="dash"
+  />
+</div> -->
+<facet-container
+  facets=facets
+  aliases=aliases
+  content-type=input.contentType
+  search-query=input.searchQuery
+  title=input.title
+  description=input.description
+  active-id=input.activeId
+  with-toggle=input.withToggle
+  initially-expanded=input.initiallyExpanded
+/>
