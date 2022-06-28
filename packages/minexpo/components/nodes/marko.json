@@ -59,12 +59,12 @@
     "@attrs": "object",
     "@link-attrs": "object"
   },
-  "<common-youtube-card-node>": {
+  "<shared-youtube-card-node>": {
     "template": "./youtube-card.marko",
     "@node": "object",
     "@link-attrs": "object"
   },
-  "<common-featured-products-card-node>": {
+  "<shared-featured-products-card-node>": {
     "template": "./featured-products-card.marko",
     "@node": "object",
     "@image-width": {

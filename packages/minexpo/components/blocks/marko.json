@@ -53,14 +53,14 @@
     "@section-name": "string",
     "@section-skip": "number"
   },
-  "<common-featured-companies>": {
+  "<shared-featured-companies>": {
     "template": "./featured-companies.marko",
     "@content-id": {
       "type": "number",
       "required": true
     }
   },
-  "<common-leadership-company-videos>": {
+  "<shared-leadership-company-videos>": {
     "template": "./leadership-company-videos.marko",
     "@content-id": {
       "type": "number",

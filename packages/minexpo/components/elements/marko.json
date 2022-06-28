@@ -22,15 +22,15 @@
       "@social-link-attrs": "object"
     }
   },
-  "<common-company-logo>": {
+  "<shared-company-logo>": {
     "template": "./company-logo.marko",
     "@content": "object"
   },
-  "<common-image-slider>": {
+  "<shared-image-slider>": {
     "template": "./image-slider.marko",
     "@images" : "array"
   },
-  "<common-supplier-disclaimer>": {
+  "<shared-supplier-disclaimer>": {
     "template": "./supplier-disclaimer.marko",
     "@obj": "object"
   }
