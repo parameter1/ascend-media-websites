@@ -1,0 +1,68 @@
+import { getAsObject, get, getAsArray } from "@parameter1/base-cms-object-path";
+import isActiveLink from "@parameter1/base-cms-marko-web-theme-default/components/site-navbar/utils/is-active-link";
+import { asArray } from "@parameter1/base-cms-utils";
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import queryFragment from "../../graphql/fragments/watch-listen";
+
+$ const { site, req } = out.global;
+
+$ const queryParams = {
+  limit: 3,
+  queryFragment,
+  sectionBubbling: false,
+  includeContentTypes: ["Video", "Podcast", "Promotion"],
+  sectionAlias: 'watch-listen',
+  ...getAsObject(input, "queryParams"),
+};
+
+$ const rootImageSrc = 'https://img.hub.heart.org/files/base/ascend/hearthub/image/static';
+$ const watchSrc = defaultValue(site.get("blocks.watch.src"), `${rootImageSrc}/watch-icon.png`);
+$ const listenSrc = defaultValue(site.get("blocks.watch.src"), `${rootImageSrc}/listen-icon.png`);
+$ const navigationSrc = defaultValue(site.get("blocks.navigation.src"), `${rootImageSrc}/navigation-icon.png`);
+
+
+<marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
+  <for|content, index| of=nodes>
+    $ let action = "Read";
+    $ let src;
+    $ let link = true;
+    $ if (content.type === "video") {
+      action = "Watch";
+      src = watchSrc;
+    }
+    $ if (content.type === "podcast") {
+      action = "Listen";
+      src = listenSrc;
+    }
+    $ if (content.type === "promotion") {
+      action = "Navigation Tips";
+      src = navigationSrc;
+      link = { target: '_blank' };
+    }
+    <marko-web-node
+      image-position="left"
+      card=true
+      flush=false
+      full-height=false
+      class=(index + 1 === nodes.length || "mb-block")
+    >
+      <@image
+        ar="1:1"
+        width="75"
+        use-placeholder=false
+        src=src
+        alt=action
+        is-logo=true
+        link={ href: get(content, "siteContext.path") }
+      />
+      <@body>
+        <@text modifiers=["content-action"]>
+          ${action}
+        </@text>
+        <@text modifiers=["content-title"]>
+          <marko-web-content-name tag=null obj=content link=link />
+        </@text>
+      </@body>
+    </marko-web-node>
+  </for>
+</marko-web-query>

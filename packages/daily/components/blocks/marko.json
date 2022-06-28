@@ -86,5 +86,20 @@
   },
   "<daily-global-right-rail-block>": {
     "template": "./global-right-rail.marko"
+  },
+  "<daily-science-news-block>": {
+    "template": "./science-news.marko"
+  },
+  "<daily-eposters-mr-block>": {
+    "template": "./eposters-mr.marko"
+  },
+  "<daily-early-career-block>": {
+    "template": "./early-career.marko"
+  },
+  "<daily-exhibits-mr-block>": {
+    "template": "./exhibits-mr.marko"
+  },
+  "<daily-event-schedule-block>": {
+    "template": "./event-schedule.marko"
   }
 }

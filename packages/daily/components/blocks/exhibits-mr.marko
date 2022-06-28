@@ -1,0 +1,19 @@
+import { buildImgixUrl } from "@parameter1/base-cms-image";
+
+$ const { site, req } = out.global;
+
+$ const src = site.get("blocks.exhibits.src") ? site.get("blocks.exhibits.src") : false;
+$ const imgixUrl = buildImgixUrl(src, { h: 250 });
+$ const srcset = [`${buildImgixUrl(imgixUrl, { h: 250, dpr: 2 })} 2x`];
+$ const href = site.get("blocks.exhibits.href") ? site.get("blocks.exhibits.href") : false;
+
+<if(src && href)>
+  <div class="ad-container ad-container--center ad-container--max-width-300">
+    <marko-web-img
+      src=imgixUrl
+      srcset=srcset
+      lazyload=true
+      link={ href }
+    />
+  </div>
+</if>
