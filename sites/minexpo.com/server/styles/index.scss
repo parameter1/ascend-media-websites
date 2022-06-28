@@ -52,8 +52,8 @@ $theme-site-header-breakpoints: (
 
   @media (min-width: map-get($theme-site-header-breakpoints, small-text-primary)) {
     background: #dde5f2;
-    background: url("https://img.ascendmedia.com/files/base/ascend/minexpo/image/static/shared-bg-nofade.jpg") no-repeat 50% 120px, #59659d;
-    // background: url("https://img.ascendmedia.com/files/base/ascend/minexpo/image/static/shared-bg-nofade.jpg") no-repeat 50% 120px, linear-gradient(180deg, #dde5f2 517px, #dfe3e2 631px, #c2ccd6 664px, #c7c6a7 680px, #8791c4 758px, #59659d 810px, #59659d 900px);
+    background: url("https://img.ascendmedia.com/files/base/ascend/minexpo/image/static/minexpo-bg-nofade.jpg") no-repeat 50% 120px, #59659d;
+    // background: url("https://img.ascendmedia.com/files/base/ascend/minexpo/image/static/minexpo-bg-nofade.jpg") no-repeat 50% 120px, linear-gradient(180deg, #dde5f2 517px, #dfe3e2 631px, #c2ccd6 664px, #c7c6a7 680px, #8791c4 758px, #59659d 810px, #59659d 900px);
     .page {
       background-color: transparent;
     }
