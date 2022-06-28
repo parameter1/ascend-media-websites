@@ -60,10 +60,6 @@
       "required": true
     }
   },
-  "<common-company-details>": {
-    "template": "./company-details.marko",
-    "@company": "object"
-  },
   "<common-leadership-company-videos>": {
     "template": "./leadership-company-videos.marko",
     "@content-id": {

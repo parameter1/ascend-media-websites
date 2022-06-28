@@ -64,11 +64,6 @@
     "@node": "object",
     "@link-attrs": "object"
   },
-  "<common-author-card-node>": {
-    "template": "./author-card.marko",
-    "@node": "object",
-    "@with-email": "boolean"
-  },
   "<common-featured-products-card-node>": {
     "template": "./featured-products-card.marko",
     "@node": "object",
