@@ -31,3 +31,24 @@ $theme-site-navbar-secondary-type: light;
     background-color: $primary;
   }
 }
+
+.site-navbar {
+  &--multi-logo {
+    .site-navbar {
+      &__link {
+        padding-top: 35px;
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+.site-menu {
+  top: calculate-navbar-height-for(default, 35px);
+
+  @each $breakpoint, $width in sort-map-by-values($theme-site-header-breakpoints, desc) {
+    @media (max-width: $width) {
+      top: calculate-navbar-height-for($breakpoint, 20px);
+    }
+  }
+}
