@@ -54,7 +54,7 @@ $ if (navigation.secondary.length) tertiaryMods.push("no-left-margin");
   $ const multiLogo = site.get("logos.navbar-secondary.src") && site.get("logos.navbar-tertiary.src");
   $ const primaryNavModifiers = multiLogo ? ["primary", "multi-logo"] : ["primary"];
   <default-theme-site-navbar modifiers=primaryNavModifiers>
-  <if (multiLogo)>
+  <if(multiLogo)>
     <default-theme-site-navbar-brand title=`${config.website("name")} Homepage`>
       <default-theme-site-navbar-logo
         alt=config.website("name")
