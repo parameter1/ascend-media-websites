@@ -78,12 +78,14 @@ $ const promise = websiteSectionContentLoader(apollo, {
             </global-content-card-deck-flow>
           </div>
           <div class="col-lg-4">
+            $ const nativeXBlockTitle = site.get('nativeXBlockTitle');
             <if(nativeXBlock === true)>
               <global-native-x-list-block
                 placement-name="default"
                 aliases=aliases
                 limit=6
                 collapsible=true
+                title=nativeXBlockTitle
               />
             </if>
             <else>

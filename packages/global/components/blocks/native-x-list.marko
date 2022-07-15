@@ -17,6 +17,7 @@ $ const imagePosition = defaultValue(input.imagePosition, "right");
 $ const withTeaser = defaultValue(input.withTeaser, false);
 $ const innerJustified = defaultValue(input.innerJustified, false);
 $ const displayImage = defaultValue(input.displayImage, true);
+$ const title = defaultValue(input.title, "Interesting Stories")
 
 <marko-web-native-x-fetch-elements|{ ads }| uri=uri id=placement.id opts={ n: limit }>
   $ const nodes = ads.filter(ad => ad.hasCampaign);
@@ -30,7 +31,7 @@ $ const displayImage = defaultValue(input.displayImage, true);
       ...input.list
     >
 
-      <@header>Interesting Stories</@header>
+      <@header>${title}</@header>
       <@nodes nodes=nodes>
         <@slot|{ node: ad, index }|>
           $ const node = convertAdToContent(ad, { sectionName: `Sponsored by ${ad.campaign.advertiserName}` });
