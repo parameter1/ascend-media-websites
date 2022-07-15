@@ -1,5 +1,7 @@
 import { getAsObject, get } from "@parameter1/base-cms-object-path";
 
+$ const { config } = out.global;
+
 $ const content = getAsObject(input, "content");
 $ const { socialLinks, ...contentSansSocial } = content;
 $ const { website, ...contentSansWebsite } = contentSansSocial;
@@ -23,6 +25,10 @@ $ const needs = [
 $ const hasValues = needs.map(field => get(content, field)).some(v => v);
 $ const hasContactValues = contactNeeds.map(field => get(content, field)).some(v => v);
 
+$ const siteId = get(config, 'websiteContext.id');
+// IMEX and IMEX FF
+$ const siteIds = ["5f69316296e7bf68228b4595", "6228b5a440412800498b456f"];
+
 <if(hasValues)>
   <marko-web-node-list
     collapsible=false
@@ -36,7 +42,7 @@ $ const hasContactValues = contactNeeds.map(field => get(content, field)).some(v
         <daily-company-page-label>Contact</daily-company-page-label>
         <default-theme-content-contact-details obj=contentSansWebsite />
       </if>
-      <if(website)>
+      <if(website && !siteIds.includes(siteId))>
         <div class="page-contact-details">
           <div class="page-contact-details__section">
             <div class="page-contact-details__content-website">
@@ -45,7 +51,17 @@ $ const hasContactValues = contactNeeds.map(field => get(content, field)).some(v
           </div>
         </div>
       </if>
-
+      <else-if(website && siteIds.includes(siteId))>
+        <div class="page-contact-details">
+          <div class="page-contact-details__section">
+            <div class="page-contact-details__content-website">
+              <div>
+                <a href=website>${website}</a>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </else-if>
       <marko-web-content-body|{ value }| obj=content>
         <daily-company-page-label>More info on $!{content.name}</daily-company-page-label>
         $!{value}
