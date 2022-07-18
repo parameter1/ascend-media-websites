@@ -55,6 +55,11 @@ module.exports = {
     logo: 'https://img.hub.heart.org/files/base/ascend/hearthub/image/static/footer.svg?h=90',
     bgColor: '#ffffff',
   },
+  p1events: {
+    tenant: 'ascend',
+    enabled: true,
+    cookieDomain: process.env.NODE_ENV === 'production' ? 'sessions.hub.heart.org' : '',
+  },
   ahaFooter: true,
   noticePushdown: true,
 };
