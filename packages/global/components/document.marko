@@ -11,6 +11,11 @@ $ const aboveContainer = get(input, "aboveContainer.renderBody");
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <marko-web-deferred-script-loader-init />
+    <marko-web-p1-events-init
+      on="load"
+      request-frame=true
+      target-tag="body"
+    />
     <marko-web-gam-init
       on="ready"
       request-frame=true
