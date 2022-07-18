@@ -6,6 +6,7 @@ $ const { id, type, pageNode } = data;
 
 $ const adSlots = ({ aliases }) => ({
   "gpt-ad-lb1": GAM.getAdUnit({ name: "lb1", aliases }),
+  "gpt-ad-rail1": GAM.getAdUnit({ name: "rail1", aliases }),
 });
 
 <marko-web-content-page-layout id=id type=type attrs={"aria-label": `website-section-${id}`}>
@@ -19,7 +20,12 @@ $ const adSlots = ({ aliases }) => ({
       <marko-web-gam-slots slots=adSlots({ aliases }) />
     </marko-web-resolve-page>
   </@head>
-
+  <@above-container>
+    <marko-web-resolve-page|{ data: content }| node=pageNode>
+      $ const aliases = hierarchyAliases(content.primarySection);
+      <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "reskin", aliases }) />
+    </marko-web-resolve-page>
+  </@above-container>
   <@page>
     <!-- <global-leaderboard-block /> -->
     <!-- <marko-web-gam-display-ad id="gpt-ad-lb1" modifiers=["top-of-page", "max-width-790", "center"] /> -->
@@ -66,8 +72,14 @@ $ const adSlots = ({ aliases }) => ({
               </@body>
             </marko-web-node-list>
           </if>
+          <if(site.get("featuredExhibitors"))>
+            <marko-web-gam-display-ad id="gpt-ad-rail1" />
+          </if>
         </div>
       </div>
+      <if(site.get("featuredExhibitors"))>
+        <marko-web-gam-display-ad id="gpt-ad-lb1" modifiers=["max-width-790", "center"] />
+      </if>
     </marko-web-resolve-page>
   </@page>
   <@below-page>
