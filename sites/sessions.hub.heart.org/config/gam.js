@@ -9,6 +9,7 @@ config
     { name: 'rail2', templateName: 'rail', path: 'rail2' },
     { name: 'rail3', templateName: 'rail', path: 'rail3' },
     { name: 'load-more', templateName: 'load-more', path: 'load-more' },
+    { name: 'reskin', path: 'reskin' },
   ]);
 
 module.exports = config;
