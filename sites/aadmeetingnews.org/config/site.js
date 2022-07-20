@@ -47,4 +47,9 @@ module.exports = {
     logo: 'https://img.ascendmedia.com/files/base/ascend/hh/image/static/aad/AAD_Logo_Header.pngh=50',
     bgColor: '#ffffff',
   },
+  p1events: {
+    tenant: 'ascend',
+    enabled: true,
+    cookieDomain: process.env.NODE_ENV === 'production' ? 'aadmeetingnews.org' : '',
+  },
 };

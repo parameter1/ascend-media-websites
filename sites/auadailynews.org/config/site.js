@@ -45,4 +45,9 @@ module.exports = {
     logo: 'https://img.ascendmedia.com/files/base/ascend/hh/image/static/aua/site_logo.png?h=50',
     bgColor: '#ffffff',
   },
+  p1events: {
+    tenant: 'ascend',
+    enabled: true,
+    cookieDomain: process.env.NODE_ENV === 'production' ? 'auadailynews.org' : '',
+  },
 };

@@ -48,4 +48,9 @@ module.exports = {
     logo: '',
     bgColor: '#ffffff',
   },
+  p1events: {
+    tenant: 'ascend',
+    enabled: true,
+    cookieDomain: process.env.NODE_ENV === 'production' ? 'acepmeetingnewscentral.org' : '',
+  },
 };
