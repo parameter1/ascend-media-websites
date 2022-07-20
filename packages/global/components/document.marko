@@ -40,13 +40,14 @@ $ const aboveContainer = get(input, "aboveContainer.renderBody");
     <marko-web-browser-component name="TriggerScreenChangeEvent" />
     <marko-web-gtm-track-bus-event on="screen_change" />
     <marko-web-gtm-track-load-more />
-
+    <marko-web-reveal-ad-listener select-all-targets=true />
     <global-site-header />
     <default-theme-site-menu modifiers=["right"] />
     <if(site.config.noticePushdown)>
       <global-notice-pushdown-block />
     </if>
   </@above-container>
+   <${input.aboveContainer} />
   <@below-container>
     <${input.belowContainer} />
     <if(site.config.ahaFooter)>
