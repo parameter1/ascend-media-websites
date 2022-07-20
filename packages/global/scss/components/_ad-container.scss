@@ -34,3 +34,8 @@
     }
   }
 }
+
+.reveal-ad-background + .body-wrapper {
+  background-image: none;
+  z-index: 1;
+}
