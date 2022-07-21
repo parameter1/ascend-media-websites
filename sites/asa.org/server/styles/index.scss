@@ -31,3 +31,48 @@ $theme-site-navbar-secondary-type: light;
     background-color: $primary;
   }
 }
+
+.site-navbar {
+  &--multi-logo {
+    .site-navbar {
+      &__link {
+        padding-top: 35px;
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+// This is to account for double logo in the nav at both desktop and tablet/mobile(small-logo)
+// breakpoint: small-primary-padding 1140px, small-text-primary 1014px, hide-primary 918px, small-logo 800px, small-text-secondary 700px, hide-secondary 580px
+$default-site-menu-top: 35px;
+$theme-site-header-breakpoints-top: (
+  small-logo: 20px,
+);
+.site-menu {
+  top: calculate-navbar-height-for(default, $default-site-menu-top);
+  @each $breakpoint, $width in sort-map-by-values($theme-site-header-breakpoints, desc) {
+    @media (max-width: $width) {
+      $top: map-get($theme-site-header-breakpoints-top, $breakpoint);
+      @if ($top) {
+        top: calculate-navbar-height-for($breakpoint, $top);
+      }
+    }
+  }
+}
+
+$default-document-container-padding-top: 170px;
+$theme-site-header-breakpoints-top-offset: (
+  small-logo: 20px,
+);
+.document-container {
+  padding-top: $default-document-container-padding-top;
+  @each $breakpoint, $width in sort-map-by-values($theme-site-header-breakpoints, desc) {
+    $offset: map-get($theme-site-header-breakpoints-top-offset, $breakpoint);
+    @if ($offset) {
+      @media (max-width: $width) {
+        padding-top: calculate-navbar-height-for($breakpoint, $offset);
+      }
+    }
+  }
+}
