@@ -8,11 +8,11 @@ module.exports = {
     title: 'ASA Anesthesiology Today',
   },
   'navbar-secondary': {
-    src: 'https://img.ascendmedia.com/files/base/ascend/hh/image/static/asa/asa-anesthesiology-meeting.png?h=100',
+    src: 'https://img.ascendmedia.com/files/base/ascend/hh/image/static/asa/annual-meeting-logo-white.png?w=300',
     srcset: [
-      'https://img.ascendmedia.com/files/base/ascend/hh/image/static/asa/asa-anesthesiology-meeting.png?h=200 2x',
+      'https://img.ascendmedia.com/files/base/ascend/hh/image/static/asa/annual-meeting-logo-white.png?w=600 2x',
     ],
-    href: '/',
+    href: 'https://www.asahq.org/annualmeeting',
     title: 'The Anesthesiology Annual Meeting',
   },
   'navbar-tertiary': {
