@@ -5,7 +5,7 @@ import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import websiteSectionContentLoader from "../../loaders/website-section-content";
 import queryFragment from "../../graphql/fragments/content-list";
 
-$ const { GAM, apollo } = out.global;
+$ const { GAM, apollo, site } = out.global;
 
 $ const {
   id,
@@ -36,6 +36,8 @@ $ const promise = websiteSectionContentLoader(apollo, {
   },
   withStandardQuery: true,
 });
+
+$ const useNativeXHeroBlock = site.getAsArray("nativeXHeroSections").includes(alias);
 
 <marko-web-resolve|{ resolved: sectionContent }| promise=promise>
   $ const { featured, standard } = sectionContent;
@@ -68,7 +70,12 @@ $ const promise = websiteSectionContentLoader(apollo, {
         />
       </@above-page>
       <@page>
-        <global-standard-hero-block nodes=getAsArray(featured, "nodes") />
+        <if(useNativeXHeroBlock)>
+          <global-native-x-hero-block nodes=getAsArray(featured, "nodes") aliases=aliases />
+        </if>
+        <else>
+          <global-standard-hero-block nodes=getAsArray(featured, "nodes") />-
+        </else>
         <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(0, 5) cols=3 ad-index=1 ad-name="rail1" ad-modifiers=["paid"]>
           <@native-x index=2 name="default" aliases=[section.alias] />
         </global-content-card-deck-flow>
