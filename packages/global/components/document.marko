@@ -64,6 +64,9 @@ $ const aboveContainer = get(input, "aboveContainer.renderBody");
         on-script-load="if ($.prototype.ahaHeaderFooterSitecore) $('.body-wrapper').ahaHeaderFooterSitecore()"
       />
     </if>
+    <else-if(site.config.useFooterOverride)>
+      <global-site-footer />
+    </else-if>
     <else>
       <default-theme-site-footer show-copyright=site.get("showCopyright") />
     </else>
