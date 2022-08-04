@@ -70,8 +70,5 @@
   },
   "<global-featured-exhibitors-block>": {
     "template": "./featured-exhibitors.marko"
-  },
-  "<global-native-x-hero-block>": {
-    "template": "./native-x-hero.marko"
   }
 }

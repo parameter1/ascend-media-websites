@@ -63,5 +63,4 @@ module.exports = {
   ahaFooter: true,
   noticePushdown: true,
   featuredExhibitors: true,
-  nativeXHeroSections: ['industry-highlights'],
 };
