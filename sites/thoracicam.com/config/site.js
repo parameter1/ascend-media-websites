@@ -3,6 +3,7 @@ const gam = require('./gam');
 const logos = require('./logos');
 
 module.exports = {
+  nativeXBlock: true,
   logos,
   navigation,
   gam,
