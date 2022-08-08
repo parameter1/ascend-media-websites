@@ -5,6 +5,7 @@ const nativeX = require('./native-x');
 
 module.exports = {
   nativeXBlock: true,
+  contentPageLoadMore: true,
   logos,
   navigation,
   gam,
