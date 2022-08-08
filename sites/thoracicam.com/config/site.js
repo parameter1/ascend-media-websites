@@ -30,7 +30,7 @@ module.exports = {
   contactUs: {
     to: 'DSanford@ascendintegratedmedia.com',
     branding: {
-      logo: '',
+      logo: 'https://img.ascendmedia.com/files/base/ascend/hh/image/static/thoracic/am-thor-header.png?h=50',
     },
     support: {
       email: 'reply@hearthubs.org',
