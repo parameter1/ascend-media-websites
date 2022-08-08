@@ -14,8 +14,9 @@ module.exports = {
   sponsoredText: 'Paid Advertising Content',
   socialMediaLinks: [
     { provider: 'facebook', href: '#', target: '_blank' },
-    { provider: 'instagram', href: '#', target: '_blank' },
     { provider: 'twitter', href: '#', target: '_blank' },
+    { provider: 'linkedin', href: '#', target: '_blank' },
+    { provider: 'instagram', href: '#', target: '_blank' },
   ],
   gtm: {
     containerId: 'GTM-NJCRJGG',
