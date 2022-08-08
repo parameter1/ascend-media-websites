@@ -1,16 +1,16 @@
 module.exports = {
   navbar: {
-    src: '',
+    src: 'https://img.ascendmedia.com/files/base/ascend/hh/image/static/thoracic/am-thor-header.png?h=100',
     srcset: [
-      '',
+      'https://img.ascendmedia.com/files/base/ascend/hh/image/static/thoracic/am-thor-header.png?h=200 2x',
     ],
     href: '/',
-    title: 'Example Site',
+    title: 'Thoracic',
   },
   footer: {
-    src: '',
+    src: 'https://img.ascendmedia.com/files/base/ascend/hh/image/static/thoracic/am-thor-header.png?h=100',
     srcset: [
-      '',
+      'https://img.ascendmedia.com/files/base/ascend/hh/image/static/thoracic/am-thor-header.png?h=200 2x',
     ],
   },
 };
