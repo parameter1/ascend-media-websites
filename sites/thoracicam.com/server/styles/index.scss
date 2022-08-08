@@ -1,7 +1,7 @@
 @import "../../node_modules/@ascend-media/package-global/scss/variables";
 
-$primary: #1c7cd5;
-$secondary: #76bc43;
+$primary: #008eca;
+$secondary: #7f7f7f;
 
 $theme-site-navbar-logo-height: 100px;
 $theme-site-navbar-logo-height-sm: 50px;
@@ -26,7 +26,7 @@ $theme-site-navbar-secondary-type: light;
 }
 
 .site-footer {
-  &__container--secondary {
-    background-color: $primary;
+  &__container {
+    background-color: $secondary;
   }
 }
