@@ -5,31 +5,20 @@ const searchItem = {
   modifiers: ['search-icon'],
 };
 
-const userTools = [
-  // { href: '/page/privacy-policy', label: 'Privacy Policy', target: '_blank' },
-  // { href: '/page/terms-conditions', label: 'Terms & Conditions' },
+const userTools = [];
+
+const items = [
+  { href: '/asthma', label: 'Asthma' },
+  { href: '/copd', label: 'COPD' },
+  { href: '/critical-care', label: 'Critical Care' },
+  { href: '/pediatrics-sleep', label: 'Pediatrics/Sleep' },
 ];
 
-const topics = [
-  { href: '/section-1', label: 'Section 1' },
-  { href: '/section-2', label: 'Section 2' },
-  { href: '/section-3', label: 'Section 3' },
-  { href: '/section-4', label: 'Section 4' },
-  { href: '/section-5', label: 'Section 5' },
-  { href: '/section-6', label: 'Section 6' },
-];
-
-const secondary = [
-  { href: '/secondary-1', label: 'Secondary 1' },
-  // { href: '#', label: 'Abstracts', target: '_blank' },
-  // { href: '#', label: 'Claim CME', target: '_blank' },
-];
+const secondary = [];
 
 module.exports = {
 
-  primary: {
-    items: [...topics],
-  },
+  primary: { items },
   secondary: {
     items: [...secondary],
   },
@@ -39,7 +28,7 @@ module.exports = {
   menu: [
     {
       label: 'Topics',
-      items: [...topics],
+      items,
     },
     {
       label: 'Resources',
