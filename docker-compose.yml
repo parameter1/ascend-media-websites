@@ -243,6 +243,7 @@ services:
       TENANT_KEY: ascend_hh
       SITE_ID: 60747a8880a4312e028b45d6
       CONTENT_PAGE_LOAD_MORE: "true"
+      NATIVE_X_BLOCK: "true"
     ports:
       - "9920:80"
       - "19920:19920"
