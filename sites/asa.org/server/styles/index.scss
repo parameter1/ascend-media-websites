@@ -88,15 +88,11 @@ $theme-site-header-breakpoints-top-offset: (
 }
 
 
-.marko-web-icon {
-  &--three-bars {
-    &::after {
-      content: "Menu";
-    }
-  }
+.site-header .marko-web-icon {
+  &--three-bars,
   &--x {
     &::after {
-      content: "Close Menu";
+      content: "Menu";
     }
   }
 }
