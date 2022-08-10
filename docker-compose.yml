@@ -382,6 +382,8 @@ services:
       LIVERELOAD_PORT: 19928
       TENANT_KEY: ascend_hh
       SITE_ID: 62f156eeb42f9308288b45e8
+      HOST: www-ascend-thoracic.dev.parameter1.com
+    hostname: www-ascend-thoracic.dev.parameter1.com
     ports:
       - "9928:80"
       - "19928:19928"
