@@ -4,7 +4,7 @@ module.exports = {
     srcset: [
       'https://img.ascendmedia.com/files/base/ascend/hh/image/static/asa/asa-logo-head-2022.png?h=200 2x',
     ],
-    href: 'https://www.asahq.org/annualmeeting',
+    href: 'https://www.asahq.org',
     title: 'ASA Anesthesiology Today',
   },
   'navbar-secondary': {

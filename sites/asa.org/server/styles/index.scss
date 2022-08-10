@@ -86,3 +86,13 @@ $theme-site-header-breakpoints-top-offset: (
     }
   }
 }
+
+
+.site-header .marko-web-icon {
+  &--three-bars,
+  &--x {
+    &::after {
+      content: "Menu";
+    }
+  }
+}

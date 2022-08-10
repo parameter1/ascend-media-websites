@@ -12,7 +12,7 @@ module.exports = {
   gam,
   nativeX,
   company: 'Ascend Media',
-  copyrightNotice: '',
+  copyrightNotice: '© 2022 American Society of Anesthesiologists (ASA)<br/>1061 American Lane | Schaumburg, IL 60173',
   showCopyright: false,
   sponsoredText: 'Paid Advertising Content',
   socialMediaLinks: [
@@ -53,4 +53,5 @@ module.exports = {
     enabled: true,
     cookieDomain: process.env.NODE_ENV === 'production' ? 'asameetingnewscentral.org' : '',
   },
+  useFooterOverride: true,
 };

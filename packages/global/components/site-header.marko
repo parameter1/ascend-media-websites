@@ -21,7 +21,7 @@ $ if (navigation.secondary.length) tertiaryMods.push("no-left-margin");
 >
   <${input.aboveNav} />
   <default-theme-site-navbar modifiers=["secondary"]>
-    <default-theme-site-navbar-brand title=`${config.website("name")} Homepage`>
+    <default-theme-site-navbar-brand title=`${config.website("name")} Homepage` href=site.get("logos.navbar.href")>
       <default-theme-site-navbar-logo
         alt=config.website("name")
         src=site.get("logos.navbar.src")
