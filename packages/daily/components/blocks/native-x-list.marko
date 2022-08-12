@@ -1,0 +1,57 @@
+import { getAsObject, get } from "@parameter1/base-cms-object-path";
+import { defaultValue } from "@parameter1/base-cms-marko-web/utils";
+import convertAdToContent from "@parameter1/base-cms-marko-web-native-x/utils/convert-ad-to-content";
+
+$ const { nativeX: nxConfig } = out.global;
+$ const limit = defaultValue(input.limit, 3);
+$ const placementName = defaultValue(input.placementName, "default");
+$ const aliases = defaultValue(input.aliases, []);
+
+$ const modifiers = input.modifiers || [];
+$ modifiers.push("native-x-list");
+$ const uri = nxConfig.getUri();
+$ const placement = nxConfig.getPlacement({ name: placementName, aliases });
+
+$ const linkHeader = defaultValue(input.linkHeader, true);
+$ const imagePosition = defaultValue(input.imagePosition, "right");
+$ const withTeaser = defaultValue(input.withTeaser, false);
+$ const innerJustified = defaultValue(input.innerJustified, false);
+$ const displayImage = defaultValue(input.displayImage, true);
+$ const title = defaultValue(input.title, "Interesting Stories")
+$ const displayHeader = defaultValue(input.displayHeader, true);
+
+<marko-web-native-x-fetch-elements|{ ads }| uri=uri id=placement.id opts={ n: limit }>
+  $ const nodes = ads.filter(ad => ad.hasCampaign);
+
+  <if(nodes.length)>
+    <marko-web-node-list
+      inner-justified=innerJustified
+      flush-x=false
+      flush-y=false
+      modifiers=modifiers
+      ...input.list
+    >
+
+      <if(displayHeader)>
+        <@header>${title}</@header>
+      </if>
+      <@nodes nodes=nodes>
+        <@slot|{ node: ad, index }|>
+          $ const node = convertAdToContent(ad, { sectionName: `Sponsored by ${ad.campaign.advertiserName}` });
+          <daily-content-list-node
+            image-position=imagePosition
+            card=false
+            flush=true
+            modifiers=modifiers
+            node=node
+            with-section=true
+            with-teaser=false
+            with-dates=false
+            attrs=ad.attributes.container
+            link-attrs=ad.attributes.link
+          />
+        </@slot>
+      </@nodes>
+    </marko-web-node-list>
+  </if>
+</marko-web-native-x-fetch-elements>
