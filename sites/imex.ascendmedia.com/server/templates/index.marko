@@ -1,6 +1,6 @@
 import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
 
-$ const { GAM, nativeX } = out.global;
+$ const { GAM, nativeX, site } = out.global;
 
 $ const {
   id,
@@ -41,12 +41,19 @@ $ const adSlots = ({ aliases }) => ({
             <@native-x index=2 name="default" aliases=["daily-news"] />
           </daily-content-featured-block>
 
-          <daily-section-list-block section-alias="industry-insights" inner-justified=false with-teaser=true limit=2>
+          <daily-section-list-block section-alias="industry-insights" inner-justified=false with-teaser=true limit=4>
             <@image width="125" />
           </daily-section-list-block>
         </div>
 
         <div class="col-lg-4 mb-block-lg page-rail">
+          <daily-native-x-list-block
+            placement-name="default"
+            aliases=aliases
+            limit=6
+            collapsible=true
+          />
+          <marko-web-gam-display-ad id="gpt-ad-rail2" class="mt-block-lg" />
           <a
             class="twitter-timeline btn btn-primary btn-block"
             data-height="650"
@@ -57,8 +64,6 @@ $ const adSlots = ({ aliases }) => ({
             Tweets by IMEX Group
           </a>
           <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-          <marko-web-gam-display-ad id="gpt-ad-rail2" class="mt-block-lg" />
         </div>
       </div>
 
@@ -82,8 +87,26 @@ $ const adSlots = ({ aliases }) => ({
         </div>
       </div>
 
-      <daily-featured-exhibitors-block section-alias="featured-exhibitors" />
-
     </marko-web-resolve-page>
   </@page>
+  <@below-page>
+    <marko-web-resolve-page|{ resolved, data: content }| node=pageNode>
+      $ const loadMoreParams = {
+        sectionAlias: 'home',
+        optionName: ["Standard"],
+        limit: 12,
+        skip: 3
+      };
+      <marko-web-load-more
+        component-name="daily-content-card-deck-flow"
+        component-input={ cols: 3, withTeaser: false }
+        fragment-name="daily-content-list"
+        query-name="website-scheduled-content"
+        query-params=loadMoreParams
+        max-pages=3
+        page-input={ for: "content", id }
+        attrs={ "aria-label": "load-more", "role": "main" }
+      />
+    </marko-web-resolve-page>
+  </@below-page>
 </marko-web-website-section-page-layout>
