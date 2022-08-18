@@ -21,12 +21,10 @@ const topics = [
 ];
 
 const secondary = [
-  { href: 'https://twitter.com/search?q=%23AHA21&src=typed_query', label: '#AHA21' },
-  { href: 'https://twitter.com/hashtag/ReSS21?src=hashtag_click', label: '#ReSS21' },
-  { href: 'https://twitter.com/search?q=%23QCOR21&src=typed_query', label: '#QCOR21' },
+  { href: 'https://twitter.com/search?q=%23AHA21&src=typed_query', label: '#AHA22' },
+  { href: 'https://twitter.com/hashtag/ReSS21?src=hashtag_click', label: '#ReSS22' },
   { href: 'https://AHAsessions.heart.org', label: 'Virtual Experience Access', target: '_blank' },
-  { href: 'https://aha.apprisor.org', label: 'Sessions & QCOR Posters', target: '_blank' },
-  { href: 'https://ress.apprisor.org', label: 'ReSS Posters', target: '_blank' },
+  { href: 'https://aha.apprisor.org', label: 'Sessions Posters', target: '_blank' },
 ];
 
 module.exports = {
