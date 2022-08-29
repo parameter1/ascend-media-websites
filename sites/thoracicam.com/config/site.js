@@ -52,9 +52,6 @@ module.exports = {
   gtm: {
     containerId: 'GTM-NJCRJGG',
   },
-  // wufoo: {
-  //   userName: 'randallreilly',
-  // },
   inquiry: {
     enabled: false,
     directSend: false,
