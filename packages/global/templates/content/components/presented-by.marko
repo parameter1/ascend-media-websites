@@ -12,7 +12,7 @@ $ const imgSrc2x = imgSrc && buildImgixUrl(imgSrc, { ...imgDefaults, dpr: 2 });
 
 <marko-web-block name="sponsor-logo" modifiers=["content-page"] class="mt-3">
   <marko-web-element block-name="sponsor-logo" name="label">
-    Presented by <if(!imgSrc)><span class="sponsore-name" >${advertiser.name}</span></if>
+    Presented by <if(!imgSrc)><span class="sponsor-name" >${advertiser.name}</span></if>
   </marko-web-element>
   <if(imgSrc)>
   <marko-web-img
