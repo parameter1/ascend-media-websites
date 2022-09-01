@@ -1,6 +1,6 @@
 {
   "name": "@ascend-media/isc.hub.heart.org",
-  "version": "1.6.0",
+  "version": "1.6.3",
   "author": "Brandon Krigbaum <brandonbk@gmail.com>",
   "repository": "https://github.com/parameter1/ascend-media-websites/tree/master/sites/isc.hub.heart.org",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "test": "yarn lint && yarn compile && yarn build"
   },
   "dependencies": {
-    "@ascend-media/package-global": "^1.6.0",
+    "@ascend-media/package-global": "^1.6.3",
     "@parameter1/base-cms-marko-core": "^3.0.0",
     "@parameter1/base-cms-marko-web": "^3.0.0",
     "@parameter1/base-cms-marko-web-gam": "^3.0.0",
