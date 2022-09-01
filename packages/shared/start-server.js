@@ -4,6 +4,7 @@ const { set, get, getAsObject } = require('@parameter1/base-cms-object-path');
 const cleanResponse = require('@parameter1/base-cms-marko-core/middleware/clean-marko-response');
 const contactUsHandler = require('@parameter1/base-cms-marko-web-contact-us');
 
+const nativeStoriesRoute = require('./routes/native-x');
 const document = require('./components/document');
 const components = require('./components');
 const fragments = require('./fragments');
@@ -12,6 +13,7 @@ const errorTemplate = require('./templates/error');
 const buildNativeXConfig = require('./native-x/build-config');
 
 const routes = siteRoutes => (app) => {
+  nativeStoriesRoute(app);
   // Handle contact submissions on /__contact-us
   contactUsHandler(app);
   // Load site routes.
