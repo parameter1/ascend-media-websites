@@ -5,6 +5,5 @@ const template = require('../templates/content/native-x-story');
 
 module.exports = (app) => {
   const config = getAsObject(app, 'locals.nativeX');
-  console.log(config);
-  app.get('/story/:section/:slug/:id', withNativeXStory({ config, template, queryFragment }));
+  app.get('/sponsored/:section/:slug/:id', withNativeXStory({ config, template, queryFragment }));
 };
