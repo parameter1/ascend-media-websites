@@ -15,12 +15,14 @@ $ const imgSrc2x = imgSrc && buildImgixUrl(imgSrc, { ...imgDefaults, dpr: 2 });
     Presented by <if(!imgSrc)><span class="sponsor-name" >${advertiser.name}</span></if>
   </marko-web-element>
   <if(imgSrc)>
-  <marko-web-img
-    class="sponsor-logo__logo"
-    src=imgSrc1x
-    srcset=[`${imgSrc2x} 2x`]
-    alt="Sponsor Logo"
-    attrs={ style }
-  />
+    <marko-web-element block-name="sponsor-logo" name="image">
+      <marko-web-img
+        class="sponsor-logo__logo"
+        src=imgSrc1x
+        srcset=[`${imgSrc2x} 2x`]
+        alt="Sponsor Logo"
+        attrs={ style }
+      />
+    </marko-web-element>
   </if>
 </marko-web-block>

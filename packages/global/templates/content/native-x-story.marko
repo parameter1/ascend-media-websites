@@ -20,16 +20,18 @@ $ const { primarySection } = content;
           <marko-web-content-name tag="h1" block-name=blockName obj=content />
           <presented-by advertiser=story.advertiser />
         </div>
+        <div class="content-page-primary-image">
+          <marko-web-page-image
+            obj=content.primaryImage
+            modifiers=["fluid-16by9"]
+            options={ w: 1600, h: 900, fit: "crop" }
+          />
+        </div>
       </@section>
 
       <@section>
         <div class="content-page-body" id="native-x-story-body">
           <default-theme-page-contents|{ blockName }|>
-            <marko-web-page-image
-              obj=content.primaryImage
-              modifiers=["fluid-16by9"]
-              options={ w: 700, h: 394, fit: "crop" }
-            />
             <marko-web-content-body block-name=blockName obj=content />
             <marko-web-social-sharing
               url=content.siteContext.canonicalUrl
