@@ -24,7 +24,7 @@
     "@parameter1/base-cms-marko-web-gtm": "^3.0.0",
     "@parameter1/base-cms-marko-web-icons": "^3.0.0",
     "@parameter1/base-cms-marko-web-inquiry": "^3.0.0",
-    "@parameter1/base-cms-marko-web-native-x": "^3.0.0",
+    "@parameter1/base-cms-marko-web-native-x": "^3.2.1",
     "@parameter1/base-cms-marko-web-photoswipe": "^3.0.0",
     "@parameter1/base-cms-marko-web-social-sharing": "^3.0.0",
     "@parameter1/base-cms-marko-web-theme-default": "^3.0.0",
