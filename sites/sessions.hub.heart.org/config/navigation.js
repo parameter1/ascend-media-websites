@@ -22,7 +22,7 @@ const topics = [
 
 const secondary = [
   { href: 'https://twitter.com/search?q=%23AHA21&src=typed_query', label: '#AHA22' },
-  { href: '#', label: '#ReSS22' },
+  { href: '#', label: 'Connection Hub' },
   { href: '#', label: 'Virtual Experience Access', target: '_blank' },
   { href: '#', label: 'Sessions Posters', target: '_blank' },
 ];
