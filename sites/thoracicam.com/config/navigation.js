@@ -6,9 +6,8 @@ const privacyPolicy = require('./privacy-policy');
 const topics = [
   { href: '/asthma', label: 'Asthma' },
   { href: '/copd', label: 'COPD' },
-  { href: '/critical-care', label: 'Critical Care' },
-  { href: '/pediatrics', label: 'Pediatrics' },
-  { href: '/sleep', label: 'Sleep' },
+  { href: '/pulmonary', label: 'Pulmonary' },
+  { href: '/resources', label: 'Resources' },
 ];
 
 const secondary = [

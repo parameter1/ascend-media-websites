@@ -6,7 +6,8 @@ config.enabled = true;
 
 config
   .setAliasPlacements('default', [
-    { name: 'default', id: '62f15b7621ed000001cc665a' },
+    { name: 'default', id: '63121de0d5ffd50001d659fb' },
+    { name: 'industry-insights', id: '63121e39d5ffd50001d65a7c' },
   ]);
 
 module.exports = config;
