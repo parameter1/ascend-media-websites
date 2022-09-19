@@ -96,3 +96,9 @@ $theme-site-header-breakpoints-top-offset: (
     }
   }
 }
+
+.ad-container > div:first-child  {
+  &::before {
+    content: "";
+  }
+}
