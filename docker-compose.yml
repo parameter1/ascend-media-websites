@@ -371,10 +371,10 @@ services:
       - "9927:80"
       - "19927:19927"
 
-  thoracic:
+  pulmonary:
     <<: *node
     <<: *site-cmd
-    working_dir: /root/sites/thoracicam.com
+    working_dir: /root/sites/ampulmonary.com
     environment:
       <<: *env
       <<: *env-tauron
@@ -383,8 +383,8 @@ services:
       LIVERELOAD_PORT: 19928
       TENANT_KEY: ascend_hh
       SITE_ID: 62f156eeb42f9308288b45e8
-      HOST: www-ascend-thoracic.dev.parameter1.com
-    hostname: www-ascend-thoracic.dev.parameter1.com
+      HOST: www-ascend-pulmonary.dev.parameter1.com
+    hostname: www-ascend-pulmonary.dev.parameter1.com
     ports:
       - "9928:80"
       - "19928:19928"

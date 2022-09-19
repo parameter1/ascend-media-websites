@@ -7,5 +7,5 @@ Disallow: /__
 Disallow: /print/content
 Disallow: /search
 
-Sitemap: https://www.thoracicam.com/sitemap.xml
-Sitemap: https://www.thoracicam.com/sitemap-google-news.xml
+Sitemap: https://www.ampulmonary.com/sitemap.xml
+Sitemap: https://www.ampulmonary.com/sitemap-google-news.xml
