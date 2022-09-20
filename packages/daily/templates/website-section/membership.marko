@@ -1,0 +1,98 @@
+import { getAsObject, get } from "@parameter1/base-cms-object-path";
+import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
+import queryFragment from "@ascend-media/package-daily/graphql/fragments/content-list";
+
+$ const { GAM } = out.global;
+
+$ const {
+  id,
+  alias,
+  name,
+  pageNode,
+} = input;
+
+<marko-web-website-section-page-layout id=id alias=alias name=name attrs={"aria-label": `website-section-${id}`}>
+  <@head>
+    <marko-web-gtm-website-section-context|{ context }| alias=alias>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-website-section-context>
+  </@head>
+
+  <@page>
+    <marko-web-resolve-page|{ data: section }| node=pageNode>
+      $ const aliases = hierarchyAliases(section);
+      <!--<shared-leaderboard-block />-->
+      <marko-web-gam-define-display-ad
+        ...GAM.getAdUnit({ name: "lb1", aliases })
+        collapse-before-ad-fetch=true
+        modifiers=["top-of-page", "center", "max-width-970"]
+      />
+
+      <div class="row">
+        <div class="col-lg-8 mb-block-lg">
+          <daily-content-hero-card-block section-id=id />
+
+          <marko-web-query|{ nodes }| name="website-optioned-content" params={
+            skip: 1,
+            sectionBubbling: false,
+            requiresImage: true,
+            excludeContentTypes: ["Contact", "Promotion", "TextAd", "Event"],
+            limit: 2,
+            sectionId: id,
+            queryFragment,
+          }>
+            <default-theme-card-deck-flow cols=2 nodes=nodes class="mb-3">
+              <@slot|{ node: content }|>
+                $ const primaryImage = getAsObject(content, "primaryImage");
+                <marko-web-node
+                  type=`${content.type}-content`
+                  image-position="top"
+                  card=true
+                  flush=false
+                  full-height=true
+                >
+                  <@image
+                    ar="16:9"
+                    width="300"
+                    fluid=true
+                    use-placeholder=false
+                    src=primaryImage.src
+                    alt=primaryImage.alt
+                    is-logo=primaryImage.isLogo
+                    link={ href: get(content, "siteContext.path") }
+                  />
+
+                  <@body>
+                    <@title tag="h5">
+                      <marko-web-content-short-name tag=null obj=content link=true />
+                    </@title>
+                    <@text modifiers=["teaser"] show=Boolean(content.teaser)>
+                      <marko-web-content-teaser tag=null obj=content link=true />
+                    </@text>
+                  </@body>
+                </marko-web-node>
+              </@slot>
+            </default-theme-card-deck-flow>
+          </marko-web-query>
+
+          <daily-section-list-block section-alias="membership/videos">
+            <@list inner-justified=false />
+            <@header>
+              <marko-web-link href="/membership/videos">More Videos</marko-web-link>
+            </@header>
+          </daily-section-list-block>
+        </div>
+
+        <div class="col-lg-4 mb-block-lg page-rail">
+          <daily-section-list-block
+            section-alias="membership/benefits"
+            image-position="right"
+            with-teaser=true
+          >
+            <@list inner-justified=false />
+          </daily-section-list-block>
+        </div>
+      </div>
+    </marko-web-resolve-page>
+  </@page>
+</marko-web-website-section-page-layout>

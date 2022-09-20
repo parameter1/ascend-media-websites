@@ -20,7 +20,7 @@ $ const displayExportDetails = (
       <div class="col-md-9 col-sm-12 col-lg-10">
         <div class="ldp">
           <div class="ldp__logo">
-            <common-company-logo content=content />
+            <shared-company-logo content=content />
           </div>
           <div class="ldp__title">
             <marko-web-content-name tag="h1" class="page-wrapper__title" obj=content />
@@ -34,10 +34,10 @@ $ const displayExportDetails = (
       </div>
       <div class="col-md-3 col-lg-2 col-sm-12 justify-content-center d-flex flex-column px-3 py-3">
         <div class="ldp__social">
-          <common-leaders-company-website-link company=content />
+          <shared-leaders-company-website-link company=content />
           <div class="mt-2 d-flex justify-content-around">
             <for|item| of=content.socialLinks>
-              <common-leaders-company-social-link company=content item=item />
+              <shared-leaders-company-social-link company=content item=item />
             </for>
           </div>
         </div>
@@ -71,7 +71,7 @@ $ const displayExportDetails = (
         </if>
         <label class="content-section-header content-section-header--border">Contact</label>
         $ const { socialLinks, ...contentSansSocial } = content;
-        <minexpo-company-contact-details obj=contentSansSocial />
+        <shared-company-contact-details obj=contentSansSocial />
       </@body>
     </marko-web-node-list>
 
@@ -92,7 +92,7 @@ $ const displayExportDetails = (
         <@nodes|{ nodes: items }| nodes=nodes>
           <default-theme-card-deck-flow cols=2 nodes=items>
             <@slot|{ node, index }|>
-              <common-featured-products-card-node
+              <shared-featured-products-card-node
                 image-width=340
                 node=node
               />
@@ -113,7 +113,7 @@ $ const displayExportDetails = (
           <div class=`card-deck-flow card-deck-flow--${videos.length}-cols`>
             <for|node| of=nodes>
               <div class="card-deck-flow__node">
-                <common-youtube-card-node node=node link-attrs={
+                <shared-youtube-card-node node=node link-attrs={
                   'data-company-id': content.id,
                   'data-company-name': content.name,
                 } />
@@ -205,7 +205,7 @@ $ const displayExportDetails = (
       </marko-web-node-list>
     </if>
 
-    <minexpo-company-export-categories-block schedules=content.websiteSchedules />
+    <shared-company-export-categories-block schedules=content.websiteSchedules />
 
     <marko-web-query|{ nodes }|
       name="all-company-content"
@@ -232,7 +232,7 @@ $ const displayExportDetails = (
   </div>
   <div class="col-lg-4 page-rail mb-3 mb-lg-0">
     <div class="mt-block">
-      <minexpo-company-product-categories-block schedules=content.websiteSchedules />
+      <shared-company-product-categories-block schedules=content.websiteSchedules />
     </div>
   </div>
 </div>

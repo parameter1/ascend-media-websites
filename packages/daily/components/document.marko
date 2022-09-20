@@ -47,7 +47,18 @@ $ const aboveContainer = get(input, "aboveContainer.renderBody");
   </@above-container>
   <@below-container>
     <${input.belowContainer} />
-    <default-theme-site-footer />
+    <if(site.config.ahaFooter)>
+      <footer id="aha-footer" class="l-footer" />
+      <marko-web-deferred-script-loader-register
+        name="aha-footer"
+        on="ready"
+        src="https://static.heart.org/ahaanywhere/sitecore/dist/ahaHeaderFooterSitecore.js"
+        on-script-load="if ($.prototype.ahaHeaderFooterSitecore) $('.body-wrapper').ahaHeaderFooterSitecore()"
+      />
+    </if>
+    <else>
+      <default-theme-site-footer />
+    </else>
   </@below-container>
   <@below-wrapper>
     <marko-web-deferred-script-loader-load />

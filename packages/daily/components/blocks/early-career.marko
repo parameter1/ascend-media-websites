@@ -1,0 +1,64 @@
+import { getAsObject, get } from "@parameter1/base-cms-object-path";
+import queryFragment from "../../graphql/fragments/vascular-early-career";
+
+$ const { site, req } = out.global;
+
+$ const earlyCareerLink = site.get("blocks.early-career.href");
+
+$ const queryParams = {
+  limit: 3,
+  queryFragment,
+  sectionBubbling: false,
+  sectionAlias: 'early-career',
+  ...getAsObject(input, "queryParams"),
+};
+
+<marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
+  <marko-web-node-list collapsible=false>
+    <@header>
+      Early Career Center
+    </@header>
+    <@nodes nodes=nodes>
+      <@slot|{ node: content }|>
+        $ const primaryImage = getAsObject(content, "primaryImage");
+        $ const contentType = content.type === 'promotion' ? '' : content.type;
+        <marko-web-node
+          type=`${content.type}-content`
+          image-position="top"
+          card=true
+          flush=true
+          full-height=false
+          modifiers=["callout", "no-shadow"]
+        >
+          <@image
+            ar="16:9"
+            width="300"
+            fluid=true
+            use-placeholder=false
+            src=primaryImage.src
+            alt=primaryImage.alt
+            is-logo=primaryImage.isLogo
+            link={ href: get(content, "siteContext.path") }
+          />
+
+          <@body>
+            <@text modifiers=["content-action"]>
+              ${contentType}
+            </@text>
+
+            <@text modifiers=["content-title", "content-title-primary"]>
+              <marko-web-content-short-name tag=null obj=content link=true />
+            </@text>
+
+            <@text modifiers=["teaser"] show=Boolean(content.teaser)>
+              <marko-web-content-teaser tag=null obj=content link=true />
+            </@text>
+          </@body>
+        </marko-web-node>
+      </@slot>
+    </@nodes>
+    <@footer>
+      <daily-early-career-blogs-button href=earlyCareerLink />
+    </@footer>
+  </marko-web-node-list>
+</marko-web-query>

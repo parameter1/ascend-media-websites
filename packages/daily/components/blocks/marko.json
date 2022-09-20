@@ -87,7 +87,27 @@
   "<daily-global-right-rail-block>": {
     "template": "./global-right-rail.marko"
   },
+<<<<<<< HEAD
   "<daily-native-x-list-block>": {
     "template": "./native-x-list.marko"
+=======
+  "<daily-science-news-block>": {
+    "template": "./science-news.marko"
+  },
+  "<daily-eposters-mr-block>": {
+    "template": "./eposters-mr.marko"
+  },
+  "<daily-early-career-block>": {
+    "template": "./early-career.marko"
+  },
+  "<daily-exhibits-mr-block>": {
+    "template": "./exhibits-mr.marko"
+  },
+  "<daily-event-schedule-block>": {
+    "template": "./event-schedule.marko"
+  },
+  "<daily-exhibitors-banner-block>": {
+    "template": "./exhibitors-banner.marko"
+>>>>>>> e93582acbb5f7217b53c357a167b0832e933365c
   }
 }
