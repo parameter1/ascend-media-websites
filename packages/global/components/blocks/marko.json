@@ -67,5 +67,11 @@
   },
   "<global-native-x-list-block>": {
     "template": "./native-x-list.marko"
+  },
+  "<global-featured-exhibitors-block>": {
+    "template": "./featured-exhibitors.marko"
+  },
+  "<global-native-x-hero-block>": {
+    "template": "./native-x-hero.marko"
   }
 }

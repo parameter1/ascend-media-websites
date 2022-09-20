@@ -7,12 +7,14 @@ module.exports = {
   nativeXBlock: Boolean(process.env.NATIVE_X_BLOCK),
   restrictRightRailDisplay: Boolean(process.env.RESTRICT_RIGHT_RAIL_DISPLAY),
   contentPageLoadMore: Boolean(process.env.CONTENT_PAGE_LOAD_MORE),
+  searchTitle: 'Search Annual Meeting Daily News',
+  nativeXBlockTitle: 'From The ASA Monitor',
   logos,
   navigation,
   gam,
   nativeX,
   company: 'Ascend Media',
-  copyrightNotice: '',
+  copyrightNotice: '© 2022 American Society of Anesthesiologists (ASA)<br/>1061 American Lane | Schaumburg, IL 60173',
   showCopyright: false,
   sponsoredText: 'Paid Advertising Content',
   socialMediaLinks: [
@@ -48,4 +50,10 @@ module.exports = {
     logo: '',
     bgColor: '#ffffff',
   },
+  p1events: {
+    tenant: 'ascend',
+    enabled: true,
+    cookieDomain: process.env.NODE_ENV === 'production' ? 'asameetingnewscentral.org' : '',
+  },
+  useFooterOverride: true,
 };

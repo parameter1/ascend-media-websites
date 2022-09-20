@@ -18,6 +18,7 @@ $pswp__root-z-index: $theme-site-header-z-index + 1 !default;
 @import "./components/hero-flow";
 @import "./components/inquiry-form";
 @import "./components/marko-web-icon";
+@import "./components/native-x-story";
 @import "./components/node-list";
 @import "./components/node";
 @import "./components/page-attribution";

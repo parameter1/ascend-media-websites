@@ -1,0 +1,23 @@
+import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
+
+$ const { id, alias, name, pageNode } = input;
+
+<global-website-section-home-layout
+  id=id
+  alias=alias
+  name=name
+  page-node=pageNode
+>
+  <@section>
+    <theme-section-list-deck-block aliases=["asthma", "copd", "pulmonary"] />
+  </@section>
+
+  <@section>
+    <!-- @todo update placement-name (not 'default') once it is determined -->
+    <theme-native-x-card-deck-block
+      section={ name: "[Placeholder Name]", description: "[placeholder description]" }
+      placement-name="default"
+    />
+  </@section>
+
+</global-website-section-home-layout>

@@ -7,6 +7,7 @@ module.exports = {
   nativeXBlock: Boolean(process.env.NATIVE_X_BLOCK),
   restrictRightRailDisplay: Boolean(process.env.RESTRICT_RIGHT_RAIL_DISPLAY),
   contentPageLoadMore: Boolean(process.env.CONTENT_PAGE_LOAD_MORE),
+  nativeXBlockTitle: 'ACEP22 Newsroom',
   logos,
   navigation,
   gam,
@@ -46,5 +47,10 @@ module.exports = {
     sendFrom: 'AAD <noreply@ascendintegratedmedia.com>',
     logo: '',
     bgColor: '#ffffff',
+  },
+  p1events: {
+    tenant: 'ascend',
+    enabled: true,
+    cookieDomain: process.env.NODE_ENV === 'production' ? 'acepmeetingnewscentral.org' : '',
   },
 };

@@ -243,6 +243,7 @@ services:
       TENANT_KEY: ascend_hh
       SITE_ID: 60747a8880a4312e028b45d6
       CONTENT_PAGE_LOAD_MORE: "true"
+      NATIVE_X_BLOCK: "true"
     ports:
       - "9920:80"
       - "19920:19920"
@@ -369,6 +370,24 @@ services:
     ports:
       - "9927:80"
       - "19927:19927"
+
+  thoracic:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/thoracicam.com
+    environment:
+      <<: *env
+      <<: *env-tauron
+      PORT: 80
+      EXPOSED_PORT: 9928
+      LIVERELOAD_PORT: 19928
+      TENANT_KEY: ascend_hh
+      SITE_ID: 62f156eeb42f9308288b45e8
+      HOST: www-ascend-thoracic.dev.parameter1.com
+    hostname: www-ascend-thoracic.dev.parameter1.com
+    ports:
+      - "9928:80"
+      - "19928:19928"
 
   template:
     <<: *node

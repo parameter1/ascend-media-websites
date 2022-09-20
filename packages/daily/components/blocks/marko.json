@@ -87,6 +87,9 @@
   "<daily-global-right-rail-block>": {
     "template": "./global-right-rail.marko"
   },
+  "<daily-native-x-list-block>": {
+    "template": "./native-x-list.marko"
+  },
   "<daily-science-news-block>": {
     "template": "./science-news.marko"
   },

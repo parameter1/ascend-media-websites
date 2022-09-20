@@ -14,15 +14,11 @@ const topics = [
   { href: '/meeting-coverage', label: 'Meeting Coverage' },
   { href: '/career', label: 'Career' },
   { href: '/exhibit-hall', label: 'Exhibit Hall' },
-  { href: 'https://www.acep.org/sa/education/courses/', label: 'Program', target: '_blank' },
-  { href: 'https://www.acep.org/sa/education/cme-credit-statement/', label: 'Claim CME', target: '_blank' },
-  { href: '/previews', label: 'Previews' },
+  { href: 'https://www.acep.org/sa/education/courses/', label: 'Courses', target: '_blank' },
+  { href: 'https://www.acep.org/sa/education/virtual-acep/', label: 'Virtual', target: '_blank' },
 ];
 
-const secondary = [
-  // { href: '/', label: 'Virtual', target: '_blank' }, // NEED URL
-  // { href: '/', label: 'Posters', target: '_blank' }, // NEED URL
-];
+const secondary = [];
 
 module.exports = {
 

@@ -65,7 +65,7 @@ $ const adSlots = ({ aliases }) => ({
       <div class="row">
         <div class="col-lg-4 mb-block-lg">
           <daily-section-list-block section-alias="destinations">
-            <@native-x index=2 name="default" aliases=["destinations"] />
+            <@native-x index=3 name="default" aliases=["destinations"] />
           </daily-section-list-block>
         </div>
 
@@ -77,7 +77,7 @@ $ const adSlots = ({ aliases }) => ({
 
         <div class="col-lg-4 mb-block-lg">
           <daily-section-list-block section-alias="happenings">
-            <@native-x index=2 name="default" aliases=["happenings"] />
+            <@native-x index=3 name="default" aliases=["happenings"] />
           </daily-section-list-block>
         </div>
       </div>
@@ -86,4 +86,24 @@ $ const adSlots = ({ aliases }) => ({
 
     </marko-web-resolve-page>
   </@page>
+  <@below-page>
+    <marko-web-resolve-page|{ resolved, data: content }| node=pageNode>
+      $ const loadMoreParams = {
+        sectionAlias: 'home',
+        optionName: ["Standard"],
+        limit: 12,
+        skip: 3
+      };
+      <marko-web-load-more
+        component-name="daily-content-card-deck-flow"
+        component-input={ cols: 3, withTeaser: false }
+        fragment-name="daily-content-list"
+        query-name="website-scheduled-content"
+        query-params=loadMoreParams
+        max-pages=3
+        page-input={ for: "content", id }
+        attrs={ "aria-label": "load-more", "role": "main" }
+      />
+    </marko-web-resolve-page>
+  </@below-page>
 </marko-web-website-section-page-layout>

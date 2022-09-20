@@ -1,0 +1,26 @@
+.page--native-x-story {
+  padding-top: 0;
+  .sponsor-name {
+    font-weight: $font-weight-bold;
+  }
+  .page-wrapper {
+    box-shadow: none;
+  }
+  .content-page-body,
+  .content-page-header {
+    max-width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .sponsor-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: map-get($spacers, block);
+    &__image {
+      margin-left: map-get($spacers, 2);
+    }
+  }
+  .social-sharing{
+    margin-top: map-get($spacers, block);
+  }
+}

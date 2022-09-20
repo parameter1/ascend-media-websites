@@ -11,6 +11,11 @@ $ const aboveContainer = get(input, "aboveContainer.renderBody");
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <marko-web-deferred-script-loader-init />
+    <marko-web-p1-events-init
+      on="load"
+      request-frame=true
+      target-tag="body"
+    />
     <marko-web-gam-init
       on="ready"
       request-frame=true
@@ -40,13 +45,14 @@ $ const aboveContainer = get(input, "aboveContainer.renderBody");
     <marko-web-browser-component name="TriggerScreenChangeEvent" />
     <marko-web-gtm-track-bus-event on="screen_change" />
     <marko-web-gtm-track-load-more />
-
+    <marko-web-reveal-ad-listener select-all-targets=true />
     <global-site-header />
     <default-theme-site-menu modifiers=["right"] />
     <if(site.config.noticePushdown)>
       <global-notice-pushdown-block />
     </if>
   </@above-container>
+   <${input.aboveContainer} />
   <@below-container>
     <${input.belowContainer} />
     <if(site.config.ahaFooter)>
@@ -58,6 +64,9 @@ $ const aboveContainer = get(input, "aboveContainer.renderBody");
         on-script-load="if ($.prototype.ahaHeaderFooterSitecore) $('.body-wrapper').ahaHeaderFooterSitecore()"
       />
     </if>
+    <else-if(site.config.useFooterOverride)>
+      <global-site-footer />
+    </else-if>
     <else>
       <default-theme-site-footer show-copyright=site.get("showCopyright") />
     </else>

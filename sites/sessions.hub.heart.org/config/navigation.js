@@ -15,17 +15,16 @@ const topics = [
   { href: '/late-breaking-science', label: 'Late-Breaking Science' },
   { href: '/daily-coverage', label: 'Daily Coverage' },
   { href: '/industry-highlights', label: 'Industry Highlights' },
-  { href: 'https://eventpilotadmin.com/web/planner.php?id=AHA21', label: 'Program', target: '_blank' },
+  { href: '/featured-exhibitors', label: 'Featured Exhibitors' },
+  { href: 'https://www.abstractsonline.com/pp8/?_ga=2.20399802.36245607.1660839477-74158399.1585661384#!/10611', label: 'Program', target: '_blank' },
   { href: '/previews', label: 'Previews' },
 ];
 
 const secondary = [
-  { href: 'https://twitter.com/search?q=%23AHA21&src=typed_query', label: '#AHA21' },
-  { href: 'https://twitter.com/hashtag/ReSS21?src=hashtag_click', label: '#ReSS21' },
-  { href: 'https://twitter.com/search?q=%23QCOR21&src=typed_query', label: '#QCOR21' },
-  { href: 'https://AHAsessions.heart.org', label: 'Virtual Experience Access', target: '_blank' },
-  { href: 'https://aha.apprisor.org', label: 'Sessions & QCOR Posters', target: '_blank' },
-  { href: 'https://ress.apprisor.org', label: 'ReSS Posters', target: '_blank' },
+  { href: 'https://twitter.com/search?q=%23AHA21&src=typed_query', label: '#AHA22' },
+  { href: '#', label: 'Connection Hub' },
+  { href: '#', label: 'Virtual Experience Access', target: '_blank' },
+  { href: '#', label: 'Sessions Posters', target: '_blank' },
 ];
 
 module.exports = {

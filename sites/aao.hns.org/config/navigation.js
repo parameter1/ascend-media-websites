@@ -12,15 +12,14 @@ const userTools = [
 
 const topics = [
   { href: '/meeting-coverage', label: 'Meeting Coverage' },
-  { href: 'https://otomtg21.junolive.co/live', label: 'Conference Agenda', target: '_blank' },
+  { href: 'https://www.entnet.org/events/annual-meeting/program/schedule/', label: 'Conference Agenda', target: '_blank' },
   { href: '/oto-experience', label: 'OTO Experience' },
-  { href: '/125th-anniversary', label: '125th Anniversary' },
-  { href: 'https://otomtg21.junolive.co/Welcome', label: 'Claim CME', target: '_blank' },
+  { href: 'https://www.entnet.org/events/annual-meeting/program/cme-information/', label: 'How to Claim CME', target: '_blank' },
 ];
 
 const secondary = [
-  { href: 'https://otomtg21.junolive.co/Welcome', label: 'Virtual Platform', target: '_blank' },
-  { href: 'https://www.researchposters.com/display_posters.aspx?code=AAO2021', label: 'Posters', target: '_blank' },
+  // { href: 'https://otomtg21.junolive.co/Welcome', label: 'Virtual Platform', target: '_blank' },
+  { href: 'https://www.eventscribe.net/2022/aaohnsf22amposters/index.asp?launcher=1', label: 'Posters', target: '_blank' },
   // { href: '#', label: 'Abstracts', target: '_blank' },
   // { href: '#', label: 'Claim CME', target: '_blank' },
 ];

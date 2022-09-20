@@ -1,6 +1,7 @@
 const navigation = require('./navigation');
 const gam = require('./gam');
 const logos = require('./logos');
+const nativeX = require('./native-x');
 
 module.exports = {
   nativeXBlock: Boolean(process.env.NATIVE_X_BLOCK),
@@ -9,6 +10,7 @@ module.exports = {
   logos,
   navigation,
   gam,
+  nativeX,
   company: 'Ascend Media',
   sponsoredText: 'Paid Advertising Content',
   socialMediaLinks: [
@@ -44,5 +46,10 @@ module.exports = {
     sendFrom: 'AUA <noreply@ascendintegratedmedia.com>',
     logo: 'https://img.ascendmedia.com/files/base/ascend/hh/image/static/aua/site_logo.png?h=50',
     bgColor: '#ffffff',
+  },
+  p1events: {
+    tenant: 'ascend',
+    enabled: true,
+    cookieDomain: process.env.NODE_ENV === 'production' ? 'auadailynews.org' : '',
   },
 };
