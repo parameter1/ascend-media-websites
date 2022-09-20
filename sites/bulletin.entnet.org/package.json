@@ -15,9 +15,8 @@
     "test": "yarn lint && yarn compile && yarn build"
   },
   "dependencies": {
-<<<<<<< HEAD
     "@ascend-media/package-bulletin": "^1.6.5",
-    "@ascend-media/package-shared": "^1.6.5",
+    "@ascend-media/package-daily": "^1.6.5",
     "@parameter1/base-cms-marko-core": "^3.0.0",
     "@parameter1/base-cms-marko-web": "^3.0.0",
     "@parameter1/base-cms-marko-web-gam": "^3.0.0",
@@ -32,24 +31,6 @@
     "@parameter1/base-cms-object-path": "^3.0.0",
     "@parameter1/base-cms-utils": "^3.0.0",
     "@parameter1/base-cms-web-cli": "^3.0.0",
-=======
-    "@ascend-media/package-bulletin": "^1.5.0",
-    "@ascend-media/package-daily": "^1.5.0",
-    "@parameter1/base-cms-marko-core": "^2.80.0",
-    "@parameter1/base-cms-marko-web": "^2.92.0",
-    "@parameter1/base-cms-marko-web-gam": "^2.90.4",
-    "@parameter1/base-cms-marko-web-gcse": "^2.75.1",
-    "@parameter1/base-cms-marko-web-gtm": "^2.88.0",
-    "@parameter1/base-cms-marko-web-icons": "^2.46.3",
-    "@parameter1/base-cms-marko-web-inquiry": "^2.92.0",
-    "@parameter1/base-cms-marko-web-native-x": "^2.88.0",
-    "@parameter1/base-cms-marko-web-photoswipe": "^2.92.0",
-    "@parameter1/base-cms-marko-web-social-sharing": "^2.92.0",
-    "@parameter1/base-cms-marko-web-theme-default": "^2.91.0",
-    "@parameter1/base-cms-object-path": "^2.75.1",
-    "@parameter1/base-cms-utils": "^2.75.1",
-    "@parameter1/base-cms-web-cli": "^2.92.0",
->>>>>>> e93582acbb5f7217b53c357a167b0832e933365c
     "graphql-tag": "^2.10.1",
     "newrelic": "^6.4.1"
   }
