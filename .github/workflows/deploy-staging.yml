@@ -54,7 +54,7 @@ jobs:
           - aao.hns.org
           - ashp.org
           - shm.org
-          - thoracicam.com
+          - ampulmonary.com
     steps:
       - uses: actions/checkout@v2
       - name: Deploy to Kubernetes

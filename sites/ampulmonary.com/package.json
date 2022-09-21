@@ -1,8 +1,8 @@
 {
-  "name": "@ascend-media/thoracicam.com",
+  "name": "@ascend-media/ampulmonary.com",
   "version": "1.6.7",
   "author": "Brandon Krigbaum <brandon@parameter1.com>",
-  "repository": "https://github.com/parameter1/ascend-media-websites/tree/master/sites/thoracicam.com",
+  "repository": "https://github.com/parameter1/ascend-media-websites/tree/master/sites/ampulmonary.com",
   "license": "MIT",
   "private": true,
   "scripts": {
