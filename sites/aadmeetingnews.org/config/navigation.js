@@ -10,7 +10,7 @@ const userTools = [];
 const topics = [
   { href: '/daily-coverage', label: 'Daily Coverage' },
   { href: '/industry-highlights', label: 'Industry Highlights' },
-  { href: '/product-samples', label: 'Product Samples' },
+  // { href: '/22445386', label: 'Product Samples' },
   { href: 'https://ia2022.aad.org/sessions', label: 'Meeting Program', target: '_blank' },
 ];
 
