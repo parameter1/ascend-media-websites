@@ -13,8 +13,6 @@
     margin-left: auto;
   }
   .sponsor-logo {
-    display: flex;
-    align-items: center;
     margin-bottom: map-get($spacers, block);
     &__image {
       margin-left: map-get($spacers, 2);
@@ -52,6 +50,7 @@
         position: absolute;
         top: 50%;
         left: 50%;
+        text-shadow: 2px 2px $black;
         transform: translate(-50%, -50%);
       }
     }
