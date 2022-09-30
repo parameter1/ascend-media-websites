@@ -227,9 +227,6 @@ $ const showRightRail = (site.get("restrictRightRailDisplay") && ["document", "p
   </@page>
   <if(site.get("contentPageLoadMore"))>
     <@below-page>
-      <div class="node-list__header--content-load-more">
-        <div class="node-list__header">More Content</div>
-      </div>
       <marko-web-resolve-page|{ resolved, data: content }| node=pageNode>
         $ const section = resolved.getAsObject("primarySection")
         $ const aliases = hierarchyAliases(section);
@@ -239,16 +236,23 @@ $ const showRightRail = (site.get("restrictRightRailDisplay") && ["document", "p
           excludeContentIds: [id],
           limit: 12,
         };
-        <marko-web-load-more
-          component-name="global-content-card-deck-flow"
-          component-input={ aliases, cols: 3, withTeaser: false }
-          fragment-name="global-content-list"
-          query-name="website-scheduled-content"
-          query-params=loadMoreParams
-          max-pages=3
-          page-input={ for: "content", id }
-          attrs={ "aria-label": "load-more", "role": "main" }
-        />
+        $ const aadRules = ["AAD"].includes(site.get("siteAcronym")) && ['press-release'].includes(type);
+        $ const header = ["AAD"].includes(site.get("siteAcronym")) ? `More in ${section.name}` : 'More Content';
+        <if(!aadRules)>
+          <div class="node-list__header--content-load-more">
+            <div class="node-list__header">${header}</div>
+          </div>
+          <marko-web-load-more
+              component-name="global-content-card-deck-flow"
+              component-input={ aliases, cols: 3, withTeaser: false }
+              fragment-name="global-content-list"
+              query-name="website-scheduled-content"
+              query-params=loadMoreParams
+              max-pages=3
+              page-input={ for: "content", id }
+              attrs={ "aria-label": "load-more", "role": "main" }
+          />
+        </if>
       </marko-web-resolve-page>
     </@below-page>
   </if>
