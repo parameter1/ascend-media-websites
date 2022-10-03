@@ -236,9 +236,10 @@ $ const showRightRail = (site.get("restrictRightRailDisplay") && ["document", "p
           excludeContentIds: [id],
           limit: 12,
         };
-        $ const aadRules = ["AAD"].includes(site.get("siteAcronym")) && ['press-release'].includes(type);
-        $ const header = ["AAD"].includes(site.get("siteAcronym")) ? `More in ${section.name}` : 'More Content';
-        <if(!aadRules)>
+        $ const contentPageLoadMoreSettings = site.get("contentPageLoadMoreSettings");
+        $ const noLoadMore = contentPageLoadMoreSettings && getAsArray(contentPageLoadMoreSettings, 'restrictedOn').includes(type);
+        $ const header = contentPageLoadMoreSettings && get(contentPageLoadMoreSettings, "useSectionForHeader") ? `More in ${section.name}` : 'More Content';
+        <if(!noLoadMore)>
           <div class="node-list__header--content-load-more">
             <div class="node-list__header">${header}</div>
           </div>
