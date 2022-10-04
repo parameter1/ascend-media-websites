@@ -123,6 +123,12 @@ $ const showRightRail = (site.get("restrictRightRailDisplay") && ["document", "p
                   width=250
                 />
               </else-if>
+              <else-if(type === "media-gallery")>
+                <marko-web-image-slider 
+                  images=getAsArray(content, "images.edges").map(edge => edge.node)
+                  image-options={ fit: "crop", w: 800, h: 450, auto: "format,compress" }
+                />
+              </else-if>
               <else-if(displayPrimaryImage)>
                 $ const isLogo = get(content, "primaryImage.isLogo");
                 <if(isLogo || type === "contact")>
