@@ -8,7 +8,7 @@ $ const { primarySection } = content;
 $ const imageOptions = { w: 1600, h: 900, fit:"crop" }
 $ const src = buildImgixUrl(content.primaryImage.src, imageOptions);
 
-<marko-web-default-page-layout type="native-x-story">
+<global-native-x-story-page>
   <@head>
     <marko-web-native-x-gtm-init />
   </@head>
@@ -43,4 +43,4 @@ $ const src = buildImgixUrl(content.primaryImage.src, imageOptions);
     <marko-web-native-x-story-track-outbound-links container="#native-x-story-body" />
     <marko-web-native-x-story-track-end-of-content />
   </@page>
-</marko-web-default-page-layout>
+</global-native-x-story-page>
