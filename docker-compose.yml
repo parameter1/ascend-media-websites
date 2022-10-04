@@ -262,6 +262,7 @@ services:
       SITE_ID: 60c7666d46f24a64538b458d
       NATIVE_X_BLOCK: "true"
       RESTRICT_RIGHT_RAIL_DISPLAY: "true"
+      CONTENT_PAGE_LOAD_MORE: "true"
     ports:
       - "9921:80"
       - "19921:19921"
