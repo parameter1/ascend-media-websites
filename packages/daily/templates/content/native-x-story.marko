@@ -3,12 +3,12 @@ import { buildImgixUrl } from "@parameter1/base-cms-image";
 
 $ const { story } = input;
 $ const content = convert(story);
-$ const { id, type } = content;
+$ const { id, type, name, teaser } = content;
 $ const { primarySection } = content;
 $ const imageOptions = { w: 1600, h: 900, fit:"crop" }
 $ const src = buildImgixUrl(content.primaryImage.src, imageOptions);
 
-<daily-native-x-story-page>
+<daily-native-x-story-page title=name description=teaser>
   <@head>
     <marko-web-native-x-gtm-init />
   </@head>
