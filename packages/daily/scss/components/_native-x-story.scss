@@ -1,9 +1,13 @@
-.page--native-x-story {
+.page--native-x-story,
+.page--native-x-story:first-child {
   padding-top: 0;
+  padding-right: 0;
+  padding-left: 0;
   .sponsor-name {
     font-weight: $font-weight-bold;
   }
   .page-wrapper {
+    padding: 0;
     box-shadow: none;
   }
   .content-page-body,
@@ -29,6 +33,8 @@
     @if $marko-web-document-container-max-width {
       @media (min-width: $marko-web-document-container-max-width) {
         max-width: 100%;
+        padding-right: 0;
+        padding-left: 0;
       }
     }
     .content-page-primary-image {
