@@ -4,14 +4,6 @@ $ const { site, req, GAM, nativeX, config } = out.global;
 $ const { NODE_ENV } = process.env;
 $ const aboveContainer = get(input, "aboveContainer.renderBody");
 
-$ if (req.path.match(/sponsored/)) {
-  if (input.container.modifiers && Array.isArray(input.container.modifiers) && input.container.modifiers.length) {
-    input.container.modifiers.push('native-x-story');
-  } else {
-    input.container.modifiers = ['native-x-story'];
-  }
-}
-
 <marko-web-document ...input>
   <@head>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
