@@ -1,9 +1,13 @@
-.page--native-x-story {
+.page--native-x-story,
+.page--native-x-story:first-child {
   padding-top: 0;
+  padding-right: 0;
+  padding-left: 0;
   .sponsor-name {
     font-weight: $font-weight-bold;
   }
   .page-wrapper {
+    padding: 0;
     box-shadow: none;
   }
   .content-page-body,
@@ -13,14 +17,74 @@
     margin-left: auto;
   }
   .sponsor-logo {
-    display: flex;
-    align-items: center;
     margin-bottom: map-get($spacers, block);
     &__image {
       margin-left: map-get($spacers, 2);
     }
   }
   .social-sharing{
+    padding-bottom: map-get($spacers, block);
     margin-top: map-get($spacers, block);
+  }
+}
+
+.document-container {
+  &--native-x-story {
+    @if $marko-web-document-container-max-width {
+      @media (min-width: $marko-web-document-container-max-width) {
+        max-width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+    .content-page-primary-image {
+      position: relative;
+      font-size: 20px;
+      @media (min-width: $marko-web-document-container-max-width) {
+        font-size: 40px;
+      }
+      font-weight: $font-weight-bold;
+      color: $white;
+      text-align: center;
+      h1 {
+        font-size: 30px;
+        @media (min-width: $marko-web-document-container-max-width) {
+          font-size: 60px;
+        }
+      }
+      .content-page-header {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        text-shadow: 2px 2px $black;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  .page-wrapper
+   {
+    &__section {
+      &--native-x-story-header {
+        margin-bottom: -4rem;
+      }
+      &--native-x-story-body {
+        position: relative;
+        @media (min-width: $marko-web-document-container-max-width) {
+          max-width: $marko-web-document-container-max-width;
+        }
+        margin-right: auto;
+        margin-left: auto;
+        background-color: $white;
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
+        .page-contents {
+          &__content-body {
+            padding: 30px;
+            img {
+              max-width: 100%;
+            }
+          }
+        }
+      }
+    }
   }
 }

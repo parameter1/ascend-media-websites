@@ -6,7 +6,8 @@
     "./flows/marko.json",
     "./layouts/marko.json",
     "./section/marko.json",
-    "./nodes/marko.json"
+    "./nodes/marko.json",
+    "./page/marko.json"
   ],
   "<daily-document>": {
     "template": "./document.marko",

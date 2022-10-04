@@ -1,11 +1,14 @@
 import convert from "@parameter1/base-cms-marko-web-native-x/utils/convert-story-to-content";
+import { buildImgixUrl } from "@parameter1/base-cms-image";
 
 $ const { story } = input;
 $ const content = convert(story);
-$ const { id, type } = content;
+$ const { id, type, name, teaser } = content;
 $ const { primarySection } = content;
+$ const imageOptions = { w: 1600, h: 900, fit:"crop" }
+$ const src = buildImgixUrl(content.primaryImage.src, imageOptions);
 
-<marko-web-default-page-layout type="native-x-story">
+<global-native-x-story-page title=name description=teaser>
   <@head>
     <marko-web-native-x-gtm-init />
   </@head>
@@ -15,21 +18,16 @@ $ const { primarySection } = content;
     <marko-web-native-x-story-track-social-share />
 
     <marko-web-page-wrapper>
-      <@section|{ blockName }| modifiers=["nativex-story-header"]>
+      <@section|{ blockName }| modifiers=["native-x-story-header"]>
+        <div class="content-page-primary-image" style=`width: 100%; height: ${imageOptions.h}px; background:url(${src}) center/cover no-repeat fixed;`>
         <div class="content-page-header">
           <marko-web-content-name tag="h1" block-name=blockName obj=content />
           <presented-by advertiser=story.advertiser />
         </div>
-        <div class="content-page-primary-image">
-          <marko-web-page-image
-            obj=content.primaryImage
-            modifiers=["fluid-16by9"]
-            options={ w: 1600, h: 900, fit: "crop" }
-          />
         </div>
       </@section>
 
-      <@section>
+      <@section modifiers=["native-x-story-body"]>
         <div class="content-page-body" id="native-x-story-body">
           <default-theme-page-contents|{ blockName }|>
             <marko-web-content-body block-name=blockName obj=content />
@@ -45,4 +43,4 @@ $ const { primarySection } = content;
     <marko-web-native-x-story-track-outbound-links container="#native-x-story-body" />
     <marko-web-native-x-story-track-end-of-content />
   </@page>
-</marko-web-default-page-layout>
+</global-native-x-story-page>
