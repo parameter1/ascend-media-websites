@@ -59,60 +59,60 @@ $ const promise = websiteSectionContentLoader(apollo, {
         />
       </@above-page>
       <@page>
-      $ const uri = nxConfig.getUri();
-      $ const placement = nxConfig.getPlacement({ name: "default", aliases });
-      <marko-web-native-x-fetch-elements|{ ads }| uri=uri id=placement.id opts={ n: 10 }>
-        $ const nodes = ads.filter(ad => ad.hasCampaign).map((ad) => ({
-          ...convertAdToContent(ad, { sectionName: `Sponsored by ${ad.campaign.advertiserName}`}), 
-          attributes: {
-            ...ad.attributes
-            }
-          }));
-        <default-theme-hero-flow nodes=[...getAsArray(featured, "nodes"), ...nodes.slice(0, 5)]>
-          <@hero|{ node }|>
-            <global-content-hero-node node=node image-width=630 title-modifiers=["large"] />
-          </@hero>
-          <@list|{ nodes }|>
-            <if(nodes.length)>
-              <marko-web-node-list
-                inner-justified=false
-                flush-x=false
-                flush-y=false
-                modifiers=["native-x-list"]
-              >
-                <@nodes nodes=nodes>
-                  <@slot|{ node, index }|>
-                    <global-content-list-node
-                      image-position="right"
-                      card=false
-                      flush=true
-                      modifiers=["native-x-list"]
-                      node=node
-                      with-section=true
-                      with-teaser=false
-                      with-dates=false
-                      attrs=getAsObject(node, 'attributes.container')
-                      link-attrs=getAsObject(node, 'attributes.link')
-                    />
-                  </@slot>
-                </@nodes>
-              </marko-web-node-list>
-            </if>
-          </@list>
-        </default-theme-hero-flow>
-        <default-theme-card-deck-flow
-          cols=3
-          nodes=nodes.slice(5, 10) 
-        >
-          <@slot|{ node, index }|>
-            <global-content-card-node
-              node=node
-              attrs=getAsObject(node, 'attributes.container')
-              link-attrs=getAsObject(node, 'attributes.link')
-            />
-          </@slot>
-        </default-theme-card-deck-flow>
-      </marko-web-native-x-fetch-elements>
+        $ const uri = nxConfig.getUri();
+        $ const placement = nxConfig.getPlacement({ name: "default", aliases });
+        <marko-web-native-x-fetch-elements|{ ads }| uri=uri id=placement.id opts={ n: 10 }>
+          $ const nodes = ads.filter(ad => ad.hasCampaign).map((ad) => ({
+            ...convertAdToContent(ad, { sectionName: `Sponsored by ${ad.campaign.advertiserName}`}), 
+            attributes: {
+              ...ad.attributes
+              }
+            }));
+          <default-theme-hero-flow nodes=[...getAsArray(featured, "nodes"), ...nodes.slice(0, 5)]>
+            <@hero|{ node }|>
+              <global-content-hero-node node=node image-width=630 title-modifiers=["large"] />
+            </@hero>
+            <@list|{ nodes }|>
+              <if(nodes.length)>
+                <marko-web-node-list
+                  inner-justified=false
+                  flush-x=false
+                  flush-y=false
+                  modifiers=["native-x-list"]
+                >
+                  <@nodes nodes=nodes>
+                    <@slot|{ node, index }|>
+                      <global-content-list-node
+                        image-position="right"
+                        card=false
+                        flush=true
+                        modifiers=["native-x-list"]
+                        node=node
+                        with-section=true
+                        with-teaser=false
+                        with-dates=false
+                        attrs=getAsObject(node, 'attributes.container')
+                        link-attrs=getAsObject(node, 'attributes.link')
+                      />
+                    </@slot>
+                  </@nodes>
+                </marko-web-node-list>
+              </if>
+            </@list>
+          </default-theme-hero-flow>
+          <default-theme-card-deck-flow
+            cols=3
+            nodes=nodes.slice(5, 10) 
+          >
+            <@slot|{ node, index }|>
+              <global-content-card-node
+                node=node
+                attrs=getAsObject(node, 'attributes.container')
+                link-attrs=getAsObject(node, 'attributes.link')
+              />
+            </@slot>
+          </default-theme-card-deck-flow>
+        </marko-web-native-x-fetch-elements>
       </@page>
     </marko-web-website-section-page-layout>
   </marko-web-resolve>
