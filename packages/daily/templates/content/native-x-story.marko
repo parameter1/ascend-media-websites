@@ -19,7 +19,7 @@ $ const src = buildImgixUrl(content.primaryImage.src, imageOptions);
 
     <marko-web-page-wrapper>
       <@section|{ blockName }| modifiers=["native-x-story-header"]>
-        <div class="content-page-primary-image" style=`width: 100%; height: ${imageOptions.h}px; background:url(${src}) center/cover no-repeat fixed;`>
+        <div class="content-page-primary-image" style=`width: 100%; height: ${imageOptions.h}px; background-image:url(${src})`>
         <div class="content-page-header">
           <marko-web-content-name tag="h1" block-name=blockName obj=content />
           <presented-by advertiser=story.advertiser />
