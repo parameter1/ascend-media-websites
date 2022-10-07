@@ -80,12 +80,14 @@ $ const promise = websiteSectionContentLoader(apollo, {
           <div class="col-lg-4">
             $ const nativeXBlockTitle = site.get('nativeXBlockTitle');
             <if(nativeXBlock === true)>
+            $ const showSectionTitle = site.get('nativeXBlockSlugs');
               <global-native-x-list-block
                 placement-name="default"
                 aliases=aliases
                 limit=6
                 collapsible=true
                 title=nativeXBlockTitle
+                with-section=showSectionTitle
               />
             </if>
             <else>

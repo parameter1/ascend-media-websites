@@ -19,6 +19,7 @@ $ const innerJustified = defaultValue(input.innerJustified, false);
 $ const displayImage = defaultValue(input.displayImage, true);
 $ const title = defaultValue(input.title, "Interesting Stories");
 $ const displayHeader = defaultValue(input.displayHeader, true);
+$ const withSection = defaultValue(input.withSection, true);
 
 <marko-web-native-x-fetch-elements|{ ads }| uri=uri id=placement.id opts={ n: limit }>
   $ const nodes = ads.filter(ad => ad.hasCampaign);
@@ -44,7 +45,7 @@ $ const displayHeader = defaultValue(input.displayHeader, true);
             flush=true
             modifiers=modifiers
             node=node
-            with-section=true
+            with-section=withSection
             with-teaser=false
             with-dates=false
             attrs=ad.attributes.container
