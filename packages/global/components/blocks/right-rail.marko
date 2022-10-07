@@ -4,6 +4,7 @@ $ const { aliases } = input;
 
 $ const nativeXBlock = site.get('nativeXBlock');
 $ const nativeXBlockTitle = site.get('nativeXBlockTitle');
+$ const withSection = site.get('nativeXBlockSlugs');
 
 <marko-web-gam-define-display-ad
   ...GAM.getAdUnit({ name: 'rail1', aliases })
@@ -17,6 +18,7 @@ $ const nativeXBlockTitle = site.get('nativeXBlockTitle');
     limit=6
     collapsible=true
     title=nativeXBlockTitle
+    with-section=withSection
   />
 </if>
 
