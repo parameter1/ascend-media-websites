@@ -1,0 +1,5 @@
+{
+  "<global-native-x-story-page>": {
+    "template": "./native-x-story.marko"
+  }
+}

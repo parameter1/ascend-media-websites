@@ -2,6 +2,7 @@ import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-ali
 import { getAsArray, getAsObject, get } from "@parameter1/base-cms-object-path";
 import isActiveLink from "@parameter1/base-cms-marko-web-theme-default/components/site-navbar/utils/is-active-link";
 import { asArray } from "@parameter1/base-cms-utils";
+import { defaultValue } from "@parameter1/base-cms-marko-web/utils";
 
 $ const { site, req, GAM } = out.global;
 $ const { id, type, pageNode } = data;
@@ -25,7 +26,8 @@ $ const displayCompanyHeader = (content) => {
   return false;
 }
 
-$ const showRightRail = (site.get("restrictRightRailDisplay") && ["document", "press-release"].includes(type)) ? false : true;
+$ const restrictedRightRailContentTypes = defaultValue(site.getAsArray("hideRailOnContentTypes"), ["document", "press-release"]);
+$ const showRightRail = (site.get("restrictRightRailDisplay") && restrictedRightRailContentTypes.includes(type)) ? false : true;
 
 <marko-web-content-page-layout id=id type=type>
   <@head>
@@ -121,6 +123,12 @@ $ const showRightRail = (site.get("restrictRightRailDisplay") && ["document", "p
                   modifiers=["primary-image-inline"]
                   fluid=false
                   width=250
+                />
+              </else-if>
+              <else-if(type === "media-gallery")>
+                <marko-web-image-slider 
+                  images=getAsArray(content, "images.edges").map(edge => edge.node)
+                  image-options={ fit: "crop", w: 800, h: 450, auto: "format,compress" }
                 />
               </else-if>
               <else-if(displayPrimaryImage)>
@@ -227,9 +235,6 @@ $ const showRightRail = (site.get("restrictRightRailDisplay") && ["document", "p
   </@page>
   <if(site.get("contentPageLoadMore"))>
     <@below-page>
-      <div class="node-list__header--content-load-more">
-        <div class="node-list__header">More Content</div>
-      </div>
       <marko-web-resolve-page|{ resolved, data: content }| node=pageNode>
         $ const section = resolved.getAsObject("primarySection")
         $ const aliases = hierarchyAliases(section);
@@ -239,16 +244,24 @@ $ const showRightRail = (site.get("restrictRightRailDisplay") && ["document", "p
           excludeContentIds: [id],
           limit: 12,
         };
-        <marko-web-load-more
-          component-name="global-content-card-deck-flow"
-          component-input={ aliases, cols: 3, withTeaser: false }
-          fragment-name="global-content-list"
-          query-name="website-scheduled-content"
-          query-params=loadMoreParams
-          max-pages=3
-          page-input={ for: "content", id }
-          attrs={ "aria-label": "load-more", "role": "main" }
-        />
+        $ const contentPageLoadMoreSettings = site.get("contentPageLoadMoreSettings");
+        $ const enableLoadMore = !getAsArray(contentPageLoadMoreSettings, 'restrictedOn').includes(type);
+        $ const header = get(contentPageLoadMoreSettings, "useSectionForHeader") ? `More in ${section.name}` : 'More Content';
+        <if(enableLoadMore)>
+          <div class="node-list__header--content-load-more">
+            <div class="node-list__header">${header}</div>
+          </div>
+          <marko-web-load-more
+              component-name="global-content-card-deck-flow"
+              component-input={ aliases, cols: 3, withTeaser: false }
+              fragment-name="global-content-list"
+              query-name="website-scheduled-content"
+              query-params=loadMoreParams
+              max-pages=3
+              page-input={ for: "content", id }
+              attrs={ "aria-label": "load-more", "role": "main" }
+          />
+        </if>
       </marko-web-resolve-page>
     </@below-page>
   </if>

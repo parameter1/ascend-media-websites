@@ -9,6 +9,7 @@ module.exports = {
   contentPageLoadMore: Boolean(process.env.CONTENT_PAGE_LOAD_MORE),
   searchTitle: 'Search Annual Meeting Daily News',
   nativeXBlockTitle: 'From The ASA Monitor',
+  nativeXBlockSlugs: false,
   logos,
   navigation,
   gam,

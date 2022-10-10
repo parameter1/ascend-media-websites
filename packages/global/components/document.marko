@@ -51,8 +51,8 @@ $ const aboveContainer = get(input, "aboveContainer.renderBody");
     <if(site.config.noticePushdown)>
       <global-notice-pushdown-block />
     </if>
+    <${input.aboveContainer} />
   </@above-container>
-   <${input.aboveContainer} />
   <@below-container>
     <${input.belowContainer} />
     <if(site.config.ahaFooter)>

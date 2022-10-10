@@ -13,7 +13,7 @@ const topics = [
   { href: '/accommodations-venues', label: 'Accommodations & Venues' },
   { href: '/happenings', label: 'Happenings' },
   { href: '/featured-exhibitors', label: 'Featured Exhibitors' },
-  { href: 'https://www.imexamerica.com/', label: 'IMEX America', target: '_blank' },
+  { href: 'https://www.imexamerica.com/register-for-imex-america', label: 'Register Now', target: '_blank' },
 ];
 
 const secondary = [

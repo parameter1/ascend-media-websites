@@ -16,19 +16,19 @@ module.exports = {
   p1events: {
     tenant: 'ascend',
     enabled: true,
-    cookieDomain: process.env.NODE_ENV === 'production' ? 'thoracicam.com' : '',
+    cookieDomain: process.env.NODE_ENV === 'production' ? 'ampulmonary.com' : '',
   },
   logos: {
     navbar: {
-      src: 'https://img.ascendmedia.com/files/base/ascend/hh/image/static/thoracic/am-thor-header.png?h=45&auto=format,compress',
+      src: 'https://img.ascendmedia.com/files/base/ascend/hh/image/static/pulmonary/Am_Pulmonary_Insights.png?h=45&auto=format,compress',
       srcset: [
-        'https://img.ascendmedia.com/files/base/ascend/hh/image/static/thoracic/am-thor-header.png?h=90&auto=format,compress 2x',
+        'https://img.ascendmedia.com/files/base/ascend/hh/image/static/pulmonary/Am_Pulmonary_Insights.png?h=90&auto=format,compress 2x',
       ],
     },
     footer: {
-      src: 'https://img.ascendmedia.com/files/base/ascend/hh/image/static/thoracic/am-thor-header.png?h=60&auto=format,compress',
+      src: 'https://img.ascendmedia.com/files/base/ascend/hh/image/static/pulmonary/Am_Pulmonary_Insights.png?h=60&auto=format,compress',
       srcset: [
-        'https://img.ascendmedia.com/files/base/ascend/hh/image/static/thoracic/am-thor-header.png?h=120&auto=format,compress 2x',
+        'https://img.ascendmedia.com/files/base/ascend/hh/image/static/pulmonary/Am_Pulmonary_Insights.png?h=120&auto=format,compress 2x',
       ],
     },
     corporate: {
@@ -56,8 +56,8 @@ module.exports = {
     enabled: false,
     directSend: false,
     sendTo: 'support@parameter1.com',
-    sendFrom: 'Thoracicam.com <noreply@ascendintegratedmedia.com>',
-    logo: 'https://img.ascendmedia.com/files/base/ascend/hh/image/static/thoracic/am-thor-header.png?h=45&auto=format,compress&bg=000000&pad=5',
+    sendFrom: 'ampulmonary.com <noreply@ascendintegratedmedia.com>',
+    logo: 'https://img.ascendmedia.com/files/base/ascend/hh/image/static/pulmonary/Am_Pulmonary_Insights.png?h=45&auto=format,compress&bg=000000&pad=5',
     bgColor: '#000000',
   },
   setSearchSortFieldToScore: true,

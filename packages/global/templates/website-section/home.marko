@@ -51,15 +51,6 @@ $ const promise = websiteSectionContentLoader(apollo, {
         <marko-web-gam-slots slots=slots />
       </@head>
 
-      <@above-container>
-        <@section
-          id=section.id
-          name=section.name
-          alias=section.alias
-          logo=section.logo
-          hierarchy=section.hierarchy
-        />
-      </@above-container>
       <@above-page>
         <marko-web-gam-display-ad
           id="gpt-ad-lb1"
@@ -80,12 +71,14 @@ $ const promise = websiteSectionContentLoader(apollo, {
           <div class="col-lg-4">
             $ const nativeXBlockTitle = site.get('nativeXBlockTitle');
             <if(nativeXBlock === true)>
+            $ const showSectionTitle = site.get('nativeXBlockSlugs');
               <global-native-x-list-block
                 placement-name="default"
                 aliases=aliases
                 limit=6
                 collapsible=true
                 title=nativeXBlockTitle
+                with-section=showSectionTitle
               />
             </if>
             <else>
