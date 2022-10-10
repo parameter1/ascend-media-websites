@@ -1,5 +1,5 @@
 {
-  "<shared-content-leader-page-wrapper>": {
+  "<minexpo-content-leader-page-wrapper>": {
     "template": "./leader.marko",
     "@id": "string",
     "@type": "string",

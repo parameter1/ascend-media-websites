@@ -1,5 +1,5 @@
 {
-  "<shared-content-list-flow>": {
+  "<minexpo-content-list-flow>": {
     "template": "./content-list.marko",
     "<header>": {},
     "<native-x>": {

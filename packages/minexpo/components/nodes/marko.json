@@ -1,5 +1,5 @@
 {
-  "<shared-company-node>": {
+  "<minexpo-company-node>": {
     "template": "./company.marko",
     "<image>": {},
     "<title>": {},
@@ -26,7 +26,7 @@
     "@attrs": "object",
     "@link-attrs": "object"
   },
-  "<shared-content-list-node>": {
+  "<minexpo-content-list-node>": {
     "template": "./content-list.marko",
     "@node": "object",
     "@display-image": {
@@ -40,7 +40,7 @@
     "@attrs": "object",
     "@link-attrs": "object"
   },
-  "<shared-content-card-node>": {
+  "<minexpo-content-card-node>": {
     "template": "./content-card.marko",
     "@node": "object",
     "@title-modifiers": "array",
@@ -59,12 +59,12 @@
     "@attrs": "object",
     "@link-attrs": "object"
   },
-  "<shared-youtube-card-node>": {
+  "<minexpo-youtube-card-node>": {
     "template": "./youtube-card.marko",
     "@node": "object",
     "@link-attrs": "object"
   },
-  "<shared-featured-products-card-node>": {
+  "<minexpo-featured-products-card-node>": {
     "template": "./featured-products-card.marko",
     "@node": "object",
     "@image-width": {
