@@ -15,11 +15,19 @@
     "test": "yarn lint && yarn compile && yarn build"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@ascend-media/package-bulletin": "^1.6.15",
     "@ascend-media/package-shared": "^1.6.15",
     "@parameter1/base-cms-marko-core": "^3.3.1",
     "@parameter1/base-cms-marko-web": "^3.7.7",
     "@parameter1/base-cms-marko-web-gam": "^3.7.1",
+=======
+    "@ascend-media/package-bulletin": "^1.6.5",
+    "@ascend-media/package-daily": "^1.6.4",
+    "@parameter1/base-cms-marko-core": "^3.0.0",
+    "@parameter1/base-cms-marko-web": "^3.0.0",
+    "@parameter1/base-cms-marko-web-gam": "^3.0.0",
+>>>>>>> 0434a4b2bcef0744703fbe8186a1a0cb27caa39d
     "@parameter1/base-cms-marko-web-gcse": "^3.0.0",
     "@parameter1/base-cms-marko-web-gtm": "^3.7.3",
     "@parameter1/base-cms-marko-web-icons": "^3.0.0",
