@@ -25,7 +25,7 @@ $ const displayCompanyHeader = (content) => {
   return false;
 }
 
-$ const showRightRail = (site.get("restrictRightRailDisplay") && ["document", "press-release"].includes(type)) ? false : true;
+$ const showRightRail = (site.get("restrictRightRailDisplay") && [...site.getAsArray("removeRailOnContentTypes"), "document", "press-release"].includes(type)) ? false : true;
 
 <marko-web-content-page-layout id=id type=type>
   <@head>
