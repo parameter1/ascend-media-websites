@@ -10,7 +10,7 @@
   "<minexpo-site-footer>": {
     "template": "./site-footer.marko"
   },
-  "<directory-facets>": {
+  "<minexpo-directory-facets>": {
     "template": "./facets.marko",
     "@facets": "array",
     "@content-type": "string",

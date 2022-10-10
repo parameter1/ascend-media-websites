@@ -16,7 +16,7 @@ $ const withToggle = defaultValue(input.withToggle, false);
   params={ alias: primaryAlias, queryFragment: categorySectionsFragment }
 >
   $ const children = getAsArray(node, "children.edges").map(({ node }) => node);
-  <directory-facets
+  <minexpo-directory-facets
     title=title
     description=description
     facets=children
