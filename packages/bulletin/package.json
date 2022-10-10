@@ -1,6 +1,6 @@
 {
   "name": "@ascend-media/package-bulletin",
-  "version": "1.6.15",
+  "version": "1.7.0",
   "author": "Brian Miller <brian@parameter1.com>",
   "repository": "https://github.com/parameter1/ascend-media-websites/tree/master/packages/bulletin",
   "license": "MIT",
@@ -10,7 +10,7 @@
     "test": "yarn lint"
   },
   "dependencies": {
-    "@ascend-media/package-daily": "^1.6.15",
+    "@ascend-media/package-daily": "^1.7.0",
     "@parameter1/base-cms-env": "^3.0.0",
     "@parameter1/base-cms-image": "^3.0.0",
     "@parameter1/base-cms-marko-core": "^3.3.1",
