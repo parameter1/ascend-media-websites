@@ -1,0 +1,39 @@
+{
+  "tags": {
+    "shared-leaders-dropdown-portal": {
+      "template": "./dropdown-portal.marko"
+    },
+    "shared-leaders-all": {
+      "template": "./all.marko",
+      "@contextual": "bolean",
+      "@display-view-all": "boolean"
+    },
+    "shared-leaders-directory-page": {
+      "template": "./directory-page.marko",
+      "@expanded": "boolean",
+      "@display-view-all": "boolean"
+    },
+    "shared-leaders-home-page": {
+      "template": "./home-page.marko",
+      "@expanded": "boolean",
+      "@display-view-all": "boolean",
+      "@media-query-columns": "number"
+    },
+    "shared-leaders-contextual": {
+      "template": "./contextual.marko",
+      "@content-id": "number"
+    },
+    "shared-leaders-gtm-tracker": {
+      "template": "./gtm-tracker.marko"
+    },
+    "shared-leaders-company-website-link": {
+      "template": "./company-website-link.marko",
+      "@company": "object"
+    },
+    "shared-leaders-company-social-link": {
+      "template": "./company-social-link.marko",
+      "@company": "object",
+      "@item": "object"
+    }
+  }
+}

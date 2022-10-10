@@ -1,4 +1,4 @@
-const deletedCompanies = require('@ascend-media/package-common/redirects/deleted-companies');
+const deletedCompanies = require('@ascend-media/package-minexpo/redirects/deleted-companies');
 
 const exec = (from, pattern) => pattern.exec(from);
 

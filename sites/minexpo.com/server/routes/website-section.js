@@ -1,7 +1,7 @@
 const { withWebsiteSection } = require('@parameter1/base-cms-marko-web/middleware');
 const MarkoWebSearchConfig = require('@parameter1/base-cms-marko-web-search/config');
 const MarkoWebSearch = require('@parameter1/base-cms-marko-web-search');
-const leadersFragment = require('@ascend-media/package-common/graphql/fragments/leaders-section');
+const leadersFragment = require('@ascend-media/package-minexpo/graphql/fragments/leaders-section');
 const directory = require('@ascend-media/package-minexpo/templates/website-section/directory');
 const section = require('../templates/website-section');
 const contactUs = require('../templates/website-section/contact-us');

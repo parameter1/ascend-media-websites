@@ -1,1 +1,1 @@
-module.exports = require('@ascend-media/package-shared/newrelic');
+module.exports = require('@ascend-media/package-daily/newrelic');

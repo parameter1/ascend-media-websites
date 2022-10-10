@@ -1,4 +1,4 @@
-const startServer = require('@ascend-media/package-shared/start-server');
+const startServer = require('@ascend-media/package-daily/start-server');
 const document = require('@ascend-media/package-bulletin/components/document');
 const components = require('@ascend-media/package-bulletin/components');
 const fragments = require('@ascend-media/package-bulletin/fragments');

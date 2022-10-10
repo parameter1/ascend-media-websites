@@ -42,7 +42,7 @@ $theme-site-header-breakpoints: (
   small-text-secondary: 875px
 );
 
-@import "../../node_modules/@ascend-media/package-common/scss/common";
+@import "../../node_modules/@ascend-media/package-minexpo/scss/common";
 @import "../../node_modules/@ascend-media/package-minexpo/scss/index";
 
 .body-wrapper {

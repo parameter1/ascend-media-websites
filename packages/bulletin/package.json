@@ -10,7 +10,7 @@
     "test": "yarn lint"
   },
   "dependencies": {
-    "@ascend-media/package-shared": "^1.6.15",
+    "@ascend-media/package-daily": "^1.6.15",
     "@parameter1/base-cms-env": "^3.0.0",
     "@parameter1/base-cms-image": "^3.0.0",
     "@parameter1/base-cms-marko-core": "^3.3.1",

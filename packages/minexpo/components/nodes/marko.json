@@ -1,5 +1,5 @@
 {
-  "<minexpo-company-node>": {
+  "<shared-company-node>": {
     "template": "./company.marko",
     "<image>": {},
     "<title>": {},
@@ -57,6 +57,24 @@
       "default-value": true
     },
     "@attrs": "object",
+    "@link-attrs": "object"
+  },
+  "<shared-youtube-card-node>": {
+    "template": "./youtube-card.marko",
+    "@node": "object",
+    "@link-attrs": "object"
+  },
+  "<shared-featured-products-card-node>": {
+    "template": "./featured-products-card.marko",
+    "@node": "object",
+    "@image-width": {
+      "type": "number",
+      "default-value": 300
+    },
+    "@with-teaser": {
+      "type": "boolean",
+      "default-value": true
+    },
     "@link-attrs": "object"
   }
 }

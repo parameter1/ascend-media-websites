@@ -20,7 +20,6 @@ $ const {
     <marko-web-resolve-page|{ data: section }| node=pageNode>
       $ const aliases = hierarchyAliases(section);
 
-      <!--<shared-leaderboard-block />-->
       <marko-web-gam-define-display-ad
         ...GAM.getAdUnit({ name: "lb1", aliases })
         modifiers=["top-of-page", "max-width-970", "center", "paid"]
@@ -31,44 +30,35 @@ $ const {
 
       <div class="row">
         <div class="col-lg-8 mb-block-lg">
-          <shared-content-hero-card-block section-id=id />
+          <daily-content-hero-card-block section-id=id />
 
-          <!-- <shared-event-schedule-block class="mb-block-lg">
-            <@header>
-              <marko-web-link href="/2020-program">Today's Schedule</marko-web-link>
-            </@header>
-            <@footer>
-              <marko-web-link href="/2020-program">View More Sessions &gt;</marko-web-link>
-            </@footer>
-          </shared-event-schedule-block> -->
+          <daily-announcements-block queryParams={ sectionAlias: "announcements" } class="mb-block-lg" />
 
-          <shared-announcements-block queryParams={ sectionAlias: "announcements" } class="mb-block-lg" />
+          <daily-science-news-block queryParams={ sectionAlias: "science-news" } class="mb-block-lg" />
 
-          <shared-science-news-block queryParams={ sectionAlias: "science-news" } class="mb-block-lg" />
-
-          <shared-content-featured-block section-alias="featured" link-header=false />
+          <daily-content-featured-block section-alias="featured" link-header=false />
         </div>
 
         <div class="col-lg-4 mb-block-lg page-rail">
-          <shared-global-right-rail-block aliases=aliases />
+          <daily-global-right-rail-block aliases=aliases />
         </div>
       </div>
 
       <div class="row">
         <div class="col-lg-4 mb-block-lg">
-          <shared-section-list-block section-alias="atvb" />
+          <daily-section-list-block section-alias="atvb" />
         </div>
 
         <div class="col-lg-4 mb-block-lg">
-          <shared-section-list-block section-alias="pvd" />
+          <daily-section-list-block section-alias="pvd" />
         </div>
 
         <div class="col-lg-4 mb-block-lg">
-          <shared-section-list-block section-alias="gpm" />
+          <daily-section-list-block section-alias="gpm" />
         </div>
       </div>
 
-      <shared-featured-exhibitors-block section-alias="exhibitors" />
+      <daily-featured-exhibitors-block section-alias="exhibitors" />
 
     </marko-web-resolve-page>
   </@page>
