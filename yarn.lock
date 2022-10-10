@@ -2501,10 +2501,10 @@
   dependencies:
     inflected "^2.1.0"
 
-"@parameter1/base-cms-leaders-program@^2.97.0":
-  version "2.97.0"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-leaders-program/-/base-cms-leaders-program-2.97.0.tgz#e6f946f512238e10dfe00f8a04e449aeddf435dd"
-  integrity sha512-Q4Q7G9/NPrmLV9ZCw1RPLshbTb+Bq9iKVDO5x9nSeadbGXByNqDTsDrpPMWC5N9+6pMNZCU/jcEtJmgnt9/L6g==
+"@parameter1/base-cms-leaders-program@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-leaders-program/-/base-cms-leaders-program-3.0.0.tgz#155644e2d370b122067616536a8824a73b62be0a"
+  integrity sha512-pMw4mledRCbBWEFgJhuMAollNS5/O4ho6NTgdwWCW2VfuvSdPET1uKdHV4QyHibk3WvA1zFqu1RbgidGpi96kw==
   dependencies:
     core-js "^3.18.2"
     object-path "^0.11.8"
@@ -2602,11 +2602,6 @@
     graphql "^14.5.4"
     graphql-tag "^2.12.5"
     moment "^2.29.1"
-
-"@parameter1/base-cms-marko-web-icons@^2.46.3":
-  version "2.46.3"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-icons/-/base-cms-marko-web-icons-2.46.3.tgz#61c0052b4346c31d39ea1acd811b7656e8ef4abe"
-  integrity sha512-ni3iKJLKeAuUs/pZUaeeS0hIbvPRe1SJDxqNH/UVUD8G7Putht4Ok6jsFnADB0vSqYB3E5uyaBNNi8NrsVlhLw==
 
 "@parameter1/base-cms-marko-web-icons@^3.0.0":
   version "3.0.0"
