@@ -11,7 +11,7 @@ module.exports = {
     restrictedOn: ['press-release'],
     useSectionForHeader: true,
   },
-  removeRailOnContentTypes: ['product'],
+  hideRailOnContentTypes: ['document', 'press-release', 'product'],
   logos,
   navigation,
   gam,
