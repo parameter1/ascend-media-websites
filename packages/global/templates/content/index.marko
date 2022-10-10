@@ -2,6 +2,7 @@ import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-ali
 import { getAsArray, getAsObject, get } from "@parameter1/base-cms-object-path";
 import isActiveLink from "@parameter1/base-cms-marko-web-theme-default/components/site-navbar/utils/is-active-link";
 import { asArray } from "@parameter1/base-cms-utils";
+import { defaultValue } from "@parameter1/base-cms-marko-web/utils";
 
 $ const { site, req, GAM } = out.global;
 $ const { id, type, pageNode } = data;
@@ -25,7 +26,8 @@ $ const displayCompanyHeader = (content) => {
   return false;
 }
 
-$ const showRightRail = (site.get("restrictRightRailDisplay") && ["document", "press-release"].includes(type)) ? false : true;
+$ const restrictedRightRailContentTypes = defaultValue(site.getAsArray("hideRailOnContentTypes"), ["document", "press-release"]);
+$ const showRightRail = (site.get("restrictRightRailDisplay") && restrictedRightRailContentTypes.includes(type)) ? false : true;
 
 <marko-web-content-page-layout id=id type=type>
   <@head>
