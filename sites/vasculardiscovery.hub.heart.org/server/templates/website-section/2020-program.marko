@@ -20,7 +20,6 @@ $ const {
     <a class="anchor" name="top" />
     <marko-web-resolve-page|{ data: section }| node=pageNode>
       $ const aliases = hierarchyAliases(section);
-      <!--<shared-leaderboard-block />-->
       <marko-web-gam-define-display-ad
         ...GAM.getAdUnit({ name: "lb1" })
         class="mt-block"
@@ -51,7 +50,7 @@ $ const {
           </marko-web-node-list>
 
           <a class="anchor" name="tuesday" />
-          <shared-event-schedule-block class="mb-block-lg">
+          <daily-event-schedule-block class="mb-block-lg">
             <@header>Tuesday</@header>
             <@query-params
               limit=0
@@ -60,10 +59,10 @@ $ const {
               ending-after=null
             />
             <@footer><a href="#top">Return to Top</a></@footer>
-          </shared-event-schedule-block>
+          </daily-event-schedule-block>
 
           <a class="anchor" name="wednesday" />
-          <shared-event-schedule-block class="mb-block-lg">
+          <daily-event-schedule-block class="mb-block-lg">
             <@header>Wednesday</@header>
             <@query-params
               limit=0
@@ -72,10 +71,10 @@ $ const {
               ending-after=null
             />
             <@footer><a href="#top">Return to Top</a></@footer>
-          </shared-event-schedule-block>
+          </daily-event-schedule-block>
 
           <a class="anchor" name="thursday" />
-          <shared-event-schedule-block class="mb-block-lg">
+          <daily-event-schedule-block class="mb-block-lg">
             <@header>Thursday</@header>
             <@query-params
               limit=0
@@ -84,11 +83,11 @@ $ const {
               ending-after=null
             />
             <@footer><a href="#top">Return to Top</a></@footer>
-          </shared-event-schedule-block>
+          </daily-event-schedule-block>
         </div>
 
         <div class="col-lg-4 mb-block-lg page-rail">
-          <shared-global-right-rail-block aliases=aliases />
+          <daily-global-right-rail-block aliases=aliases />
         </div>
       </div>
     </marko-web-resolve-page>

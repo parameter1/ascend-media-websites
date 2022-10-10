@@ -1,4 +1,4 @@
-@import "../../node_modules/@ascend-media/package-shared/scss/variables";
+@import "../../node_modules/@ascend-media/package-daily/scss/variables";
 
 $primary-color: #be3426;
 $theme-site-navbar-primary-bg-color: #694d6b;
@@ -9,7 +9,7 @@ $theme-card-header-color: #694d6b;
 
 $theme-card-header-background-color: #fff;
 
-@import "../../node_modules/@ascend-media/package-shared/scss/theme";
+@import "../../node_modules/@ascend-media/package-daily/scss/theme";
 
 .site-navbar{
   &__brand {
@@ -122,5 +122,49 @@ $theme-card-header-background-color: #fff;
 .ad-container {
   &--top-of-page {
     margin-bottom: map-get($spacers, block);
+  }
+}
+
+
+// Maintain the styles of the current footer
+.site-footer {
+  $self: &;
+  &__copyright {
+    text-align: left;
+  }
+  &__logo {
+    margin-bottom: map-get($spacers, block);
+    filter: none;
+  }
+  &__wrapper {
+    @media (min-width: $marko-web-document-container-max-width) {
+      max-width: $marko-web-document-container-max-width;
+      margin: 0 auto;
+    }
+  }
+  &__container {
+    &--secondary {
+      background-color: $light;
+    }
+    &--primary {
+      #{ $self }__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+    }
+  }
+  &__social-icons {
+    justify-content: flex-end;
+    margin: auto 0;
+  }
+
+  @include media-breakpoint-down(sm) {
+    &__social-icons {
+      .marko-web-icon--xl svg {
+        width: 1.75em;
+        height: 1.75rem;
+      }
+    }
   }
 }

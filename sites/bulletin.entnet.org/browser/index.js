@@ -1,6 +1,6 @@
 import Browser from '@parameter1/base-cms-marko-web/browser';
-import Shared from '@ascend-media/package-shared/browser';
+import Daily from '@ascend-media/package-daily/browser';
 
-Shared(Browser);
+Daily(Browser);
 
 export default Browser;

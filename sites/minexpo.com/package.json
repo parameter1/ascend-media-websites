@@ -15,7 +15,6 @@
     "test": "yarn lint && yarn compile && yarn build"
   },
   "dependencies": {
-    "@ascend-media/package-common": "^1.6.15",
     "@ascend-media/package-minexpo": "^1.6.15",
     "@parameter1/base-cms-marko-core": "^3.3.1",
     "@parameter1/base-cms-marko-web": "^3.7.7",
