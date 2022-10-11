@@ -56,4 +56,9 @@ module.exports = {
     logo: 'https://img.ascendmedia.com/files/base/ascend/hearthub/image/static/planet-imex-logo.png?h=90',
     bgColor: '#ffffff',
   },
+  p1events: {
+    tenant: 'ascend',
+    enabled: true,
+    cookieDomain: process.env.NODE_ENV === 'production' ? 'imexfrankfurst.ascendmedia.org' : '',
+  },
 };
