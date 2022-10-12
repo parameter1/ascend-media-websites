@@ -168,3 +168,16 @@ $theme-card-header-background-color: #fff;
     }
   }
 }
+
+.node-list {
+  &--classifieds {
+    .node-list {
+      &__header {
+        background-color: $primary-color;
+        a {
+          color: $white;
+        }
+      }
+    }
+  }
+}
