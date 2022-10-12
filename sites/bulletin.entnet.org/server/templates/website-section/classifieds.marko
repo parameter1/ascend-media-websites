@@ -1,0 +1,45 @@
+import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
+import { getAsObject } from "@parameter1/base-cms-object-path";
+import contentListFragment from "@ascend-media/package-daily/graphql/fragments/content-list";
+
+$ const { GAM } = out.global;
+
+$ const { id, pageNode, alias, name } = data;
+
+$ const adSlots = ({ aliases }) => ({
+  "gpt-ad-lb1": GAM.getAdUnit({ name: "lb1", aliases }),
+  "gpt-ad-lb2": GAM.getAdUnit({ name: "lb2", aliases }),
+  "gpt-ad-rail1": GAM.getAdUnit({ name: "rail1", aliases }),
+});
+
+<marko-web-website-section-page-layout id=id alias=alias name=name attrs={"aria-label": `website-section-${id}`}>
+  <@head>
+    <marko-web-gtm-website-section-context|{ context }| alias=alias>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-website-section-context>
+    <marko-web-resolve-page|{ data: section }| node=pageNode>
+      $ const aliases = hierarchyAliases(section);
+      <marko-web-gam-slots slots=adSlots({ aliases }) />
+    </marko-web-resolve-page>
+  </@head>
+
+  <@page>
+    <marko-web-resolve-page|{ data: section }| node=pageNode>
+      <marko-web-gam-display-ad id="gpt-ad-lb1" modifiers=["top-of-page", "max-width-970", "center"] />
+
+      <daily-content-hero-block section-id=id />
+
+      <div class="row">
+        <div class="col-lg-6 mb-block-lg">
+          <daily-section-list-block section-alias="classifieds/employment" limit=10 class='node-list--classifieds' />
+        </div>
+
+        <div class="col-lg-6 mb-block-lg">
+          <daily-section-list-block section-alias="classifieds/courses-meetings" limit=10 class='node-list--classifieds' />
+        </div>
+      </div>
+
+    </marko-web-resolve-page>
+  </@page>
+
+</marko-web-website-section-page-layout>
