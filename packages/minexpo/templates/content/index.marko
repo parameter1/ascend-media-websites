@@ -23,7 +23,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
             "gpt-ad-rail1": GAM.getAdUnit({ name: "rail1", aliases }),
           };
           <marko-web-gam-slots slots=adSlots />
-          <shared-gam-content-targeting obj=content />
+          <minexpo-gam-content-targeting obj=content />
         </if>
       </marko-web-resolve-page>
   </@head>
@@ -48,7 +48,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
               <default-theme-website-section-breadcrumbs section=content.primarySection />
               <marko-web-content-name tag="h1" class="page-wrapper__title" obj=content />
               <marko-web-content-teaser tag="p" class="page-wrapper__deck" obj=content />
-              <shared-supplier-disclaimer obj=content />
+              <minexpo-supplier-disclaimer obj=content />
               <if(content.type !== "contact")>
                 <default-theme-content-attribution obj=content />
               </if>
@@ -76,7 +76,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
               <else-if(displayCarousel)>
                 $ const images = getAsArray(content, "images.edges").map(({ node }) => node);
                 <if(images.length > 1 && (content.status === 1 && content.published < new Date(2019, 9, 30)))>
-                  <shared-image-slider images=images />
+                  <minexpo-image-slider images=images />
                 </if>
                 <else>
                   $ const isLogo = get(content, "primaryImage.isLogo");
@@ -107,7 +107,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
               </if>
 
               <if(["article", "blog", "media-gallery", "news", "podcast", "press-release", "product", "video", "webinar"].includes(content.type))>
-                <shared-featured-companies content-id=content.id />
+                <minexpo-featured-companies content-id=content.id />
               </if>
 
             </default-theme-page-contents>
@@ -118,7 +118,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
               </if>
 
               <!-- Leaders block here -->
-              <shared-leaders-contextual content-id=content.id />
+              <minexpo-leaders-contextual content-id=content.id />
 
             </aside>
           </div>
@@ -131,7 +131,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
     <marko-web-resolve-page|{ resolved, data: content }| node=pageNode>
       $ const section = resolved.getAsObject("primarySection");
       $ const aliases = hierarchyAliases(section);
-      <shared-content-load-more-block
+      <minexpo-content-load-more-block
         id=id
         type=type
         name=content.name
@@ -139,7 +139,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
         section-id=section.id
         section-name=section.name
       >
-      </shared-content-load-more-block>
+      </minexpo-content-load-more-block>
     </marko-web-resolve-page>
   </@below-page>
   <@foot>

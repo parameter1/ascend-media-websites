@@ -97,7 +97,7 @@ $ const {
                   <div class="row">
                     <div class="col">
                       <div class="mb-block">
-                        <shared-directory-categories-block
+                        <minexpo-directory-categories-block
                           title="Product Categories"
                           aliases=aliases
                           active-id=id
@@ -203,7 +203,7 @@ $ const {
                   </div>
                 </div>
                 <div class="mb-block">
-                  <shared-leaders-directory-page expanded=false />
+                  <minexpo-leaders-directory-page expanded=false />
                 </div>
               </div>
               <div class="col-lg-8 mb-block">
@@ -231,14 +231,14 @@ $ const {
                         </@header>
                         <@nodes nodes=nodes>
                           <@slot|{ node }|>
-                            <shared-company-node
+                            <minexpo-company-node
                               with-section=false
                               with-teaser=false
                               node=node
                               modifiers=["content-list"]
                             >
                               <@image width=250 ar="3:2" use-placeholder=true />
-                            </shared-company-node>
+                            </minexpo-company-node>
                           </@slot>
                         </@nodes>
                       </marko-web-node-list>
