@@ -173,7 +173,7 @@ $theme-card-header-background-color: #fff;
   &--classifieds {
     .node-list {
       &__header {
-        background-color: $primary-color;
+        background-color: $theme-card-header-color;
         a {
           color: $white;
         }
