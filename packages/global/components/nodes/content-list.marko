@@ -11,7 +11,7 @@ $ const primarySection = getAsObject(content, "primarySection");
 
 $ const withTeaser = defaultValue(input.withTeaser, false);
 $ const withBody = defaultValue(input.withBody, false);
-$ const withSection = defaultValue(input.withSection, true);
+$ const withSection = get(primarySection, 'name') === "Sponsored" ? defaultValue(site.get("showSponsoredSlug"), true) : defaultValue(input.withSection, true);
 $ const withAttribution = defaultValue(input.withAttribution, true);
 $ const withDates = defaultValue(input.withDates, true);
 

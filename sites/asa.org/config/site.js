@@ -57,4 +57,5 @@ module.exports = {
     cookieDomain: process.env.NODE_ENV === 'production' ? 'asameetingnewscentral.org' : '',
   },
   useFooterOverride: true,
+  showSponsoredSlug: false,
 };
