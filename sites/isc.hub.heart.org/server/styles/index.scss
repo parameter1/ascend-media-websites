@@ -63,3 +63,12 @@ iframe:focus,
     border: medium solid #000;
   }
 }
+
+.page {
+  &--content-company {
+    .load-more-header {
+      color: #fff;
+      background-color: $primary;
+    }
+  }
+}
