@@ -18,6 +18,7 @@ $ const createAttrs = () => {
       header: `More from ${content.name}`,
       queryName: "all-company-content",
       queryParams: { companyId: content.id, limit, skip },
+      modifiers=['company-page']
     };
   }
   if (content.type === "contact") {
@@ -69,7 +70,11 @@ $ const createAttrs = () => {
 };
 $ const attrs = createAttrs();
 
-<global-latest-content-feed-load-more-block header=attrs.header max-pages=4>
+<global-latest-content-feed-load-more-block 
+  header=attrs.header
+  max-pages=4
+  modifiers=attrs.modifiers
+>
   <@query
     name=attrs.queryName
     params=attrs.queryParams
