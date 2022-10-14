@@ -10,7 +10,7 @@ $ const page = getAsObject(input, "page");
   component-input={
     withHeader: true,
     header: input.header,
-    modifiers: ["infinite-scroll"],
+    modifiers: ["infinite-scroll", ...input.modifiers],
     adunit: input.adunit,
   }
   fragment-name="global-content-list"
