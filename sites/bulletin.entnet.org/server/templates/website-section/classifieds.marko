@@ -1,0 +1,77 @@
+import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
+import { getAsObject } from "@parameter1/base-cms-object-path";
+import contentListFragment from "@ascend-media/package-daily/graphql/fragments/content-list";
+
+$ const { GAM } = out.global;
+
+$ const { id, pageNode, alias, name } = data;
+
+$ const adSlots = ({ aliases }) => ({
+  "gpt-ad-lb1": GAM.getAdUnit({ name: "lb1", aliases }),
+  "gpt-ad-lb2": GAM.getAdUnit({ name: "lb2", aliases }),
+  "gpt-ad-rail1": GAM.getAdUnit({ name: "rail1", aliases }),
+});
+
+<bulletin-classifieds-page id=id alias=alias name=name attrs={"aria-label": `website-section-${id}`}>
+  <@head>
+    <marko-web-gtm-website-section-context|{ context }| alias=alias>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-website-section-context>
+    <marko-web-resolve-page|{ data: section }| node=pageNode>
+      $ const aliases = hierarchyAliases(section);
+      <marko-web-gam-slots slots=adSlots({ aliases }) />
+    </marko-web-resolve-page>
+  </@head>
+
+  <@page>
+    <marko-web-resolve-page|{ data: section }| node=pageNode>
+      <marko-web-gam-display-ad id="gpt-ad-lb1" modifiers=["top-of-page", "max-width-970", "center"] />
+      <marko-web-page-wrapper>
+        <@section>
+          <div class="row">
+            <div class="col-lg-6 mb-block-lg">
+              <div class="row">
+                <div class="col-lg-12 mb-block-lg">
+                  <daily-native-x-hero-card-block 
+                    placement-name="default"
+                    aliases=["employment"]
+                  />
+                </div>
+                <div class="col-lg-12 mb-block-lg">
+                  <daily-section-list-block 
+                    section-alias="classifieds/employment" 
+                    limit=10
+                    class="node-list--classifieds"
+                    with-section=false
+                    with-teaser=true
+                    image-width="180"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 mb-block-lg">
+              <div class="row">
+                <div class="col-lg-12 mb-block-lg">
+                  <daily-native-x-hero-card-block 
+                    placement-name="default"
+                    aliases=["courses-meetings"]
+                  />
+                </div>
+                <div class="col-lg-12 mb-block-lg">
+                  <daily-section-list-block 
+                    section-alias="classifieds/courses-meetings" 
+                    limit=10
+                    class="node-list--classifieds"
+                    with-section=false
+                    with-teaser=true
+                    image-width="180"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </@section>
+      </marko-web-page-wrapper>
+    </marko-web-resolve-page>
+  </@page>
+</bulletin-classifieds-page>

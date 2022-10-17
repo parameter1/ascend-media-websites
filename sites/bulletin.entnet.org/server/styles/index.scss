@@ -39,6 +39,13 @@ $theme-card-header-background-color: #fff;
       font-size: 14px;
     }
   }
+  &--text-ad-content-type {
+    .node {
+      &__header {
+        background-color: $theme-card-header-color;
+      }
+    }
+  }
 }
 
 .page-rail {
@@ -168,3 +175,28 @@ $theme-card-header-background-color: #fff;
     }
   }
 }
+
+.node-list {
+  &--classifieds {
+    .node-list {
+      &__header {
+        background-color: $theme-card-header-color;
+        a {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+/* .document-container {
+  &--classifieds {
+    @if $marko-web-document-container-max-width {
+      @media (min-width: $marko-web-document-container-max-width) {
+        max-width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+  }
+} */

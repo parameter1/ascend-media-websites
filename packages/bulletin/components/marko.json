@@ -3,7 +3,8 @@
     "./blocks/marko.json",
     "./flows/marko.json",
     "./layouts/marko.json",
-    "./nodes/marko.json"
+    "./nodes/marko.json",
+    "./page/marko.json"
   ],
   "<bulletin-document>": {
     "template": "./document.marko",

@@ -11,6 +11,8 @@ $ const linkHeader = defaultValue(input.linkHeader, true);
 $ const imagePosition = defaultValue(input.imagePosition, "left");
 $ const withTeaser = defaultValue(input.withTeaser, false);
 $ const innerJustified = defaultValue(input.innerJustified, true);
+$ const withSection = defaultValue(input.withSection, true);
+$ const imageWidth = defaultValue(input.imageWidth, "90");
 
 $ const queryParams = {
   limit: input.limit || 4,
@@ -56,7 +58,7 @@ $ const queryParams = {
           >
             <@image
               ar="1:1"
-              width="90"
+              width=imageWidth
               use-placeholder=false
               src=primaryImage.src
               alt=primaryImage.alt
@@ -65,11 +67,13 @@ $ const queryParams = {
               ...input.image
             />
             <@body>
-              <@header>
-                <@left>
-                  <marko-web-website-section-name obj=primarySection link=true />
-                </@left>
-              </@header>
+              <if(withSection)>
+                <@header>
+                  <@left>
+                    <marko-web-website-section-name obj=primarySection link=true />
+                  </@left>
+                </@header>
+                </if>
               <@title tag="h5">
                 <marko-web-content-short-name tag=null obj=nxNode link={ attrs: linkAttrs } />
               </@title>

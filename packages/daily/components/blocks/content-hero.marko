@@ -1,4 +1,4 @@
-import { getAsObject, get } from "@parameter1/base-cms-object-path";
+import { getAsObject, get, getAsArray } from "@parameter1/base-cms-object-path";
 import queryFragment from "../../graphql/fragments/content-hero";
 
 $ const { sectionId, limit } = input;
@@ -13,6 +13,8 @@ $ const queryParams = {
   ...getAsObject(input, "queryParams"),
   sectionId,
 };
+
+$ const adSlots = getAsArray(input.adSlots).length ? getAsArray(input.adSlots) : ["gpt-ad-column1", "gpt-ad-rail1"]
 
 <marko-web-query|{ nodes }| name="website-optioned-content" params=queryParams>
   <default-theme-hero-flow nodes=nodes>
@@ -48,10 +50,10 @@ $ const queryParams = {
           </@body>
         </@image>
       </marko-web-node>
-      <marko-web-gam-display-ad id="gpt-ad-column1" modifiers=["top-of-page", "max-width-728", "center"] />
+      <marko-web-gam-display-ad id=adSlots[0] modifiers=["top-of-page", "max-width-728", "center"] />
     </@hero>
     <@list|{ nodes }|>
-      <marko-web-gam-display-ad id="gpt-ad-rail1" />
+      <marko-web-gam-display-ad id=adSlots[1] />
       <if(nodes.length)>
         <for|content, index| of=nodes>
           $ const primaryImage = getAsObject(content, "primaryImage");
