@@ -39,6 +39,13 @@ $theme-card-header-background-color: #fff;
       font-size: 14px;
     }
   }
+  &--text-ad-content-type {
+    .node {
+      &__header {
+        background-color: $theme-card-header-color;
+      }
+    }
+  }
 }
 
 .page-rail {
@@ -182,7 +189,7 @@ $theme-card-header-background-color: #fff;
   }
 }
 
-.document-container {
+/* .document-container {
   &--classifieds {
     @if $marko-web-document-container-max-width {
       @media (min-width: $marko-web-document-container-max-width) {
@@ -192,4 +199,4 @@ $theme-card-header-background-color: #fff;
       }
     }
   }
-}
+} */
