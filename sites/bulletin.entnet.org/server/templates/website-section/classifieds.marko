@@ -26,27 +26,52 @@ $ const adSlots = ({ aliases }) => ({
   <@page>
     <marko-web-resolve-page|{ data: section }| node=pageNode>
       <marko-web-gam-display-ad id="gpt-ad-lb1" modifiers=["top-of-page", "max-width-970", "center"] />
-
-      <div class="row">
-        <div class="col-lg-6 mb-block-lg">
-          <daily-section-list-block 
-            section-alias="classifieds/employment" 
-            limit=10
-            class="node-list--classifieds"
-            with-section=false
-          />
-        </div>
-
-        <div class="col-lg-6 mb-block-lg">
-          <daily-section-list-block 
-            section-alias="classifieds/courses-meetings" 
-            limit=10
-            class="node-list--classifieds"
-            with-section=false
-          />
-        </div>
-      </div>
-
+      <marko-web-page-wrapper>
+        <@section>
+          <div class="row">
+            <div class="col-lg-6 mb-block-lg">
+              <div class="row">
+                <div class="col-lg-12 mb-block-lg">
+                  <daily-native-x-hero-card-block 
+                    placement-name="default"
+                    aliases=["employment"]
+                  />
+                </div>
+                <div class="col-lg-12 mb-block-lg">
+                  <daily-section-list-block 
+                    section-alias="classifieds/employment" 
+                    limit=10
+                    class="node-list--classifieds"
+                    with-section=false
+                    with-teaser=true
+                    image-width="180"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 mb-block-lg">
+              <div class="row">
+                <div class="col-lg-12 mb-block-lg">
+                  <daily-native-x-hero-card-block 
+                    placement-name="default"
+                    aliases=["courses-meetings"]
+                  />
+                </div>
+                <div class="col-lg-12 mb-block-lg">
+                  <daily-section-list-block 
+                    section-alias="classifieds/courses-meetings" 
+                    limit=10
+                    class="node-list--classifieds"
+                    with-section=false
+                    with-teaser=true
+                    image-width="180"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </@section>
+      </marko-web-page-wrapper>
     </marko-web-resolve-page>
   </@page>
 </bulletin-classifieds-page>
