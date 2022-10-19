@@ -70,12 +70,12 @@ $ const promise = websiteSectionContentLoader(apollo, {
           </div>
           <div class="col-lg-4">
             <if(nativeXBlock && nativeXBlock.enabled)>
-            $ const { withSection } = nativeXBlock;
+            $ const { title, withSection } = nativeXBlock;
               <global-native-x-list-block
                 placement-name="default"
                 aliases=aliases
                 collapsible=true
-                title=nativeXBlockTitle
+                title=title
                 with-section=withSection
               />
             </if>
