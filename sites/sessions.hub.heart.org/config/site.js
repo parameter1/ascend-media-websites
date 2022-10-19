@@ -5,7 +5,9 @@ const blocks = require('./blocks');
 const nativeX = require('./native-x');
 
 module.exports = {
-  nativeXBlock: Boolean(process.env.NATIVE_X_BLOCK),
+  nativeXBlock: {
+    enabled: Boolean(process.env.NATIVE_X_BLOCK),
+  },
   restrictRightRailDisplay: Boolean(process.env.RESTRICT_RIGHT_RAIL_DISPLAY),
   contentPageLoadMore: Boolean(process.env.CONTENT_PAGE_LOAD_MORE),
   blocks,

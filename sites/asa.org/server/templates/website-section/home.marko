@@ -6,7 +6,7 @@ import websiteSectionContentLoader from "@ascend-media/package-global/loaders/we
 import queryFragment from "@ascend-media/package-global/graphql/fragments/content-list";
 
 $ const { GAM, apollo, site } = out.global;
-$ const nativeXBlock = site.get('nativeXBlock');
+$ const nativeXBlock = site.getAsObject("nativeXBlock");
 
 $ const {
   id,
@@ -63,22 +63,23 @@ $ const promise = websiteSectionContentLoader(apollo, {
         <global-standard-hero-block nodes=getAsArray(featured, "nodes") />
         <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(0, 2) cols=3 ad-index=1 ad-name="rail1" />
         <div class="row">
-          <div class="col-lg-8">
+          <div class="col-lg-8 mb-block">
             <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(2, 6)>
               <@native-x index=0 name="default" />
             </global-content-card-deck-flow>
           </div>
-          <div class="col-lg-4">
-            $ const nativeXBlockTitle = site.get('nativeXBlockTitle');
-            $ const showSectionTitle = site.get('nativeXBlockSlugs');
-            <global-native-x-list-block
-              placement-name="default"
-              aliases=aliases
-              limit=6
-              collapsible=true
-              title=nativeXBlockTitle
-              with-section=showSectionTitle
-            />
+          <div class="col-lg-4 mb-block">
+            <if(nativeXBlock && nativeXBlock.enabled)>
+            $ const { limit, title, withSection } = nativeXBlock;
+              <global-native-x-list-block
+                placement-name="default"
+                aliases=aliases
+                collapsible=true
+                limit=limit
+                title=title
+                with-section=withSection
+              />
+            </if>
           </div>
         </div>
         <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(6, 8) cols=3 ad-index=0 ad-name="rail2" />
