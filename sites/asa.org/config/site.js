@@ -4,12 +4,14 @@ const logos = require('./logos');
 const nativeX = require('./native-x');
 
 module.exports = {
-  nativeXBlock: Boolean(process.env.NATIVE_X_BLOCK),
+  nativeXBlock: {
+    enabled: Boolean(process.env.NATIVE_X_BLOCK),
+    title: 'From The ASA Monitor',
+    withSection: false,
+  },
   restrictRightRailDisplay: Boolean(process.env.RESTRICT_RIGHT_RAIL_DISPLAY),
   contentPageLoadMore: Boolean(process.env.CONTENT_PAGE_LOAD_MORE),
   searchTitle: 'Search Annual Meeting Daily News',
-  nativeXBlockTitle: 'From The ASA Monitor',
-  nativeXBlockSlugs: false,
   logos,
   navigation,
   gam,
