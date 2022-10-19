@@ -6,7 +6,7 @@ import websiteSectionContentLoader from "@ascend-media/package-global/loaders/we
 import queryFragment from "@ascend-media/package-global/graphql/fragments/content-list";
 
 $ const { GAM, apollo, site } = out.global;
-$ const nativeXBlock = site.get('nativeXBlock');
+$ const nativeXBlock = site.getAsObject('nativeXBlock');
 
 $ const {
   id,
@@ -70,12 +70,11 @@ $ const promise = websiteSectionContentLoader(apollo, {
           </div>
           <div class="col-lg-4">
             $ const nativeXBlockTitle = site.get('nativeXBlockTitle');
-            <if(nativeXBlock === true)>
+            <if(nativeXBlock && nativeXBlock.enabled)>
             $ const showSectionTitle = site.get('nativeXBlockSlugs');
               <global-native-x-list-block
                 placement-name="default"
                 aliases=aliases
-                limit=6
                 collapsible=true
                 title=nativeXBlockTitle
                 with-section=showSectionTitle
