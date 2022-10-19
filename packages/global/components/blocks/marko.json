@@ -59,7 +59,7 @@
   "<global-standard-hero-block>": {
     "template": "./standard-hero.marko"
   },
-  "<global-global-right-rail-block>": {
+  "<global-right-rail-block>": {
     "template": "./right-rail.marko"
   },
   "<global-notice-pushdown-block>": {
