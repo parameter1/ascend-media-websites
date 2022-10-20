@@ -9,7 +9,7 @@ const userTools = [];
 
 const topics = [
   { href: '/ashp-spotlight', label: 'ASHP Spotlight' },
-  { href: '/meeting-coverage', label: 'Meeting Coverage' },
+  { href: '/midyear-coverage', label: 'Midyear Coverage' },
   { href: '/awards-events', label: 'Awards and Events' },
   { href: '/ashp-marketplace', label: 'ASHP Marketplace' },
   { href: '/meeting-info', label: 'Meeting Info' },
