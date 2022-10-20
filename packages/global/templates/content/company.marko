@@ -87,7 +87,7 @@ $ const adSlots = ({ aliases }) => ({
   <marko-web-resolve-page|{ resolved, data: content }| node=pageNode>
     $ const section = resolved.getAsObject("primarySection");
     $ const aliases = hierarchyAliases(section);
-    $ const includeContentTypes = ["Article", "Blog", "Product", "News", "PressRelease", "Webinar", "Whitepaper", "Video"];
+    $ const includeContentTypes = ["Article", "Blog", "Product", "News", "PressRelease", "Webinar", "Whitepaper", "Video", "Promotion"];
       <marko-web-load-more
         header=`More from ${content.name}`
         component-name="global-content-card-deck-flow"
