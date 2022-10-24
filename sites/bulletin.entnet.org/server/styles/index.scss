@@ -177,9 +177,11 @@ $theme-card-header-background-color: #fff;
 }
 
 .node-list {
-  &--classifieds {
+  &--classifieds,
+  &--native-x-list {
     .node-list {
       &__header {
+        color: $white;
         background-color: $theme-card-header-color;
         a {
           color: $white;
