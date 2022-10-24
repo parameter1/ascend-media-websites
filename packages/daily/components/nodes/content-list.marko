@@ -33,7 +33,7 @@ $ const { linkAttrs } = input;
 >
   <if(defaultValue(input.displayImage, true))>
     <@image
-      width=input.imageWidth
+      width=defaultValue(input.imageWidth, 75)
       align="top"
       use-placeholder=false
       fluid=false
