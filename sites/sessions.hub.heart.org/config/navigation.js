@@ -23,7 +23,7 @@ const topics = [
 const secondary = [
   { href: 'https://twitter.com/search?q=%23AHA21&src=typed_query', label: '#AHA22' },
   { href: 'https://ahasessions22.heart.org/', label: 'Virtual Experience Access', target: '_blank' },
-  { href: 'https://aha.apprisor.org/epsWelcome.cfm?CFID=1113090&CFTOKEN=ff449c65d7f45be4-6D0F6A82-E115-7B95-16DCAB5FF38CCCE3', label: 'Sessions Posters', target: '_blank' },
+  { href: 'https://aha.apprisor.org/epsWelcome.cfm', label: 'Sessions Posters', target: '_blank' },
 ];
 
 module.exports = {
