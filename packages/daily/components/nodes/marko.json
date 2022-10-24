@@ -11,6 +11,7 @@
 
     "@display-image": "boolean",
     "@image-position": "string",
+    "@image-width": "number",
     "@card": "boolean",
     "@flush": "boolean",
     "@full-height": "boolean",
