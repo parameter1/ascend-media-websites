@@ -1,8 +1,9 @@
 import { getAsObject, get } from "@parameter1/base-cms-object-path";
+import eventLinkAttrs from "@parameter1/base-cms-marko-web-p1-events/utils/link-attrs";
+import eventEntity from "@parameter1/base-cms-marko-web-p1-events/utils/base-content-entity";
 
 $ const content = getAsObject(input, "content");
 $ const { socialLinks, ...contentSansSocial } = content;
-$ const { website, ...contentSansWebsite } = contentSansSocial;
 $ const contactNeeds = [
   "address1", "address2", "cityStateZip", "country",
   "phone", "fax", "mobile", "tollfree",
@@ -34,16 +35,19 @@ $ const hasContactValues = contactNeeds.map(field => get(content, field)).some(v
 
       <if(hasContactValues)>
         <global-company-page-label>Contact</global-company-page-label>
-        <default-theme-content-contact-details obj=contentSansWebsite />
-      </if>
-      <if(website)>
-        <div class="page-contact-details">
-          <div class="page-contact-details__section">
-            <div class="page-contact-details__content-website">
-              <marko-web-browser-component name="JumpModal" props={ href: website, label: website } />
-            </div>
-          </div>
-        </div>
+        <default-theme-content-contact-details 
+          obj=contentSansSocial
+          website-link-attrs=eventLinkAttrs({
+            category: "Company Profile Page",
+            label: "Company Website",
+            entity: eventEntity(content.id, "company"),
+          })
+          social-link-attrs=eventLinkAttrs({
+            category: "Company Profile Page",
+            label: "Company Social Link",
+            entity: eventEntity(content.id, "company"),
+          })
+        />
       </if>
 
       <marko-web-content-body|{ value }| obj=content>
