@@ -177,9 +177,11 @@ $theme-card-header-background-color: #fff;
 }
 
 .node-list {
-  &--classifieds {
+  &--classifieds,
+  &--native-x-list {
     .node-list {
       &__header {
+        color: $white;
         background-color: $theme-card-header-color;
         a {
           color: $white;
@@ -189,14 +191,19 @@ $theme-card-header-background-color: #fff;
   }
 }
 
-/* .document-container {
+.document-container {
   &--classifieds {
-    @if $marko-web-document-container-max-width {
-      @media (min-width: $marko-web-document-container-max-width) {
-        max-width: 100%;
-        padding-right: 0;
-        padding-left: 0;
+    .node {
+      &--hero {
+        .node {
+          &__header {
+            a {
+              font-size: 1rem;
+              font-weight: 600;
+            }
+          }
+        }
       }
     }
   }
-} */
+}

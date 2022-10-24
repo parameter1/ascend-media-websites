@@ -107,8 +107,5 @@
   },
   "<daily-exhibitors-banner-block>": {
     "template": "./exhibitors-banner.marko"
-  },
-  "<daily-native-x-hero-card-block>": {
-    "template": "./native-x-hero-card.marko"
   }
 }

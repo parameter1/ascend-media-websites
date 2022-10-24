@@ -14,11 +14,13 @@ $ const placement = nxConfig.getPlacement({ name: placementName, aliases });
 
 $ const linkHeader = defaultValue(input.linkHeader, true);
 $ const imagePosition = defaultValue(input.imagePosition, "right");
+$ const imageWidth = defaultValue(input.imageWidth, 75)
 $ const withTeaser = defaultValue(input.withTeaser, false);
 $ const innerJustified = defaultValue(input.innerJustified, false);
 $ const displayImage = defaultValue(input.displayImage, true);
 $ const title = defaultValue(input.title, "Interesting Stories")
 $ const displayHeader = defaultValue(input.displayHeader, true);
+$ const withSection = defaultValue(input.withSection, true);
 
 <marko-web-native-x-fetch-elements|{ ads }| uri=uri id=placement.id opts={ n: limit }>
   $ const nodes = ads.filter(ad => ad.hasCampaign);
@@ -40,12 +42,13 @@ $ const displayHeader = defaultValue(input.displayHeader, true);
           $ const node = convertAdToContent(ad, { sectionName: `Sponsored by ${ad.campaign.advertiserName}` });
           <daily-content-list-node
             image-position=imagePosition
+            image-width=imageWidth
             card=false
             flush=true
             modifiers=modifiers
             node=node
-            with-section=true
-            with-teaser=false
+            with-section=withSection
+            with-teaser=withTeaser
             with-dates=false
             attrs=ad.attributes.container
             link-attrs=ad.attributes.link

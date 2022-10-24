@@ -32,12 +32,17 @@ $ const adSlots = ({ aliases }) => ({
             <div class="col-lg-6 mb-block-lg">
               <div class="row">
                 <div class="col-lg-12 mb-block-lg">
-                  <daily-native-x-hero-card-block 
+                  <daily-native-x-list-block
                     placement-name="default"
                     aliases=["employment"]
+                    limit=1
+                    collapsible=true
+                    title="Featured Employment"
+                    with-teaser=true
+                    with-section=false
+                    image-position="left"
+                    image-width=180
                   />
-                </div>
-                <div class="col-lg-12 mb-block-lg">
                   <daily-section-list-block 
                     section-alias="classifieds/employment" 
                     limit=10
@@ -52,12 +57,17 @@ $ const adSlots = ({ aliases }) => ({
             <div class="col-lg-6 mb-block-lg">
               <div class="row">
                 <div class="col-lg-12 mb-block-lg">
-                  <daily-native-x-hero-card-block 
+                  <daily-native-x-list-block
                     placement-name="default"
                     aliases=["courses-meetings"]
+                    limit=1
+                    collapsible=true
+                    title="Featured Courses & Meetings"
+                    with-teaser=true
+                    with-section=false
+                    image-position="left"
+                    image-width=180
                   />
-                </div>
-                <div class="col-lg-12 mb-block-lg">
                   <daily-section-list-block 
                     section-alias="classifieds/courses-meetings" 
                     limit=10
