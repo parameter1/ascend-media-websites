@@ -6,8 +6,6 @@ $ const { nativeX: nxConfig } = out.global;
 $ const placementName = defaultValue(input.placementName, "default");
 $ const aliases = defaultValue(input.aliases, []);
 
-$ const modifiers = input.modifiers || [];
-$ modifiers.push("native-x-list");
 $ const uri = nxConfig.getUri();
 $ const placement = nxConfig.getPlacement({ name: placementName, aliases });
 
@@ -19,7 +17,8 @@ $ const placement = nxConfig.getPlacement({ name: placementName, aliases });
       ...convertAdToContent(ad, { sectionName: `Sponsored by ${ad.campaign.advertiserName}` }),
       attributes: {
         ...ad.attributes
-      }
+      },
+      ...(input.header && { shortName: input.header })
     }
     $ const primaryImage = getAsObject(content, "primaryImage");
     <marko-web-node
@@ -49,6 +48,11 @@ $ const placement = nxConfig.getPlacement({ name: placementName, aliases });
           is-logo=primaryImage.isLogo
           link={ href: content.siteContext.path, attrs: getAsObject(content, "attributes.link") }
         >
+          <@body>
+            <@text modifiers=["teaser"] show=Boolean(content.teaser)>
+              <marko-web-content-teaser tag=null obj=content link=true />
+            </@text>
+          </@body>
         </@image>
     </marko-web-node>
   </if>
