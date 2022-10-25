@@ -22,9 +22,8 @@ const topics = [
 
 const secondary = [
   { href: 'https://twitter.com/search?q=%23AHA21&src=typed_query', label: '#AHA22' },
-  { href: '#', label: 'Connection Hub' },
-  { href: '#', label: 'Virtual Experience Access', target: '_blank' },
-  { href: '#', label: 'Sessions Posters', target: '_blank' },
+  { href: 'https://ahasessions22.heart.org/', label: 'Virtual Experience Access', target: '_blank' },
+  { href: 'https://aha.apprisor.org', label: 'Sessions Posters', target: '_blank' },
 ];
 
 module.exports = {
