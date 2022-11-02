@@ -14,7 +14,7 @@ module.exports = (app) => {
     template: content,
     queryFragment: contactQueryFragment,
   }));
-  app.get('/*?:id(\\d{8})*', withContent({
+  app.get('/*?/:id(\\d{8})/*|/:id(\\d{8})(/|$)', withContent({
     template: content,
     queryFragment,
   }));
