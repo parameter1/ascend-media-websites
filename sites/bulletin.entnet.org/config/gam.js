@@ -26,6 +26,7 @@ config
     { name: 'lb3', templateName: 'leaderboard600x100', path: 'lb3' },
     { name: 'rail1', options: { size: [300, 250] }, path: 'rail1' },
     { name: 'rail2', options: { size: [300, 250] }, path: 'rail2' },
+    { name: 'rail3', options: { size: [300, 250] }, path: 'rail3' },
   ]);
 
 module.exports = config;
