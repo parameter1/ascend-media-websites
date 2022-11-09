@@ -12,6 +12,7 @@ $ const adSlots = ({ aliases }) => ({
   "gpt-ad-lb3": GAM.getAdUnit({ name: "lb3", aliases }),
   "gpt-ad-rail1": GAM.getAdUnit({ name: "rail1", aliases }),
   "gpt-ad-rail2": GAM.getAdUnit({ name: "rail2", aliases }),
+  "gpt-ad-rail3": GAM.getAdUnit({ name: "rail3", aliases })
 });
 
 <marko-web-content-page-layout id=id type=type>
@@ -57,17 +58,7 @@ $ const adSlots = ({ aliases }) => ({
               <marko-web-resolve|{ resolved }| promise=issuePromise>
                 $ const { issue, issueContent } = resolved;
                 <if(issue)>
-                  <daily-content-list-flow
-                    nodes=issueContent.nodes.slice(0,3)
-                    inner-justified=false
-                    flush-x=false
-                    flush-y=false
-                  >
-                    <@header>More Articles</@header>
-                    <@node with-dates=false with-teaser=false display-image=false with-attribution=false with-section=false>
-                      <@title modifiers=["small"] />
-                    </@node>
-                  </daily-content-list-flow>
+                  <marko-web-gam-display-ad id="gpt-ad-rail3" />
                   <bulletin-magazine-latest-issue-node card=true flush=false card=false node=issue />
                 </if>
               </marko-web-resolve>
