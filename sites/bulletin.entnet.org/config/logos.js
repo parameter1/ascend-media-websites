@@ -1,8 +1,8 @@
 module.exports = {
   navbar: {
-    src: 'https://img.ascendmedia.com/files/base/ascend/bulletin/image/static/bulletin.png',
+    src: 'https://img.ascendmedia.com/files/base/ascend/bulletin/image/static/header-bulletin.png',
     srcset: [
-      'https://img.ascendmedia.com/files/base/ascend/bulletin/image/static/bulletin.png',
+      'https://img.ascendmedia.com/files/base/ascend/bulletin/image/static/header-bulletin.png',
     ],
     href: '/',
     title: 'Bulletin',
