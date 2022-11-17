@@ -15,7 +15,7 @@ const topics = [
 ];
 
 const secondary = [
-  { href: 'https://ratecards.ascendeventmedia.com/aao-hnsbulletin2022/', label: 'Advertise', target: '_blank' },
+  { href: 'https://ratecards.ascendeventmedia.com/aao-hnsbulletin2023/', label: 'Advertise', target: '_blank' },
 ];
 
 module.exports = {
