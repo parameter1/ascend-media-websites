@@ -16,6 +16,7 @@ module.exports = {
   gam,
   nativeX,
   company: 'Ascend Media',
+  exhibitorsTitle: 'Featured Exhibitors',
   socialMediaLinks: [
     { provider: 'twitter', href: 'https://twitter.com/AHAMeetings', target: '_blank' },
     { provider: 'facebook', href: 'https://www.facebook.com/ahameetings', target: '_blank' },

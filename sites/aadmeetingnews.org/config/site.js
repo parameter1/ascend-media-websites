@@ -23,6 +23,7 @@ module.exports = {
   copyrightNotice: 'All rights reserved. DermWorld Meeting News Central is a publication of the American Academy of Dermatology.',
   customCopyright: '© Ascend Media All rights reserved. DermWorld Meeting News Central is a publication of the American Academy of Dermatology.',
   sponsoredText: 'Paid Advertising Content',
+  exhibitorsTitle: 'Small Exhibitor Spotlight',
   socialMediaLinks: [
     { provider: 'facebook', href: 'https://www.facebook.com/AADmember', target: '_blank' },
     { provider: 'instagram', href: 'https://www.instagram.com/aadmember/', target: '_blank' },
