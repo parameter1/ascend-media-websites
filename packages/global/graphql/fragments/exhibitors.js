@@ -2,7 +2,7 @@ const gql = require('graphql-tag');
 
 module.exports = gql`
 
-fragment WebsiteContentFeaturedExhibitorsFragment on Content {
+fragment WebsiteContentExhibitorsFragment on Content {
   id
   type
   primaryImage {

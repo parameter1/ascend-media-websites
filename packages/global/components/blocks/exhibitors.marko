@@ -1,7 +1,8 @@
 import { getAsObject, get } from "@parameter1/base-cms-object-path";
-import queryFragment from "../../graphql/fragments/featured-exhibitors";
+import queryFragment from "../../graphql/fragments/exhibitors";
 
 $ const { sectionAlias } = input;
+$ const { site } = out.global;
 
 $ const queryParams = {
   limit: 12,
@@ -13,16 +14,18 @@ $ const queryParams = {
   sectionAlias,
 };
 
-<marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
+$ const title = site.get('exhibitorsTitle');
+
+<marko-web-query|{ nodes, section }| name="website-scheduled-content" params=queryParams>
   <marko-web-node-list>
     <@header>
-      Featured Exhibitors
+      ${title}
     </@header>
     <@body>
       Click on a logo to visit these exhibitors
     </@body>
     <@nodes nodes=nodes>
-      <default-theme-card-deck-flow cols=4 nodes=nodes modifiers=["featured-exhibitors"]>
+      <default-theme-card-deck-flow cols=4 nodes=nodes modifiers=["exhibitors"]>
         <@slot|{ node: content }|>
           $ const primaryImage = getAsObject(content, "primaryImage");
           <marko-web-node
