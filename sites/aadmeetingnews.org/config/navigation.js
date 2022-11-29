@@ -11,7 +11,8 @@ const topics = [
   { href: '/daily-coverage', label: 'Daily Coverage' },
   { href: '/industry-highlights', label: 'Industry Highlights' },
   { href: '/product-samples', label: 'Product Samples' },
-  { href: 'https://ia2022.aad.org/sessions', label: 'Meeting Program', target: '_blank' },
+  { href: '/small-exhibitor-spotlight', label: 'Small Exhibitor Spotlight' },
+  { href: 'https://ia2022.aad.org/sessions', label: 'Program', target: '_blank' },
 ];
 
 const secondary = [
