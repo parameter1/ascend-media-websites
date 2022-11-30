@@ -11,7 +11,7 @@ const topics = [
   { href: '/daily-coverage', label: 'Daily Coverage' },
   { href: '/industry-highlights', label: 'Industry Highlights' },
   { href: '/product-samples', label: 'Product Samples' },
-  { href: '/small-exhibitor-spotlight', label: 'Small Exhibitor Spotlight' },
+  { href: '/small-exhibit-spotlight', label: 'Small Exhibit Spotlight' },
   { href: 'https://ia2022.aad.org/sessions', label: 'Program', target: '_blank' },
 ];
 
