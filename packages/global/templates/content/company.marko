@@ -73,12 +73,12 @@ $ const adSlots = ({ aliases }) => ({
               </@body>
             </marko-web-node-list>
           </if>
-          <if(site.get("featuredExhibitors"))>
+          <if(site.get("exhibitors"))>
             <marko-web-gam-display-ad id="gpt-ad-rail1" />
           </if>
         </div>
       </div>
-      <if(site.get("featuredExhibitors"))>
+      <if(site.get("exhibitors"))>
         <marko-web-gam-display-ad id="gpt-ad-lb1" modifiers=["max-width-790", "center"] />
       </if>
     </marko-web-resolve-page>

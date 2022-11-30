@@ -1,6 +1,6 @@
 .card-deck-flow {
   $self: &;
-  &--featured-exhibitors {
+  &--exhibitors {
     #{ $self } {
       &__node {
         margin-bottom: 0;
