@@ -65,6 +65,6 @@ module.exports = {
   },
   ahaFooter: true,
   noticePushdown: true,
-  featuredExhibitors: true,
+  exhibitors: true,
   nativeXHeroSections: ['industry-highlights'],
 };
