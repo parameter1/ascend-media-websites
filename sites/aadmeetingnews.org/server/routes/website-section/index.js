@@ -4,7 +4,7 @@ const section = require('@ascend-media/package-global/templates/website-section'
 const exhibitors = require('@ascend-media/package-global/templates/website-section/exhibitors');
 
 module.exports = (app) => {
-  app.get('/:alias(small-exhibitor-spotlight)', withWebsiteSection({
+  app.get('/:alias(small-exhibit-spotlight)', withWebsiteSection({
     template: exhibitors,
     queryFragment,
   }));
