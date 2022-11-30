@@ -14,7 +14,7 @@ $ const queryParams = {
   sectionAlias,
 };
 
-$ const title = site.get('exhibitorsTitle');
+$ const title = site.get('exhibitors.title');
 
 <marko-web-query|{ nodes, section }| name="website-scheduled-content" params=queryParams>
   <marko-web-node-list>
