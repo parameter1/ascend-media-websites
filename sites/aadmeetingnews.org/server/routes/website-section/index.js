@@ -2,8 +2,14 @@ const { withWebsiteSection } = require('@parameter1/base-cms-marko-web/middlewar
 const queryFragment = require('@ascend-media/package-global/graphql/fragments/website-section-page');
 const section = require('@ascend-media/package-global/templates/website-section');
 const exhibitors = require('@ascend-media/package-global/templates/website-section/exhibitors');
+const nativeX = require('@ascend-media/package-global/templates/website-section/native-x');
 
 module.exports = (app) => {
+  app.get('/:alias(industry-highlights)', withWebsiteSection({
+    template: nativeX,
+    queryFragment,
+  }));
+
   app.get('/:alias(small-exhibit-spotlight)', withWebsiteSection({
     template: exhibitors,
     queryFragment,
