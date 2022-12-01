@@ -4,11 +4,11 @@ const config = new GAMConfiguration('6407152', { basePath: 'bulletin' });
 
 config
   .setTemplate('leaderboard', {
-    size: [[728, 90], [600, 100], [320, 50], [300, 50], [300, 100]],
+    size: [[728, 90], [600, 100], [320, 50], [300, 50], [300, 250], [300, 100]],
     sizeMapping: [
       { viewport: [750, 0], size: [[728, 90]] },
       { viewport: [620, 0], size: [[600, 100]] },
-      { viewport: [320, 0], size: [[300, 50], [320, 50], [300, 100]] },
+      { viewport: [320, 0], size: [[300, 50], [320, 50], [300, 250], [300, 100]] },
     ],
   })
   .setTemplate('leaderboard600x100', {
