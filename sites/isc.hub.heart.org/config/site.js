@@ -62,4 +62,5 @@ module.exports = {
   },
   ahaFooter: true,
   noticePushdown: true,
+  nativeXHeroSections: ['industry-highlights'],
 };
