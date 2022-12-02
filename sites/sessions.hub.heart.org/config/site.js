@@ -67,5 +67,4 @@ module.exports = {
   exhibitors: {
     title: 'Featured Exhibitors',
   },
-  nativeXHeroSections: ['industry-highlights'],
 };
