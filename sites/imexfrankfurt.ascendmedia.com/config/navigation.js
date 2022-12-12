@@ -13,7 +13,7 @@ const topics = [
   { href: '/accommodations-venues', label: 'Accommodation & Venues' },
   { href: '/happenings', label: 'Happenings' },
   { href: '/featured-exhibitors', label: 'Featured Exhibitors' },
-  { href: 'https://www.imex-frankfurt.com', label: 'IMEX in Frankfurt', target: '_blank' },
+  { href: 'https://www.imex-frankfurt.com', label: 'Register Now', target: '_blank' },
 
 ];
 
