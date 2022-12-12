@@ -47,6 +47,14 @@ $ const adSlots = ({ aliases }) => ({
         </div>
 
         <div class="col-lg-4 mb-block-lg page-rail">
+          <daily-native-x-list-block
+            placement-name="default"
+            aliases=aliases
+            limit=6
+            collapsible=true
+            title="Featured Exhibitors"
+          />
+          <marko-web-gam-display-ad id="gpt-ad-rail2" class="mt-block-lg" />
           <a
             class="twitter-timeline btn btn-primary btn-block"
             data-height="650"
@@ -57,8 +65,6 @@ $ const adSlots = ({ aliases }) => ({
             Tweets by IMEX Group
           </a>
           <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-          <marko-web-gam-display-ad id="gpt-ad-rail2" class="mt-block-lg" />
         </div>
       </div>
 
@@ -81,8 +87,6 @@ $ const adSlots = ({ aliases }) => ({
           </daily-section-list-block>
         </div>
       </div>
-
-      <daily-featured-exhibitors-block section-alias="featured-exhibitors" />
 
     </marko-web-resolve-page>
   </@page>
