@@ -18,7 +18,7 @@ $ const queryParams = {
 
 <marko-web-query|{ nodes }| name="website-optioned-content" params=queryParams>
   <!-- Native-X here uses base 0 indexing whereas limit is defined using base 1 -->
-  $ const slotInNativeX = (nativeX && nativeX.index && ((nativeX.index + 1) !== nodes.length));
+  $ const slotInNativeX = nxConfig.enabled && (nativeX && nativeX.index && ((nativeX.index + 1) !== nodes.length));
   $ const finalizedNodes =  slotInNativeX ? [
     ...nodes.slice(0, nativeX.index),
     {},
@@ -43,7 +43,7 @@ $ const queryParams = {
         >
             $ const primaryImage = getAsObject(nxNode, "primaryImage");
             $ const primarySection = getAsObject(nxNode, "primarySection");
-            <if((index === nativeX.index && nodes[nativeX.index].id !== nxNode.id) || index !== nativeX.index)>
+            <if(!nxConfig.enabled || (index === nativeX.index && nodes[nativeX.index].id !== nxNode.id) || index !== nativeX.index)>
               <marko-web-node
                 type=`${nxNode.type}-content`
                 image-position="left"

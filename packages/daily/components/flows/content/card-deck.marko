@@ -9,7 +9,7 @@ $ const image = getAsObject(input, "node.image");
 $ const nativeX = getAsObject(input, "nativeX");
 
 <!-- Native-X here uses base 0 indexing whereas Array.length uses base 1 -->
-$ const slotInNativeX = (nativeX && nativeX.index && ((nativeX.index + 1) !== nodes.length));
+$ const slotInNativeX = nxConfig.enabled && (nativeX && nativeX.index && ((nativeX.index + 1) !== nodes.length));
 $ const finalizedNodes = slotInNativeX ? [
   ...nodes.slice(0, nativeX.index),
   {},
@@ -31,7 +31,7 @@ $ const finalizedNodes = slotInNativeX ? [
       node=node
       config=nxConfig
     >
-      <if((index === nativeX.index && nodes[nativeX.index].id !== nxNode.id) || index !== nativeX.index)>
+      <if(!nxConfig.enabled || (index === nativeX.index && nodes[nativeX.index].id !== nxNode.id) || index !== nativeX.index)>
         <daily-content-card-node ...input.node node=nxNode attrs=containerAttrs link-attrs=linkAttrs/>
       </if>
     </marko-web-native-x-render>
