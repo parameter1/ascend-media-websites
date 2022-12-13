@@ -25,6 +25,13 @@ $ const queryParams = {
 };
 
 <marko-web-query|{ nodes, section }| name="website-scheduled-content" params=queryParams>
+  <!-- Native-X here uses base 0 indexing whereas limit is defined using base 1 -->
+  $ const slotInNativeX = (nativeX && nativeX.index && ((nativeX.index + 1) !== nodes.length));
+  $ const finalizedNodes =  slotInNativeX ? [
+    ...nodes.slice(0, nativeX.index),
+    {},
+    ...nodes.slice(nativeX.index, nodes.length - 1)
+  ] : nodes;
   <marko-web-node-list
     inner-justified=innerJustified
     flush-x=false
@@ -40,7 +47,7 @@ $ const queryParams = {
         <marko-web-website-section-name obj=section link=linkHeader />
       </else>
     </@header>
-    <@nodes nodes=nodes>
+    <@nodes nodes=finalizedNodes>
       <@slot|{ node, index }|>
         <marko-web-native-x-render|{ node: nxNode, linkAttrs, containerAttrs }|
           ...nativeX
@@ -50,38 +57,40 @@ $ const queryParams = {
         >
           $ const primaryImage = getAsObject(nxNode, "primaryImage");
           $ const primarySection = getAsObject(nxNode, "primarySection");
-          <marko-web-node
-            image-position=imagePosition
-            flush=true
-            full-height=false
-            attrs=containerAttrs
-          >
-            <@image
-              ar="1:1"
-              width=imageWidth
-              use-placeholder=false
-              src=primaryImage.src
-              alt=primaryImage.alt
-              is-logo=primaryImage.isLogo
-              link={ href: get(nxNode, "siteContext.path"), attrs: linkAttrs }
-              ...input.image
-            />
-            <@body>
-              <if(withSection)>
-                <@header>
-                  <@left>
-                    <marko-web-website-section-name obj=primarySection link=true />
-                  </@left>
-                </@header>
-                </if>
-              <@title tag="h5">
-                <marko-web-content-short-name tag=null obj=nxNode link={ attrs: linkAttrs } />
-              </@title>
-              <@text modifiers=["teaser"] show=withTeaser>
-                <marko-web-content-teaser tag=null obj=nxNode link={ attrs: linkAttrs } />
-              </@text>
-            </@body>
-          </marko-web-node>
+          <if((index === nativeX.index && nodes[nativeX.index].id !== nxNode.id) || index !== nativeX.index)>
+            <marko-web-node
+              image-position=imagePosition
+              flush=true
+              full-height=false
+              attrs=containerAttrs
+            >
+              <@image
+                ar="1:1"
+                width=imageWidth
+                use-placeholder=false
+                src=primaryImage.src
+                alt=primaryImage.alt
+                is-logo=primaryImage.isLogo
+                link={ href: get(nxNode, "siteContext.path"), attrs: linkAttrs }
+                ...input.image
+              />
+              <@body>
+                <if(withSection)>
+                  <@header>
+                    <@left>
+                      <marko-web-website-section-name obj=primarySection link=true />
+                    </@left>
+                  </@header>
+                  </if>
+                <@title tag="h5">
+                  <marko-web-content-short-name tag=null obj=nxNode link={ attrs: linkAttrs } />
+                </@title>
+                <@text modifiers=["teaser"] show=withTeaser>
+                  <marko-web-content-teaser tag=null obj=nxNode link={ attrs: linkAttrs } />
+                </@text>
+              </@body>
+            </marko-web-node>
+          </if>
         </marko-web-native-x-render>
       </@slot>
     </@nodes>
