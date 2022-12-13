@@ -3,10 +3,18 @@ import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 
 $ const { GAM, nativeX: nxConfig } = out.global;
 
-$ const { aliases, adIndex, adName } = input;
+$ const { aliases, adIndex, adName, nodes } = input;
 $ const adPosition = input.adPosition || "after";
 $ const image = getAsObject(input, "node.image");
 $ const nativeX = getAsObject(input, "nativeX");
+
+<!-- Native-X here uses base 0 indexing whereas Array.length uses base 1 -->
+$ const slotInNativeX = (nativeX && nativeX.index && ((nativeX.index + 1) !== nodes.length));
+$ const finalizedNodes = slotInNativeX ? [
+  ...nodes.slice(0, nativeX.index),
+  {},
+  ...nodes.slice(nativeX.index, nodes.length - 1)
+] : nodes;
 
 <default-theme-card-deck-flow
   tag=input.tag
@@ -14,7 +22,7 @@ $ const nativeX = getAsObject(input, "nativeX");
   modifiers=input.modifiers
   attrs=input.attrs
   cols=defaultValue(input.cols, 3)
-  nodes=input.nodes
+  nodes=finalizedNodes
 >
   <@slot|{ node, index }|>
     <marko-web-native-x-render|{ node: nxNode, linkAttrs, containerAttrs }|
@@ -23,7 +31,9 @@ $ const nativeX = getAsObject(input, "nativeX");
       node=node
       config=nxConfig
     >
-      <daily-content-card-node ...input.node node=nxNode attrs=containerAttrs link-attrs=linkAttrs/>
+      <if((index === nativeX.index && nodes[nativeX.index].id !== nxNode.id) || index !== nativeX.index)>
+        <daily-content-card-node ...input.node node=nxNode attrs=containerAttrs link-attrs=linkAttrs/>
+      </if>
     </marko-web-native-x-render>
   </@slot>
   <if(adIndex !== null)>
