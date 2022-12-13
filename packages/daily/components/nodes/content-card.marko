@@ -5,29 +5,32 @@ $ const hasImage = Boolean(get(input, "node.primaryImage.src"));
 $ const modifiers = [...getAsArray(input, "modifiers"), "content-card"];
 $ if (!hasImage) modifiers.push("zoomed");
 
-<daily-content-list-node
-  node=input.node
-  image-position=defaultValue(input.imagePosition, "top")
-  display-image=defaultValue(input.displayImage, true)
-  flush=defaultValue(input.flush, false)
-  card=true
-  full-height=defaultValue(input.fullHeight, true)
-  attrs=input.attrs
-  link-attrs=input.linkAttrs
-  modifiers=modifiers
-  with-teaser=defaultValue(input.withTeaser, true)
-  with-body=defaultValue(input.withBody, false)
-  with-section=defaultValue(input.withSection, true)
-  with-attribution=defaultValue(input.withAttribution, true)
-  with-dates=defaultValue(input.withDates, true)
-  title=input.title
-  teaser=input.teaser
-  attribution=input.attribution
->
-  <@image
-    ar="16:9"
-    width=340
-    ...input.image
-    fluid=true
-  />
-</daily-content-list-node>
+<!-- @todo Determine a better way to account for if an empty/null node is passed into this-->
+<if(Object.keys(input.node).length)>
+  <daily-content-list-node
+    node=input.node
+    image-position=defaultValue(input.imagePosition, "top")
+    display-image=defaultValue(input.displayImage, true)
+    flush=defaultValue(input.flush, false)
+    card=true
+    full-height=defaultValue(input.fullHeight, true)
+    attrs=input.attrs
+    link-attrs=input.linkAttrs
+    modifiers=modifiers
+    with-teaser=defaultValue(input.withTeaser, true)
+    with-body=defaultValue(input.withBody, false)
+    with-section=defaultValue(input.withSection, true)
+    with-attribution=defaultValue(input.withAttribution, true)
+    with-dates=defaultValue(input.withDates, true)
+    title=input.title
+    teaser=input.teaser
+    attribution=input.attribution
+  >
+    <@image
+      ar="16:9"
+      width=340
+      ...input.image
+      fluid=true
+    />
+  </daily-content-list-node>
+</if>
