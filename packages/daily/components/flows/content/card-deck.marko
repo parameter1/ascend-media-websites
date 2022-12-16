@@ -9,11 +9,11 @@ $ const image = getAsObject(input, "node.image");
 $ const nativeX = getAsObject(input, "nativeX");
 
 <!-- Native-X here uses base 0 indexing whereas Array.length uses base 1 -->
-$ const slotInNativeX = nxConfig.enabled && (nativeX && nativeX.index && ((nativeX.index + 1) !== nodes.length));
+$ const slotInNativeX = nxConfig.enabled && (nativeX && nativeX.index);
 $ const finalizedNodes = slotInNativeX ? [
   ...nodes.slice(0, nativeX.index),
   {},
-  ...nodes.slice(nativeX.index, nodes.length - 1)
+  ...nodes.slice(nativeX.index, nodes.length)
 ] : nodes;
 
 <default-theme-card-deck-flow
@@ -31,7 +31,7 @@ $ const finalizedNodes = slotInNativeX ? [
       node=node
       config=nxConfig
     >
-      <if(!nxConfig.enabled || (index === nativeX.index && nodes[nativeX.index].id !== nxNode.id) || index !== nativeX.index)>
+      <if(!nxConfig.enabled || (index === nativeX.index && finalizedNodes[nativeX.index].id !== nxNode.id) || index !== nativeX.index)>
         <daily-content-card-node ...input.node node=nxNode attrs=containerAttrs link-attrs=linkAttrs/>
       </if>
     </marko-web-native-x-render>
