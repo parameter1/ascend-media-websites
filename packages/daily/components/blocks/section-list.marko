@@ -26,11 +26,11 @@ $ const queryParams = {
 
 <marko-web-query|{ nodes, section }| name="website-scheduled-content" params=queryParams>
   <!-- Native-X here uses base 0 indexing whereas Array.length is defined using base 1 -->
-  $ const slotInNativeX = nxConfig.enabled && (nativeX && nativeX.index && ((nativeX.index + 1) !== nodes.length));
+  $ const slotInNativeX = nxConfig.enabled && (nativeX && nativeX.index);
   $ const finalizedNodes =  slotInNativeX ? [
     ...nodes.slice(0, nativeX.index),
     {},
-    ...nodes.slice(nativeX.index, nodes.length - 1)
+    ...nodes.slice(nativeX.index, nodes.length)
   ] : nodes;
   <marko-web-node-list
     inner-justified=innerJustified
@@ -57,7 +57,7 @@ $ const queryParams = {
         >
           $ const primaryImage = getAsObject(nxNode, "primaryImage");
           $ const primarySection = getAsObject(nxNode, "primarySection");
-          <if(!nxConfig.enabled|| (index === nativeX.index && nodes[nativeX.index].id !== nxNode.id) || index !== nativeX.index)>
+          <if(!nxConfig.enabled|| (index === nativeX.index && finalizedNodes[nativeX.index].id !== nxNode.id) || index !== nativeX.index)>
             <marko-web-node
               image-position=imagePosition
               flush=true
