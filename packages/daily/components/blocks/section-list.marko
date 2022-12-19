@@ -57,40 +57,38 @@ $ const queryParams = {
         >
           $ const primaryImage = getAsObject(nxNode, "primaryImage");
           $ const primarySection = getAsObject(nxNode, "primarySection");
-          <if(!nxConfig.enabled|| (index === nativeX.index && finalizedNodes[nativeX.index].id !== nxNode.id) || index !== nativeX.index)>
-            <marko-web-node
-              image-position=imagePosition
-              flush=true
-              full-height=false
-              attrs=containerAttrs
-            >
-              <@image
-                ar="1:1"
-                width=imageWidth
-                use-placeholder=false
-                src=primaryImage.src
-                alt=primaryImage.alt
-                is-logo=primaryImage.isLogo
-                link={ href: get(nxNode, "siteContext.path"), attrs: linkAttrs }
-                ...input.image
-              />
-              <@body>
-                <if(withSection)>
-                  <@header>
-                    <@left>
-                      <marko-web-website-section-name obj=primarySection link=true />
-                    </@left>
-                  </@header>
-                  </if>
-                <@title tag="h5">
-                  <marko-web-content-short-name tag=null obj=nxNode link={ attrs: linkAttrs } />
-                </@title>
-                <@text modifiers=["teaser"] show=withTeaser>
-                  <marko-web-content-teaser tag=null obj=nxNode link={ attrs: linkAttrs } />
-                </@text>
-              </@body>
-            </marko-web-node>
-          </if>
+          <marko-web-node
+            image-position=imagePosition
+            flush=true
+            full-height=false
+            attrs=containerAttrs
+          >
+            <@image
+              ar="1:1"
+              width=imageWidth
+              use-placeholder=false
+              src=primaryImage.src
+              alt=primaryImage.alt
+              is-logo=primaryImage.isLogo
+              link={ href: get(nxNode, "siteContext.path"), attrs: linkAttrs }
+              ...input.image
+            />
+            <@body>
+              <if(withSection)>
+                <@header>
+                  <@left>
+                    <marko-web-website-section-name obj=primarySection link=true />
+                  </@left>
+                </@header>
+                </if>
+              <@title tag="h5">
+                <marko-web-content-short-name tag=null obj=nxNode link={ attrs: linkAttrs } />
+              </@title>
+              <@text modifiers=["teaser"] show=withTeaser>
+                <marko-web-content-teaser tag=null obj=nxNode link={ attrs: linkAttrs } />
+              </@text>
+            </@body>
+          </marko-web-node>
         </marko-web-native-x-render>
       </@slot>
     </@nodes>

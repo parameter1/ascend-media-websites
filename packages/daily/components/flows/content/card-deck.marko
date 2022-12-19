@@ -31,9 +31,7 @@ $ const finalizedNodes = slotInNativeX ? [
       node=node
       config=nxConfig
     >
-      <if(!nxConfig.enabled || (index === nativeX.index && finalizedNodes[nativeX.index].id !== nxNode.id) || index !== nativeX.index)>
-        <daily-content-card-node ...input.node node=nxNode attrs=containerAttrs link-attrs=linkAttrs/>
-      </if>
+      <daily-content-card-node ...input.node node=nxNode attrs=containerAttrs link-attrs=linkAttrs/>
     </marko-web-native-x-render>
   </@slot>
   <if(adIndex !== null)>
