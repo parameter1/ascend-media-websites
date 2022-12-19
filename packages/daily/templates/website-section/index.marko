@@ -1,7 +1,7 @@
 import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
 import queryFragment from "../../graphql/fragments/content-list";
 
-$ const { GAM } = out.global;
+$ const { GAM, nativeX: nxConfig } = out.global;
 
 $ const {
   id,
@@ -16,6 +16,10 @@ $ const adSlots = ({ aliases }) => ({
   "gpt-ad-rail1": GAM.getAdUnit({ name: "rail1", aliases }),
   "gpt-ad-rail2": GAM.getAdUnit({ name: "rail2", aliases }),
 });
+
+$ const limit = nxConfig.enabled ? 16 : 17;
+$ const skip = 3;
+$ const loadMoreSkip = limit + skip;
 
 <marko-web-website-section-page-layout id=id alias=alias name=name attrs={"aria-label": `website-section-${id}`}>
   <@head>
@@ -35,7 +39,7 @@ $ const adSlots = ({ aliases }) => ({
 
     <marko-web-query|{ nodes }|
       name="website-optioned-content"
-      params={ sectionId: id, optionName: "Pinned", limit: 17, skip: 3, requiresImage: true, queryFragment }
+      params={ sectionId: id, optionName: "Pinned", limit, skip, requiresImage: true, queryFragment }
     >
       <daily-content-card-deck-flow nodes=nodes cols=3 ad-index=4 ad-name="rail2">
         <@native-x index=3 name="default" aliases=[alias] />
@@ -50,7 +54,7 @@ $ const adSlots = ({ aliases }) => ({
         component-input={ aliases }
         fragment-name="daily-content-list"
         query-name="website-scheduled-content"
-        query-params={ sectionId: id, limit: 12, skip: 20, requiresImage: true }
+        query-params={ sectionId: id, limit: 12, skip: loadMoreSkip, requiresImage: true }
         max-pages=3
         page-input={ for: "website-section", id }
         attrs={ "aria-label": "load-more", "role": "main" }

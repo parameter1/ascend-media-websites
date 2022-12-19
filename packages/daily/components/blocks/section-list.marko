@@ -25,6 +25,13 @@ $ const queryParams = {
 };
 
 <marko-web-query|{ nodes, section }| name="website-scheduled-content" params=queryParams>
+  <!-- Native-X here uses base 0 indexing whereas Array.length is defined using base 1 -->
+  $ const slotInNativeX = nxConfig.enabled && (nativeX && nativeX.index);
+  $ const finalizedNodes =  slotInNativeX ? [
+    ...nodes.slice(0, nativeX.index),
+    {},
+    ...nodes.slice(nativeX.index, nodes.length)
+  ] : nodes;
   <marko-web-node-list
     inner-justified=innerJustified
     flush-x=false
@@ -40,7 +47,7 @@ $ const queryParams = {
         <marko-web-website-section-name obj=section link=linkHeader />
       </else>
     </@header>
-    <@nodes nodes=nodes>
+    <@nodes nodes=finalizedNodes>
       <@slot|{ node, index }|>
         <marko-web-native-x-render|{ node: nxNode, linkAttrs, containerAttrs }|
           ...nativeX

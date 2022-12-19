@@ -42,7 +42,7 @@ $ const { linkAttrs } = input;
       src=primaryImage.src
       alt=primaryImage.alt
       is-logo=(isEbook ? true : primaryImage.isLogo)
-      link={ href: content.siteContext.path, attrs: linkAttrs }
+      link={ href: get(content, "siteContext.path"), attrs: linkAttrs }
     />
   </if>
   <@body>
