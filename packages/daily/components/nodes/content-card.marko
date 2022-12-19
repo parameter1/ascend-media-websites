@@ -5,7 +5,6 @@ $ const hasImage = Boolean(get(input, "node.primaryImage.src"));
 $ const modifiers = [...getAsArray(input, "modifiers"), "content-card"];
 $ if (!hasImage) modifiers.push("zoomed");
 
-<!-- @todo Determine a better way to account for if an empty/null node is passed into this-->
 <daily-content-list-node
   node=input.node
   image-position=defaultValue(input.imagePosition, "top")
