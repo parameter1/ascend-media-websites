@@ -9,7 +9,7 @@ $ const image = getAsObject(input, "node.image");
 $ const nativeX = getAsObject(input, "nativeX");
 
 <!-- Native-X here uses base 0 indexing whereas Array.length uses base 1 -->
-$ const slotInNativeX = nxConfig.enabled && (nativeX && nativeX.index);
+$ const slotInNativeX = nxConfig.enabled && (nativeX && nativeX.index >= 0);
 $ const finalizedNodes = slotInNativeX ? [
   ...nodes.slice(0, nativeX.index),
   {},
