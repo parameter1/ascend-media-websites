@@ -31,7 +31,7 @@ $ const promise = websiteSectionContentLoader(apollo, {
   },
   standardParams: {
     optionName: ["Standard"],
-    limit: 10,
+    limit: 9,
     requiresImage: true,
     queryFragment
   },
@@ -64,7 +64,7 @@ $ const promise = websiteSectionContentLoader(apollo, {
         <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(0, 2) cols=3 ad-index=1 ad-name="rail1" />
         <div class="row">
           <div class="col-lg-8 mb-block">
-            <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(2, 6)>
+            <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(2, 5)>
               <@native-x index=0 name="default" />
             </global-content-card-deck-flow>
           </div>
@@ -82,14 +82,14 @@ $ const promise = websiteSectionContentLoader(apollo, {
             </if>
           </div>
         </div>
-        <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(6, 8) cols=3 ad-index=0 ad-name="rail2" />
+        <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(5, 7) cols=3 ad-index=0 ad-name="rail2" />
 
         <div class="row">
           <div class="col-lg-4 mb-block">
             <marko-web-gam-display-ad id="gpt-ad-rail3" />
           </div>
           <div class="col-lg-4 mb-block">
-            <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(8, 10) cols=1 />
+          <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(7, 9) cols=1 />
           </div>
           <div class="col-lg-4 mb-block">
             <global-twitter-widget-block />

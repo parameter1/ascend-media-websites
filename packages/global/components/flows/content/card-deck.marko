@@ -3,10 +3,17 @@ import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 
 $ const { GAM, nativeX: nxConfig } = out.global;
 
-$ const { aliases, adIndex, adName } = input;
+$ const { aliases, adIndex, adName, nodes } = input;
 $ const adPosition = input.adPosition || "after";
 $ const image = getAsObject(input, "node.image");
 $ const nativeX = getAsObject(input, "nativeX");
+
+$ const slotInNativeX = nxConfig.enabled && (nativeX && nativeX.index >= 0);
+$ const finalizedNodes =  slotInNativeX ? [
+  ...nodes.slice(0, nativeX.index),
+  {},
+  ...nodes.slice(nativeX.index, nodes.length)
+] : nodes;
 
 <default-theme-card-deck-flow
   tag=input.tag
@@ -14,15 +21,12 @@ $ const nativeX = getAsObject(input, "nativeX");
   modifiers=input.modifiers
   attrs=input.attrs
   cols=defaultValue(input.cols, 2)
-  nodes=input.nodes
+  nodes=finalizedNodes
 >
   <@slot|{ node, index }|>
-  $ const { secondIndex } = nativeX;
-  $ const loadMulti = (index === nativeX.index || index === secondIndex) && input.pageNumber === 1;
-  $ const loadNativeX = secondIndex ? (loadMulti) : (index === nativeX.index);
     <marko-web-native-x-render|{ node: nxNode, linkAttrs, containerAttrs }|
       ...nativeX
-      when=(loadNativeX)
+      when=(index === nativeX.index)
       node=node
       config=nxConfig
     >

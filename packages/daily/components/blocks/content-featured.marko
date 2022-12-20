@@ -18,7 +18,7 @@ $ const queryParams = {
 
 <marko-web-query|{ nodes }| name="website-optioned-content" params=queryParams>
   <!-- Native-X here uses base 0 indexing whereas Array.length is defined using base 1 -->
-  $ const slotInNativeX = nxConfig.enabled && (nativeX && nativeX.index);
+  $ const slotInNativeX = nxConfig.enabled && (nativeX && nativeX.index >= 0);
   $ const finalizedNodes =  slotInNativeX ? [
     ...nodes.slice(0, nativeX.index),
     {},

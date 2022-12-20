@@ -30,7 +30,7 @@ $ const promise = websiteSectionContentLoader(apollo, {
   },
   standardParams: {
     optionName: ["Standard"],
-    limit: 11,
+    limit: 10,
     requiresImage: true,
     queryFragment
   },
@@ -67,17 +67,17 @@ $ const useNativeXHeroBlock = site.getAsArray("nativeXHeroSections").includes(al
         <else>
           <global-standard-hero-block nodes=getAsArray(featured, "nodes") />-
         </else>
-        <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(0, 5) cols=3 ad-index=1 ad-name="rail1" ad-modifiers=["paid"]>
+        <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(0, 4) cols=3 ad-index=1 ad-name="rail1" ad-modifiers=["paid"]>
           <@native-x index=2 name="default" aliases=[section.alias] />
         </global-content-card-deck-flow>
-        <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(5, 7) cols=3 ad-index=0 ad-name="rail2" />
+        <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(4, 6) cols=3 ad-index=0 ad-name="rail2" />
 
         <div class="row">
           <div class="col-lg-4 mb-block">
             <marko-web-gam-display-ad id="gpt-ad-rail3" />
           </div>
           <div class="col-lg-8 mb-block">
-            <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(7, 11) cols=2 />
+            <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(6, 10) cols=2 />
           </div>
         </div>
 
