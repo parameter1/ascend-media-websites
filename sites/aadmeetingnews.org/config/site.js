@@ -7,6 +7,7 @@ module.exports = {
   nativeXBlock: {
     enabled: Boolean(process.env.NATIVE_X_BLOCK),
     limit: 9,
+    sectionName: 'Presented by',
   },
   restrictRightRailDisplay: Boolean(process.env.RESTRICT_RIGHT_RAIL_DISPLAY),
   contentPageLoadMore: Boolean(process.env.CONTENT_PAGE_LOAD_MORE),
@@ -23,6 +24,7 @@ module.exports = {
   copyrightNotice: 'All rights reserved. DermWorld Meeting News Central is a publication of the American Academy of Dermatology.',
   customCopyright: '© Ascend Media All rights reserved. DermWorld Meeting News Central is a publication of the American Academy of Dermatology.',
   sponsoredText: 'Paid Advertising Content',
+  sponsoredSlug: 'Presented',
   socialMediaLinks: [
     { provider: 'facebook', href: 'https://www.facebook.com/AADmember', target: '_blank' },
     { provider: 'instagram', href: 'https://www.instagram.com/aadmember/', target: '_blank' },
