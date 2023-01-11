@@ -10,7 +10,7 @@ $ const nativeXBlock = site.getAsObject("nativeXBlock");
 />
 
 <if(nativeXBlock && nativeXBlock.enabled)>
-  $ const { limit, title, withSection } = nativeXBlock;
+  $ const { limit, title, sectionName, withSection } = nativeXBlock;
   <global-native-x-list-block
     placement-name="default"
     aliases=aliases
@@ -18,6 +18,7 @@ $ const nativeXBlock = site.getAsObject("nativeXBlock");
     collapsible=true
     title=title
     with-section=withSection
+    section-name=sectionName
   />
 </if>
 

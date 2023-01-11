@@ -38,7 +38,8 @@ $ const withSection = defaultValue(input.withSection, true);
       </if>
       <@nodes nodes=nodes>
         <@slot|{ node: ad, index }|>
-          $ const node = convertAdToContent(ad, { sectionName: `Sponsored by ${ad.campaign.advertiserName}` });
+          $ const sectionName = input.sectionName ? `${input.sectionName} ${ad.campaign.advertiserName}` : `Sponsored by ${ad.campaign.advertiserName}`;
+          $ const node = convertAdToContent(ad, { sectionName });
           <global-content-list-node
             image-position=imagePosition
             card=false
