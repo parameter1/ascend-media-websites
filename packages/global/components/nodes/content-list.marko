@@ -15,7 +15,7 @@ $ const withSection = get(primarySection, 'name') === "Sponsored" ? defaultValue
 
 $ const sponsoredSlug = site.getAsObject("sponsoredSlug");
 $ const { value: slugValue, withAdvertiser } = sponsoredSlug;
-$ const slug = get(primarySection, 'name') === 'Sponsored' && site.get("sponsoredSlug.value") ? site.get("sponsoredSlug.value") : '';
+$ const slug = get(primarySection, 'name') === 'Sponsored' && slugValue ? slugValue : '';
 $ const company = getAsObject(content, "company");
 $  if (slug && withAdvertiser && company.name) {
   primarySection.name = `${slug} by ${company.name}`
