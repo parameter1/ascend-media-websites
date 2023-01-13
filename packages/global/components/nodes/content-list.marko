@@ -12,8 +12,17 @@ $ const primarySection = getAsObject(content, "primarySection");
 $ const withTeaser = defaultValue(input.withTeaser, false);
 $ const withBody = defaultValue(input.withBody, false);
 $ const withSection = get(primarySection, 'name') === "Sponsored" ? defaultValue(site.get("showSponsoredSlug"), true) : defaultValue(input.withSection, true);
-$ const sponsoredSlug = get(primarySection, 'name') === 'Sponsored' && site.get("sponsoredSlug") ? site.get("sponsoredSlug") : '';
-$ if (sponsoredSlug) primarySection.name = sponsoredSlug;
+
+$ const sponsoredSlug = site.getAsObject("sponsoredSlug");
+$ const { value: slugValue, withAdvertiser } = sponsoredSlug;
+$ const slug = get(primarySection, 'name') === 'Sponsored' && site.get("sponsoredSlug.value") ? site.get("sponsoredSlug.value") : '';
+$ const company = getAsObject(content, "company");
+$  if (slug && withAdvertiser && company.name) {
+  primarySection.name = `${slug} by ${company.name}`
+} else if (slug)  {
+  primarySection.name = slug;
+}
+
 $ const withAttribution = defaultValue(input.withAttribution, true);
 $ const withDates = defaultValue(input.withDates, true);
 
