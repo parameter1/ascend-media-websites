@@ -52,12 +52,17 @@ $ const promise = websiteSectionContentLoader(apollo, {
         $ const uri = nxConfig.getUri();
         $ const placement = nxConfig.getPlacement({ name: "default", aliases });
         <marko-web-native-x-fetch-elements|{ ads }| uri=uri id=placement.id opts={ n: 50 }>
-          $ const nodes = ads.filter(ad => ad.hasCampaign).map((ad) => ({
-            ...convertAdToContent(ad, { sectionName: `Sponsored by ${ad.campaign.advertiserName}`}), 
-            attributes: {
-              ...ad.attributes
-              }
-            }));
+          $ const sponsoredSlug = site.getAsObject("sponsoredSlug");
+          $ const { value: slugValue } = sponsoredSlug;
+          $ const nodes = ads.filter(ad => ad.hasCampaign).map((ad) => {
+            const sectionName = slugValue ? `${slugValue} by ${ad.campaign.advertiserName}` : `Sponsored by ${ad.campaign.advertiserName}`;
+            const node = convertAdToContent(ad, { sectionName });
+            return {
+              ...convertAdToContent(ad, { sectionName }),
+              attributes: {
+                ...ad.attributes
+                }
+            }});
           <default-theme-hero-flow nodes=[...getAsArray(featured, "nodes"), ...nodes.slice(0, 5)]>
             <@hero|{ node }|>
               <global-content-hero-node node=node image-width=630 title-modifiers=["large"] />
@@ -92,7 +97,7 @@ $ const promise = websiteSectionContentLoader(apollo, {
           </default-theme-hero-flow>
           <default-theme-card-deck-flow
             cols=3
-            nodes=nodes.slice(5) 
+            nodes=nodes.slice(5)
           >
             <@slot|{ node, index }|>
               <global-content-card-node
