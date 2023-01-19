@@ -55,13 +55,7 @@ $ const adSlots = ({ aliases }) => ({
             </default-theme-page-contents>
 
             <aside class="col-lg-4 page-rail">
-              <marko-web-resolve|{ resolved }| promise=issuePromise>
-                $ const { issue, issueContent } = resolved;
-                <if(issue)>
-                  <marko-web-gam-display-ad id="gpt-ad-rail3" />
-                  <bulletin-magazine-latest-issue-node card=true flush=false card=false node=issue />
-                </if>
-              </marko-web-resolve>
+              <marko-web-gam-display-ad id="gpt-ad-rail3" />
             </aside>
           </div>
         </@section>
