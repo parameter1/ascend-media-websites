@@ -20,5 +20,8 @@
   },
   "<bulletin-site-header>": {
     "template": "./site-header.marko"
+  },
+  "<bulletin-site-footer>": {
+    "template": "./site-footer.marko"
   }
 }
