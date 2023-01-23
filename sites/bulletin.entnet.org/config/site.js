@@ -9,6 +9,7 @@ module.exports = {
   gam,
   nativeX,
   company: 'American Academy of Otolaryngology–Head and Neck Surgery',
+  advertise: 'Acceptance of advertising in the <i>Bulletin</i> in no way constitutes approval or endorsement by AAO-HNS of products or services advertised unless indicated as such.',
   socialMediaLinks: [],
   gtm: {
     containerId: 'GTM-5XS5Z5K',
