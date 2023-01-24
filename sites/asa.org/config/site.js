@@ -9,7 +9,6 @@ module.exports = {
     title: 'From The ASA Monitor',
     withSection: false,
   },
-  restrictRightRailDisplay: Boolean(process.env.RESTRICT_RIGHT_RAIL_DISPLAY),
   contentPageLoadMore: Boolean(process.env.CONTENT_PAGE_LOAD_MORE),
   searchTitle: 'Search Annual Meeting Daily News',
   logos,
