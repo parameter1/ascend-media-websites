@@ -49,9 +49,15 @@
       text-align: center;
       background: url("") center/cover no-repeat scroll;
       h1 {
-        font-size: 30px;
+        font-size: 26px;
         @media (min-width: $marko-web-document-container-max-width) {
           font-size: 60px;
+        }
+      }
+      h3 {
+        font-size: 21px;
+        @media (min-width: $marko-web-document-container-max-width) {
+          font-size: 27px;
         }
       }
       .content-page-header {
