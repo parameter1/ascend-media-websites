@@ -26,7 +26,7 @@ export default {
     },
     message: {
       type: String,
-      default: 'The American Heart Association (AHA) does not endorse any commercial products or programs. The links provided within this site are for convenience only, and are not an endorsement of either the linked-to entity, product or service.  AHA makes no warranties of any kind, express or implied, with regard to its third-party vendor websites. Paid advertisements are not reviewed by the AHA for scientific accuracy.',
+      default: 'The American Heart Association/American Stroke Association (AHA/ASA) does not endorse any commercial products or programs. The links provided within this site are for convenience only, and are not an endorsement of either the linked-to entity, product or service. AHA/ASA makes no warranties of any kind, express, or implied, with regard to its third-party vendor websites. Paid advertisements are not reviewed by the AHA/ASA for scientific accuracy.',
     },
     imgSrc: {
       type: String,
