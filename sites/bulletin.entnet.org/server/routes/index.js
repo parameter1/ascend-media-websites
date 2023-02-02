@@ -3,6 +3,7 @@ const content = require('./content');
 const magazine = require('./magazine');
 const search = require('./search');
 const classifieds = require('./classifieds');
+const aboutTheBulletin = require('./about-the-bulletin');
 
 module.exports = (app) => {
   // Homepage
@@ -19,4 +20,7 @@ module.exports = (app) => {
 
   // Content Pages
   content(app);
+
+  // Content Pages
+  aboutTheBulletin(app);
 };
