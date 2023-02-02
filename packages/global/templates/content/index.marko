@@ -29,7 +29,6 @@ $ const displayCompanyHeader = (content) => {
 $ const hideRailOnContentTypes = site.getAsArray("hideRailOnContentTypes");
 $ const restrictedRightRailContentTypes = hideRailOnContentTypes.length ? hideRailOnContentTypes : ["document", "press-release"];
 $ const showRightRail = restrictedRightRailContentTypes.includes(type) ? false : true;
-$ const showRailAds = hideRailOnContentTypes.length ? false : true;
 
 <marko-web-content-page-layout id=id type=type>
   <@head>
@@ -222,7 +221,7 @@ $ const showRailAds = hideRailOnContentTypes.length ? false : true;
               <else-if(showRightRail)>
                 <global-right-rail-block aliases=aliases no-shadow=true />
               </else-if>
-              <else-if(showRailAds)>
+              <else>
                 <marko-web-gam-define-display-ad
                   ...GAM.getAdUnit({ name: "rail1", aliases })
                   class="mb-block"
@@ -231,7 +230,7 @@ $ const showRailAds = hideRailOnContentTypes.length ? false : true;
                   ...GAM.getAdUnit({ name: "rail2", aliases })
                   class="mb-block"
                 />
-              </else-if>
+              </else>
             </aside>
 
             <if(displayPhotoswipe)>
