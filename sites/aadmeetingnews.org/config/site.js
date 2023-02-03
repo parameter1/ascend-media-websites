@@ -9,7 +9,6 @@ module.exports = {
     limit: 9,
     sectionName: 'Presented by',
   },
-  restrictRightRailDisplay: Boolean(process.env.RESTRICT_RIGHT_RAIL_DISPLAY),
   contentPageLoadMore: Boolean(process.env.CONTENT_PAGE_LOAD_MORE),
   contentPageLoadMoreSettings: {
     restrictedOn: ['press-release'],

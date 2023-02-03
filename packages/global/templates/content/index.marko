@@ -26,8 +26,9 @@ $ const displayCompanyHeader = (content) => {
   return false;
 }
 
-$ const restrictedRightRailContentTypes = defaultValue(site.getAsArray("hideRailOnContentTypes"), ["document", "press-release"]);
-$ const showRightRail = (site.get("restrictRightRailDisplay") && restrictedRightRailContentTypes.includes(type)) ? false : true;
+$ const hideRailOnContentTypes = site.getAsArray("hideRailOnContentTypes");
+$ const restrictedRightRailContentTypes = hideRailOnContentTypes.length ? hideRailOnContentTypes : ["document", "press-release"];
+$ const showRightRail = restrictedRightRailContentTypes.includes(type) ? false : true;
 
 <marko-web-content-page-layout id=id type=type>
   <@head>
@@ -126,7 +127,7 @@ $ const showRightRail = (site.get("restrictRightRailDisplay") && restrictedRight
                 />
               </else-if>
               <else-if(type === "media-gallery")>
-                <marko-web-image-slider 
+                <marko-web-image-slider
                   images=getAsArray(content, "images.edges").map(edge => edge.node)
                   image-options={ fit: "crop", w: 800, h: 450, auto: "format,compress" }
                 />
@@ -220,6 +221,16 @@ $ const showRightRail = (site.get("restrictRightRailDisplay") && restrictedRight
               <else-if(showRightRail)>
                 <global-right-rail-block aliases=aliases no-shadow=true />
               </else-if>
+              <else>
+                <marko-web-gam-define-display-ad
+                  ...GAM.getAdUnit({ name: "rail1", aliases })
+                  class="mb-block"
+                />
+                <marko-web-gam-define-display-ad
+                  ...GAM.getAdUnit({ name: "rail2", aliases })
+                  class="mb-block"
+                />
+              </else>
             </aside>
 
             <if(displayPhotoswipe)>
