@@ -1,0 +1,49 @@
+import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
+import queryFragment from "@ascend-media/package-daily/graphql/fragments/content-list";
+
+$ const { GAM } = out.global;
+
+$ const {
+  id,
+  alias,
+  name,
+  pageNode,
+} = data;
+
+$ const adSlots = ({ aliases }) => ({
+  "gpt-ad-lb1": GAM.getAdUnit({ name: "lb1", aliases }),
+  "gpt-ad-column1": GAM.getAdUnit({ name: "column1", aliases }),
+  "gpt-ad-rail1": GAM.getAdUnit({ name: "rail1", aliases }),
+  "gpt-ad-rail2": GAM.getAdUnit({ name: "rail2", aliases }),
+});
+
+<marko-web-website-section-page-layout id=id alias=alias name=name attrs={"aria-label": `website-section-${id}`}>
+  <@head>
+    <marko-web-gtm-website-section-context|{ context }| alias=alias>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-website-section-context>
+    <marko-web-resolve-page|{ data: section }| node=pageNode>
+      $ const aliases = hierarchyAliases(section);
+      <marko-web-gam-slots slots=adSlots({ aliases }) />
+    </marko-web-resolve-page>
+  </@head>
+
+  <@page>
+    <marko-web-gam-display-ad id="gpt-ad-lb1" modifiers=["top-of-page", "max-width-790", "center"] />
+    <marko-web-page-wrapper class="mb-block">
+      <@section>
+        <div class="row">
+          <div class="col">
+            <h1 class="page-wrapper__title">About the Bulletin</h1>
+          </div>
+        </div>
+      </@section>
+    </marko-web-page-wrapper>
+    <marko-web-query|{ nodes }|
+      name="website-optioned-content"
+      params={ sectionId: id, requiresImage: true, queryFragment }
+    >
+      <daily-content-card-deck-flow nodes=nodes cols=3 ad-index=4 ad-name="rail2" />
+    </marko-web-query>
+  </@page>
+</marko-web-website-section-page-layout>
