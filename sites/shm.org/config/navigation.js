@@ -21,7 +21,7 @@ module.exports = {
     items: [...topics],
   },
   secondary: {
-    items: [{ href: 'https://twitter.com/societyhospmed', label: '#SHMConverge', target: '_blank' }],
+    items: [{ href: 'https://www.hospitalmedicine.org/', label: 'hospitalmedicine.org', target: '_blank' }],
   },
   tertiary: {
     items: [searchItem],
