@@ -39,6 +39,7 @@ module.exports = {
       email: 'reply@hearthubs.org',
     },
   },
+  useFooterOverride: true,
   inquiry: {
     enabled: true,
     directSend: true,
