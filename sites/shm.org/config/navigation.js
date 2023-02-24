@@ -34,10 +34,10 @@ module.exports = {
     {
       label: 'Resources',
       items: [
-        { href: '/22080995', label: 'Conference FAQs' },
-        { href: '/22056481', label: 'COVID and Safety Protocols' },
-        { href: '/22056721', label: 'How to claim CME and other educational credits' },
-        { href: '/22081005', label: 'SHM Converge 2023' },
+        { href: '/22671158', label: 'Special events' },
+        { href: 'https://shmconverge.hospitalmedicine.org/faq/', label: 'Conference FAQs', target: '_blank' },
+        { href: '/22711263', label: 'Claiming CME and Other Credits' },
+        { href: '/22671101', label: 'SHM Converge 2024' },
       ],
     },
     {
