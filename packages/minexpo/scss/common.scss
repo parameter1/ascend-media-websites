@@ -23,9 +23,9 @@ $theme-site-header-breakpoints: (
   small-text-secondary: 740px
 ) !default;
 
-@import "../../node_modules/@parameter1/base-cms-marko-web-theme-default/skins/orion/skin";
-@import "../../node_modules/@parameter1/base-cms-marko-web-gtm/scss/slot";
-@import "../../node_modules/@parameter1/base-cms-marko-web-leaders/scss/leaders";
+@import "@parameter1/base-cms-marko-web-theme-default/skins/orion/skin";
+@import "@parameter1/base-cms-marko-web-gtm/scss/slot";
+@import "@parameter1/base-cms-marko-web-leaders/scss/leaders";
 @import "./common-components/carousel";
 @import "./common-components/contact-us-form"; // @todo this should be remove once contact us is in core
 @import "./common-components/company-page";

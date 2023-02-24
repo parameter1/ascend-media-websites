@@ -1,4 +1,4 @@
-@import "../../node_modules/@ascend-media/package-global/scss/variables";
+@import "@ascend-media/package-global/scss/variables";
 
 $primary: #5d4777;
 $secondary: #e87722;
@@ -15,7 +15,7 @@ $theme-site-navbar-secondary-bg-color: $primary;
 $theme-site-navbar-secondary-type: light;
 
 
-@import "../../node_modules/@ascend-media/package-global/scss/theme";
+@import "@ascend-media/package-global/scss/theme";
 
 .node {
   &__footer-left a {

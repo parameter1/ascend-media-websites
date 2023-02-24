@@ -1,4 +1,4 @@
-@import "../../node_modules/@ascend-media/package-daily/scss/variables";
+@import "@ascend-media/package-daily/scss/variables";
 
 $primary-color: #be3426;
 $theme-site-navbar-primary-bg-color: #694d6b;
@@ -9,7 +9,7 @@ $theme-card-header-color: #694d6b;
 
 $theme-card-header-background-color: #fff;
 
-@import "../../node_modules/@ascend-media/package-daily/scss/theme";
+@import "@ascend-media/package-daily/scss/theme";
 
 .site-navbar{
   &__brand {

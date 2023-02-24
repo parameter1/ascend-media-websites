@@ -1,4 +1,4 @@
-@import "../../node_modules/@ascend-media/package-daily/scss/variables";
+@import "@ascend-media/package-daily/scss/variables";
 
 $primary: #097dc1;
 $secondary: #da291c;
@@ -20,7 +20,7 @@ $theme-site-navbar-tertiary-link-color: $tertiary;
 $theme-hero-teaser-bg-color: $tertiary;
 
 
-@import "../../node_modules/@ascend-media/package-daily/scss/theme";
+@import "@ascend-media/package-daily/scss/theme";
 
 .body-wrapper {
   display: block;

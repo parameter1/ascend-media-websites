@@ -2,11 +2,11 @@
 
 @import "./variables";
 @import "./mixins";
-@import "../../../../node_modules/@parameter1/base-cms-marko-web-theme-default/scss/theme";
+@import "@parameter1/base-cms-marko-web-theme-default/scss/theme";
 
 $pswp__root-z-index: $theme-site-header-z-index + 1 !default;
-@import "../../../../node_modules/@parameter1/base-cms-marko-web-photoswipe/scss/main";
-@import "../../../../node_modules/@parameter1/base-cms-marko-web-social-sharing/scss/buttons";
+@import "@parameter1/base-cms-marko-web-photoswipe/scss/main";
+@import "@parameter1/base-cms-marko-web-social-sharing/scss/buttons";
 
 @import "./components/ad-container";
 @import "./components/body-wrapper";

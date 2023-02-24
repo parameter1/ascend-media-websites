@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap");
 
 @import "./mixins";
-@import "../../node_modules/@parameter1/base-cms-marko-web-theme-default/scss/theme";
+@import "@parameter1/base-cms-marko-web-theme-default/scss/theme";
 
 $pswp__root-z-index: $theme-site-header-z-index + 1 !default;
-@import "../../node_modules/@parameter1/base-cms-marko-web-photoswipe/scss/main";
-@import "../../node_modules/@parameter1/base-cms-marko-web-social-sharing/scss/buttons";
-@import "../../node_modules/@parameter1/base-cms-marko-web-reveal-ad/scss/reveal-ad";
+@import "@parameter1/base-cms-marko-web-photoswipe/scss/main";
+@import "@parameter1/base-cms-marko-web-social-sharing/scss/buttons";
+@import "@parameter1/base-cms-marko-web-reveal-ad/scss/reveal-ad";
 
 // vue-modal styles
 @import "./components/vue-modal";

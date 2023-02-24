@@ -3,7 +3,7 @@ version: '3.7'
 x-node-defaults: &node
   tty: true
   init: true
-  image: node:10.24
+  image: node:14.21
   entrypoint: ["node"]
   working_dir: /root
   restart: always
@@ -43,8 +43,8 @@ x-env-development: &env-development
   SITEMAPS_URI: ${SITEMAPS_URI-http://host.docker.internal:10009}
 
 x-site-command: &site-cmd
-  entrypoint: ["node_modules/.bin/basecms-website"]
-  command: ["dev", "index.js"]
+  entrypoint: ["yarn"]
+  command: ["dev"]
 
 volumes:
   yarn-cache: {}
@@ -65,12 +65,10 @@ services:
       <<: *env
 
   hh:
-    <<: *node
-    <<: *site-cmd
+    <<: [*node, *site-cmd]
     working_dir: /root/sites/hearthubs.org
     environment:
-      <<: *env
-      <<: *env-tauron
+      <<: [*env, *env-tauron]
       PORT: 80
       EXPOSED_PORT: 9810
       LIVERELOAD_PORT: 19810
@@ -81,12 +79,10 @@ services:
       - "19810:19810"
 
   qcor:
-    <<: *node
-    <<: *site-cmd
+    <<: [*node, *site-cmd]
     working_dir: /root/sites/qcor.hub.heart.org
     environment:
-      <<: *env
-      <<: *env-tauron
+      <<: [*env, *env-tauron]
       PORT: 80
       EXPOSED_PORT: 9811
       LIVERELOAD_PORT: 19811
@@ -97,12 +93,10 @@ services:
       - "19811:19811"
 
   bcvs:
-    <<: *node
-    <<: *site-cmd
+    <<: [*node, *site-cmd]
     working_dir: /root/sites/bcvs.hub.heart.org
     environment:
-      <<: *env
-      <<: *env-tauron
+      <<: [*env, *env-tauron]
       PORT: 80
       EXPOSED_PORT: 9812
       LIVERELOAD_PORT: 19812
@@ -113,12 +107,10 @@ services:
       - "19812:19812"
 
   vasculardiscovery:
-    <<: *node
-    <<: *site-cmd
+    <<: [*node, *site-cmd]
     working_dir: /root/sites/vasculardiscovery.hub.heart.org
     environment:
-      <<: *env
-      <<: *env-tauron
+      <<: [*env, *env-tauron]
       PORT: 80
       EXPOSED_PORT: 9813
       LIVERELOAD_PORT: 19813
@@ -129,12 +121,10 @@ services:
       - "19813:19813"
 
   hypertension:
-    <<: *node
-    <<: *site-cmd
+    <<: [*node, *site-cmd]
     working_dir: /root/sites/hypertension.hub.heart.org
     environment:
-      <<: *env
-      <<: *env-tauron
+      <<: [*env, *env-tauron]
       PORT: 80
       EXPOSED_PORT: 9814
       LIVERELOAD_PORT: 19814
@@ -145,12 +135,10 @@ services:
       - "19814:19814"
 
   minexpo:
-    <<: *node
-    <<: *site-cmd
+    <<: [*node, *site-cmd]
     working_dir: /root/sites/minexpo.com
     environment:
-      <<: *env
-      <<: *env-tauron
+      <<: [*env, *env-tauron]
       PORT: 80
       EXPOSED_PORT: 9815
       LIVERELOAD_PORT: 19815
@@ -164,12 +152,10 @@ services:
       - "19815:19815"
 
   sessions:
-    <<: *node
-    <<: *site-cmd
+    <<: [*node, *site-cmd]
     working_dir: /root/sites/sessions.hub.heart.org
     environment:
-      <<: *env
-      <<: *env-tauron
+      <<: [*env, *env-tauron]
       PORT: 80
       EXPOSED_PORT: 9816
       LIVERELOAD_PORT: 19816
@@ -182,12 +168,10 @@ services:
       - "19816:19816"
 
   imex:
-    <<: *node
-    <<: *site-cmd
+    <<: [*node, *site-cmd]
     working_dir: /root/sites/imex.ascendmedia.com
     environment:
-      <<: *env
-      <<: *env-tauron
+      <<: [*env, *env-tauron]
       PORT: 80
       EXPOSED_PORT: 9817
       LIVERELOAD_PORT: 19817
@@ -198,12 +182,10 @@ services:
       - "19817:19817"
 
   isc:
-    <<: *node
-    <<: *site-cmd
+    <<: [*node, *site-cmd]
     working_dir: /root/sites/isc.hub.heart.org
     environment:
-      <<: *env
-      <<: *env-tauron
+      <<: [*env, *env-tauron]
       PORT: 80
       EXPOSED_PORT: 9818
       LIVERELOAD_PORT: 19818
@@ -215,12 +197,10 @@ services:
       - "19818:19818"
 
   bulletin:
-    <<: *node
-    <<: *site-cmd
+    <<: [*node, *site-cmd]
     working_dir: /root/sites/bulletin.entnet.org
     environment:
-      <<: *env
-      <<: *env-tauron
+      <<: [*env, *env-tauron]
       PORT: 80
       EXPOSED_PORT: 9919
       LIVERELOAD_PORT: 19919
@@ -231,12 +211,10 @@ services:
       - "19919:19919"
 
   aua:
-    <<: *node
-    <<: *site-cmd
+    <<: [*node, *site-cmd]
     working_dir: /root/sites/auadailynews.org
     environment:
-      <<: *env
-      <<: *env-tauron
+      <<: [*env, *env-tauron]
       PORT: 80
       EXPOSED_PORT: 9920
       LIVERELOAD_PORT: 19920
@@ -249,12 +227,10 @@ services:
       - "19920:19920"
 
   aad:
-    <<: *node
-    <<: *site-cmd
+    <<: [*node, *site-cmd]
     working_dir: /root/sites/aadmeetingnews.org
     environment:
-      <<: *env
-      <<: *env-tauron
+      <<: [*env, *env-tauron]
       PORT: 80
       EXPOSED_PORT: 9921
       LIVERELOAD_PORT: 19921
@@ -268,12 +244,10 @@ services:
       - "19921:19921"
 
   asa:
-    <<: *node
-    <<: *site-cmd
+    <<: [*node, *site-cmd]
     working_dir: /root/sites/asa.org
     environment:
-      <<: *env
-      <<: *env-tauron
+      <<: [*env, *env-tauron]
       PORT: 80
       EXPOSED_PORT: 9922
       LIVERELOAD_PORT: 19922
@@ -286,12 +260,10 @@ services:
       - "19922:19922"
 
   acep:
-    <<: *node
-    <<: *site-cmd
+    <<: [*node, *site-cmd]
     working_dir: /root/sites/acep.org
     environment:
-      <<: *env
-      <<: *env-tauron
+      <<: [*env, *env-tauron]
       PORT: 80
       EXPOSED_PORT: 9923
       LIVERELOAD_PORT: 19923
@@ -304,12 +276,10 @@ services:
       - "19923:19923"
 
   aao:
-    <<: *node
-    <<: *site-cmd
+    <<: [*node, *site-cmd]
     working_dir: /root/sites/aao.hns.org
     environment:
-      <<: *env
-      <<: *env-tauron
+      <<: [*env, *env-tauron]
       PORT: 80
       EXPOSED_PORT: 9924
       LIVERELOAD_PORT: 19924
@@ -321,12 +291,10 @@ services:
       - "19924:19924"
 
   ashp:
-    <<: *node
-    <<: *site-cmd
+    <<: [*node, *site-cmd]
     working_dir: /root/sites/ashp.org
     environment:
-      <<: *env
-      <<: *env-tauron
+      <<: [*env, *env-tauron]
       PORT: 80
       EXPOSED_PORT: 9925
       LIVERELOAD_PORT: 19925
@@ -339,12 +307,10 @@ services:
       - "19925:19925"
 
   shm:
-    <<: *node
-    <<: *site-cmd
+    <<: [*node, *site-cmd]
     working_dir: /root/sites/shm.org
     environment:
-      <<: *env
-      <<: *env-tauron
+      <<: [*env, *env-tauron]
       PORT: 80
       EXPOSED_PORT: 9926
       LIVERELOAD_PORT: 19926
@@ -357,12 +323,10 @@ services:
       - "19926:19926"
 
   imex-ff:
-    <<: *node
-    <<: *site-cmd
+    <<: [*node, *site-cmd]
     working_dir: /root/sites/imexfrankfurt.ascendmedia.com
     environment:
-      <<: *env
-      <<: *env-tauron
+      <<: [*env, *env-tauron]
       PORT: 80
       EXPOSED_PORT: 9927
       LIVERELOAD_PORT: 19927
@@ -373,12 +337,10 @@ services:
       - "19927:19927"
 
   pulmonary:
-    <<: *node
-    <<: *site-cmd
+    <<: [*node, *site-cmd]
     working_dir: /root/sites/ampulmonary.com
     environment:
-      <<: *env
-      <<: *env-tauron
+      <<: [*env, *env-tauron]
       PORT: 80
       EXPOSED_PORT: 9928
       LIVERELOAD_PORT: 19928
@@ -391,12 +353,10 @@ services:
       - "19928:19928"
 
   template:
-    <<: *node
-    <<: *site-cmd
+    <<: [*node, *site-cmd]
     working_dir: /root/sites/examplesite.org
     environment:
-      <<: *env
-      <<: *env-tauron
+      <<: [*env, *env-tauron]
       PORT: 80
       EXPOSED_PORT: 9999
       LIVERELOAD_PORT: 19999
