@@ -43,6 +43,7 @@ x-env-development: &env-development
   SITEMAPS_URI: ${SITEMAPS_URI-http://host.docker.internal:10009}
 
 x-site-command: &site-cmd
+  <<: *node
   entrypoint: ["yarn"]
   command: ["dev"]
 
@@ -65,7 +66,7 @@ services:
       <<: *env
 
   hh:
-    <<: [*node, *site-cmd]
+    <<: *site-cmd
     working_dir: /root/sites/hearthubs.org
     environment:
       <<: [*env, *env-tauron]
@@ -79,7 +80,7 @@ services:
       - "19810:19810"
 
   qcor:
-    <<: [*node, *site-cmd]
+    <<: *site-cmd
     working_dir: /root/sites/qcor.hub.heart.org
     environment:
       <<: [*env, *env-tauron]
@@ -93,7 +94,7 @@ services:
       - "19811:19811"
 
   bcvs:
-    <<: [*node, *site-cmd]
+    <<: *site-cmd
     working_dir: /root/sites/bcvs.hub.heart.org
     environment:
       <<: [*env, *env-tauron]
@@ -107,7 +108,7 @@ services:
       - "19812:19812"
 
   vasculardiscovery:
-    <<: [*node, *site-cmd]
+    <<: *site-cmd
     working_dir: /root/sites/vasculardiscovery.hub.heart.org
     environment:
       <<: [*env, *env-tauron]
@@ -121,7 +122,7 @@ services:
       - "19813:19813"
 
   hypertension:
-    <<: [*node, *site-cmd]
+    <<: *site-cmd
     working_dir: /root/sites/hypertension.hub.heart.org
     environment:
       <<: [*env, *env-tauron]
@@ -135,7 +136,7 @@ services:
       - "19814:19814"
 
   minexpo:
-    <<: [*node, *site-cmd]
+    <<: *site-cmd
     working_dir: /root/sites/minexpo.com
     environment:
       <<: [*env, *env-tauron]
@@ -152,7 +153,7 @@ services:
       - "19815:19815"
 
   sessions:
-    <<: [*node, *site-cmd]
+    <<: *site-cmd
     working_dir: /root/sites/sessions.hub.heart.org
     environment:
       <<: [*env, *env-tauron]
@@ -168,7 +169,7 @@ services:
       - "19816:19816"
 
   imex:
-    <<: [*node, *site-cmd]
+    <<: *site-cmd
     working_dir: /root/sites/imex.ascendmedia.com
     environment:
       <<: [*env, *env-tauron]
@@ -182,7 +183,7 @@ services:
       - "19817:19817"
 
   isc:
-    <<: [*node, *site-cmd]
+    <<: *site-cmd
     working_dir: /root/sites/isc.hub.heart.org
     environment:
       <<: [*env, *env-tauron]
@@ -197,7 +198,7 @@ services:
       - "19818:19818"
 
   bulletin:
-    <<: [*node, *site-cmd]
+    <<: *site-cmd
     working_dir: /root/sites/bulletin.entnet.org
     environment:
       <<: [*env, *env-tauron]
@@ -211,7 +212,7 @@ services:
       - "19919:19919"
 
   aua:
-    <<: [*node, *site-cmd]
+    <<: *site-cmd
     working_dir: /root/sites/auadailynews.org
     environment:
       <<: [*env, *env-tauron]
@@ -227,7 +228,7 @@ services:
       - "19920:19920"
 
   aad:
-    <<: [*node, *site-cmd]
+    <<: *site-cmd
     working_dir: /root/sites/aadmeetingnews.org
     environment:
       <<: [*env, *env-tauron]
@@ -244,7 +245,7 @@ services:
       - "19921:19921"
 
   asa:
-    <<: [*node, *site-cmd]
+    <<: *site-cmd
     working_dir: /root/sites/asa.org
     environment:
       <<: [*env, *env-tauron]
@@ -260,7 +261,7 @@ services:
       - "19922:19922"
 
   acep:
-    <<: [*node, *site-cmd]
+    <<: *site-cmd
     working_dir: /root/sites/acep.org
     environment:
       <<: [*env, *env-tauron]
@@ -276,7 +277,7 @@ services:
       - "19923:19923"
 
   aao:
-    <<: [*node, *site-cmd]
+    <<: *site-cmd
     working_dir: /root/sites/aao.hns.org
     environment:
       <<: [*env, *env-tauron]
@@ -291,7 +292,7 @@ services:
       - "19924:19924"
 
   ashp:
-    <<: [*node, *site-cmd]
+    <<: *site-cmd
     working_dir: /root/sites/ashp.org
     environment:
       <<: [*env, *env-tauron]
@@ -307,7 +308,7 @@ services:
       - "19925:19925"
 
   shm:
-    <<: [*node, *site-cmd]
+    <<: *site-cmd
     working_dir: /root/sites/shm.org
     environment:
       <<: [*env, *env-tauron]
@@ -323,7 +324,7 @@ services:
       - "19926:19926"
 
   imex-ff:
-    <<: [*node, *site-cmd]
+    <<: *site-cmd
     working_dir: /root/sites/imexfrankfurt.ascendmedia.com
     environment:
       <<: [*env, *env-tauron]
@@ -337,7 +338,7 @@ services:
       - "19927:19927"
 
   pulmonary:
-    <<: [*node, *site-cmd]
+    <<: *site-cmd
     working_dir: /root/sites/ampulmonary.com
     environment:
       <<: [*env, *env-tauron]
@@ -353,7 +354,7 @@ services:
       - "19928:19928"
 
   template:
-    <<: [*node, *site-cmd]
+    <<: *site-cmd
     working_dir: /root/sites/examplesite.org
     environment:
       <<: [*env, *env-tauron]
