@@ -68,12 +68,10 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/hearthubs.org
     environment:
-      <<: [*env, *env-tauron]
+      <<: *env
       PORT: 80
       EXPOSED_PORT: 9810
       LIVERELOAD_PORT: 19810
-      TENANT_KEY: ascend_hh
-      SITE_ID: 5e79147a9610c96162e3a0bc
     ports:
       - "9810:80"
       - "19810:19810"
@@ -82,12 +80,10 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/qcor.hub.heart.org
     environment:
-      <<: [*env, *env-tauron]
+      <<: *env
       PORT: 80
       EXPOSED_PORT: 9811
       LIVERELOAD_PORT: 19811
-      TENANT_KEY: ascend_hh
-      SITE_ID: 5f09f138c6eb965e078b4568
     ports:
       - "9811:80"
       - "19811:19811"
@@ -96,12 +92,10 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/bcvs.hub.heart.org
     environment:
-      <<: [*env, *env-tauron]
+      <<: *env
       PORT: 80
       EXPOSED_PORT: 9812
       LIVERELOAD_PORT: 19812
-      TENANT_KEY: ascend_hh
-      SITE_ID: 5f09c343c6eb96c0068b4573
     ports:
       - "9812:80"
       - "19812:19812"
@@ -110,12 +104,10 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/vasculardiscovery.hub.heart.org
     environment:
-      <<: [*env, *env-tauron]
+      <<: *env
       PORT: 80
       EXPOSED_PORT: 9813
       LIVERELOAD_PORT: 19813
-      TENANT_KEY: ascend_hh
-      SITE_ID: 5f09f15dc6eb965f078b456f
     ports:
       - "9813:80"
       - "19813:19813"
@@ -124,12 +116,10 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/hypertension.hub.heart.org
     environment:
-      <<: [*env, *env-tauron]
+      <<: *env
       PORT: 80
       EXPOSED_PORT: 9814
       LIVERELOAD_PORT: 19814
-      TENANT_KEY: ascend_hh
-      SITE_ID: 5f09c37bc6eb96a9058b4579
     ports:
       - "9814:80"
       - "19814:19814"
@@ -138,15 +128,13 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/minexpo.com
     environment:
-      <<: [*env, *env-tauron]
+      <<: *env
       PORT: 80
       EXPOSED_PORT: 9815
       LIVERELOAD_PORT: 19815
       ALGOLIA_API_KEY: ${ALGOLIA_API_KEY}
       ALGOLIA_APP_ID: ${ALGOLIA_APP_ID}
       ALGOLIA_DEFAULT_INDEX: ${ALGOLIA_DEFAULT_INDEX}
-      TENANT_KEY: ascend_minex
-      SITE_ID: 5f2c4e7900d6f47b4ca70040
     ports:
       - "9815:80"
       - "19815:19815"
@@ -155,12 +143,10 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/sessions.hub.heart.org
     environment:
-      <<: [*env, *env-tauron]
+      <<: *env
       PORT: 80
       EXPOSED_PORT: 9816
       LIVERELOAD_PORT: 19816
-      TENANT_KEY: ascend_hh
-      SITE_ID: 5f69318496e7bf68228b4597
       NATIVE_X_BLOCK: "true"
       RESTRICT_RIGHT_RAIL_DISPLAY: "true"
     ports:
@@ -171,12 +157,10 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/imex.ascendmedia.com
     environment:
-      <<: [*env, *env-tauron]
+      <<: *env
       PORT: 80
       EXPOSED_PORT: 9817
       LIVERELOAD_PORT: 19817
-      TENANT_KEY: ascend_hh
-      SITE_ID: 5f69316296e7bf68228b4595
     ports:
       - "9817:80"
       - "19817:19817"
@@ -185,12 +169,10 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/isc.hub.heart.org
     environment:
-      <<: [*env, *env-tauron]
+      <<: *env
       PORT: 80
       EXPOSED_PORT: 9818
       LIVERELOAD_PORT: 19818
-      TENANT_KEY: ascend_hh
-      SITE_ID: 5fa07807adb660cb238b45a9
       NATIVE_X_BLOCK: "true"
     ports:
       - "9818:80"
@@ -200,12 +182,10 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/bulletin.entnet.org
     environment:
-      <<: [*env, *env-tauron]
+      <<: *env
       PORT: 80
       EXPOSED_PORT: 9919
       LIVERELOAD_PORT: 19919
-      TENANT_KEY: ascend_hh
-      SITE_ID: 6001de6ce8e95f05158b4577
     ports:
       - "9919:80"
       - "19919:19919"
@@ -214,12 +194,10 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/auadailynews.org
     environment:
-      <<: [*env, *env-tauron]
+      <<: *env
       PORT: 80
       EXPOSED_PORT: 9920
       LIVERELOAD_PORT: 19920
-      TENANT_KEY: ascend_hh
-      SITE_ID: 60747a8880a4312e028b45d6
       CONTENT_PAGE_LOAD_MORE: "true"
       NATIVE_X_BLOCK: "true"
     ports:
@@ -230,12 +208,10 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/aadmeetingnews.org
     environment:
-      <<: [*env, *env-tauron]
+      <<: *env
       PORT: 80
       EXPOSED_PORT: 9921
       LIVERELOAD_PORT: 19921
-      TENANT_KEY: ascend_hh
-      SITE_ID: 60c7666d46f24a64538b458d
       NATIVE_X_BLOCK: "true"
       RESTRICT_RIGHT_RAIL_DISPLAY: "true"
       CONTENT_PAGE_LOAD_MORE: "true"
@@ -247,12 +223,10 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/asa.org
     environment:
-      <<: [*env, *env-tauron]
+      <<: *env
       PORT: 80
       EXPOSED_PORT: 9922
       LIVERELOAD_PORT: 19922
-      TENANT_KEY: ascend_hh
-      SITE_ID: 611a7eaf3fdb1225198b45a3
       NATIVE_X_BLOCK: "true"
       RESTRICT_RIGHT_RAIL_DISPLAY: "true"
     ports:
@@ -263,12 +237,10 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/acep.org
     environment:
-      <<: [*env, *env-tauron]
+      <<: *env
       PORT: 80
       EXPOSED_PORT: 9923
       LIVERELOAD_PORT: 19923
-      TENANT_KEY: ascend_hh
-      SITE_ID: 611a92384931c530198b45bf
       NATIVE_X_BLOCK: "true"
       RESTRICT_RIGHT_RAIL_DISPLAY: "true"
     ports:
@@ -279,12 +251,10 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/aao.hns.org
     environment:
-      <<: [*env, *env-tauron]
+      <<: *env
       PORT: 80
       EXPOSED_PORT: 9924
       LIVERELOAD_PORT: 19924
-      TENANT_KEY: ascend_hh
-      SITE_ID: 611bb90b0fa7e3b2258b458c
       NATIVE_X_BLOCK: "true"
     ports:
       - "9924:80"
@@ -294,12 +264,10 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/ashp.org
     environment:
-      <<: [*env, *env-tauron]
+      <<: *env
       PORT: 80
       EXPOSED_PORT: 9925
       LIVERELOAD_PORT: 19925
-      TENANT_KEY: ascend_hh
-      SITE_ID: 611bbf5d4c3ae90e268b4592
       NATIVE_X_BLOCK: "true"
       RESTRICT_RIGHT_RAIL_DISPLAY: "true"
     ports:
@@ -310,12 +278,10 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/shm.org
     environment:
-      <<: [*env, *env-tauron]
+      <<: *env
       PORT: 80
       EXPOSED_PORT: 9926
       LIVERELOAD_PORT: 19926
-      TENANT_KEY: ascend_hh
-      SITE_ID: 616db80fb973b9f0308b45aa
       NATIVE_X_BLOCK: "true"
       RESTRICT_RIGHT_RAIL_DISPLAY: "true"
     ports:
@@ -326,12 +292,10 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/imexfrankfurt.ascendmedia.com
     environment:
-      <<: [*env, *env-tauron]
+      <<: *env
       PORT: 80
       EXPOSED_PORT: 9927
       LIVERELOAD_PORT: 19927
-      TENANT_KEY: ascend_hh
-      SITE_ID: 6228b5a440412800498b456f
     ports:
       - "9927:80"
       - "19927:19927"
@@ -340,12 +304,10 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/ampulmonary.com
     environment:
-      <<: [*env, *env-tauron]
+      <<: *env
       PORT: 80
       EXPOSED_PORT: 9928
       LIVERELOAD_PORT: 19928
-      TENANT_KEY: ascend_hh
-      SITE_ID: 62f156eeb42f9308288b45e8
       HOST: www-ascend-pulmonary.dev.parameter1.com
     hostname: www-ascend-pulmonary.dev.parameter1.com
     ports:
@@ -356,12 +318,10 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/examplesite.org
     environment:
-      <<: [*env, *env-tauron]
+      <<: *env
       PORT: 80
       EXPOSED_PORT: 9999
       LIVERELOAD_PORT: 19999
-      TENANT_KEY: ascend_hh
-      SITE_ID: 60c7666d46f24a64538b458d
     ports:
       - "9999:80"
       - "19999:19999"
