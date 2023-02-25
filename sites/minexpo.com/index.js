@@ -2,6 +2,7 @@ const newrelic = require('newrelic');
 const { startServer } = require('@parameter1/base-cms-marko-web');
 const { set, getAsObject } = require('@parameter1/base-cms-object-path');
 const { version } = require('./package.json');
+const pkg = require('./package.json');
 const routes = require('./server/routes');
 const siteConfig = require('./config/site');
 const coreConfig = require('./config/core');
@@ -14,6 +15,7 @@ const { log } = console;
 
 module.exports = startServer({
   rootDir: __dirname,
+  website: pkg.website,
   coreConfig,
   siteConfig,
   routes,
