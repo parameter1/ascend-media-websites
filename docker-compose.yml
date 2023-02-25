@@ -18,7 +18,6 @@ x-env-defaults: &env
   NODE_ENV: development
   RECAPTCHA_V3_SITE_KEY: ${RECAPTCHA_V3_SITE_KEY-(unset)}
   RECAPTCHA_V3_SECRET_KEY: ${RECAPTCHA_V3_SECRET_KEY-(unset)}
-  # @todo the sendgrid values should be removed once the @base-cms/mailer service is created.
   SENDGRID_API_KEY: ${SENDGRID_API_KEY-(unset)}
   SENDGRID_DEV_TO: basecmsdev@gmail.com
   YARN_CACHE_FOLDER: /.yarn-cache
