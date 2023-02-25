@@ -9,7 +9,7 @@ const leaders = require('../templates/website-section/leaders');
 const queryFragment = require('../graphql/fragments/website-section-page');
 
 module.exports = (app) => {
-  const searchMiddleware = config => (req, res, next) => {
+  const searchMiddleware = (config) => (req, res, next) => {
     res.locals.$markoWebSearch = new MarkoWebSearch({
       config: new MarkoWebSearchConfig(config || {
         resultsPerPage: { default: 18 },

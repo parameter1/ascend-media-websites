@@ -28,6 +28,6 @@ module.exports = startServer({
     const gamConfig = getAsObject(siteConfig, 'gam');
     if (gamConfig) set(app.locals, 'GAM', gamConfig);
   },
-  onAsyncBlockError: e => newrelic.noticeError(e),
+  onAsyncBlockError: (e) => newrelic.noticeError(e),
   redirectHandler,
-}).then(() => log('Website started!')).catch(e => setImmediate(() => { throw e; }));
+}).then(() => log('Website started!')).catch((e) => setImmediate(() => { throw e; }));

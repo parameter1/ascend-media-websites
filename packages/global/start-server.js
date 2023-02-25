@@ -13,7 +13,7 @@ const buildNativeXConfig = require('./native-x/build-config');
 
 const pushdownCookieFinder = require('./middleware/pushdown-cookie-finder');
 
-const routes = siteRoutes => (app) => {
+const routes = (siteRoutes) => (app) => {
   nativeStoriesRoute(app);
   // Load RSS Feed Redirect route
   RSSFeedRoute(app);
@@ -48,6 +48,6 @@ module.exports = (options = {}) => {
       // Use cookieFinder middleware
       app.use(pushdownCookieFinder());
     },
-    onAsyncBlockError: e => newrelic.noticeError(e),
+    onAsyncBlockError: (e) => newrelic.noticeError(e),
   });
 };

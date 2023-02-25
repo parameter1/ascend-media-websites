@@ -19,4 +19,4 @@ module.exports = startServer({
   fragments,
   errorTemplate,
   routes,
-}).then(() => log('Website started!')).catch(e => setImmediate(() => { throw e; }));
+}).then(() => log('Website started!')).catch((e) => setImmediate(() => { throw e; }));

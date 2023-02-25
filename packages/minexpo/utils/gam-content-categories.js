@@ -5,7 +5,7 @@ const categories = (obj, key, value) => ([...new Set([
   ...(value ? [value.name] : []),
 ])]);
 
-module.exports = content => getAsArray(content, 'taxonomy.edges')
+module.exports = (content) => getAsArray(content, 'taxonomy.edges')
   .map(({ node }) => node.hierarchy)
   .reduce((obj, hierarchy) => {
     const [primary, secondary, tertiary] = hierarchy;
