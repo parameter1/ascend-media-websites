@@ -12,17 +12,17 @@ const AutoScroll = () => import(/* webpackChunkName: "minexpo-auto-scroll" */ '.
 export default (Browser) => {
   ContactUs(Browser);
   Inquiry(Browser);
-  Browser.registerComponent('MinexpoPaginationPageNumberInput', PaginationPageNumberInput);
+  Browser.register('MinexpoPaginationPageNumberInput', PaginationPageNumberInput);
   const { EventBus } = Browser;
-  Browser.registerComponent('MinexpoGTMTrackLeaders', MinexpoGTMTrackLeaders, { provide: { EventBus } });
-  Browser.registerComponent('MinexpoLeadersCompanyWebsiteLink', MinexpoLeadersCompanyWebsiteLink, {
+  Browser.register('MinexpoGTMTrackLeaders', MinexpoGTMTrackLeaders, { provide: { EventBus } });
+  Browser.register('MinexpoLeadersCompanyWebsiteLink', MinexpoLeadersCompanyWebsiteLink, {
     on: { action: (...args) => EventBus.$emit('leaders-action', ...args) },
   });
-  Browser.registerComponent('MinexpoLeadersCompanySocialLink', MinexpoLeadersCompanySocialLink, {
+  Browser.register('MinexpoLeadersCompanySocialLink', MinexpoLeadersCompanySocialLink, {
     on: { action: (...args) => EventBus.$emit('leaders-action', ...args) },
   });
   Leaders(Browser);
 
   Browser.register('MinexpoImageSlider', ImageSlider);
-  Browser.registerComponent('MinexpoAutoScroll', AutoScroll);
+  Browser.register('MinexpoAutoScroll', AutoScroll);
 };
