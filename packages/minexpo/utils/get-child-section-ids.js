@@ -1,6 +1,5 @@
 const { getAsArray } = require('@parameter1/base-cms-object-path');
 
-
 const getChildSectionIds = (section, ids) => {
   const children = getAsArray(section, 'children.edges').map(({ node }) => node);
 

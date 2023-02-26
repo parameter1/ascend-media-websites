@@ -11,7 +11,7 @@ const document = require('./components/document');
 const components = require('./components');
 const fragments = require('./fragments');
 
-const routes = siteRoutes => (app) => {
+const routes = (siteRoutes) => (app) => {
   nativeStoriesRoute(app);
   // Handle contact submissions on /__contact-us
   contactUsHandler(app);
@@ -45,6 +45,6 @@ module.exports = (options = {}) => {
       // Clean all response bodies.
       app.use(cleanResponse());
     },
-    onAsyncBlockError: e => newrelic.noticeError(e),
+    onAsyncBlockError: (e) => newrelic.noticeError(e),
   });
 };

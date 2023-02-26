@@ -5,7 +5,8 @@
     "<page>": {},
     "<adunit>": {},
     "@header": "string",
-    "@max-pages": "number"
+    "@max-pages": "number",
+    "@modifiers": "array"
   },
   "<global-content-page-load-more-block>": {
     "template":  "./content-page.marko",

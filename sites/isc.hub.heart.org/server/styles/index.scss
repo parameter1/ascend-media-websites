@@ -1,4 +1,4 @@
-@import "../../node_modules/@ascend-media/package-global/scss/variables";
+@import "@ascend-media/package-global/scss/variables";
 
 $theme-site-navbar-logo-height: 75px;
 $theme-site-navbar-logo-height-sm: 35px;
@@ -10,7 +10,7 @@ $theme-site-navbar-primary-bg-color: $black;
 $theme-site-navbar-secondary-bg-color: $primary;
 $theme-site-navbar-secondary-type: dark;
 
-@import "../../node_modules/@ascend-media/package-global/scss/theme";
+@import "@ascend-media/package-global/scss/theme";
 
 .body-wrapper {
   display: block;

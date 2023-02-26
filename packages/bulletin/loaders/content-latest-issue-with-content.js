@@ -40,8 +40,8 @@ const getIssue = async (apolloClient, {
       || !data.contentMagazineSchedules.edges.length
   ) return null;
   const nodes = data.contentMagazineSchedules.edges
-    .map(edge => (edge && edge.node ? edge.node : null))
-    .filter(c => c);
+    .map((edge) => (edge && edge.node ? edge.node : null))
+    .filter((c) => c);
   return nodes[0].issue;
 };
 

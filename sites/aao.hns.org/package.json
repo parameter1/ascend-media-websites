@@ -5,33 +5,48 @@
   "repository": "https://github.com/parameter1/ascend-media-websites/tree/master/sites/aao.hns.org",
   "license": "MIT",
   "private": true,
-  "scripts": {
-    "dev": "basecms-website dev index.js",
-    "build": "basecms-website build",
-    "compile": "basecms-marko-compile compile --dir ./ --silent false",
-    "lint": "yarn lint:js && yarn lint:css",
-    "lint:js": "eslint --ext .js --ext .vue --max-warnings 5 --ignore-path ../../.eslintignore ./",
-    "lint:css": "stylelint ./**/*.scss --max-warnings 5",
-    "test": "yarn lint && yarn compile && yarn build"
+  "website": {
+    "id": "611bb90b0fa7e3b2258b458c",
+    "tenant": "ascend_hh",
+    "account": "ascend",
+    "stack": "tauron",
+    "key": "aao",
+    "deploy": true
   },
+  "scripts": {
+    "dev": "basecms-website dev --compile-dir ../../packages --watch-dir ../../packages",
+    "build": "basecms-website build",
+    "compile": "basecms-marko-compile compile",
+    "lint": "eslint --ext .js --ext .vue --max-warnings 5 --config ../../.eslintrc.js --ignore-path ../../.eslintignore ./",
+    "lint:fix": "yarn lint --fix",
+    "test": "yarn lint && yarn compile --no-clean"
+  },
+  "engines": {
+    "node": ">=14.15"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
   "dependencies": {
     "@ascend-media/package-global": "^1.9.1",
-    "@parameter1/base-cms-marko-core": "^3.3.1",
-    "@parameter1/base-cms-marko-web": "^3.14.0",
-    "@parameter1/base-cms-marko-web-gam": "^3.7.1",
-    "@parameter1/base-cms-marko-web-gcse": "^3.0.0",
-    "@parameter1/base-cms-marko-web-gtm": "^3.7.3",
-    "@parameter1/base-cms-marko-web-icons": "^3.0.0",
-    "@parameter1/base-cms-marko-web-inquiry": "^3.0.0",
-    "@parameter1/base-cms-marko-web-native-x": "^3.7.3",
-    "@parameter1/base-cms-marko-web-photoswipe": "^3.13.5",
-    "@parameter1/base-cms-marko-web-social-sharing": "^3.0.0",
-    "@parameter1/base-cms-marko-web-theme-default": "^3.15.1",
-    "@parameter1/base-cms-object-path": "^3.0.0",
-    "@parameter1/base-cms-utils": "^3.0.0",
-    "@parameter1/base-cms-web-cli": "^3.14.0",
+    "@parameter1/base-cms-marko-core": "^4.2.0",
+    "@parameter1/base-cms-marko-web": "^4.5.2",
+    "@parameter1/base-cms-marko-web-gam": "^4.1.0",
+    "@parameter1/base-cms-marko-web-gcse": "^4.1.0",
+    "@parameter1/base-cms-marko-web-gtm": "^4.1.0",
+    "@parameter1/base-cms-marko-web-icons": "^4.1.0",
+    "@parameter1/base-cms-marko-web-inquiry": "^4.1.0",
+    "@parameter1/base-cms-marko-web-native-x": "^4.1.0",
+    "@parameter1/base-cms-marko-web-photoswipe": "^4.1.0",
+    "@parameter1/base-cms-marko-web-social-sharing": "^4.1.0",
+    "@parameter1/base-cms-marko-web-theme-default": "^4.1.0",
+    "@parameter1/base-cms-object-path": "^4.0.2",
+    "@parameter1/base-cms-utils": "^4.0.2",
+    "@parameter1/base-cms-web-cli": "^4.3.4",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1",
-    "newrelic": "^6.4.1"
+    "newrelic": "^9.10.2"
   }
 }
