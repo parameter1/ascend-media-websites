@@ -25,7 +25,6 @@ jobs:
           - { dir: bcvs.hub.heart.org, stack: tauron, id: 5f09c343c6eb96c0068b4573, account: ascend, tenant: ascend_hh, rancher_label: ascend-media-bcvs.hub.heart.org }
           - { dir: bulletin.entnet.org, stack: tauron, id: 6001de6ce8e95f05158b4577, account: ascend, tenant: ascend_hh, rancher_label: ascend-media-bulletin.entnet.org }
           - { dir: examplesite.org, stack: tauron, id: 60c7666d46f24a64538b458d, account: ascend, tenant: ascend_hh, rancher_label: ascend-media-examplesite.org }
-          - { dir: hearthubs.org, stack: tauron, id: 5e79147a9610c96162e3a0bc, account: ascend, tenant: ascend_hh, rancher_label: ascend-media-hearthubs.org }
           - { dir: hypertension.hub.heart.org, stack: tauron, id: 5f09c37bc6eb96a9058b4579, account: ascend, tenant: ascend_hh, rancher_label: ascend-media-hypertension.hub.heart.org }
           - { dir: imex.ascendmedia.com, stack: tauron, id: 5f69316296e7bf68228b4595, account: ascend, tenant: ascend_hh, rancher_label: ascend-media-imex.ascendmedia.com }
           - { dir: imexfrankfurt.ascendmedia.com, stack: tauron, id: 6228b5a440412800498b456f, account: ascend, tenant: ascend_hh, rancher_label: ascend-media-imexfrankfurt.ascendmedia.com }
