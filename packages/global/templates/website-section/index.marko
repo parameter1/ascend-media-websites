@@ -65,7 +65,7 @@ $ const useNativeXHeroBlock = site.getAsArray("nativeXHeroSections").includes(al
           <global-native-x-hero-block nodes=getAsArray(featured, "nodes") aliases=aliases />
         </if>
         <else>
-          <global-standard-hero-block nodes=getAsArray(featured, "nodes") />-
+          <global-standard-hero-block nodes=getAsArray(featured, "nodes") />
         </else>
         <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(0, 4) cols=3 ad-index=1 ad-name="rail1" ad-modifiers=["paid"]>
           <@native-x index=2 name="default" aliases=[section.alias] />
