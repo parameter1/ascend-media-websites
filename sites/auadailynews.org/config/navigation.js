@@ -9,13 +9,14 @@ const userTools = [];
 
 const topics = [
   { href: '/meeting-coverage', label: 'Meeting Coverage' },
-  { href: 'https://www.eventscribe.net/2022/AUA2022/', label: 'Program', target: '_blank' },
+  { href: '/guidelines', label: 'Guidelines' },
   { href: '/industry-highlights', label: 'Industry Highlights' },
   { href: '/science-technology-hall', label: 'Science & Technology Hall' },
 ];
 
 const secondary = [
-  // { href: 'https://www.eventscribe.net/2022/AUA2022/', label: 'Virtual AUA2022', target: '_blank' }, "Will hide until later"
+  { href: 'https://www.eventscribe.net/2023/AUA2023/index.asp', label: 'Program', target: '_blank' },
+  { href: 'https://www.auanet.org/AUA2023/register', label: 'Register', target: '_blank' },
 ];
 
 module.exports = {

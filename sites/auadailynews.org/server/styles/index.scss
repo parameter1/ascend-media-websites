@@ -1,13 +1,13 @@
 @import "@ascend-media/package-global/scss/variables";
 
-$primary: #5d4777;
-$secondary: #e87722;
+$primary: #dbecf8;
+$secondary: #092640;
 
 $theme-site-navbar-logo-height: 100px;
 $theme-site-navbar-logo-height-sm: 30px;
 $theme-site-footer-logo-height: 100px;
 $theme-site-footer-logo-height-sm: 50px;
-$theme-site-footer-primary-bg-color: $primary;
+$theme-site-footer-primary-bg-color: #00567a;
 $theme-site-footer-secondary-bg-color: $primary;
 $theme-site-footer-copyright-color: #fff;
 $theme-site-navbar-primary-bg-color: $secondary;
@@ -17,7 +17,27 @@ $theme-site-navbar-secondary-type: light;
 
 @import "@ascend-media/package-global/scss/theme";
 
+.page-contents {
+  &__content-body a {
+    color:#bd2633;
+  }
+}
+
+.page-contact-details {
+  &__content-website a {
+    color: #00567a
+  }
+}
+.node-list {
+  &__header {
+    background-color: #00567a;
+  }
+}
+
 .node {
+  &__header a {
+    color: #57262f;
+  }
   &__footer-left a {
     color: $secondary;
   }
@@ -36,14 +56,17 @@ $theme-site-navbar-secondary-type: light;
   &--primary {
     .site-navbar {
       &__link {
-        color: #000;
+        color: #fff;
+      }
+      &__link--active {
+        color: #bd2633;
       }
     }
   }
   &--secondary {
     .site-navbar {
       &__link {
-        color: $white;
+        color: $secondary;
       }
     }
   }
@@ -52,7 +75,7 @@ $theme-site-navbar-secondary-type: light;
       .site-navbar {
         &__link {
           svg {
-            fill: $white;
+            fill: $secondary;
           }
         }
       }
@@ -61,7 +84,7 @@ $theme-site-navbar-secondary-type: light;
   &__toggler {
     .marko-web-icon {
       svg {
-        fill: $white;
+        fill: $secondary;
       }
     }
   }
