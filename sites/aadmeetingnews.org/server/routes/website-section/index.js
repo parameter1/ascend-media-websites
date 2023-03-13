@@ -3,6 +3,7 @@ const queryFragment = require('@ascend-media/package-global/graphql/fragments/we
 const section = require('@ascend-media/package-global/templates/website-section');
 const exhibitors = require('@ascend-media/package-global/templates/website-section/exhibitors');
 const nativeX = require('@ascend-media/package-global/templates/website-section/native-x');
+const interestingStories = require('@ascend-media/package-global/templates/website-section/interesting-stories');
 
 module.exports = (app) => {
   app.get('/:alias(industry-highlights)', withWebsiteSection({
@@ -12,6 +13,11 @@ module.exports = (app) => {
 
   app.get('/:alias(small-exhibit-spotlight)', withWebsiteSection({
     template: exhibitors,
+    queryFragment,
+  }));
+
+  app.get('/:alias(daily-coverage)', withWebsiteSection({
+    template: interestingStories,
     queryFragment,
   }));
 
