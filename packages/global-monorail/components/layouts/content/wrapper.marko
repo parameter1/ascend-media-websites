@@ -59,8 +59,8 @@ $ const alias = get(input, "primarySection.alias");
         $ const section = content.primarySection;
         <marko-web-page-wrapper>
           <@section|{ aliases }|>
-            <global-section-feed-wrapper aliases=aliases alias=content.primarySection.alias>
-              <@header>More in ${content.primarySection.name}</@header>
+            <global-section-feed-wrapper aliases=aliases alias=section.alias>
+              <@header>More in ${section.name}</@header>
               <@query-params excludeContentIds=[content.id] />
             </global-section-feed-wrapper>
           </@section>

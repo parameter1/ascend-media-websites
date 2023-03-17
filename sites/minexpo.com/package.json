@@ -31,8 +31,8 @@
   ],
   "dependencies": {
     "@ascend-media/package-minexpo": "^1.9.4",
-    "@parameter1/base-cms-marko-core": "^4.5.12",
-    "@parameter1/base-cms-marko-web": "^4.5.12",
+    "@parameter1/base-cms-marko-core": "^4.9.0",
+    "@parameter1/base-cms-marko-web": "^4.11.3",
     "@parameter1/base-cms-marko-web-contact-us": "^4.5.12",
     "@parameter1/base-cms-marko-web-gam": "^4.5.12",
     "@parameter1/base-cms-marko-web-gcse": "^4.5.12",
@@ -41,10 +41,10 @@
     "@parameter1/base-cms-marko-web-native-x": "^4.5.12",
     "@parameter1/base-cms-marko-web-reveal-ad": "^4.5.12",
     "@parameter1/base-cms-marko-web-search": "^4.5.12",
-    "@parameter1/base-cms-marko-web-theme-default": "^4.5.12",
+    "@parameter1/base-cms-marko-web-theme-default": "^4.9.0",
     "@parameter1/base-cms-object-path": "^4.5.12",
     "@parameter1/base-cms-utils": "^4.5.12",
-    "@parameter1/base-cms-web-cli": "^4.5.14",
+    "@parameter1/base-cms-web-cli": "^4.12.1",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1",
     "newrelic": "^9.10.2"
