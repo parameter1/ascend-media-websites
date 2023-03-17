@@ -57,16 +57,14 @@ $ const alias = get(input, "primarySection.alias");
 
       <marko-web-resolve-page|{ data: content, resolved }| node=pageNode>
         $ const section = content.primarySection;
-        <if(section)>
-          <marko-web-page-wrapper>
-            <@section|{ aliases }|>
-              <global-section-feed-wrapper aliases=aliases alias=section.alias>
-                <@header>More in ${section.name}</@header>
-                <@query-params excludeContentIds=[content.id] />
-              </global-section-feed-wrapper>
-            </@section>
-          </marko-web-page-wrapper>
-        </if>
+        <marko-web-page-wrapper>
+          <@section|{ aliases }|>
+            <global-section-feed-wrapper aliases=aliases alias=section.alias>
+              <@header>More in ${section.name}</@header>
+              <@query-params excludeContentIds=[content.id] />
+            </global-section-feed-wrapper>
+          </@section>
+        </marko-web-page-wrapper>
       </marko-web-resolve-page>
     </marko-web-page-container>
   </@below-page>
