@@ -7,14 +7,13 @@ const topics = [
   { href: '/asthma', label: 'Asthma' },
   { href: '/copd', label: 'COPD' },
   { href: '/pulmonary', label: 'Pulmonary' },
-  { href: '/resources', label: 'Resources' },
 ];
 
 const secondary = [
 ];
 
-const resources = [
-];
+// const resources = [
+// ];
 
 const mobileMenu = {
   primary: sortNavItems([
@@ -66,50 +65,50 @@ module.exports = {
         ...sortNavItems(topics),
       ],
     },
-    col2: {
-      label: 'TBD',
-      items: [
-      ],
-    },
-    col3: {
-      label: 'TBD',
-      items: [
-      ],
-    },
-    col4: {
-      label: 'Resources',
-      items: [
-        ...resources,
-      ],
-    },
+    // col2: {
+    //   label: 'TBD',
+    //   items: [
+    //   ],
+    // },
+    // col3: {
+    //   label: 'TBD',
+    //   items: [
+    //   ],
+    // },
+    // col4: {
+    //   label: 'Resources',
+    //   items: [
+    //     ...resources,
+    //   ],
+    // },
   },
   footer: {
-    col1: {
+    col3: {
       label: 'Topics',
       items: [
-        { href: '/business-insights', label: 'Business Insights' },
-        { href: '/diagnostic-technologies', label: 'Diagnostic Technologies' },
-        { href: '/diseases', label: 'Diseases' },
+        { href: '/asthma', label: 'Asthma' },
+        { href: '/copd', label: 'COPD' },
+        { href: '/pulmonary', label: 'Pulmonary' },
       ],
     },
-    col2: {
-      label: 'Resources',
-      items: [
-        ...resources,
-        { href: '#', label: 'TBD' },
-        { href: '#', label: 'TBD' },
-      ],
-    },
-    col3: {
-      label: 'More',
-      items: [
-        { href: '#', label: 'TBD' },
-        { href: '#', label: 'TBD' },
-      ],
-    },
+    // col2: {
+    //   label: 'Resources',
+    //   items: [
+    //     ...resources,
+    //     { href: '#', label: 'TBD' },
+    //     { href: '#', label: 'TBD' },
+    //   ],
+    // },
+    // col3: {
+    //   label: 'More',
+    //   items: [
+    //     { href: '#', label: 'TBD' },
+    //     { href: '#', label: 'TBD' },
+    //   ],
+    // },
     items: [
       privacyPolicy,
-      { href: '/page/copyright-information', label: 'Copyright Information' },
+      { href: '/page/terms-conditions', label: 'Terms & Conditions' },
       { href: '/page/contact-us', label: 'Contact Us' },
       { href: '/site-map', label: 'Site Map' },
     ],
