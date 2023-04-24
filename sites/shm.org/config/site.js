@@ -24,7 +24,7 @@ module.exports = {
     containerId: 'GTM-K7Q5JTS',
   },
   twitterFeed: {
-    href: '',
+    href: 'https://twitter.com/SocietyHospMed',
     tagline: 'Tweets by SHM',
   },
   gcse: {
