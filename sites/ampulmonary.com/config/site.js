@@ -60,5 +60,20 @@ module.exports = {
     logo: 'https://img.ascendmedia.com/files/base/ascend/hh/image/static/pulmonary/Am_Pulmonary_Insights.png?h=45&auto=format,compress&bg=000000&pad=5',
     bgColor: '#000000',
   },
+  contactUs: {
+    notificationDefaults: {
+      branding: {
+        bgColor: '#000',
+        logo: 'https://img.hub.heart.org/files/base/ascend/minexpo/image/static/minexpo-logo.png?h=45',
+      },
+      to: 'DSanford@ascendintegratedmedia.com',
+      sendFrom: 'AM Pulmonary <noreply@parameter1.com>',
+    },
+    branding: {
+      bgColor: '#000',
+      logo: 'https://img.hub.heart.org/files/base/ascend/minexpo/image/static/minexpo-logo.png?h=45',
+    },
+    to: 'DSanford@ascendintegratedmedia.com',
+  },
   setSearchSortFieldToScore: true,
 };
