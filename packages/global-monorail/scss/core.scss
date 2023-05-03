@@ -299,6 +299,16 @@ label {
   margin-left: 0;
 }
 
+.page-contents {
+  $self: &;
+  &__content-body p {
+    .image-with-caption[data-embed-type="image"][data-embed-align="right"] {
+      @include media-breakpoint-up(md) {
+        text-align: left;
+      }
+    }
+  }
+}
 .ad-container {
   &--inline-content#{&}--template-inline-content-desktop,
   &--inline-content#{&}--template-inline-content-mobile {
