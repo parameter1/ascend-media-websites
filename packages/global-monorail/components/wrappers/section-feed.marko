@@ -1,6 +1,10 @@
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import convertAdToContent from "@parameter1/base-cms-marko-web-native-x/utils/convert-ad-to-content";
+import queryFragment from "@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/section-feed-block";
 
-$ const { pagination: p } = out.global;
+$ const { nativeX: nxConfig, pagination: p } = out.global;
+$ const uri = nxConfig.getUri();
+$ const placement = nxConfig.getPlacement({ name: "default", aliases: input.aliases });
 $ const perPage = 12;
 $ const withPagination = defaultValue(input.withPagination, true);
 $ const { modifiers } = input;
@@ -9,54 +13,37 @@ $ const queryParams = {
   ...input.queryParams,
 };
 
+$ const queryParamsWithPagination = {
+  ...queryParams,
+  limit: perPage,
+  skip: p.skip({ perPage }),
+  queryFragment
+};
 <div class="row">
   <div class="col-lg-8">
-    <theme-section-feed-block
-      alias=input.alias
-      header=input.header
-      modifiers=modifiers
-    >
-      <@query-params ...queryParams limit=3 skip=p.skip({ perPage })/>
-      <@node-list innerJustified=false ...input.nodeList />
-    </theme-section-feed-block>
-    <theme-gam-define-display-ad
-      name="inline-content-desktop"
-      position="section_page"
-      aliases=input.aliases
-      modifiers=["inline-section-feed"]
-    />
-    <theme-section-feed-block alias=input.alias modifiers=modifiers>
-      <@query-params ...queryParams limit=3 skip=p.skip({ perPage, skip: 3 }) />
-      <@node-list innerJustified=false ...input.nodeList />
-    </theme-section-feed-block>
-    <theme-gam-define-display-ad
-      name="inline-content-desktop"
-      position="section_page"
-      aliases=input.aliases
-      modifiers=["inline-section-feed"]
-    />
-  </div>
-  <div class="col-lg-4">
-    <global-most-popular-list-block class="sticky-top" />
-  </div>
-</div>
-<div class="row">
-  <div class="col-lg-8">
-    <theme-section-feed-block alias=input.alias modifiers=modifiers>
-      <@query-params ...queryParams limit=3 skip=p.skip({ perPage, skip: 6 }) />
-      <@node-list innerJustified=false ...input.nodeList />
-    </theme-section-feed-block>
-    <!--   -->
-    <theme-gam-define-display-ad
-      name="inline-content-desktop"
-      position="section_page"
-      aliases=input.aliases
-      modifiers=["inline-section-feed"]
-    />
-    <theme-section-feed-block alias=input.alias modifiers=modifiers>
-      <@query-params ...queryParams limit=3 skip=p.skip({ perPage, skip: 9 }) />
-      <@node-list innerJustified=false ...input.nodeList />
-    </theme-section-feed-block>
+    <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParamsWithPagination>
+      $ const nodesWithAds = [
+        ...nodes.slice(0,3),
+        {},
+        ...nodes.slice(3,6),
+        {},
+        ...nodes.slice(6,9),
+        {},
+        ...nodes.slice(9)
+      ];
+      $ const nodeList = { innerJustified: false, ...input.nodeList };
+      <theme-section-feed-flow
+        nodes=nodesWithAds
+        header=input.header
+        node=input.node
+        node-list=nodeList
+        display-image=true
+        with-section=true
+        modifiers=input.modifiers
+        native-x={ indexes: [3, 7, 11], name: "default", aliases: input.aliases }
+        with-native-x-section=input.withNativeXSection
+      />
+    </marko-web-query>
     <if(withPagination)>
       <theme-section-feed-block|{ totalCount }| alias=input.alias count-only=true>
         <@query-params ...queryParams />
@@ -69,6 +56,6 @@ $ const queryParams = {
     </if>
   </div>
   <div class="col-lg-4">
-    <!-- <global-most-popular-list-block class="sticky-top" /> -->
+    <global-most-popular-list-block class="sticky-top" />
   </div>
 </div>
