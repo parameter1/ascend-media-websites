@@ -1,52 +1,38 @@
-import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
-import { getAsArray, get } from "@parameter1/base-cms-object-path";
-
 $ const { id, type, pageNode } = input;
 
-<theme-content-page id=id type=type >
-  <@head>
-    <marko-web-gtm-content-context|{ context }| id=id>
-      <marko-web-gtm-push data=context />
-    </marko-web-gtm-content-context>
-    <marko-web-resolve-page|{ data: content }| node=pageNode>
-      <marko-web-p1-events-track-content node=content />
-    </marko-web-resolve-page>
-  </@head>
-  <@page>
-    <marko-web-resolve-page|{ data: content }| node=pageNode>
-      $ const aliases = hierarchyAliases(content.primarySection);
-      <marko-web-page-wrapper>
-        <@section|{ aliases }| modifiers=["first"]>
-          <theme-gam-define-display-ad
-            name="leaderboard"
-            position="content_page"
-            aliases=aliases
-            modifiers=["inter-block"]
-          />
-        </@section>
-        <@section|{ blockName }|>
-          $ const { primarySection } = content;
-          <div class="content-page-header">
-            <theme-content-page-breadcrumbs section=primarySection />
-            <marko-web-content-name tag="h1" block-name=blockName obj=content />
-          </div>
-        </@section>
+<global-content-wrapper-layout
+  id=id
+  type=type
+  page-node=pageNode
+>
 
-        <@section|{ blockName }|>
-          <div class="row">
-            <div class="col-lg-8">
-              <div class="content-page-body">
-                <theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
+  <@section|{ aliases }| modifiers=["first"]>
+    <theme-gam-define-display-ad
+      name="leaderboard"
+      position="content_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section>
 
-                  $ const bodyId = `content-body-${content.id}`;
-                  <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
+  <@section|{ blockName, content }|>
+    $ const { primarySection } = content;
+    <div class="content-page-header">
+      <theme-content-page-breadcrumbs section=primarySection />
+      <marko-web-content-name tag="h1" block-name=blockName obj=content />
+    </div>
+  </@section>
 
-                </theme-page-contents>
-              </div>
-            </div>
-          </div>
-        </@section>
-      </marko-web-page-wrapper>
-    </marko-web-resolve-page>
-  </@page>
-</theme-content-page>
+  <@section|{ blockName, content }|>
+    $ const { primarySection } = content;
+    <div class="content-page-body">
+      <default-theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
+
+        $ const bodyId = `content-body-${content.id}`;
+        <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
+
+      </default-theme-page-contents>
+    </div>
+  </@section>
+
+</global-content-wrapper-layout>
