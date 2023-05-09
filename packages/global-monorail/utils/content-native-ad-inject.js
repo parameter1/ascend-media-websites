@@ -1,4 +1,5 @@
 const cheerio = require('cheerio');
+const contentPublishedComponent = require('@parameter1/base-cms-marko-web/components/element/content/published');
 const fetchElements = require('@parameter1/base-cms-marko-web-native-x/services/fetch-elements');
 const { get, getAsObject } = require('@parameter1/base-cms-object-path');
 
@@ -143,13 +144,18 @@ module.exports = async ({
     </div>
     <!--M/-->
     */
-    const linkAttributes = getAsObject(ad, 'attributes.link');
-    const containerAttributes = getAsObject(ad, 'attributes.container');
-    const link = get(ad, 'href');
-    const creative = getAsObject(ad, 'creative');
-    const image = getAsObject(ad, 'image');
-    const replaceWith = `
-    <div class="node-list__node">
+    if (ad && Object.keys(ad).length) {
+      const linkAttributes = getAsObject(ad, 'attributes.link');
+      const containerAttributes = getAsObject(ad, 'attributes.container');
+      const link = get(ad, 'href');
+      const creative = getAsObject(ad, 'creative');
+      const image = getAsObject(ad, 'image');
+      const updatedAt = get(ad, 'campaign.updatedAt');
+      const startDate = get(ad, 'campaign.criteria.start');
+      const publishedObj = {};
+      publishedObj.published = updatedAt > startDate ? updatedAt : startDate;
+      const replaceWith = `
+    <div class="inline-native-ad-node">
       <div class="section-feed-content-node">
         <div data-fortnight-action="${containerAttributes['data-fortnight-action']}" data-fortnight-fields="${containerAttributes['data-fortnight-fields']}" data-fortnight-timestamp="${containerAttributes['data-fortnight-timestamp']}" class="section-feed-content-node__contents">
           <div class="section-feed-content-node__body">
@@ -164,9 +170,7 @@ module.exports = async ({
                 ${creative.teaser}
               </a>
             </div>
-            <div class="section-feed-content-node__content-published">
-              April 20, 2023
-            </div>
+            ${contentPublishedComponent.renderToString({ blockName: 'section-feed-content-node', obj: publishedObj, format: 'MMMM D, YYYY' })}
           </div>
           </div>
           <div class="section-feed-content-node__image-wrapper">
@@ -179,7 +183,9 @@ module.exports = async ({
           </div>
         </div>
       </div>`;
-    $(elem).replaceWith(replaceWith);
+      $(elem).replaceWith(replaceWith);
+    }
+    $(elem).replaceWith('');
   });
   return { body: $.html() };
 };
