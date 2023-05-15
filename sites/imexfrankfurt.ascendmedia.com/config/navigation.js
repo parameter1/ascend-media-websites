@@ -18,8 +18,10 @@ const topics = [
 ];
 
 const secondary = [
+  { href: 'https://imex-frankfurt.com/', label: 'IMEX Frankfurt', target: '_blank' },
   { href: 'https://www.imex-frankfurt.com/schedule-at-a-glance', label: 'Programme', target: '_blank' },
   { href: 'https://imex.ascendmedia.com/', label: 'IMEX America', target: '_blank' },
+  { href: 'https://imex-frankfurt.com/newfront/profile/dashboard', label: 'Sign In', target: '_blank' },
 ];
 
 module.exports = {
