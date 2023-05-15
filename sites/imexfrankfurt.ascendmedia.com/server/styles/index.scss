@@ -33,3 +33,23 @@ $theme-hero-teaser-bg-color: $tertiary;
     color: #3a3839;
   }
 }
+
+.site-navbar__items--secondary {
+  li {
+    padding-top: 4px;
+  }
+  li:first-child {
+    background-color: #D20A60 !important;
+    border-radius: 0.5rem;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 0px;
+    a {
+      padding: 0px 10px;
+      color: #fff;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+  }
+}
