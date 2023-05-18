@@ -1,4 +1,5 @@
 import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
+import { buildImgixUrl } from "@parameter1/base-cms-image";
 import { getAsArray, getAsObject, get } from "@parameter1/base-cms-object-path";
 import isActiveLink from "@parameter1/base-cms-marko-web-theme-default/components/site-navbar/utils/is-active-link";
 import { asArray } from "@parameter1/base-cms-utils";
@@ -7,28 +8,10 @@ import { defaultValue } from "@parameter1/base-cms-marko-web/utils";
 $ const { site, req, GAM } = out.global;
 $ const { id, type, pageNode } = data;
 
-
 $ const displayPrimaryImage = ["whitepaper", "media-gallery", "video", "event"].includes(type) ? false : true;
 $ const displayPublishedDate = ["event", "webinar", "company", "contact"].includes(type) ? false : true;
-$ const displayFeatured = ["company", "product", "contact"].includes(type) ? false : true;
-$ const displayInquiry = (content) => {
-  if (type === "company" && get(content, "enableRmi")) return true;
-  if (get(content, "company.enableRmi")) return true;
-  return false;
-}
-$ const displayCompanyImage = ["product", "press-release"].includes(type) ? true : false;
 $ const displaySocialShare = ["contact"].includes(type) ? false : true;
-$ const displayPhotoswipe = ["contact"].includes(type) ? false : true;
-
-$ const displayCompanyHeader = (content) => {
-  const company = get(content, "company");
-  if (get(content, "company")) return true;
-  return false;
-}
-
-$ const hideRailOnContentTypes = site.getAsArray("hideRailOnContentTypes");
-$ const restrictedRightRailContentTypes = hideRailOnContentTypes.length ? hideRailOnContentTypes : ["document", "press-release"];
-$ const showRightRail = restrictedRightRailContentTypes.includes(type) ? false : true;
+$ const displayPhotoswipe = ["media-gallery"].includes(type) || req.qery.displayPhotoswipe ? true : false;
 
 <marko-web-content-page-layout id=id type=type>
   <@head>
@@ -50,18 +33,9 @@ $ const showRightRail = restrictedRightRailContentTypes.includes(type) ? false :
 
     <marko-web-resolve-page|{ data: content, resolved }| node=pageNode>
 
-    <if(displayCompanyHeader(content))>
-      <marko-web-page-wrapper modifiers=["shadow"] class="mb-block">
-        <@section>
-          <global-company-header-block company=content.company />
-        </@section>
-      </marko-web-page-wrapper>
-    </if>
-    <else>
-      <marko-web-gam-display-ad id="gpt-ad-lb1"  class="mt-block" modifiers=["top-of-page", "max-width-790", "center"] />
-    </else>
+    <marko-web-gam-display-ad id="gpt-ad-lb1"  class="mt-block" modifiers=["top-of-page", "max-width-790", "center"] />
 
-      $ const images = getAsArray(content, 'images.edges').map(({ node }) => node);
+      $ const images = getAsArray(content, 'images.edges').map((edge) => getAsObject(edge, "node"));
       $ const aliases = hierarchyAliases(content.primarySection);
       <marko-web-page-wrapper>
         <@section>
@@ -73,29 +47,9 @@ $ const showRightRail = restrictedRightRailContentTypes.includes(type) ? false :
             >
               <marko-web-element name="content-header" block-name=blockName>
                 <default-theme-page-dates|{ blockName }|>
-                  <if(type === "event")>
-                    <marko-web-content-start-date
-                      class=`${blockName}__event-day`
-                      format="dddd"
-                      obj=content
-                    />
-                  </if>
-                  <else>
-                    <marko-web-element tag="span" name="content-type" block-name=blockName>
-                      ${content.typeTitled}
-                    </marko-web-element>
-                  </else>
-                  <if(content.type === "event")>
-                    <div class=`${blockName}__content-event-times`>
-                      <marko-web-content-start-date tag="span" format="h:mm a" block-name=blockName obj=content />
-                      <marko-web-content-end-date tag="span" format="h:mm a" block-name=blockName obj=content />
-                      <span> (CDT) </span>
-                      <marko-web-content-start-date tag="span" format="MMM D, YYYY" block-name=blockName obj=content />
-                    </div>
-                  </if>
-                  <if(content.type === "webinar")>
-                    <marko-web-content-start-date block-name=blockName obj=content />
-                  </if>
+                  <marko-web-element tag="span" name="content-type" block-name=blockName>
+                    ${content.typeTitled}
+                  </marko-web-element>
                   <if(displayPublishedDate)>
                     <marko-web-content-published block-name=blockName obj=content />
                   </if>
@@ -118,18 +72,27 @@ $ const showRightRail = restrictedRightRailContentTypes.includes(type) ? false :
               <if(content.embedCode)>
                 <marko-web-content-embed-code block-name=blockName obj=content />
               </if>
-              <else-if(type === "media-gallery")>
-                <if(images.length)>
-                  <div class="page-contents__images">
-                    <for|image, index| of=images>
-                      <div id=`image-${image.id}`>
-                        <theme-primary-image-block block-name="gallery-image" obj=image />
+
+              <if(displayPhotoswipe && images)>
+                <marko-web-photoswipe-images images=images>
+                  <@props thumbnail-click-selectors=`[data-gallery-id="${id}"] [data-image-id]` />
+                </marko-web-photoswipe-images>
+                <div class="page-images-gallery">
+                  <h6 class="page-images-gallery__title">
+                    Thumbnails:
+                  </h6>
+                  <div class="page-images-gallery'__row row">
+                    <for|image| of=images>
+                      <div class="page-images-gallery__col col-3">
+                        <img src=buildImgixUrl(image.src, input.imageOptions) alt=image.alt data-image-id=image.id />
+                        <div class="page-images-gallery__overlay">
+                          <span class="page-images-gallery__image-name">${image.displayName}</span>
+                        </div>
                       </div>
                     </for>
                   </div>
-                </if>
-              </else-if>
-
+                </div>
+              </if>
               <else-if(displayPrimaryImage)>
                 <marko-web-page-image
                   obj=content.primaryImage
