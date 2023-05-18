@@ -8,10 +8,8 @@ import { defaultValue } from "@parameter1/base-cms-marko-web/utils";
 $ const { site, req, GAM } = out.global;
 $ const { id, type, pageNode } = data;
 
-$ const displayPrimaryImage = ["whitepaper", "media-gallery", "video", "event"].includes(type) ? false : true;
 $ const displayPublishedDate = ["event", "webinar", "company", "contact"].includes(type) ? false : true;
 $ const displaySocialShare = ["contact"].includes(type) ? false : true;
-$ const displayPhotoswipe = ["media-gallery"].includes(type) || req.qery.displayPhotoswipe ? true : false;
 
 <marko-web-content-page-layout id=id type=type>
   <@head>
@@ -69,37 +67,24 @@ $ const displayPhotoswipe = ["media-gallery"].includes(type) || req.qery.display
                 />
               </if>
 
-              <if(content.embedCode)>
-                <marko-web-content-embed-code block-name=blockName obj=content />
-              </if>
-
-              <if(displayPhotoswipe && images)>
-                <marko-web-photoswipe-images images=images>
-                  <@props thumbnail-click-selectors=`[data-gallery-id="${id}"] [data-image-id]` />
-                </marko-web-photoswipe-images>
-                <div class="page-images-gallery">
-                  <h6 class="page-images-gallery__title">
-                    Thumbnails:
-                  </h6>
-                  <div class="page-images-gallery'__row row">
-                    <for|image| of=images>
-                      <div class="page-images-gallery__col col-3">
-                        <img src=buildImgixUrl(image.src, input.imageOptions) alt=image.alt data-image-id=image.id />
-                        <div class="page-images-gallery__overlay">
-                          <span class="page-images-gallery__image-name">${image.displayName}</span>
-                        </div>
+              <marko-web-photoswipe-images images=images>
+                <@props thumbnail-click-selectors=`[data-gallery-id="${id}"] [data-image-id]` />
+              </marko-web-photoswipe-images>
+              <div class="page-images-gallery">
+                <h6 class="page-images-gallery__title">
+                  Thumbnails:
+                </h6>
+                <div class="page-images-gallery'__row row">
+                  <for|image| of=images>
+                    <div class="page-images-gallery__col col-3">
+                      <img src=buildImgixUrl(image.src, input.imageOptions) alt=image.alt data-image-id=image.id />
+                      <div class="page-images-gallery__overlay">
+                        <span class="page-images-gallery__image-name">${image.displayName}</span>
                       </div>
-                    </for>
-                  </div>
+                    </div>
+                  </for>
                 </div>
-              </if>
-              <else-if(displayPrimaryImage)>
-                <marko-web-page-image
-                  obj=content.primaryImage
-                  modifiers=["fluid-16by9"]
-                  options={ w: 700, h: 394, fit: "crop" }
-                />
-              </else-if>
+              </div>
 
               $ const bodyId = `content-body-${id}`;
               <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
