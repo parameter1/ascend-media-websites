@@ -14,6 +14,7 @@ const topics = [
   // REMOVE FOR SUMMER
   // { href: '/small-exhibit-spotlight', label: 'Small Exhibit Spotlight' },
   { href: 'https://am2023.aad.org/sessions', label: 'Program', target: '_blank' },
+  { href: '/media-gallery', label: 'Media Gallery' },
 ];
 
 const secondary = [
