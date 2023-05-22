@@ -11,8 +11,10 @@ const topics = [
   { href: '/daily-coverage', label: 'Daily Coverage' },
   { href: '/industry-highlights', label: 'Industry Highlights' },
   { href: '/product-samples', label: 'Product Samples' },
-  { href: '/small-exhibit-spotlight', label: 'Small Exhibit Spotlight' },
+  // REMOVE FOR SUMMER
+  // { href: '/small-exhibit-spotlight', label: 'Small Exhibit Spotlight' },
   { href: 'https://am2023.aad.org/sessions', label: 'Program', target: '_blank' },
+  { href: '/media-gallery', label: 'Media Gallery' },
 ];
 
 const secondary = [
