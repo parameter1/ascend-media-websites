@@ -14,6 +14,11 @@ const secondary = [
 
 // const resources = [
 // ];
+const utilities = [
+  { href: '#', label: 'Subscribe' },
+  { href: '/page/about-us', label: 'About Us' },
+  { href: '/page/contact-us', label: 'Contact Us' },
+];
 
 const mobileMenu = {
   primary: sortNavItems([
@@ -75,12 +80,12 @@ module.exports = {
     //   items: [
     //   ],
     // },
-    // col4: {
-    //   label: 'Resources',
-    //   items: [
-    //     ...resources,
-    //   ],
-    // },
+    col4: {
+      label: 'Resources',
+      items: [
+        ...utilities,
+      ],
+    },
   },
   footer: {
     col3: {
@@ -108,6 +113,7 @@ module.exports = {
     // },
     items: [
       privacyPolicy,
+      { href: '/page/about-us', label: 'About Us' },
       { href: '/page/terms-conditions', label: 'Terms & Conditions' },
       { href: '/page/contact-us', label: 'Contact Us' },
       { href: '/site-map', label: 'Site Map' },
