@@ -1,8 +1,12 @@
 import { getAsArray, get } from "@parameter1/base-cms-object-path";
-import contentIframe from "@ascend-media/package-global-monorail/utils/content-iframe";
-import getContentPreview from "@parameter1/base-cms-marko-web-theme-monorail/utils/get-content-preview";
 
-$ const { site, contentMeterState } = out.global;
+import convertAdToContent from "@parameter1/base-cms-marko-web-native-x/utils/convert-ad-to-content";
+import getContentPreview from "@parameter1/base-cms-marko-web-theme-monorail/utils/get-content-preview";
+import contentInjectAds from "@ascend-media/package-global-monorail/utils/content-native-ad-inject";
+import contentIframe from "@ascend-media/package-global-monorail/utils/content-iframe";
+
+
+$ const { site, contentMeterState, parseEmbeddedMedia, req, res, nativeX: nxConfig } = out.global;
 $ const { id, type, pageNode, showReadNextBlock, showBottomAdBlock, showTopStoryBlock, ...rest } = input;
 $ const sections = getAsArray(input, "sections");
 
@@ -85,33 +89,37 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
 
                 $ const bodyId = `content-body-${content.id}`;
 
-                <!-- <if(shouldInjectAds)>
-                  $ const desktopCounts = [350, 1500, 2750, 4500, 6250, 8000, 9750, 11500, 13250, 15000, 16750, 18500];
-                  $ const mobileCounts = [250, 1650, 2950, 4250, 5550, 6850, 8150, 9450, 10750, 12050, 13350, 14650, 15950, 17250];
-                  <theme-gam-inject-ads selector=`#${bodyId}` detect-embeds=true>
-                    <for|char| of=desktopCounts> -->
-                      <!-- desktop/tablet only -->
-                      <!-- <@inject
-                        at=char
-                        name="inline-content-desktop"
-                        aliases=aliases
-                        modifiers=["max-width-970", "margin-auto-x", "inline-content"]
+                <if(shouldInjectAds)>
+                  $ const nativeXUri = nxConfig.getUri();
+                  $ const { id: nativeXPlacementId } = nxConfig.getPlacement({ name: "default", aliases });
+                  <await(contentInjectAds({
+                    content,
+                    parseEmbeddedMedia,
+                    req,
+                    res,
+                    nativeXUri,
+                    nativeXPlacementId,
+                  }))>
+                    <@then|result|>
+                      <marko-web-obj-text
+                        type="content"
+                        block-name=input.blockName
+                        obj=result
+                        field="body"
+                        html=true
+                        tag=input.tag
+                        class=input.class
+                        modifiers=input.modifiers
+                        attrs={ id: bodyId }
+                        link=input.link
                       />
-                    </for>
+                    </@then>
+                  </await>
+                </if>
 
-                    <for|char| of=mobileCounts> -->
-                      <!-- mobile only -->
-                      <!-- <@inject
-                        at=char
-                        name="inline-content-mobile"
-                        aliases=aliases
-                        modifiers=["max-width-970", "margin-auto-x", "inline-content"]
-                      />
-                    </for>
-                  </theme-gam-inject-ads>
-                </if> -->
-
-                <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
+                <else>
+                  <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
+                </else>
 
                 <!-- needs input -->
                 <if(input.afterBody)>
