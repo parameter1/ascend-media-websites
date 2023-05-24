@@ -20,15 +20,15 @@ module.exports = {
   },
   logos: {
     navbar: {
-      src: 'https://img.ascendmedia.com/files/base/ascend/hh/image/static/pulmonary/Am_Pulmonary_Insights.png?h=45&auto=format,compress',
+      src: 'https://img.ascendmedia.com/files/base/ascend/hh/image/static/pulmonary/AMPulmonary_logo.png?h=45&auto=format,compress',
       srcset: [
-        'https://img.ascendmedia.com/files/base/ascend/hh/image/static/pulmonary/Am_Pulmonary_Insights.png?h=90&auto=format,compress 2x',
+        'https://img.ascendmedia.com/files/base/ascend/hh/image/static/pulmonary/AMPulmonary_logo.png?h=90&auto=format,compress 2x',
       ],
     },
     footer: {
-      src: 'https://img.ascendmedia.com/files/base/ascend/hh/image/static/pulmonary/Am_Pulmonary_Insights.png?h=60&auto=format,compress',
+      src: 'https://img.ascendmedia.com/files/base/ascend/hh/image/static/pulmonary/AMPulmonary_logo_white.png?h=60&auto=format,compress',
       srcset: [
-        'https://img.ascendmedia.com/files/base/ascend/hh/image/static/pulmonary/Am_Pulmonary_Insights.png?h=120&auto=format,compress 2x',
+        'https://img.ascendmedia.com/files/base/ascend/hh/image/static/pulmonary/AMPulmonary_logo_white.png?h=120&auto=format,compress 2x',
       ],
     },
     corporate: {
