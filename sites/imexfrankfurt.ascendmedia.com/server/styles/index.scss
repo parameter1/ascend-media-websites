@@ -1,6 +1,6 @@
 @import "@ascend-media/package-daily/scss/variables";
 
-$primary: #097dc1;
+$primary: #4D92CF;
 $secondary: #da291c;
 $tertiary: #3a3839;
 
@@ -31,5 +31,25 @@ $theme-hero-teaser-bg-color: $tertiary;
 .page-contents {
   &__content-body{
     color: #3a3839;
+  }
+}
+
+.site-navbar__items--secondary {
+  li {
+    padding-top: 4px;
+  }
+  li:first-child {
+    background-color: #D20A60 !important;
+    border-radius: 0.5rem;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 0px;
+    a {
+      padding: 0px 10px;
+      color: #fff;
+    }
+    a:hover {
+      text-decoration: none;
+    }
   }
 }
