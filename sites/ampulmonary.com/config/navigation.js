@@ -12,9 +12,7 @@ const topics = [
 const secondary = [
 ];
 
-// const resources = [
-// ];
-const utilities = [
+const resources = [
   { href: '#', label: 'Subscribe' },
   { href: '/page/about-us', label: 'About Us' },
   { href: '/page/contact-us', label: 'Contact Us' },
@@ -83,7 +81,7 @@ module.exports = {
     col4: {
       label: 'Resources',
       items: [
-        ...utilities,
+        ...resources,
       ],
     },
   },
