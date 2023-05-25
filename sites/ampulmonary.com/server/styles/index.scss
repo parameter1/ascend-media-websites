@@ -10,3 +10,9 @@ $theme-site-header-breakpoints: (
 $primary: #009bd6;
 
 @import "@ascend-media/package-global-monorail/scss/core";
+
+.site-footer {
+  &__logo {
+    filter: none;
+  }
+}
