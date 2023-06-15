@@ -60,6 +60,12 @@ $ const { gamDefer, gtmDefer } = req.query;
     <!-- start gtm -->
     <marko-web-gtm-start />
 
+    <marko-web-identity-x-context|{ hasUser, user }|>
+      <if(hasUser && user.id)>
+        <marko-web-gtm-push data={ 'identity-x.user_id': user.id } />
+      </if>
+    </marko-web-identity-x-context>
+
     <!-- start gam -->
     <marko-web-gam-enable>
       <@lazy-load ...site.getAsObject("gam.lazyLoad") />
@@ -82,7 +88,10 @@ $ const { gamDefer, gtmDefer } = req.query;
   </@above-container>
   <@below-container>
     <${input.belowContainer} />
-    <global-site-footer />
+    $ const { disabled: pushdownDisabled } = site.getAsObject('newsletter.pushdown');
+    $ const useIdxNewsletterSignup = true !== pushdownDisabled;
+    <!-- <theme-site-footer use-idx-newsletter-signup=useIdxNewsletterSignup /> -->
+    <global-site-footer use-idx-newsletter-signup=useIdxNewsletterSignup />
   </@below-container>
   <@below-wrapper>
     <marko-web-deferred-script-loader-load />
