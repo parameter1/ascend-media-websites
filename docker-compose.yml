@@ -16,11 +16,14 @@ x-env-defaults: &env
   NEW_RELIC_ENABLED: ${NEW_RELIC_ENABLED-0}
   NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY-(unset)}
   NODE_ENV: development
+  IDENTITYX_API_TOKEN: ${IDENTITYX_API_TOKEN-(unset)}
+  IDENTITYX_GRAPHQL_URI: ${IDENTITYX_GRAPHQL_URI-https://identity-x.parameter1.com/graphql}
   RECAPTCHA_V3_SITE_KEY: ${RECAPTCHA_V3_SITE_KEY-(unset)}
   RECAPTCHA_V3_SECRET_KEY: ${RECAPTCHA_V3_SECRET_KEY-(unset)}
   SENDGRID_API_KEY: ${SENDGRID_API_KEY-(unset)}
   SENDGRID_DEV_TO: basecmsdev@gmail.com
   YARN_CACHE_FOLDER: /.yarn-cache
+  IDX_NAV_ENABLE: ${IDX_NAV_ENABLE-true}
 
 x-env-leonis: &env-leonis
   GRAPHQL_URI: ${GRAPHQL_URI-https://leonis.graphql.base.parameter1.com}
