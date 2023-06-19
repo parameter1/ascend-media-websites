@@ -9,6 +9,7 @@ $ const perPage = 12;
 $ const withPagination = defaultValue(input.withPagination, true);
 $ const { modifiers } = input;
 $ const queryParams = {
+  sectionAlias: input.alias,
   requiresImage: false,
   ...input.queryParams,
 };
