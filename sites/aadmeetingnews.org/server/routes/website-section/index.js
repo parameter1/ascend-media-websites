@@ -22,7 +22,7 @@ module.exports = (app) => {
     queryFragment,
   }));
 
-  app.get('/:alias(media-gallery)', withWebsiteSection({
+  app.get('/:alias(photo-gallery)', withWebsiteSection({
     template: mediaGallery,
     queryFragment,
   }));
