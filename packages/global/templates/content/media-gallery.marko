@@ -71,12 +71,9 @@ $ const displaySocialShare = ["contact"].includes(type) ? false : true;
                 <@props thumbnail-click-selectors=`[data-gallery-id="${id}"] [data-image-id]` />
               </marko-web-photoswipe-images>
               <div class="page-images-gallery">
-                <h6 class="page-images-gallery__title">
-                  Thumbnails:
-                </h6>
                 <div class="page-images-gallery'__row row">
                   <for|image| of=images>
-                    <div class="page-images-gallery__col col-3">
+                    <div class="page-images-gallery__col col-6 col-lg-3">
                       <img src=buildImgixUrl(image.src, input.imageOptions) alt=image.alt data-image-id=image.id />
                       <div class="page-images-gallery__overlay">
                         <span class="page-images-gallery__image-name">${image.displayName}</span>
@@ -91,6 +88,9 @@ $ const displaySocialShare = ["contact"].includes(type) ? false : true;
 
               <marko-web-content-sidebars block-name=blockName obj=content />
             </default-theme-page-contents>
+            <aside class="col-lg-4 page-rail">
+              <global-right-rail-block aliases=aliases no-shadow=true />
+            </aside>
           </div>
         </@section>
 
