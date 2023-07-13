@@ -51,7 +51,7 @@ $ if (navigation.secondary.length) tertiaryMods.push("no-left-margin");
     </if>
   </default-theme-site-navbar>
 
-  $ const multiLogo = site.get("logos.navbar-secondary.src") && site.get("logos.navbar-tertiary.src");
+  $ const multiLogo = site.get("logos.navbar-secondary.src");
   $ const primaryNavModifiers = multiLogo ? ["primary", "multi-logo"] : ["primary"];
   <default-theme-site-navbar modifiers=primaryNavModifiers>
   <if(multiLogo)>
@@ -60,14 +60,6 @@ $ if (navigation.secondary.length) tertiaryMods.push("no-left-margin");
         alt=config.website("name")
         src=site.get("logos.navbar-secondary.src")
         srcset=site.getAsArray("logos.navbar-secondary.srcset").join(",")
-        block-name="site-navbar-secondary"
-      />
-    </default-theme-site-navbar-brand>
-    <default-theme-site-navbar-brand title=`${config.website("name")} Homepage`>
-      <default-theme-site-navbar-logo
-        alt=config.website("name")
-        src=site.get("logos.navbar-tertiary.src")
-        srcset=site.getAsArray("logos.navbar-tertiary.srcset").join(",")
         block-name="site-navbar-secondary"
       />
     </default-theme-site-navbar-brand>
