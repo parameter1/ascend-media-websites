@@ -1,13 +1,18 @@
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 $ const { GAM, site } = out.global;
 
 $ const { aliases } = input;
+$ const adSlotOne = defaultValue(input.adSlotOne, true);
+$ const adSlotTwo = defaultValue(input.adSlotTwo, true);
 
 $ const nativeXBlock = site.getAsObject("nativeXBlock");
 
-<marko-web-gam-define-display-ad
-  ...GAM.getAdUnit({ name: "rail1", aliases })
-  class="mb-block"
-/>
+<if(adSlotOne)>
+  <marko-web-gam-define-display-ad
+    ...GAM.getAdUnit({ name: "rail1", aliases })
+    class="mb-block"
+  />
+</if>
 
 <if(nativeXBlock && nativeXBlock.enabled)>
   $ const { limit, title, sectionName, withSection } = nativeXBlock;
@@ -26,7 +31,9 @@ $ const nativeXBlock = site.getAsObject("nativeXBlock");
   <global-twitter-widget-block />
 </else>
 
-<marko-web-gam-define-display-ad
-...GAM.getAdUnit({ name: "rail2", aliases })
-  class="mb-block"
-/>
+<if(adSlotTwo)>
+  <marko-web-gam-define-display-ad
+    ...GAM.getAdUnit({ name: "rail2", aliases })
+    class="mb-block"
+  />
+</if>
