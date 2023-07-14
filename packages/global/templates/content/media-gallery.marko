@@ -88,9 +88,11 @@ $ const displaySocialShare = ["contact"].includes(type) ? false : true;
 
               <marko-web-content-sidebars block-name=blockName obj=content />
             </default-theme-page-contents>
-            <aside class="col-lg-4 page-rail">
-              <global-right-rail-block aliases=aliases no-shadow=true />
-            </aside>
+            <div class="col-lg-4 page-rail">
+              <div class="sticky-top">
+                <global-right-rail-block aliases=aliases no-shadow=true ad-slot-one=false />
+              </div>
+            </div>
           </div>
         </@section>
 
