@@ -89,7 +89,24 @@ $ const displaySocialShare = ["contact"].includes(type) ? false : true;
               <marko-web-content-sidebars block-name=blockName obj=content />
             </default-theme-page-contents>
             <aside class="col-lg-4 page-rail">
-              <global-right-rail-block aliases=aliases no-shadow=true />
+              <div class="sticky-top">
+                $ const nativeXBlock = site.getAsObject("nativeXBlock");
+                $ const { limit, title, sectionName, withSection } = nativeXBlock;
+                <global-native-x-list-block
+                  placement-name="default"
+                  aliases=aliases
+                  limit=limit
+                  collapsible=true
+                  title=title
+                  with-section=withSection
+                  section-name=sectionName
+                />
+
+                <marko-web-gam-define-display-ad
+                ...GAM.getAdUnit({ name: "rail2", aliases })
+                  class="mb-block"
+                />
+              </div>
             </aside>
           </div>
         </@section>
