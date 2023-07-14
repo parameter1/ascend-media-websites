@@ -7,7 +7,7 @@ $pswp__root-z-index: $theme-site-header-z-index + 1 !default;
 @import "@parameter1/base-cms-marko-web-photoswipe/scss/main";
 @import "@parameter1/base-cms-marko-web-social-sharing/scss/buttons";
 @import "@parameter1/base-cms-marko-web-reveal-ad/scss/reveal-ad";
-
+@import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/sticky-top";
 // vue-modal styles
 @import "./components/vue-modal";
 
@@ -64,4 +64,8 @@ $pswp__root-z-index: $theme-site-header-z-index + 1 !default;
       border-bottom: none;
     }
   }
+}
+
+.sticky-top {
+  top: 175px;
 }
