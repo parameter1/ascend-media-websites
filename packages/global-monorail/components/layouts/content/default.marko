@@ -1,4 +1,4 @@
-import { getAsArray, get } from "@parameter1/base-cms-object-path";
+import { getAsArray, get, getAsObject } from "@parameter1/base-cms-object-path";
 
 import convertAdToContent from "@parameter1/base-cms-marko-web-native-x/utils/convert-ad-to-content";
 import getContentPreview from "@parameter1/base-cms-marko-web-theme-monorail/utils/get-content-preview";
@@ -14,6 +14,7 @@ $ const displayPrimaryImage = ["media-gallery"].includes(type) ? false : true;
 $ const displayPublishedDate = ["company", "contact", "whitepaper"].includes(type) ? false : true;
 $ const displayReadNext = showReadNextBlock && ["article"].includes(type);
 $ const displaySocialShare = ["contact"].includes(type) ? false : true;
+$ const newsletterConfig = site.getAsObject('newsletter.signupBannerLarge');
 $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type);
 
 <global-content-wrapper-layout
@@ -66,7 +67,8 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
                 force-display=forceDisplay
               />
             </else-if>
-            <!-- $ const requiresRegistration = get(content, "userRegistration.isCurrentlyRequired");
+            $ const requiresRegistration = get(content, "userRegistration.isCurrentlyRequired");
+            $ const accessLevels = getAsArray(content, "userRegistration.accessLevels");
             <marko-web-identity-x-access|context|
               enabled=requiresRegistration
               required-access-level-ids=accessLevels
@@ -85,7 +87,7 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
                   messages=context.messages
                 />
               </if>
-              <else> -->
+              <else>
 
                 $ const bodyId = `content-body-${content.id}`;
 
@@ -154,6 +156,13 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
                   />
                 </if>
 
+                <if(!newsletterConfig.disabled)>
+                  <identity-x-newsletter-form-inline type="inlineContent" />
+                </if>
+                <else>
+                  <theme-newsletter-signup-banner-external-block config-name="signupBannerStatic" />
+                </else>
+
                 <if(displaySocialShare)>
                   <marko-web-social-sharing
                     path=content.siteContext.path
@@ -161,9 +170,22 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
                     print-path=`/print/content/${content.id}`
                   />
                 </if>
-              <!-- </else>
+                <!-- <if(displayNewsletterSignup)>
+                  <marko-web-identity-x-context|{ hasUser }|>
+                    <if(!hasUser)>
+                      <identity-x-newsletter-form-inline
+                        button-labels=buttonLabels
+                        login-email-label=loginEmailLabel
+                        login-email-placeholder="example@yourcompany.com"
+                        type="inlineContent"
+                        action-text=actionText
+                      />
+                    </if>
+                  </marko-web-identity-x-context>
+                </if> -->
+              </else>
 
-            </marko-web-identity-x-access> -->
+            </marko-web-identity-x-access>
           </default-theme-page-contents>
         </div>
       </div>

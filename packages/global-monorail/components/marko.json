@@ -36,5 +36,8 @@
   },
   "<global-content-meter-track>": {
     "template": "./content-meter-track.marko"
+  },
+  "<global-site-newsletter-menu>": {
+    "template": "./site-newsletter-menu.marko"
   }
 }
