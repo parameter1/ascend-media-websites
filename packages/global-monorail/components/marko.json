@@ -39,5 +39,8 @@
   },
   "<global-newsletter-signup>": {
     "template": "./newsletter-signup.marko"
+  },
+  "<global-site-newsletter-menu>": {
+    "template": "./site-newsletter-menu.marko"
   }
 }

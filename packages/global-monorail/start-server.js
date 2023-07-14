@@ -4,6 +4,9 @@ const { set, get } = require('@parameter1/base-cms-object-path');
 const loadInquiry = require('@parameter1/base-cms-marko-web-inquiry');
 const htmlSitemapPagination = require('@parameter1/base-cms-marko-web-html-sitemap/middleware/paginated');
 const contactUsHandler = require('@parameter1/base-cms-marko-web-contact-us');
+const newsletterState = require('@parameter1/base-cms-marko-web-theme-monorail/middleware/newsletter-state');
+const identityX = require('@parameter1/base-cms-marko-web-identity-x');
+const idxRouteTemplates = require('./templates/user');
 
 const document = require('./components/document');
 const components = require('./components');
@@ -48,6 +51,13 @@ module.exports = (options = {}) => {
 
       // Use paginated middleware
       app.use(htmlSitemapPagination());
+
+      // Use newsletterState middleware
+      app.use(newsletterState());
+
+      // install identity x
+      const idxConfig = get(options, 'siteConfig.identityX');
+      identityX(app, idxConfig, { templates: idxRouteTemplates });
 
       // Setup GAM.
       const gamConfig = get(options, 'siteConfig.gam');

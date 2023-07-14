@@ -18,6 +18,25 @@
 }
 
 .page-wrapper {
+  $self: &;
+  &__section--user-form {
+    &:only-child  {
+      max-width: 400px;
+      padding: 30px;
+      margin: 30px auto;
+      background-color: $gray-100;
+
+      @media (max-width: $content-meter-mobile-breakpoint) {
+        padding: 15px;
+        margin: 0 -15px;
+      }
+    }
+    #{ $self }__title {
+      @include skin-typography($style: "content-meter-cta");
+      font-weight: $font-weight-bold;
+      color: $theme-page-title-color;
+    }
+  }
   &__section {
     &--user-form,
     .content-page-gate {
@@ -34,5 +53,12 @@
         }
       }
     }
+  }
+  #{ $self }__confirmation {
+    padding: map-get($spacers, 2);
+    margin-bottom: map-get($spacers, block);
+    font-weight: $font-weight-bold;
+    background-color: $gray-200;
+
   }
 }

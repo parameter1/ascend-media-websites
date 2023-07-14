@@ -5,13 +5,12 @@ const baseConfig = {
 };
 
 const defaults = {
-  name: 'Don’t Miss Out',
+  name: 'amPulmonary Insights',
   description: 'amPulmonary enewsletter is the hub of news and cutting-edge information for pulmonary clinicians, researchers, and medical professionals interested in the latest developments.',
   privacyPolicy,
 };
 
 module.exports = {
-  // uses inline omeda form
   signupBanner: {
     ...defaults,
     imagePath: 'files/base/smg/all/image/static/newsletter-pushdown/sab-full.png',
@@ -24,7 +23,7 @@ module.exports = {
 
   signupBannerLarge: {
     ...baseConfig,
-    name: 'Don’t Miss Out',
+    name: 'amPulmonary Insights',
     description: 'amPulmonary enewsletter is the hub of news and cutting-edge information for pulmonary clinicians, researchers, and medical professionals interested in the latest developments.',
   },
   signupFooter: {
