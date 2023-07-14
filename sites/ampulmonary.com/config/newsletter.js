@@ -6,12 +6,7 @@ const baseConfig = {
 
 const defaults = {
   name: 'amPulmonary Insights',
-  description: 'The eNewsletter for Pulmonary Professionals.',
-  defaultNewsletter: {
-    deploymentTypeId: 29,
-    name: 'Daily Report',
-    eventCategory: 'Daily Newsletter Subscription',
-  },
+  description: 'amPulmonary enewsletter is the hub of news and cutting-edge information for pulmonary clinicians, researchers, and medical professionals interested in the latest developments.',
   privacyPolicy,
 };
 
@@ -23,16 +18,17 @@ module.exports = {
   pushdown: {
     ...defaults,
     imagePath: 'files/base/smg/all/image/static/newsletter-pushdown/sab-half.png',
+    description: 'amPulmonary enewsletter is the hub of news and cutting-edge information for pulmonary clinicians, researchers, and medical professionals interested in the latest developments.',
   },
 
   signupBannerLarge: {
     ...baseConfig,
     name: 'amPulmonary Insights',
-    description: 'The eNewsletter for Pulmonary Professionals.',
+    description: 'amPulmonary enewsletter is the hub of news and cutting-edge information for pulmonary clinicians, researchers, and medical professionals interested in the latest developments.',
   },
   signupFooter: {
     ...baseConfig,
-    name: 'amPulmonary Insights',
-    description: 'The eNewsletter for Pulmonary Professionals.',
+    name: 'Newsletter for Professionals',
+    description: 'amPulmonary enewsletter is the hub of news and cutting-edge information for pulmonary clinicians, researchers, and medical professionals interested in the latest developments.',
   },
 };
