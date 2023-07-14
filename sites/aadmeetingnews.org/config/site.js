@@ -6,7 +6,6 @@ const nativeX = require('./native-x');
 module.exports = {
   nativeXBlock: {
     enabled: Boolean(process.env.NATIVE_X_BLOCK),
-    limit: 9,
     sectionName: 'Presented by',
   },
   contentPageLoadMore: Boolean(process.env.CONTENT_PAGE_LOAD_MORE),
