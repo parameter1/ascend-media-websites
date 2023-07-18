@@ -13,7 +13,6 @@ const defaults = {
 module.exports = {
   signupBanner: {
     ...defaults,
-    imagePath: 'files/base/ascend/hh/image/static/pulmonary/pulmonary-newsletter-full.png',
   },
   pushdown: {
     ...defaults,
