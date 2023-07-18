@@ -13,11 +13,10 @@ const defaults = {
 module.exports = {
   signupBanner: {
     ...defaults,
-    imagePath: 'files/base/smg/all/image/static/newsletter-pushdown/sab-full.png',
   },
   pushdown: {
     ...defaults,
-    imagePath: 'files/base/smg/all/image/static/newsletter-pushdown/sab-half.png',
+    imagePath: 'files/base/ascend/hh/image/static/pulmonary/pulmonary-newsletter-half.png',
     description: 'amPulmonary enewsletter is the hub of news and cutting-edge information for pulmonary clinicians, researchers, and medical professionals interested in the latest developments.',
   },
 
