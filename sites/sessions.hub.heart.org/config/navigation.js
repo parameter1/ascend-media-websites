@@ -22,8 +22,6 @@ const topics = [
 
 const secondary = [
   { href: 'https://twitter.com/search?q=%23AHA21&src=typed_query', label: '#AHA23' },
-  { href: '/', label: 'Virtual Experience Access' },
-  { href: '/', label: 'Sessions Posters' },
 ];
 
 module.exports = {
