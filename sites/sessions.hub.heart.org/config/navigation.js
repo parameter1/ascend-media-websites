@@ -15,15 +15,15 @@ const topics = [
   { href: '/late-breaking-science', label: 'Late-Breaking Science' },
   { href: '/daily-coverage', label: 'Daily Coverage' },
   { href: '/industry-highlights', label: 'Industry Highlights' },
-  { href: '/featured-exhibitors', label: 'Featured Exhibitors' },
+  { href: '/photo-gallery', label: 'Photo Gallery' },
   { href: 'https://eppro02.ativ.me/src/EventPilot/php/express/web/planner.php?id=AHA22', label: 'Program', target: '_blank' },
-  { href: '/previews', label: 'Previews' },
+  // { href: '/previews', label: 'Previews' },
 ];
 
 const secondary = [
-  { href: 'https://twitter.com/search?q=%23AHA21&src=typed_query', label: '#AHA22' },
-  { href: 'https://ahasessions22.heart.org/', label: 'Virtual Experience Access', target: '_blank' },
-  { href: 'https://aha.apprisor.org', label: 'Sessions Posters', target: '_blank' },
+  { href: 'https://twitter.com/search?q=%23AHA21&src=typed_query', label: '#AHA23' },
+  { href: '/', label: 'Virtual Experience Access' },
+  { href: '/', label: 'Sessions Posters' },
 ];
 
 module.exports = {
