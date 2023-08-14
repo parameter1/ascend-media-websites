@@ -21,7 +21,7 @@ const topics = [
 ];
 
 const secondary = [
-  { href: 'https://twitter.com/search?q=%23AHA21&src=typed_query', label: '#AHA23' },
+  { href: 'https://twitter.com/search?q=%23AHA23&src=typed_query', label: '#AHA23' },
 ];
 
 module.exports = {
