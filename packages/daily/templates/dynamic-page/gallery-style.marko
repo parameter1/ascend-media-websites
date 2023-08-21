@@ -1,0 +1,46 @@
+import { getAsArray, getAsObject, get } from "@parameter1/base-cms-object-path";
+
+$ const { GAM } = out.global;
+
+$ const { id, alias, pageNode } = data;
+
+<marko-web-dynamic-page-layout id=id alias=alias>
+  <@head>
+    <marko-web-gtm-dynamic-page-context|{ context }| alias=alias>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-dynamic-page-context>
+  </@head>
+
+  <@page>
+    <marko-web-gam-define-display-ad
+      ...GAM.getAdUnit({ name: "lb1" })
+      class="mt-block"
+      modifiers=["max-width-970", "top-of-page", "center"]
+    />
+
+    <marko-web-resolve-page|{ data: page }| node=pageNode>
+      <marko-web-page-wrapper class="mt-block">
+        <@section>
+          <div class="row">
+            <div class="col">
+              <h1 class="page-wrapper__title">${page.name}</h1>
+              <marko-web-content-teaser tag="p" class="page-wrapper__deck" obj=page />
+              <hr>
+            </div>
+          </div>
+        </@section>
+        <@section>
+          <div class="row">
+          $ const imageNodes = getAsArray(page, "images.edges").map(edge => edge.node);
+          <for|imageNode| of=imageNodes>
+            <div class="col-md-4 col-lg-3">
+              <img src=imageNode.src alt=imageNode.alt width="100%" height="75%" />
+              <span class="caption">$!{imageNode.caption}</span>
+            </div>
+          </for>
+          </div>
+        </@section>
+      </marko-web-page-wrapper>
+    </marko-web-resolve-page>
+  </@page>
+</marko-web-dynamic-page-layout>
