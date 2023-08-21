@@ -16,7 +16,7 @@ const topics = [
   { href: '/daily-coverage', label: 'Daily Coverage' },
   { href: '/industry-highlights', label: 'Industry Highlights' },
   { href: '/photo-gallery', label: 'Photo Gallery' },
-  { href: 'https://eppro02.ativ.me/src/EventPilot/php/express/web/planner.php?id=AHA22', label: 'Program', target: '_blank' },
+  { href: 'https://www.abstractsonline.com/pp8/?_ga=2.117725897.197470905.1692625537-1814998058.1681330243#!/10871', label: 'Program', target: '_blank' },
   // { href: '/previews', label: 'Previews' },
 ];
 
