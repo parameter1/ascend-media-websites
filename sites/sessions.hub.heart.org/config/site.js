@@ -16,7 +16,7 @@ module.exports = {
   nativeX,
   company: 'Ascend Media',
   socialMediaLinks: [
-    { provider: 'twitter', href: 'https://twitter.com/AHAMeetings', target: '_blank' },
+    { provider: 'twitter-x', href: 'https://twitter.com/AHAMeetings', target: '_blank' },
     { provider: 'facebook', href: 'https://www.facebook.com/ahameetings', target: '_blank' },
     { provider: 'instagram', href: 'https://instagram.com/american_heart', target: '_blank' },
     { provider: 'youtube', href: 'https://youtube.com/user/AHASessions', target: '_blank' },
