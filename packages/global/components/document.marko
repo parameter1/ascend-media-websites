@@ -46,7 +46,16 @@ $ const aboveContainer = get(input, "aboveContainer.renderBody");
     <marko-web-gtm-track-bus-event on="screen_change" />
     <marko-web-gtm-track-load-more />
     <marko-web-reveal-ad-listener select-all-targets=true />
-    <global-site-header />
+    $ console.log()
+    $ const isAestheticsSection = req.path.match(/^\/(aesthetics)$/);
+    $ const isAestheticsContentOrSubsection = req.path.match(/^\/(aesthetics)\//);
+    <if(get(config, "websiteContext.id") === "60c7666d46f24a64538b458d" && (isAestheticsSection || isAestheticsContentOrSubsection))>
+      $ const pathMatch = isAestheticsSection ? isAestheticsSection[1] : isAestheticsContentOrSubsection[1];
+      <global-site-header path-match=pathMatch />
+    </if>
+    <else>
+      <global-site-header />
+    </else>
     <default-theme-site-menu modifiers=["right"] />
     <if(site.config.noticePushdown)>
       <global-notice-pushdown-block />
