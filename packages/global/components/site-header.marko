@@ -21,13 +21,24 @@ $ if (navigation.secondary.length) tertiaryMods.push("no-left-margin");
 >
   <${input.aboveNav} />
   <default-theme-site-navbar modifiers=["secondary"]>
-    <default-theme-site-navbar-brand title=`${config.website("name")} Homepage` href=site.get("logos.navbar.href")>
-      <default-theme-site-navbar-logo
-        alt=config.website("name")
-        src=site.get("logos.navbar.src")
-        srcset=site.getAsArray("logos.navbar.srcset").join(",")
-      />
-    </default-theme-site-navbar-brand>
+    <if(input.pathMatch)>
+      <default-theme-site-navbar-brand title=site.get(`logos.${input.pathMatch}.title`) href=site.get(`logos.${input.pathMatch}.href`)>
+        <default-theme-site-navbar-logo
+          alt=site.get(`logos.${input.pathMatch}.title`)
+          src=site.get(`logos.${input.pathMatch}.src`)
+          srcset=site.getAsArray(`logos.${input.pathMatch}.srcset`).join(",")
+        />
+      </default-theme-site-navbar-brand>
+    </if>
+    <else>
+      <default-theme-site-navbar-brand title=`${config.website("name")} Homepage` href=site.get("logos.navbar.href")>
+        <default-theme-site-navbar-logo
+          alt=config.website("name")
+          src=site.get("logos.navbar.src")
+          srcset=site.getAsArray("logos.navbar.srcset").join(",")
+        />
+      </default-theme-site-navbar-brand>
+    </else>
     <default-theme-site-navbar-items
       items=navigation.secondary
       modifiers=["secondary"]
