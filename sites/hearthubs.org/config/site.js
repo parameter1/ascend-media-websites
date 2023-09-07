@@ -10,7 +10,7 @@ module.exports = {
   gam,
   company: 'Ascend Media',
   socialMediaLinks: [
-    { provider: 'twitter', href: 'http://www.twitter.com/American_Heart', target: '_blank' },
+    { provider: 'twitter-x', href: 'http://www.twitter.com/American_Heart', target: '_blank' },
     { provider: 'facebook', href: 'https://www.facebook.com/AmericanHeart', target: '_blank' },
     { provider: 'instagram', href: 'http://instagram.com/american_heart', target: '_blank' },
     { provider: 'youtube', href: 'https://www.youtube.com/user/americanheartassoc', target: '_blank' },

@@ -29,7 +29,7 @@ module.exports = {
   socialMediaLinks: [
     { provider: 'facebook', href: 'https://www.facebook.com/AADmember', target: '_blank' },
     { provider: 'instagram', href: 'https://www.instagram.com/aadmember/', target: '_blank' },
-    { provider: 'twitter', href: 'https://twitter.com/AADmember', target: '_blank' },
+    { provider: 'twitter-x', href: 'https://twitter.com/AADmember', target: '_blank' },
   ],
   gtm: {
     containerId: 'GTM-5R9XFFX',

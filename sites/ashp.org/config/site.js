@@ -18,7 +18,7 @@ module.exports = {
   sponsoredText: 'Paid Advertising Content',
   socialMediaLinks: [
     { provider: 'facebook', href: 'https://www.facebook.com/ASHPofficial/', target: '_blank' },
-    { provider: 'twitter', href: 'https://twitter.com/ashpofficial', target: '_blank' },
+    { provider: 'twitter-x', href: 'https://twitter.com/ashpofficial', target: '_blank' },
     { provider: 'linkedin', href: 'https://www.linkedin.com/company/ashp/', target: '_blank' },
     { provider: 'instagram', href: 'https://www.instagram.com/ashpofficial/', target: '_blank' },
   ],
