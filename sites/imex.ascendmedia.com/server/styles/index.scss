@@ -31,12 +31,43 @@ $theme-hero-teaser-bg-color: $tertiary;
 .page-contents {
   &__content-body{
     color: #3a3839;
+    a {
+      color: #191D4E;
+      :hover {
+        color: #4d92cf;
+        text-decoration: underline;
+      }
+    }
   }
 }
+
+
+.site-navbar__items--tertiary .site-navbar__link--active svg, .site-navbar__items--tertiary .site-navbar__link:hover svg {
+  fill:#4d92cf;
+}
+
+.site-navbar__items--tertiary .site-navbar__link--active svg, .site-navbar__items--tertiary .site-navbar__link:active svg {
+  fill:#4d92cf;
+}
+
+.site-navbar__items--tertiary .marko-web-icon:hover svg {
+  fill: #4d92cf;
+}
+
+button.site-navbar__toggler:hover {
+    svg {
+      fill: #4d92cf !important;
+    }
+  }
 
 .site-navbar__items--secondary {
   li {
     padding-top: 4px;
+    a.site-navbar__link {
+      :hover {
+        color: #4d92cf;
+      }
+    }
   }
   li:first-child {
     background-color: #f2716f !important;

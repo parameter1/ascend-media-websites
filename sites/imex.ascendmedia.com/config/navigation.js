@@ -20,7 +20,7 @@ const secondary = [
   { href: 'https://imexamerica.com/', label: 'IMEX America', target: '_blank' },
   { href: 'https://www.imexamerica.com/whats-on/schedule-at-a-glance', label: 'Program', target: '_blank' },
   { href: 'https://www.imex-frankfurt.com', label: 'IMEX Frankfurt', target: '_blank' },
-  { href: 'https://imexevents.powerappsportals.com/en-US/signin', label: 'Sign In', target: '_blank' },
+  { href: 'https://imexamerica.com/sign-in', label: 'Sign In', target: '_blank' },
 ];
 
 module.exports = {
