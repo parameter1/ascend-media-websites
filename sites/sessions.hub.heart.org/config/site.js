@@ -16,7 +16,7 @@ module.exports = {
   nativeX,
   company: 'Ascend Media',
   socialMediaLinks: [
-    { provider: 'twitter-x', href: 'https://twitter.com/AHAMeetings', target: '_blank' },
+    { provider: 'twitter', href: 'https://twitter.com/AHAScience', target: '_blank' },
     { provider: 'facebook', href: 'https://www.facebook.com/ahameetings', target: '_blank' },
     { provider: 'instagram', href: 'https://instagram.com/american_heart', target: '_blank' },
     { provider: 'youtube', href: 'https://youtube.com/user/AHASessions', target: '_blank' },
@@ -27,8 +27,8 @@ module.exports = {
     containerId: 'GTM-TXG3S5L',
   },
   twitterFeed: {
-    href: ' https://twitter.com/AHAMeetings',
-    tagline: 'Tweets by AHAMeetings',
+    href: ' https://twitter.com/AHAScience',
+    tagline: 'Tweets by AHAScience',
   },
   gcse: {
     id: '3b6a89459a586ff54',
