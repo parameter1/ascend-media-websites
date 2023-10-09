@@ -74,3 +74,18 @@ $pswp__root-z-index: $theme-site-header-z-index + 1 !default;
     }
   }
 }
+
+// This is temporary until a correction within Base-CMS is made for these
+.marko-web-icon--twitter {
+  svg {
+    fill: #000 !important;
+  }
+}
+
+.social-sharing {
+  &__button {
+    &--twitter {
+      background-color: #000;
+    }
+  }
+}

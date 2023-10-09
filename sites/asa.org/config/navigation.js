@@ -17,8 +17,8 @@ const topics = [
 
 const resources = [
   { href: 'https://www.asahq.org/annualmeeting', label: 'Meeting Info' },
-  { href: 'https://www.abstractsonline.com/pp8/#!/10552', label: 'Sessions' },
-  { href: 'https://www.abstractsonline.com/pp8/#!/10552/credits', label: 'Claim CME' },
+  { href: 'https://www.abstractsonline.com/pp8/#!/10809', label: 'Sessions' },
+  { href: 'https://www.abstractsonline.com/pp8/#!/10809/credits', label: 'Claim CME' },
   { href: '/', label: 'Archive' },
 ];
 
