@@ -31,7 +31,7 @@ $ const promise = websiteSectionContentLoader(apollo, {
   },
   standardParams: {
     optionName: ["Standard"],
-    limit: 9,
+    limit: 11,
     requiresImage: true,
     queryFragment
   },
@@ -88,11 +88,8 @@ $ const promise = websiteSectionContentLoader(apollo, {
           <div class="col-lg-4 mb-block">
             <marko-web-gam-display-ad id="gpt-ad-rail3" />
           </div>
-          <div class="col-lg-4 mb-block">
-            <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(7, 9) cols=1 />
-          </div>
-          <div class="col-lg-4 mb-block">
-            <global-twitter-widget-block />
+          <div class="col-lg-8 mb-block">
+            <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(7, 11) cols=2 />
           </div>
         </div>
 
