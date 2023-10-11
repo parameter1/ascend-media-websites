@@ -28,10 +28,6 @@ module.exports = {
   gtm: {
     containerId: 'GTM-NGJTG3G',
   },
-  twitterFeed: {
-    href: 'https://twitter.com/ASALifeline',
-    tagline: 'Tweets from ASA LifeLine',
-  },
   gcse: {
     id: '1982758490b24cc96',
   },
