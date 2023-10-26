@@ -15,6 +15,7 @@ module.exports = {
     ...defaults,
   },
   pushdown: {
+    maxAgeInDays: 0,
     ...defaults,
     imagePath: 'files/base/ascend/hh/image/static/pulmonary/pulmonary-newsletter-half.png',
     description: 'amPulmonary enewsletter is the hub of news and cutting-edge information for pulmonary clinicians, researchers, and medical professionals interested in the latest developments.',
