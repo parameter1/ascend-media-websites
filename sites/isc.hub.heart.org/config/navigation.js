@@ -20,7 +20,7 @@ const topics = [
 ];
 
 const secondary = [
-  { href: 'https://twitter.com/search?q=%24ISC23&src=typed_query', label: '#ISC24', target: '_blank' },
+  { href: 'https://twitter.com/search?q=%23ISC24&src=typed_query', label: '#ISC24', target: '_blank' },
   { href: 'https://www.heart.org/en/about-us/statements-and-policies/privacy-statement', label: 'Privacy Policy', target: '_blank' },
 ];
 
