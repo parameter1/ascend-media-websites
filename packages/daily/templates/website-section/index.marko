@@ -32,6 +32,20 @@ $ const loadMoreSkip = limit + skip;
     </marko-web-resolve-page>
   </@head>
 
+  <@above-container>
+    <if([85579,85580,85582,85583].includes(id))>
+      <marko-web-resolve-page|{ data: section }| node=pageNode>
+      <marko-web-block name="announcement">
+        <marko-web-element block-name="announcement" name="wrapper">
+          <marko-web-element block-name="announcement" name="title">
+            These articles are taken from when the Bulletin went all digital in 2023, can't find what you're looking for? Use the site search!
+          </marko-web-element>
+        </marko-web-element>
+      </marko-web-block>
+      </marko-web-resolve-page>
+    </if>
+  </@above-container>
+
   <@page>
     <marko-web-gam-display-ad id="gpt-ad-lb1" modifiers=["top-of-page", "max-width-790", "center"] />
 
