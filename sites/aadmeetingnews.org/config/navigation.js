@@ -16,8 +16,8 @@ const topics = [
 ];
 
 const secondary = [
-  { href: 'https://ia2023.aad.org/sessions', label: 'Program', target: '_blank' },
-  { href: 'https://www.aad.org/member/meetings-education/ia23/registration', label: 'Registration', target: '_blank' },
+  { href: 'https://am2024.aad.org/sessions', label: 'Program', target: '_blank' },
+  { href: 'https://www.aad.org/member/meetings-education/am24/registration', label: 'Registration', target: '_blank' },
 ];
 
 module.exports = {
