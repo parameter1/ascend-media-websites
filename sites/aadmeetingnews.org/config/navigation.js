@@ -12,7 +12,7 @@ const topics = [
   { href: '/industry-highlights', label: 'Industry Highlights' },
   { href: '/photo-gallery', label: 'Photo Gallery' },
   { href: '/product-samples', label: 'Product Samples' },
-  { href: '/small-exhibit-spotlight', label: 'Exhibit Spotlight' },
+  { href: '/exhibit-spotlight', label: 'Exhibit Spotlight' },
 ];
 
 const secondary = [
