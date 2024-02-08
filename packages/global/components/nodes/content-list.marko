@@ -60,7 +60,7 @@ $ if (sponsored) modifiers.push('sponsored');
       src=primaryImage.src
       alt=primaryImage.alt
       is-logo=(isEbook ? true : primaryImage.isLogo)
-      link={ href: get(content, "siteContext.path"), attrs: linkAttrs }
+      link={ href: get(content, "siteContext.path"), attrs: linkAttrs, target: "_blank" }
     />
   </if>
   <@body>
@@ -90,7 +90,7 @@ $ if (sponsored) modifiers.push('sponsored');
       </@header>
     </if>
     <@title tag="h5" ...input.title>
-      <marko-web-content-short-name tag=null obj=content link={ attrs: linkAttrs } />
+      <marko-web-content-short-name tag=null obj=content link={ attrs: linkAttrs, target: "_blank" } />
     </@title>
     <@text|{ blockName }|
       modifiers=["event-details"]
