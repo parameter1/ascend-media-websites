@@ -205,6 +205,12 @@ $theme-card-header-background-color: #fff;
           }
         }
       }
+      &-list {
+        &__header {
+          background-color: $theme-card-header-color;
+          color: #fff;
+        }
+      }
     }
   }
 }

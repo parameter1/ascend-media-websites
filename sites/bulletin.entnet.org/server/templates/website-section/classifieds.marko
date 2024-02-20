@@ -1,6 +1,6 @@
 import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
 import { getAsObject } from "@parameter1/base-cms-object-path";
-import contentListFragment from "@ascend-media/package-daily/graphql/fragments/content-list";
+import queryFragment from "@ascend-media/package-daily/graphql/fragments/content-list";
 
 $ const { GAM } = out.global;
 
@@ -30,60 +30,46 @@ $ const adSlots = ({ aliases }) => ({
         <@section>
           <div class="row">
             <div class="col-lg-6 mb-block-lg">
-              <div class="row">
-                <div class="col-lg-12 mb-block-lg">
-                  <daily-native-x-list-block
-                    placement-name="default"
-                    aliases=["employment"]
-                    limit=1
-                    collapsible=true
-                    title="Featured Employment"
-                    with-teaser=true
-                    with-section=false
-                    image-position="left"
-                    image-width=180
-                  />
-                  <daily-section-list-block
-                    section-alias="classifieds/employment"
-                    link-header=false
-                    limit=50
-                    class="node-list--classifieds"
-                    with-section=false
-                    with-teaser=true
-                    image-width="180"
-                    inner-justified=false
-                  />
-                </div>
-              </div>
+              <daily-native-x-list-block
+                placement-name="default"
+                aliases=["featured-opportunity-1"]
+                limit=1
+                collapsible=true
+                title="Featured Opportunity"
+                with-teaser=true
+                with-section=false
+                image-position="left"
+                image-width=180
+              />
             </div>
             <div class="col-lg-6 mb-block-lg">
-              <div class="row">
-                <div class="col-lg-12 mb-block-lg">
-                  <daily-native-x-list-block
-                    placement-name="default"
-                    aliases=["courses-meetings"]
-                    limit=1
-                    collapsible=true
-                    title="Featured Courses | Meetings | Other Opportunities"
-                    with-teaser=true
-                    with-section=false
-                    image-position="left"
-                    image-width=180
-                  />
-                  <daily-section-list-block
-                    section-alias="classifieds/courses-meetings"
-                    link-header=false
-                    limit=50
-                    class="node-list--classifieds"
-                    with-section=false
-                    with-teaser=true
-                    image-width="180"
-                    inner-justified=false
-                  />
-                </div>
-              </div>
+              <daily-native-x-list-block
+                placement-name="default"
+                aliases=["featured-opportunity-2"]
+                limit=1
+                collapsible=true
+                title="Featured Opportunity"
+                with-teaser=true
+                with-section=false
+                image-position="left"
+                image-width=180
+              />
             </div>
           </div>
+        </@section>
+        <@section>
+        $ const queryParams = {
+          sectionId: 84172,
+          limit: 5,
+          queryFragment,
+        };
+        <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
+          <daily-content-card-deck-feed-flow
+            nodes=nodes
+            header="Opportunities"
+            with-header=true
+          />
+        </marko-web-query>
         </@section>
       </marko-web-page-wrapper>
     </marko-web-resolve-page>
