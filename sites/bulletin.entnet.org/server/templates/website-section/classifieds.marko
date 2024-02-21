@@ -65,87 +65,43 @@ $ const adSlots = ({ aliases }) => ({
         };
         <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
           $ const evens = nodes.filter((_, index) => index % 2 === 0);
-          $ const odds = nodes.filter((_, index) => index % 2 === 1);
+          $ const maxLength = evens.length;
           <div class="node-list__header node-list__header--padding-y text-center">Opportunities</div>
-          <div class="row">
-            <div class="col-lg-6 mb-block-lg">
-              <marko-web-node-list
-                inner-justified=true
-                flush-x=false
-                flush-y=false
-                class="node-list--classifieds"
-              >
-                <@nodes nodes=evens>
-                  <@slot|{ node }|>
-                    $ const primaryImage = getAsObject(node, "primaryImage");
-                    $ const primarySection = getAsObject(node, "primarySection");
-                    <marko-web-node
-                      image-position="left"
-                      flush=true
-                      full-height=false
-                    >
-                      <@image
-                        ar="1:1"
-                        width=180
-                        use-placeholder=false
-                        src=primaryImage.src
-                        alt=primaryImage.alt
-                        is-logo=primaryImage.isLogo
-                        link={ href: get(node, "siteContext.path")}
-                        ...input.image
-                      />
-                      <@body>
-                        <@title tag="h5">
-                          <marko-web-content-short-name tag=null obj=node />
-                        </@title>
-                        <@text modifiers=["teaser"]>
-                          <marko-web-content-teaser tag=null obj=node />
-                        </@text>
-                      </@body>
-                    </marko-web-node>
-                  </@slot>
-                </@nodes>
-              </marko-web-node-list>
-            </div>
-            <div class="col-lg-6 mb-block-lg">
-              <marko-web-node-list
-                inner-justified=true
-                flush-x=false
-                flush-y=false
-                class="node-list--classifieds"
-              >
-                <@nodes nodes=odds>
-                  <@slot|{ node }|>
-                    $ const primaryImage = getAsObject(node, "primaryImage");
-                    $ const primarySection = getAsObject(node, "primarySection");
-                    <marko-web-node
-                      image-position="left"
-                      flush=true
-                      full-height=false
-                    >
-                      <@image
-                        ar="1:1"
-                        width=180
-                        use-placeholder=false
-                        src=primaryImage.src
-                        alt=primaryImage.alt
-                        is-logo=primaryImage.isLogo
-                        link={ href: get(node, "siteContext.path") }
-                        ...input.image
-                      />
-                      <@body>
-                        <@title tag="h5">
-                          <marko-web-content-short-name tag=null obj=node />
-                        </@title>
-                        <@text modifiers=["teaser"]>
-                          <marko-web-content-teaser tag=null obj=node />
-                        </@text>
-                      </@body>
-                    </marko-web-node>
-                  </@slot>
-                </@nodes>
-              </marko-web-node-list>
-            </div>
+          <div class="row node-list--classifeds">
+            <for|node, index| of=nodes>
+            $ const isNotLastOfColumn = (index % maxLength) < maxLength && nodes.length - index > 2;
+            $ const className = isNotLastOfColumn ? "node-classified": "";
+              <div class="col-lg-6 mb-block-lg">
+                $ const primaryImage = getAsObject(node, "primaryImage");
+                $ const primarySection = getAsObject(node, "primarySection");
+                $ const linkAttrs = { href: get(node, "siteContext.path") };
+                <marko-web-node
+                  image-position="left"
+                  flush=false
+                  full-height=false
+                  class=className
+                >
+                  <@image
+                    ar="1:1"
+                    width=180
+                    use-placeholder=false
+                    src=primaryImage.src
+                    alt=primaryImage.alt
+                    is-logo=primaryImage.isLogo
+                    link=linkAttrs
+                    ...input.image
+                  />
+                  <@body>
+                    <@title tag="h5">
+                      <marko-web-content-short-name tag=null obj=node link=linkAttrs />
+                    </@title>
+                    <@text modifiers=["teaser"]>
+                      <marko-web-content-teaser tag=null obj=node link=linkAttrs />
+                    </@text>
+                  </@body>
+                </marko-web-node>
+              </div>
+            </for>
           </div>
         </marko-web-query>
         </@section>
