@@ -192,6 +192,10 @@ $theme-card-header-background-color: #fff;
   }
 }
 
+.node-classified {
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
 .document-container {
   &--classifieds {
     .node {

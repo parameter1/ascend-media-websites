@@ -1,5 +1,5 @@
 import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
-import { getAsObject } from "@parameter1/base-cms-object-path";
+import { getAsObject, get } from "@parameter1/base-cms-object-path";
 import queryFragment from "@ascend-media/package-daily/graphql/fragments/content-list";
 
 $ const { GAM } = out.global;
@@ -64,11 +64,45 @@ $ const adSlots = ({ aliases }) => ({
           queryFragment,
         };
         <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
-          <daily-content-card-deck-feed-flow
-            nodes=nodes
-            header="Opportunities"
-            with-header=true
-          />
+          $ const evens = nodes.filter((_, index) => index % 2 === 0);
+          $ const maxLength = evens.length;
+          <div class="node-list__header node-list__header--padding-y text-center">Opportunities</div>
+          <div class="row node-list--classifeds">
+            <for|node, index| of=nodes>
+            $ const isNotLastOfColumn = (index % maxLength) < maxLength && nodes.length - index > 2;
+            $ const className = isNotLastOfColumn ? "node-classified": "";
+              <div class="col-lg-6 mb-block-lg">
+                $ const primaryImage = getAsObject(node, "primaryImage");
+                $ const primarySection = getAsObject(node, "primarySection");
+                $ const linkAttrs = { href: get(node, "siteContext.path") };
+                <marko-web-node
+                  image-position="left"
+                  flush=false
+                  full-height=false
+                  class=className
+                >
+                  <@image
+                    ar="1:1"
+                    width=180
+                    use-placeholder=false
+                    src=primaryImage.src
+                    alt=primaryImage.alt
+                    is-logo=primaryImage.isLogo
+                    link=linkAttrs
+                    ...input.image
+                  />
+                  <@body>
+                    <@title tag="h5">
+                      <marko-web-content-short-name tag=null obj=node link=linkAttrs />
+                    </@title>
+                    <@text modifiers=["teaser"]>
+                      <marko-web-content-teaser tag=null obj=node link=linkAttrs />
+                    </@text>
+                  </@body>
+                </marko-web-node>
+              </div>
+            </for>
+          </div>
         </marko-web-query>
         </@section>
       </marko-web-page-wrapper>
