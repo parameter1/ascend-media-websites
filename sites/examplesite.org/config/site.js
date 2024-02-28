@@ -41,4 +41,5 @@ module.exports = {
     logo: '',
     bgColor: '#ffffff',
   },
+  civicComputingEnabled: process.env.CIVIC_COMPUTING_ENABLED === 'true',
 };

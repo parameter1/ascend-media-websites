@@ -66,4 +66,5 @@ module.exports = {
   exhibitors: {
     title: 'Exhibit Spotlight',
   },
+  civicComputingEnabled: process.env.CIVIC_COMPUTING_ENABLED === 'true',
 };

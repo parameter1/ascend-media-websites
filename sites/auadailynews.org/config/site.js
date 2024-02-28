@@ -53,4 +53,5 @@ module.exports = {
     enabled: true,
     cookieDomain: process.env.NODE_ENV === 'production' ? 'auadailynews.org' : '',
   },
+  civicComputingEnabled: process.env.CIVIC_COMPUTING_ENABLED === 'true',
 };

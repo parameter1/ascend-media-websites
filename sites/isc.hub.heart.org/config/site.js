@@ -59,4 +59,5 @@ module.exports = {
   },
   ahaFooter: true,
   noticePushdown: true,
+  civicComputingEnabled: process.env.CIVIC_COMPUTING_ENABLED === 'true',
 };
