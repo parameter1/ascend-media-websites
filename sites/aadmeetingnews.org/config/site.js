@@ -66,4 +66,5 @@ module.exports = {
   exhibitors: {
     title: 'Exhibit Spotlight',
   },
+  civicComputingApiId: process.env.CIVIC_COMPUTING_API_ID,
 };
