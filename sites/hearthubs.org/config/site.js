@@ -46,4 +46,8 @@ module.exports = {
     logo: 'https://img.hub.heart.org/files/base/ascend/hearthub/image/static/footer.svg?h=90',
     bgColor: '#ffffff',
   },
+  civicComputing: {
+    apiKey: undefined, // '592b99ebdf88c091dad9b556b6d8de236ac97687',
+    product: undefined, // 'PRO_MULTISITE',
+  },
 };

@@ -78,4 +78,8 @@ module.exports = {
     to: 'DSanford@ascendintegratedmedia.com',
   },
   setSearchSortFieldToScore: true,
+  civicComputing: {
+    apiKey: '592b99ebdf88c091dad9b556b6d8de236ac97687',
+    product: 'PRO_MULTISITE',
+  },
 };

@@ -54,4 +54,8 @@ module.exports = {
     enabled: true,
     cookieDomain: process.env.NODE_ENV === 'production' ? 'ashpmidyeardailynews.org' : '',
   },
+  civicComputing: {
+    apiKey: undefined, // '592b99ebdf88c091dad9b556b6d8de236ac97687',
+    product: undefined, // 'PRO_MULTISITE',
+  },
 };

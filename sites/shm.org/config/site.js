@@ -48,4 +48,8 @@ module.exports = {
     logo: 'https://img.ascendmedia.com/files/base/ascend/hh/image/static/aua/site_logo.png?h=50',
     bgColor: '#ffffff',
   },
+  civicComputing: {
+    apiKey: undefined, // '592b99ebdf88c091dad9b556b6d8de236ac97687',
+    product: undefined, // 'PRO_MULTISITE',
+  },
 };
