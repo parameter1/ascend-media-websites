@@ -92,11 +92,12 @@ $ const { gamDefer, gtmDefer } = req.query;
     $ const useIdxNewsletterSignup = true !== pushdownDisabled;
     <!-- <theme-site-footer use-idx-newsletter-signup=useIdxNewsletterSignup /> -->
     <global-site-footer use-idx-newsletter-signup=useIdxNewsletterSignup />
-    <if(site.get('civicComputingEnabled') === true)>
+    $ console.log(site.get('civicComputingApiId'))
+    <if(site.get('civicComputingApiId'))>
       <script src="https://cc.cdn.civiccomputing.com/9/cookieControl-9.x.min.js" type="text/javascript"></script>
       <script>
         var config = {
-          apiKey: '7bcbf673ca9198af7c307b0fbb81865a6207ea5d',
+          apiKey: '${site.get('civicComputingApiId')}',
           product: 'PRO_MULTISITE',
         };
 

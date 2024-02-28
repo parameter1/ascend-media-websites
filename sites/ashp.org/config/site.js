@@ -54,5 +54,5 @@ module.exports = {
     enabled: true,
     cookieDomain: process.env.NODE_ENV === 'production' ? 'ashpmidyeardailynews.org' : '',
   },
-  civicComputingEnabled: process.env.CIVIC_COMPUTING_ENABLED === 'true',
+  civicComputingApiId: process.env.CIVIC_COMPUTING_API_ID,
 };
