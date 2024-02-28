@@ -31,14 +31,16 @@ $ const aboveContainer = get(input, "aboveContainer.renderBody");
   <@below-container>
     <${input.belowContainer} />
     <bulletin-site-footer />
-    <script src="https://cc.cdn.civiccomputing.com/9/cookieControl-9.x.min.js" type="text/javascript"></script>
-    <script>
-      var config = {
-        apiKey: '7bcbf673ca9198af7c307b0fbb81865a6207ea5d',
-        product: 'PRO_MULTISITE',
-      };
+    <if(site.get('civicComputingEnabled') === true)>
+      <script src="https://cc.cdn.civiccomputing.com/9/cookieControl-9.x.min.js" type="text/javascript"></script>
+      <script>
+        var config = {
+          apiKey: '7bcbf673ca9198af7c307b0fbb81865a6207ea5d',
+          product: 'PRO_MULTISITE',
+        };
 
-      CookieControl.load( config );
-    </script>
+        CookieControl.load( config );
+      </script>
+    </if>
   </@below-container>
 </marko-web-document>
