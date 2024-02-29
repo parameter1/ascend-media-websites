@@ -143,6 +143,10 @@ $theme-card-header-background-color: #fff;
   &__logo {
     margin-bottom: map-get($spacers, block);
     filter: none;
+    @include media-breakpoint-down(md) {
+      max-width: 100%;
+      aspect-ratio: 390 / 90;
+    }
   }
   &__wrapper {
     @media (min-width: $marko-web-document-container-max-width) {
