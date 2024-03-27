@@ -144,11 +144,12 @@ module.exports = async ({
     </div>
     <!--M/-->
     */
-    if (ad && Object.keys(ad).length) {
+    if (ad && Object.keys(ad).length && Object.keys(getAsObject(ad, 'creative')).length) {
       const linkAttributes = getAsObject(ad, 'attributes.link');
       const containerAttributes = getAsObject(ad, 'attributes.container');
       const link = get(ad, 'href');
       const creative = getAsObject(ad, 'creative');
+      console.log(creative);
       const image = getAsObject(ad, 'image');
       const updatedAt = get(ad, 'campaign.updatedAt');
       const startDate = get(ad, 'campaign.criteria.start');
